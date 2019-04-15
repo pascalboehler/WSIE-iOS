@@ -11,6 +11,8 @@
 		BB751E382263A071000C646A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E362263A071000C646A /* Main.storyboard */; };
 		BB751E3A2263A072000C646A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB751E392263A072000C646A /* Assets.xcassets */; };
 		BB751E3D2263A072000C646A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E3B2263A072000C646A /* LaunchScreen.storyboard */; };
+		BBA17D21226499E200B07B8C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */; };
+		BBA17D252264B91100B07B8C /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */; };
 		BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF83432264829800ED8B45 /* RecipeViewController.swift */; };
 		BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8347226482C500ED8B45 /* IdeasViewController.swift */; };
 		BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */; };
@@ -23,6 +25,8 @@
 		BB751E392263A072000C646A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB751E3C2263A072000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB751E3E2263A072000C646A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		BBAF83432264829800ED8B45 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BBAF8347226482C500ED8B45 /* IdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasViewController.swift; sourceTree = "<group>"; };
 		BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 		BB751E312263A070000C646A /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
+				BBA17D1F226499AE00B07B8C /* Custom Classes */,
 				BBAF8346226482B300ED8B45 /* VIewController */,
 				BB751E322263A071000C646A /* AppDelegate.swift */,
 				BB751E362263A071000C646A /* Main.storyboard */,
@@ -68,12 +73,21 @@
 			path = WSIE;
 			sourceTree = "<group>";
 		};
+		BBA17D1F226499AE00B07B8C /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
 		BBAF8346226482B300ED8B45 /* VIewController */ = {
 			isa = PBXGroup;
 			children = (
 				BBAF83432264829800ED8B45 /* RecipeViewController.swift */,
 				BBAF8347226482C500ED8B45 /* IdeasViewController.swift */,
 				BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */,
+				BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */,
 			);
 			name = VIewController;
 			sourceTree = "<group>";
@@ -150,8 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */,
+				BBA17D21226499E200B07B8C /* RecipeTableViewCell.swift in Sources */,
 				BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */,
 				BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */,
+				BBA17D252264B91100B07B8C /* RecipeDetailViewController.swift in Sources */,
 				BB751E332263A071000C646A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
