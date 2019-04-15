@@ -13,6 +13,12 @@ class RecipeViewController: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    // Recipe dataset ONLY FOR TESTING !!!
+    let recipe = [
+        ["Title 1", "Title 2", "Tiltle 3", "Title 4", "Title 5"], // Titles
+        ["velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor"], // Short Descriptions
+        ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +56,9 @@ extension RecipeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         
-        cell.recipeImageView.image = UIImage(named: "Clock")
-        cell.titleLabel.text = "Title"
-        cell.shortDescriptionLabel.text = "Lorem Ipsum Dolor sit amet kasdjhglasdugöaksdjgöaksdgaöskdjgaöksdjgaöksdj kajsd jshdbv,ydv "
+        cell.recipeImageView.image = UIImage(named: recipe[2][indexPath.row])
+        cell.titleLabel.text = recipe[0][indexPath.row]
+        cell.shortDescriptionLabel.text = recipe[1][indexPath.row]
         
         return cell
     }
