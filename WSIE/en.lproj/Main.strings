@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "37k-Ta-H3v"; */
+"37k-Ta-H3v.title" = "Favourites";
+
+/* Class = "UITabBarItem"; title = "Ideas"; ObjectID = "L9K-O7-TNt"; */
+"L9K-O7-TNt.title" = "Ideas";
+
+/* Class = "UINavigationItem"; title = "Favourites"; ObjectID = "Mru-LT-uXE"; */
+"Mru-LT-uXE.title" = "Favourites";
+
+/* Class = "UINavigationItem"; title = "Ideas"; ObjectID = "o8E-PS-6o7"; */
+"o8E-PS-6o7.title" = "Ideas";
+
+/* Class = "UITabBarItem"; title = "Recipe"; ObjectID = "uPi-Tn-nGr"; */
+"uPi-Tn-nGr.title" = "Recipe";
+
+/* Class = "UINavigationItem"; title = "Recipe"; ObjectID = "vU9-WA-u38"; */
+"vU9-WA-u38.title" = "Recipe";

@@ -62,7 +62,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="foM-Up-rJV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourites" id="37k-Ta-H3v"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="Star" id="37k-Ta-H3v"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUw-ks-UYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +92,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cjz-vV-3RC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipe" id="uPi-Tn-nGr"/>
+                    <tabBarItem key="tabBarItem" title="Recipe" image="Book" id="uPi-Tn-nGr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTA-nA-5Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +119,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Book" width="30" height="30"/>
         <image name="Bulb" width="30" height="30"/>
+        <image name="Star" width="30" height="30"/>
     </resources>
 </document>
