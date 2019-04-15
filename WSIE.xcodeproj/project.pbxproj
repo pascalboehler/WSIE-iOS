@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BB751E332263A071000C646A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB751E322263A071000C646A /* AppDelegate.swift */; };
-		BB751E352263A071000C646A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB751E342263A071000C646A /* ViewController.swift */; };
 		BB751E382263A071000C646A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E362263A071000C646A /* Main.storyboard */; };
 		BB751E3A2263A072000C646A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB751E392263A072000C646A /* Assets.xcassets */; };
 		BB751E3D2263A072000C646A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E3B2263A072000C646A /* LaunchScreen.storyboard */; };
+		BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF83432264829800ED8B45 /* RecipeViewController.swift */; };
+		BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8347226482C500ED8B45 /* IdeasViewController.swift */; };
+		BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BB751E2F2263A070000C646A /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB751E322263A071000C646A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB751E342263A071000C646A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB751E372263A071000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB751E392263A072000C646A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB751E3C2263A072000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB751E3E2263A072000C646A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBAF83432264829800ED8B45 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		BBAF8347226482C500ED8B45 /* IdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasViewController.swift; sourceTree = "<group>"; };
+		BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		BB751E312263A070000C646A /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
+				BBAF8346226482B300ED8B45 /* VIewController */,
 				BB751E322263A071000C646A /* AppDelegate.swift */,
-				BB751E342263A071000C646A /* ViewController.swift */,
 				BB751E362263A071000C646A /* Main.storyboard */,
-				BB751E392263A072000C646A /* Assets.xcassets */,
 				BB751E3B2263A072000C646A /* LaunchScreen.storyboard */,
+				BB751E392263A072000C646A /* Assets.xcassets */,
 				BB751E3E2263A072000C646A /* Info.plist */,
 			);
 			path = WSIE;
+			sourceTree = "<group>";
+		};
+		BBAF8346226482B300ED8B45 /* VIewController */ = {
+			isa = PBXGroup;
+			children = (
+				BBAF83432264829800ED8B45 /* RecipeViewController.swift */,
+				BBAF8347226482C500ED8B45 /* IdeasViewController.swift */,
+				BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */,
+			);
+			name = VIewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB751E352263A071000C646A /* ViewController.swift in Sources */,
+				BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */,
+				BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */,
+				BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */,
 				BB751E332263A071000C646A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

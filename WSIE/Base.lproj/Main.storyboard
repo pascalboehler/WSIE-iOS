@@ -13,7 +13,7 @@
         <!--Ideas-->
         <scene sceneID="KSy-aN-OKK">
             <objects>
-                <viewController id="J5X-sO-jRc" sceneMemberID="viewController">
+                <viewController id="J5X-sO-jRc" customClass="IdeasViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2mN-SY-NJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
         <!--Favourites-->
         <scene sceneID="hkI-dF-YuT">
             <objects>
-                <viewController id="qv8-LQ-Kfx" sceneMemberID="viewController">
+                <viewController id="qv8-LQ-Kfx" customClass="FavouritesViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="02N-Hg-aTo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
         <!--Recipe-->
         <scene sceneID="GPk-x4-dWz">
             <objects>
-                <viewController id="lUR-DR-Jkp" sceneMemberID="viewController">
+                <viewController id="lUR-DR-Jkp" customClass="RecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aGv-9j-5ij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
