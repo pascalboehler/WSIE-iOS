@@ -100,12 +100,15 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeTableViewCell" id="Se9-GL-Wea" customClass="RecipeTableViewCell" customModule="WSIE" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Se9-GL-Wea" id="rmA-ek-yqr">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Se9-GL-Wea" id="rmA-ek-yqr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4br-ZX-1wI">
                                                     <rect key="frame" x="20" y="11" width="374" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="OGY-uW-vxZ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -114,10 +117,14 @@
                                                     <rect key="frame" x="8" y="47.000000000000007" width="104.66666666666667" height="69.666666666666686"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="hPv-f4-wkn" secondAttribute="height" multiplier="3:2" id="92d-o3-oKE"/>
+                                                        <constraint firstAttribute="height" constant="69.670000000000002" id="TuU-au-MeX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-Vp-fWI" userLabel="Shortdescription">
                                                     <rect key="frame" x="120.66666666666666" y="47" width="265.33333333333337" height="59"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="59" id="sXd-zl-klR"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -156,9 +163,14 @@
                         <viewLayoutGuide key="safeArea" id="Cjz-vV-3RC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="Bkz-J2-ELz">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EUi-RD-AQW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EUi-RD-AQW">
+                            <connections>
+                                <action selector="addRecipeButtonHandler:" destination="lUR-DR-Jkp" id="TM2-Xu-dm3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="Uxi-EE-6VM" id="q6Q-7G-XbT"/>
                         <segue destination="pxr-Pr-9wn" kind="show" identifier="ShowRecipeDetailViewController" id="Yfk-ia-OPP"/>
                         <segue destination="Pah-Qc-5pz" kind="show" identifier="ShowCreateRecipeViewController" id="rEc-nZ-tCW"/>
                     </connections>
