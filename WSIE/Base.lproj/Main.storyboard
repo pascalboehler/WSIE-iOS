@@ -116,7 +116,7 @@
                                                         <constraint firstAttribute="width" secondItem="hPv-f4-wkn" secondAttribute="height" multiplier="3:2" id="92d-o3-oKE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-Vp-fWI" userLabel="Shortdescription">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-Vp-fWI" userLabel="Shortdescription">
                                                     <rect key="frame" x="120.66666666666666" y="47" width="265.33333333333337" height="59"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -137,6 +137,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="jZk-Vp-fWI" secondAttribute="trailing" constant="8" id="ukM-s2-CZa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeImageView" destination="hPv-f4-wkn" id="2Yx-4N-CRA"/>
+                                            <outlet property="shortDescriptionLabel" destination="jZk-Vp-fWI" id="cSq-9H-O2a"/>
+                                            <outlet property="titleLabel" destination="4br-ZX-1wI" id="Tzb-jd-80Y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -151,15 +156,31 @@
                         <viewLayoutGuide key="safeArea" id="Cjz-vV-3RC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="Bkz-J2-ELz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="EUi-RD-AQW"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EUi-RD-AQW"/>
                     </navigationItem>
                     <connections>
                         <segue destination="pxr-Pr-9wn" kind="show" identifier="ShowRecipeDetailViewController" id="Yfk-ia-OPP"/>
+                        <segue destination="Pah-Qc-5pz" kind="show" identifier="ShowCreateRecipeViewController" id="rEc-nZ-tCW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTA-nA-5Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="1887" y="-862"/>
+        </scene>
+        <!--Create Recipe-->
+        <scene sceneID="4gX-Cg-AYO">
+            <objects>
+                <viewController title="Create Recipe" id="Pah-Qc-5pz" customClass="CreateRecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zl1-QH-nFi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ju9-iU-zbj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffe-Ij-Ng3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800" y="-547"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="BKY-Vj-w4z">
@@ -174,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rg-BJ-KhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710.144927536232" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="2800" y="-1228"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dV3-Yw-MSY">
@@ -212,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jo-ln-dNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.536231884058" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="928" y="-862"/>
         </scene>
     </scenes>
     <resources>
