@@ -17,10 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="2mN-SY-NJj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ut9-We-d93">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Ideas" id="o8E-PS-6o7"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ut9-We-d93" firstAttribute="leading" secondItem="y9Q-GV-De6" secondAttribute="leading" id="1CA-4I-OmS"/>
+                            <constraint firstItem="ut9-We-d93" firstAttribute="trailing" secondItem="y9Q-GV-De6" secondAttribute="trailing" id="7Y2-kz-ylq"/>
+                            <constraint firstItem="ut9-We-d93" firstAttribute="top" secondItem="y9Q-GV-De6" secondAttribute="top" id="uXI-BZ-LzZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="y9Q-GV-De6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ideas" id="L9K-O7-TNt"/>
+                    <tabBarItem key="tabBarItem" title="Ideas" image="Bulb" id="L9K-O7-TNt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTE-gZ-Ke0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -33,7 +46,20 @@
                     <view key="view" contentMode="scaleToFill" id="02N-Hg-aTo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nVY-4D-z82">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Favourites" id="Mru-LT-uXE"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nVY-4D-z82" firstAttribute="leading" secondItem="foM-Up-rJV" secondAttribute="leading" id="Hko-BW-tZy"/>
+                            <constraint firstItem="nVY-4D-z82" firstAttribute="top" secondItem="foM-Up-rJV" secondAttribute="top" id="bhW-XB-enO"/>
+                            <constraint firstItem="nVY-4D-z82" firstAttribute="trailing" secondItem="foM-Up-rJV" secondAttribute="trailing" id="ya7-j8-msq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="foM-Up-rJV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favourites" id="37k-Ta-H3v"/>
@@ -50,7 +76,20 @@
                     <view key="view" contentMode="scaleToFill" id="aGv-9j-5ij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u5g-IZ-Tcb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Recipe" id="vU9-WA-u38"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u5g-IZ-Tcb" firstAttribute="top" secondItem="Cjz-vV-3RC" secondAttribute="top" id="4Ee-VD-IPH"/>
+                            <constraint firstItem="u5g-IZ-Tcb" firstAttribute="trailing" secondItem="Cjz-vV-3RC" secondAttribute="trailing" id="Icy-Rz-AJ6"/>
+                            <constraint firstItem="u5g-IZ-Tcb" firstAttribute="leading" secondItem="Cjz-vV-3RC" secondAttribute="leading" id="wGn-eR-my2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Cjz-vV-3RC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recipe" id="uPi-Tn-nGr"/>
@@ -79,4 +118,7 @@
             <point key="canvasLocation" x="-299" y="142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bulb" width="30" height="30"/>
+    </resources>
 </document>
