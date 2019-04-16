@@ -7,133 +7,133 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB320CA4226640AF003E1736 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB320CA2226640AF003E1736 /* Data.xcdatamodeld */; };
-		BB751E332263A071000C646A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB751E322263A071000C646A /* AppDelegate.swift */; };
-		BB751E382263A071000C646A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E362263A071000C646A /* Main.storyboard */; };
-		BB751E3A2263A072000C646A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB751E392263A072000C646A /* Assets.xcassets */; };
-		BB751E3D2263A072000C646A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E3B2263A072000C646A /* LaunchScreen.storyboard */; };
-		BBA17D21226499E200B07B8C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */; };
-		BBA17D252264B91100B07B8C /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */; };
-		BBA17D272264E94100B07B8C /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA17D262264E94100B07B8C /* CreateRecipeViewController.swift */; };
-		BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF83432264829800ED8B45 /* RecipeViewController.swift */; };
-		BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8347226482C500ED8B45 /* IdeasViewController.swift */; };
-		BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */; };
-		F6774970FD7C9C8F388630CE /* libPods-WSIE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */; };
+		591D48AD643FF9912F202A49 /* libPods-WSIE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */; };
+		BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FAD2266559500153244 /* AppDelegate.swift */; };
+		BBE10FB32266559500153244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB12266559500153244 /* Main.storyboard */; };
+		BBE10FB62266559500153244 /* WSIE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FB42266559500153244 /* WSIE.xcdatamodeld */; };
+		BBE10FB82266559600153244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB72266559600153244 /* Assets.xcassets */; };
+		BBE10FBB2266559600153244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB92266559600153244 /* LaunchScreen.storyboard */; };
+		BBE10FCA22665B3C00153244 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC422665B3C00153244 /* RecipeViewController.swift */; };
+		BBE10FCB22665B3C00153244 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC522665B3C00153244 /* RecipeTableViewCell.swift */; };
+		BBE10FCC22665B3C00153244 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC622665B3C00153244 /* IdeasViewController.swift */; };
+		BBE10FCD22665B3C00153244 /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC722665B3C00153244 /* CreateRecipeViewController.swift */; };
+		BBE10FCE22665B3C00153244 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC822665B3C00153244 /* FavouritesViewController.swift */; };
+		BBE10FCF22665B3C00153244 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC922665B3C00153244 /* RecipeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
-		BB320CA3226640AF003E1736 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
-		BB751E2F2263A070000C646A /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB751E322263A071000C646A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB751E372263A071000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BB751E392263A072000C646A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BB751E3C2263A072000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BB751E3E2263A072000C646A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
-		BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
-		BBA17D262264E94100B07B8C /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
-		BBAF83432264829800ED8B45 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		BBAF8347226482C500ED8B45 /* IdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasViewController.swift; sourceTree = "<group>"; };
-		BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
-		C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
-		D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		BBE10FAA2266559500153244 /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBE10FAD2266559500153244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBE10FB22266559500153244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBE10FB52266559500153244 /* WSIE.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSIE.xcdatamodel; sourceTree = "<group>"; };
+		BBE10FB72266559600153244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBE10FBA2266559600153244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBE10FBC2266559600153244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBE10FC422665B3C00153244 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		BBE10FC522665B3C00153244 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		BBE10FC622665B3C00153244 /* IdeasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeasViewController.swift; sourceTree = "<group>"; };
+		BBE10FC722665B3C00153244 /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
+		BBE10FC822665B3C00153244 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		BBE10FC922665B3C00153244 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		E53FA53E6D19D8BC669AF482 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
+		FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BB751E2C2263A070000C646A /* Frameworks */ = {
+		BBE10FA72266559500153244 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6774970FD7C9C8F388630CE /* libPods-WSIE.a in Frameworks */,
+				591D48AD643FF9912F202A49 /* libPods-WSIE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15DA713D953AA745C951B585 /* Frameworks */ = {
+		003406AC9369B86D91CEB301 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */,
+				FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8FD7BBEE79F58CFF73E68565 /* Pods */ = {
+		5ABE363B5917D190EC761A33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */,
-				C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */,
+				E53FA53E6D19D8BC669AF482 /* Pods-WSIE.debug.xcconfig */,
+				4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BB751E262263A070000C646A = {
+		BBE10FA12266559500153244 = {
 			isa = PBXGroup;
 			children = (
-				BB751E312263A070000C646A /* WSIE */,
-				BB751E302263A070000C646A /* Products */,
-				8FD7BBEE79F58CFF73E68565 /* Pods */,
-				15DA713D953AA745C951B585 /* Frameworks */,
+				BBE10FAC2266559500153244 /* WSIE */,
+				BBE10FAB2266559500153244 /* Products */,
+				5ABE363B5917D190EC761A33 /* Pods */,
+				003406AC9369B86D91CEB301 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		BB751E302263A070000C646A /* Products */ = {
+		BBE10FAB2266559500153244 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB751E2F2263A070000C646A /* WSIE.app */,
+				BBE10FAA2266559500153244 /* WSIE.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BB751E312263A070000C646A /* WSIE */ = {
+		BBE10FAC2266559500153244 /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
-				BBA17D1F226499AE00B07B8C /* Custom Classes */,
-				BBAF8346226482B300ED8B45 /* VIewController */,
-				BB751E322263A071000C646A /* AppDelegate.swift */,
-				BB751E362263A071000C646A /* Main.storyboard */,
-				BB751E3B2263A072000C646A /* LaunchScreen.storyboard */,
-				BB751E392263A072000C646A /* Assets.xcassets */,
-				BB751E3E2263A072000C646A /* Info.plist */,
-				BB320CA2226640AF003E1736 /* Data.xcdatamodeld */,
+				BBE10FD322665C5E00153244 /* Custom Classes */,
+				BBE10FC322665AE300153244 /* View Controller */,
+				BBE10FAD2266559500153244 /* AppDelegate.swift */,
+				BBE10FB12266559500153244 /* Main.storyboard */,
+				BBE10FB92266559600153244 /* LaunchScreen.storyboard */,
+				BBE10FB72266559600153244 /* Assets.xcassets */,
+				BBE10FBC2266559600153244 /* Info.plist */,
+				BBE10FB42266559500153244 /* WSIE.xcdatamodeld */,
 			);
 			path = WSIE;
 			sourceTree = "<group>";
 		};
-		BBA17D1F226499AE00B07B8C /* Custom Classes */ = {
+		BBE10FC322665AE300153244 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BBA17D20226499E200B07B8C /* RecipeTableViewCell.swift */,
+				BBE10FC722665B3C00153244 /* CreateRecipeViewController.swift */,
+				BBE10FC822665B3C00153244 /* FavouritesViewController.swift */,
+				BBE10FC622665B3C00153244 /* IdeasViewController.swift */,
+				BBE10FC922665B3C00153244 /* RecipeDetailViewController.swift */,
+				BBE10FC422665B3C00153244 /* RecipeViewController.swift */,
 			);
-			name = "Custom Classes";
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
-		BBAF8346226482B300ED8B45 /* VIewController */ = {
+		BBE10FD322665C5E00153244 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BBAF83432264829800ED8B45 /* RecipeViewController.swift */,
-				BBAF8347226482C500ED8B45 /* IdeasViewController.swift */,
-				BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */,
-				BBA17D242264B91100B07B8C /* RecipeDetailViewController.swift */,
-				BBA17D262264E94100B07B8C /* CreateRecipeViewController.swift */,
+				BBE10FC522665B3C00153244 /* RecipeTableViewCell.swift */,
 			);
-			name = VIewController;
+			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB751E2E2263A070000C646A /* WSIE */ = {
+		BBE10FA92266559500153244 /* WSIE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB751E412263A072000C646A /* Build configuration list for PBXNativeTarget "WSIE" */;
+			buildConfigurationList = BBE10FBF2266559600153244 /* Build configuration list for PBXNativeTarget "WSIE" */;
 			buildPhases = (
-				F068124EBEFD2070E1EC6AB1 /* [CP] Check Pods Manifest.lock */,
-				BB751E2B2263A070000C646A /* Sources */,
-				BB751E2C2263A070000C646A /* Frameworks */,
-				BB751E2D2263A070000C646A /* Resources */,
-				4EA0DDB8978D7446E8B1D2A8 /* [CP] Copy Pods Resources */,
+				BA179C54F8930A2A32F662AA /* [CP] Check Pods Manifest.lock */,
+				BBE10FA62266559500153244 /* Sources */,
+				BBE10FA72266559500153244 /* Frameworks */,
+				BBE10FA82266559500153244 /* Resources */,
+				B2ACDD5736A5AD54F0935B9F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,25 +141,25 @@
 			);
 			name = WSIE;
 			productName = WSIE;
-			productReference = BB751E2F2263A070000C646A /* WSIE.app */;
+			productReference = BBE10FAA2266559500153244 /* WSIE.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BB751E272263A070000C646A /* Project object */ = {
+		BBE10FA22266559500153244 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Pascal Boehler";
 				TargetAttributes = {
-					BB751E2E2263A070000C646A = {
+					BBE10FA92266559500153244 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = BB751E2A2263A070000C646A /* Build configuration list for PBXProject "WSIE" */;
+			buildConfigurationList = BBE10FA52266559500153244 /* Build configuration list for PBXProject "WSIE" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,31 +167,31 @@
 				en,
 				Base,
 			);
-			mainGroup = BB751E262263A070000C646A;
-			productRefGroup = BB751E302263A070000C646A /* Products */;
+			mainGroup = BBE10FA12266559500153244;
+			productRefGroup = BBE10FAB2266559500153244 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB751E2E2263A070000C646A /* WSIE */,
+				BBE10FA92266559500153244 /* WSIE */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BB751E2D2263A070000C646A /* Resources */ = {
+		BBE10FA82266559500153244 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB751E3D2263A072000C646A /* LaunchScreen.storyboard in Resources */,
-				BB751E3A2263A072000C646A /* Assets.xcassets in Resources */,
-				BB751E382263A071000C646A /* Main.storyboard in Resources */,
+				BBE10FBB2266559600153244 /* LaunchScreen.storyboard in Resources */,
+				BBE10FB82266559600153244 /* Assets.xcassets in Resources */,
+				BBE10FB32266559500153244 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4EA0DDB8978D7446E8B1D2A8 /* [CP] Copy Pods Resources */ = {
+		B2ACDD5736A5AD54F0935B9F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -213,7 +213,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSIE/Pods-WSIE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F068124EBEFD2070E1EC6AB1 /* [CP] Check Pods Manifest.lock */ = {
+		BA179C54F8930A2A32F662AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,36 +238,36 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BB751E2B2263A070000C646A /* Sources */ = {
+		BBE10FA62266559500153244 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */,
-				BBA17D21226499E200B07B8C /* RecipeTableViewCell.swift in Sources */,
-				BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */,
-				BB320CA4226640AF003E1736 /* Data.xcdatamodeld in Sources */,
-				BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */,
-				BBA17D252264B91100B07B8C /* RecipeDetailViewController.swift in Sources */,
-				BBA17D272264E94100B07B8C /* CreateRecipeViewController.swift in Sources */,
-				BB751E332263A071000C646A /* AppDelegate.swift in Sources */,
+				BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */,
+				BBE10FB62266559500153244 /* WSIE.xcdatamodeld in Sources */,
+				BBE10FCF22665B3C00153244 /* RecipeDetailViewController.swift in Sources */,
+				BBE10FCD22665B3C00153244 /* CreateRecipeViewController.swift in Sources */,
+				BBE10FCA22665B3C00153244 /* RecipeViewController.swift in Sources */,
+				BBE10FCC22665B3C00153244 /* IdeasViewController.swift in Sources */,
+				BBE10FCE22665B3C00153244 /* FavouritesViewController.swift in Sources */,
+				BBE10FCB22665B3C00153244 /* RecipeTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BB751E362263A071000C646A /* Main.storyboard */ = {
+		BBE10FB12266559500153244 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BB751E372263A071000C646A /* Base */,
+				BBE10FB22266559500153244 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BB751E3B2263A072000C646A /* LaunchScreen.storyboard */ = {
+		BBE10FB92266559600153244 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BB751E3C2263A072000C646A /* Base */,
+				BBE10FBA2266559600153244 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BB751E3F2263A072000C646A /* Debug */ = {
+		BBE10FBD2266559600153244 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -336,7 +336,7 @@
 			};
 			name = Debug;
 		};
-		BB751E402263A072000C646A /* Release */ = {
+		BBE10FBE2266559600153244 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -391,9 +391,9 @@
 			};
 			name = Release;
 		};
-		BB751E422263A072000C646A /* Debug */ = {
+		BBE10FC02266559600153244 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */;
+			baseConfigurationReference = E53FA53E6D19D8BC669AF482 /* Pods-WSIE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -410,9 +410,9 @@
 			};
 			name = Debug;
 		};
-		BB751E432263A072000C646A /* Release */ = {
+		BBE10FC12266559600153244 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */;
+			baseConfigurationReference = 4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,20 +432,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB751E2A2263A070000C646A /* Build configuration list for PBXProject "WSIE" */ = {
+		BBE10FA52266559500153244 /* Build configuration list for PBXProject "WSIE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB751E3F2263A072000C646A /* Debug */,
-				BB751E402263A072000C646A /* Release */,
+				BBE10FBD2266559600153244 /* Debug */,
+				BBE10FBE2266559600153244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB751E412263A072000C646A /* Build configuration list for PBXNativeTarget "WSIE" */ = {
+		BBE10FBF2266559600153244 /* Build configuration list for PBXNativeTarget "WSIE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB751E422263A072000C646A /* Debug */,
-				BB751E432263A072000C646A /* Release */,
+				BBE10FC02266559600153244 /* Debug */,
+				BBE10FC12266559600153244 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -453,17 +453,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BB320CA2226640AF003E1736 /* Data.xcdatamodeld */ = {
+		BBE10FB42266559500153244 /* WSIE.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BB320CA3226640AF003E1736 /* Data.xcdatamodel */,
+				BBE10FB52266559500153244 /* WSIE.xcdatamodel */,
 			);
-			currentVersion = BB320CA3226640AF003E1736 /* Data.xcdatamodel */;
-			path = Data.xcdatamodeld;
+			currentVersion = BBE10FB52266559500153244 /* WSIE.xcdatamodel */;
+			path = WSIE.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = BB751E272263A070000C646A /* Project object */;
+	rootObject = BBE10FA22266559500153244 /* Project object */;
 }

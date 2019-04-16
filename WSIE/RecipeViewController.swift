@@ -29,6 +29,13 @@ class RecipeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // reload the tableView data when view appears
+        tableView.reloadData()
+    }
+    
     @IBAction func addRecipeButtonHandler(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "ShowCreateRecipeViewController", sender: nil)
     }

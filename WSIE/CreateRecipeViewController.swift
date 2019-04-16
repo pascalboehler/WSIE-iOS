@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateRecipeViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var shortDescriptionTextView: UITextView!
+    @IBOutlet weak var imageLinkTextView: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shortDescriptionTextView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -23,6 +29,50 @@ class CreateRecipeViewController: UIViewController {
     
     @IBAction func saveButtonHandler(_ sender: Any) {
         print("OnSaveButtonPressed")
-        self.dismiss(animated: true, completion: nil)    }
+        guard let title = titleTextField.text else {
+            return
+        }
+        guard let shortDescription = shortDescriptionTextView.text else {
+            return
+        }
+        guard let imageLink = imageLinkTextView.text else {
+            return
+        }
+        saveRecipe(title: title, shortDescription: shortDescription, imageLink: imageLink)
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
+    func saveRecipe(title: String, shortDescription: String, imageLink: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: managedContext)!
+        
+        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        recipe.setValue(title, forKeyPath: "recipeTitle")
+        recipe.setValue(shortDescription, forKeyPath: "recipeShortDescription")
+        recipe.setValue(imageLink, forKey: "recipeImageLink")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Coul ´d not save recipe. \(error), \(error.userInfo)")
+        }
+    }
+    
+}
+
+extension CreateRecipeViewController : UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }
