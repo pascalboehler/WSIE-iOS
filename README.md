@@ -14,4 +14,3 @@ Functions of the application:
 To read our markdown formatting guide (to make sure that you get the best experience) please visit our website under: pascalboehler.github.io/wsie-ios/markdown-guide
 
 To read our markdown formatting tutorial with all the supported markdown expressions please visit our website under: pascalboehler.github.io/wsie-ios/markdown-tutorial
-
