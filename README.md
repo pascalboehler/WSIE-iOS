@@ -16,3 +16,4 @@ To read our markdown formatting guide (to make sure that you get the best experi
 To read our markdown formatting tutorial with all the supported markdown expressions please visit our website under: http://pascalboehler.github.io/wsie-ios/markdown-tutorial
 
 Screenshots of the application
+![Test Image](/Assets/Clock/clock.png)
