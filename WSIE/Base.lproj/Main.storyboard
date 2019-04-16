@@ -384,17 +384,20 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAw-uq-TKi" customClass="MarkdownView" customModule="MarkdownView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uAw-uq-TKi" customClass="MarkdownView" customModule="MarkdownView">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uAw-uq-TKi" firstAttribute="top" secondItem="Izu-cE-bdB" secondAttribute="bottom" id="1C3-Of-hjk"/>
+                            <constraint firstItem="uAw-uq-TKi" firstAttribute="trailing" secondItem="WbI-ny-yZn" secondAttribute="trailing" id="4Tb-Ib-C1p"/>
                             <constraint firstAttribute="bottom" secondItem="Oa6-jo-h4j" secondAttribute="bottom" id="MDR-KR-Zns"/>
+                            <constraint firstItem="Oa6-jo-h4j" firstAttribute="top" secondItem="uAw-uq-TKi" secondAttribute="bottom" id="NQz-ME-I8g"/>
                             <constraint firstItem="Izu-cE-bdB" firstAttribute="top" secondItem="WbI-ny-yZn" secondAttribute="top" id="Q0T-EY-r5J"/>
                             <constraint firstItem="Izu-cE-bdB" firstAttribute="leading" secondItem="WbI-ny-yZn" secondAttribute="leading" id="Tby-UD-TfU"/>
+                            <constraint firstItem="uAw-uq-TKi" firstAttribute="leading" secondItem="WbI-ny-yZn" secondAttribute="leading" id="U13-hG-qcN"/>
                             <constraint firstItem="Oa6-jo-h4j" firstAttribute="trailing" secondItem="WbI-ny-yZn" secondAttribute="trailing" id="iKy-Hy-oxe"/>
                             <constraint firstItem="Izu-cE-bdB" firstAttribute="trailing" secondItem="WbI-ny-yZn" secondAttribute="trailing" id="u2R-4L-4Zl"/>
                             <constraint firstItem="Oa6-jo-h4j" firstAttribute="leading" secondItem="WbI-ny-yZn" secondAttribute="leading" id="vob-tw-HMT"/>
