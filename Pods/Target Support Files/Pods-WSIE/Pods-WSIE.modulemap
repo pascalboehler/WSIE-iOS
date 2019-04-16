@@ -1,0 +1,6 @@
+module Pods_WSIE {
+  umbrella header "Pods-WSIE-umbrella.h"
+
+  export *
+  module * { export * }
+}

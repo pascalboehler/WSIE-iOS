@@ -17,9 +17,11 @@
 		BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF83432264829800ED8B45 /* RecipeViewController.swift */; };
 		BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8347226482C500ED8B45 /* IdeasViewController.swift */; };
 		BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */; };
+		F6774970FD7C9C8F388630CE /* libPods-WSIE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		BB751E2F2263A070000C646A /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB751E322263A071000C646A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB751E372263A071000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		BBAF83432264829800ED8B45 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		BBAF8347226482C500ED8B45 /* IdeasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasViewController.swift; sourceTree = "<group>"; };
 		BBAF8349226482D800ED8B45 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6774970FD7C9C8F388630CE /* libPods-WSIE.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15DA713D953AA745C951B585 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3A98DCC3118A89E4C590C03 /* libPods-WSIE.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FD7BBEE79F58CFF73E68565 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */,
+				C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BB751E262263A070000C646A = {
 			isa = PBXGroup;
 			children = (
 				BB751E312263A070000C646A /* WSIE */,
 				BB751E302263A070000C646A /* Products */,
+				8FD7BBEE79F58CFF73E68565 /* Pods */,
+				15DA713D953AA745C951B585 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB751E412263A072000C646A /* Build configuration list for PBXNativeTarget "WSIE" */;
 			buildPhases = (
+				F068124EBEFD2070E1EC6AB1 /* [CP] Check Pods Manifest.lock */,
 				BB751E2B2263A070000C646A /* Sources */,
 				BB751E2C2263A070000C646A /* Frameworks */,
 				BB751E2D2263A070000C646A /* Resources */,
+				4EA0DDB8978D7446E8B1D2A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +187,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EA0DDB8978D7446E8B1D2A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSIE/Pods-WSIE-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MarkdownView/MarkdownView.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MarkdownView.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSIE/Pods-WSIE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F068124EBEFD2070E1EC6AB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WSIE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB751E2B2263A070000C646A /* Sources */ = {
@@ -316,6 +390,7 @@
 		};
 		BB751E422263A072000C646A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -334,6 +409,7 @@
 		};
 		BB751E432263A072000C646A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
