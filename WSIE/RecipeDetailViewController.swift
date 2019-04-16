@@ -15,5 +15,10 @@ class RecipeDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func backButtonHandler(_ sender: Any) {
+        // quits the ViewController
+        dismiss(animated: true, completion: nil)
+    }
 }
 

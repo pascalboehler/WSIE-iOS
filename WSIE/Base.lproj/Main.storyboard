@@ -93,6 +93,53 @@
             </objects>
             <point key="canvasLocation" x="1837.68115942029" y="141.96428571428569"/>
         </scene>
+        <!--Create Recipe View Controller-->
+        <scene sceneID="sjW-5F-cgD">
+            <objects>
+                <viewController id="56d-j9-uG3" customClass="CreateRecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnj-gR-Noz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nR-ve-jht">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Create Recipe" id="d2U-EP-KeA">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AfG-Zy-0gZ">
+                                            <connections>
+                                                <action selector="cancelButtonHandler:" destination="56d-j9-uG3" id="6Py-Vr-Ldf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IFh-fM-khH">
+                                            <connections>
+                                                <action selector="saveButtonHandler:" destination="56d-j9-uG3" id="cfw-B2-asI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4d5-7y-3Ez">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4d5-7y-3Ez" firstAttribute="trailing" secondItem="8HR-CX-uZf" secondAttribute="trailing" id="L5b-B7-IlG"/>
+                            <constraint firstItem="6nR-ve-jht" firstAttribute="top" secondItem="8HR-CX-uZf" secondAttribute="top" id="ZDs-Fr-6d0"/>
+                            <constraint firstItem="6nR-ve-jht" firstAttribute="trailing" secondItem="8HR-CX-uZf" secondAttribute="trailing" id="duP-z6-961"/>
+                            <constraint firstItem="6nR-ve-jht" firstAttribute="leading" secondItem="8HR-CX-uZf" secondAttribute="leading" id="efB-eK-1g1"/>
+                            <constraint firstItem="4d5-7y-3Ez" firstAttribute="leading" secondItem="8HR-CX-uZf" secondAttribute="leading" id="g20-ey-OiY"/>
+                            <constraint firstAttribute="bottom" secondItem="4d5-7y-3Ez" secondAttribute="bottom" id="u6C-8S-DdI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8HR-CX-uZf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EeB-Er-3vz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032" y="-516"/>
+        </scene>
         <!--Favourites-->
         <scene sceneID="hkI-dF-YuT">
             <objects>
@@ -255,6 +302,7 @@
                         <viewLayoutGuide key="safeArea" id="Cjz-vV-3RC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="Bkz-J2-ELz">
+                        <barButtonItem key="backBarButtonItem" title="Recipe" id="Q4i-1c-K3e"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EUi-RD-AQW">
                             <connections>
                                 <action selector="addRecipeButtonHandler:" destination="lUR-DR-Jkp" id="TM2-Xu-dm3"/>
@@ -263,43 +311,95 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Uxi-EE-6VM" id="q6Q-7G-XbT"/>
-                        <segue destination="pxr-Pr-9wn" kind="show" identifier="ShowRecipeDetailViewController" id="Yfk-ia-OPP"/>
-                        <segue destination="Pah-Qc-5pz" kind="show" identifier="ShowCreateRecipeViewController" id="rEc-nZ-tCW"/>
+                        <segue destination="IMY-Va-NMA" kind="showDetail" identifier="ShowRecipeDetailViewController" id="FIY-by-zFo"/>
+                        <segue destination="Aop-px-1fU" kind="showDetail" identifier="ShowEditRecipeViewController" id="lmr-2i-zUj"/>
+                        <segue destination="56d-j9-uG3" kind="showDetail" identifier="ShowCreateRecipeViewController" id="Cfs-qI-NS6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTA-nA-5Qr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="-862"/>
+            <point key="canvasLocation" x="1958" y="-1219"/>
         </scene>
-        <!--Create Recipe-->
-        <scene sceneID="4gX-Cg-AYO">
+        <!--View Controller-->
+        <scene sceneID="9Ex-HQ-yz5">
             <objects>
-                <viewController title="Create Recipe" id="Pah-Qc-5pz" customClass="CreateRecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zl1-QH-nFi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                <viewController id="Aop-px-1fU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7S4-Aa-3QZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8j-eT-NFP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Edit Recipe" id="HhX-dq-DVo">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FSO-MX-wyN"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="859-2w-GpM"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u3j-f4-F8y">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items/>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ju9-iU-zbj"/>
+                        <constraints>
+                            <constraint firstItem="u3j-f4-F8y" firstAttribute="leading" secondItem="UmC-aS-lDU" secondAttribute="leading" id="Ie3-HD-zuk"/>
+                            <constraint firstItem="u3j-f4-F8y" firstAttribute="trailing" secondItem="UmC-aS-lDU" secondAttribute="trailing" id="NMv-Sh-2tk"/>
+                            <constraint firstItem="o8j-eT-NFP" firstAttribute="trailing" secondItem="UmC-aS-lDU" secondAttribute="trailing" id="OQN-No-zVf"/>
+                            <constraint firstAttribute="bottom" secondItem="u3j-f4-F8y" secondAttribute="bottom" id="QPN-zC-OpB"/>
+                            <constraint firstItem="o8j-eT-NFP" firstAttribute="top" secondItem="UmC-aS-lDU" secondAttribute="top" id="UcD-1d-spF"/>
+                            <constraint firstItem="o8j-eT-NFP" firstAttribute="leading" secondItem="UmC-aS-lDU" secondAttribute="leading" id="f7Z-ab-4dQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UmC-aS-lDU"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffe-Ij-Ng3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czk-ot-uZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2800" y="-547"/>
+            <point key="canvasLocation" x="3032" y="-1219"/>
         </scene>
         <!--Recipe Detail View Controller-->
-        <scene sceneID="BKY-Vj-w4z">
+        <scene sceneID="znl-oo-3m4">
             <objects>
-                <viewController id="pxr-Pr-9wn" customClass="RecipeDetailViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aCk-zQ-pZc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                <viewController id="IMY-Va-NMA" customClass="RecipeDetailViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XjJ-jj-xkw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Izu-cE-bdB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Recipe" id="5zO-L0-m0c">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="v8V-Em-Ghk">
+                                            <connections>
+                                                <action selector="backButtonHandler:" destination="IMY-Va-NMA" id="cNM-B1-RQm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oa6-jo-h4j">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items/>
+                            </tabBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="yI6-Zf-rNu"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Oa6-jo-h4j" secondAttribute="bottom" id="MDR-KR-Zns"/>
+                            <constraint firstItem="Izu-cE-bdB" firstAttribute="top" secondItem="WbI-ny-yZn" secondAttribute="top" id="Q0T-EY-r5J"/>
+                            <constraint firstItem="Izu-cE-bdB" firstAttribute="leading" secondItem="WbI-ny-yZn" secondAttribute="leading" id="Tby-UD-TfU"/>
+                            <constraint firstItem="Oa6-jo-h4j" firstAttribute="trailing" secondItem="WbI-ny-yZn" secondAttribute="trailing" id="iKy-Hy-oxe"/>
+                            <constraint firstItem="Izu-cE-bdB" firstAttribute="trailing" secondItem="WbI-ny-yZn" secondAttribute="trailing" id="u2R-4L-4Zl"/>
+                            <constraint firstItem="Oa6-jo-h4j" firstAttribute="leading" secondItem="WbI-ny-yZn" secondAttribute="leading" id="vob-tw-HMT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WbI-ny-yZn"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6rg-BJ-KhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QE3-Ee-WLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2800" y="-1228"/>
+            <point key="canvasLocation" x="3032" y="-1898"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dV3-Yw-MSY">
@@ -337,7 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0jo-ln-dNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="-862"/>
+            <point key="canvasLocation" x="928" y="-1219"/>
         </scene>
         <!--Ideas-->
         <scene sceneID="nKA-Hz-Ouu">
