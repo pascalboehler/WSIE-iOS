@@ -64,7 +64,6 @@
 				3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */,
 				C38CC454851DCF04E9B10AD5 /* Pods-WSIE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

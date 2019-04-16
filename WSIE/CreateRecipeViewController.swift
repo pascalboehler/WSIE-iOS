@@ -18,12 +18,11 @@ class CreateRecipeViewController: UIViewController {
     
     @IBAction func cancelButtonHandler(_ sender: Any) {
         print("On Cancel Button Pressed")
-        self.removeFromParent()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonHandler(_ sender: Any) {
         print("OnSaveButtonPressed")
-        self.removeFromParent()
-    }
+        self.dismiss(animated: true, completion: nil)    }
     
 }
