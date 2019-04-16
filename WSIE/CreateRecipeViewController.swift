@@ -61,8 +61,9 @@ class CreateRecipeViewController: UIViewController {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Coul ´d not save recipe. \(error), \(error.userInfo)")
+            print("Could not save recipe. \(error), \(error.userInfo)")
         }
+        print("Saved item..")
     }
     
 }

@@ -20,18 +20,21 @@ class RecipeViewController: UIViewController {
         ["velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor"], // Short Descriptions
         ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
     ] */
-    let recipe: [NSManagedObject] = [] // get database
+    var recipe: [Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        recipe = fetchData()
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print("View did appear...")
+        recipe = fetchData()
         // reload the tableView data when view appears
         tableView.reloadData()
     }
@@ -54,6 +57,21 @@ extension RecipeViewController : UITableViewDelegate {
         if editingStyle == .delete {
             print("Deleted Recipe...")
         }
+    }
+    
+    func fetchData() -> [Recipe]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<Recipe>(entityName: "Recipe")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            return result
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
+        }
+        return []
     }
 }
 
