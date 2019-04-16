@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB320CA4226640AF003E1736 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB320CA2226640AF003E1736 /* Data.xcdatamodeld */; };
 		BB751E332263A071000C646A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB751E322263A071000C646A /* AppDelegate.swift */; };
 		BB751E382263A071000C646A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB751E362263A071000C646A /* Main.storyboard */; };
 		BB751E3A2263A072000C646A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB751E392263A072000C646A /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3147944EC6B48AE72A3D80BB /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
+		BB320CA3226640AF003E1736 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		BB751E2F2263A070000C646A /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB751E322263A071000C646A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB751E372263A071000C646A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				BB751E3B2263A072000C646A /* LaunchScreen.storyboard */,
 				BB751E392263A072000C646A /* Assets.xcassets */,
 				BB751E3E2263A072000C646A /* Info.plist */,
+				BB320CA2226640AF003E1736 /* Data.xcdatamodeld */,
 			);
 			path = WSIE;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				BBAF834A226482D800ED8B45 /* FavouritesViewController.swift in Sources */,
 				BBA17D21226499E200B07B8C /* RecipeTableViewCell.swift in Sources */,
 				BBAF83442264829800ED8B45 /* RecipeViewController.swift in Sources */,
+				BB320CA4226640AF003E1736 /* Data.xcdatamodeld in Sources */,
 				BBAF8348226482C500ED8B45 /* IdeasViewController.swift in Sources */,
 				BBA17D252264B91100B07B8C /* RecipeDetailViewController.swift in Sources */,
 				BBA17D272264E94100B07B8C /* CreateRecipeViewController.swift in Sources */,
@@ -447,6 +451,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB320CA2226640AF003E1736 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB320CA3226640AF003E1736 /* Data.xcdatamodel */,
+			);
+			currentVersion = BB320CA3226640AF003E1736 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BB751E272263A070000C646A /* Project object */;
 }

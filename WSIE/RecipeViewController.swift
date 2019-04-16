@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RecipeViewController: UIViewController {
 
@@ -14,11 +15,12 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Recipe dataset ONLY FOR TESTING !!!
-    let recipe = [
+    /*let recipe = [
         ["Title 1", "Title 2", "Tiltle 3", "Title 4", "Title 5"], // Titles
         ["velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor", "velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor"], // Short Descriptions
         ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
-    ]
+    ] */
+    let recipe: [NSManagedObject] = [] // get database
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,15 +52,20 @@ extension RecipeViewController : UITableViewDelegate {
 
 extension RecipeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return recipe.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
+        let currentRecipe = recipe[indexPath.row]
+        if let recipeImageLink = currentRecipe.value(forKeyPath: "recipeImageLink") as? String {
+            cell.recipeImageView?.image = UIImage(named: recipeImageLink)
+        } else {
+            cell.recipeImageView?.image = UIImage(named: "Clock") // change to no photo image later...
+        }
         
-        cell.recipeImageView.image = UIImage(named: recipe[2][indexPath.row])
-        cell.titleLabel.text = recipe[0][indexPath.row]
-        cell.shortDescriptionLabel.text = recipe[1][indexPath.row]
+        cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
+        cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
         
         return cell
     }
