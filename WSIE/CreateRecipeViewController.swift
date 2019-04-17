@@ -66,6 +66,15 @@ class CreateRecipeViewController: UIViewController {
         print("Saved item..")
     }
     
+    func showSaveAlert() {
+    	let alertController = UIAlertController(title: "Unsaved changes", message: "Do you really want to exit?", preferredStyle = .alert)
+    	let cancelALert = UIAlert(title: "Cancel", style: .cancel, handler: nil)
+    	let saveAlert = UIAlert(title: "Save", style: .default, handler: nil)
+    	alertController.addAction(cancelAlert)
+    	alertController.addAction(saveAlert)
+    	present(alertController)
+    }
+    
 }
 
 extension CreateRecipeViewController : UITextViewDelegate {
