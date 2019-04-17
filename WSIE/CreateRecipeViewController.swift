@@ -15,11 +15,18 @@ class CreateRecipeViewController: UIViewController {
     @IBOutlet weak var shortDescriptionTextView: UITextView!
     @IBOutlet weak var imageLinkTextView: UITextField!
     
+    var currentIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         shortDescriptionTextView.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? EditRecipeViewController {
+            
+        }
     }
     
     @IBAction func cancelButtonHandler(_ sender: Any) {
