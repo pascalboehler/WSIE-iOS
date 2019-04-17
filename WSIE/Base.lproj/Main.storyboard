@@ -375,6 +375,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="yMX-fr-TI8">
                         <barButtonItem key="backBarButtonItem" title="Recipe" id="2K2-8S-0g4"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Bjm-qh-1CI"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qF2-9a-REv">
                             <connections>
                                 <action selector="addRecipeButtonHandler:" destination="uxI-Wj-2CD" id="y2A-e3-nkK"/>
@@ -392,10 +393,10 @@
             </objects>
             <point key="canvasLocation" x="1958" y="-1219"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Recipe View Controller-->
         <scene sceneID="CLp-BM-GNB">
             <objects>
-                <viewController id="Vau-0O-xZk" sceneMemberID="viewController">
+                <viewController id="Vau-0O-xZk" customClass="EditRecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="muB-is-KnM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -448,6 +449,11 @@
                                                 <action selector="backButtonHandler:" destination="jpL-so-aOx" id="UZg-jt-Y9g"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="s8v-gd-alQ">
+                                            <connections>
+                                                <action selector="editButtonHandler:" destination="jpL-so-aOx" id="GOi-7q-AoZ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -478,6 +484,7 @@
                     </view>
                     <connections>
                         <outlet property="markdownView" destination="QYe-Bz-0lp" id="e8j-CI-oDX"/>
+                        <segue destination="Vau-0O-xZk" kind="show" id="8hC-Pt-xTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67i-Jm-jmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -566,4 +573,7 @@
         <image name="Restaurant" width="30" height="30"/>
         <image name="Star" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8hC-Pt-xTo"/>
+    </inferredMetricsTieBreakers>
 </document>

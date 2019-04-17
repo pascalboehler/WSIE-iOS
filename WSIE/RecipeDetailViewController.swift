@@ -23,5 +23,9 @@ class RecipeDetailViewController: UIViewController {
         // quits the ViewController
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func editButtonHandler(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "ShowEditRecipeViewController", sender: nil)
+    }
 }
 
