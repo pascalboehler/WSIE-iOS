@@ -24,23 +24,26 @@ class CreateRecipeViewController: UIViewController {
     
     @IBAction func cancelButtonHandler(_ sender: Any) {
         print("On Cancel Button Pressed")
-        self.dismiss(animated: true, completion: nil)
+        showSaveAlert()
+        // self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonHandler(_ sender: Any) {
         print("OnSaveButtonPressed")
-        guard let title = titleTextField.text else {
+        guard let title = self.titleTextField.text else {
+            self.missingElementAlert(missingElement: "title")
             return
         }
-        guard let shortDescription = shortDescriptionTextView.text else {
+        guard let shortDescription = self.shortDescriptionTextView.text else {
+            self.missingElementAlert(missingElement: "shortDecription")
             return
         }
-        guard let imageLink = imageLinkTextView.text else {
+        guard let imageLink = self.imageLinkTextView.text else {
+            self.missingElementAlert(missingElement: "imageLink")
             return
         }
         saveRecipe(title: title, shortDescription: shortDescription, imageLink: imageLink)
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     func saveRecipe(title: String, shortDescription: String, imageLink: String) {
@@ -67,12 +70,52 @@ class CreateRecipeViewController: UIViewController {
     }
     
     func showSaveAlert() {
-    	let alertController = UIAlertController(title: "Unsaved changes", message: "Do you really want to exit?", preferredStyle = .alert)
-    	let cancelALert = UIAlert(title: "Cancel", style: .cancel, handler: nil)
-    	let saveAlert = UIAlert(title: "Save", style: .default, handler: nil)
+    	let alertController = UIAlertController(title: "Unsaved changes", message: "There are some unsaved changes. Do you really want to exit and discard the changes?", preferredStyle: .alert)
+        let cancelAlert = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            _ in
+            self.dismiss(animated: true, completion: nil)
+        })
+    	let saveAlert = UIAlertAction(title: "Save", style: .default, handler: {
+            _ in
+            guard let titleString = self.titleTextField.text else {
+                self.missingElementAlert(missingElement: "title")
+                return
+            }
+            guard let shortDescriptionString = self.shortDescriptionTextView.text else {
+                self.missingElementAlert(missingElement: "shortDecription")
+                return
+            }
+            guard let imageLink = self.imageLinkTextView.text else {
+                self.missingElementAlert(missingElement: "imageLink")
+                return
+            }
+            self.saveRecipe(title: titleString, shortDescription: shortDescriptionString, imageLink: imageLink)
+            self.dismiss(animated: true, completion: nil)
+        })
     	alertController.addAction(cancelAlert)
     	alertController.addAction(saveAlert)
-    	present(alertController)
+    	present(alertController, animated: true)
+    }
+    
+    func missingElementAlert(missingElement element: String) {
+        let alert = UIAlertController(title: "Missing Element", message: "", preferredStyle: .alert)
+        
+        switch element {
+        case "title":
+            alert.message = "Please insert a title for the recipe!"
+            break
+        case "shortDescription":
+            alert.message = "Please insert a short description for the recipe!"
+            break
+        case "imageLink":
+            alert.message = "Please insert a image link for the recipe!" // change later to Image...
+        default:
+            alert.message = "Please insert the missing attributes for the recipe!"
+        }
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
 }

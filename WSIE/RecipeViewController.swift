@@ -55,7 +55,14 @@ extension RecipeViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
             print("Deleted Recipe...")
+            let deletedRecipe = recipe[indexPath.row]
+            context.delete(deletedRecipe)
+            recipe.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            appDelegate.saveContext()
         }
     }
     
