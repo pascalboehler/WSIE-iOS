@@ -19,6 +19,13 @@ class RecipeDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? EditRecipeViewController {
+            print("Segue prepared")
+        }
+    }
+    
+    
     @IBAction func backButtonHandler(_ sender: Any) {
         // quits the ViewController
         dismiss(animated: true, completion: nil)

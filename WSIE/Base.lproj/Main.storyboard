@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za8-FY-HdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.884057971015" y="-516.29464285714289"/>
+            <point key="canvasLocation" x="3032" y="-371"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
@@ -405,8 +405,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
                                     <navigationItem title="Edit Recipe" id="bzL-Nc-m0t">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="38K-VP-wrG"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YUs-N2-IFG"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="38K-VP-wrG">
+                                            <connections>
+                                                <action selector="cancelButtonHandler:" destination="Vau-0O-xZk" id="HQ2-zF-V2F"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YUs-N2-IFG">
+                                            <connections>
+                                                <action selector="saveButtonHandler:" destination="Vau-0O-xZk" id="eOX-9C-fEz"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -415,18 +423,28 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pae-MW-QTM">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="v0M-Ew-sKI" firstAttribute="leading" secondItem="eDr-6X-1pj" secondAttribute="leading" id="11G-ho-HDF"/>
+                            <constraint firstItem="NTd-IF-9gt" firstAttribute="top" secondItem="Pae-MW-QTM" secondAttribute="bottom" id="3nk-D7-4e2"/>
+                            <constraint firstItem="Pae-MW-QTM" firstAttribute="top" secondItem="v0M-Ew-sKI" secondAttribute="bottom" id="6tv-6g-e6w"/>
                             <constraint firstItem="v0M-Ew-sKI" firstAttribute="trailing" secondItem="eDr-6X-1pj" secondAttribute="trailing" id="906-CC-B3S"/>
                             <constraint firstItem="v0M-Ew-sKI" firstAttribute="top" secondItem="eDr-6X-1pj" secondAttribute="top" id="FhU-Je-Ety"/>
                             <constraint firstAttribute="bottom" secondItem="NTd-IF-9gt" secondAttribute="bottom" id="OvF-TM-8eT"/>
                             <constraint firstItem="NTd-IF-9gt" firstAttribute="leading" secondItem="eDr-6X-1pj" secondAttribute="leading" id="f9R-O0-Xv7"/>
+                            <constraint firstItem="Pae-MW-QTM" firstAttribute="trailing" secondItem="eDr-6X-1pj" secondAttribute="trailing" id="nKa-t4-jvP"/>
+                            <constraint firstItem="Pae-MW-QTM" firstAttribute="leading" secondItem="eDr-6X-1pj" secondAttribute="leading" id="uVV-39-gaP"/>
                             <constraint firstItem="NTd-IF-9gt" firstAttribute="trailing" secondItem="eDr-6X-1pj" secondAttribute="trailing" id="yl4-DP-X6z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eDr-6X-1pj"/>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Pae-MW-QTM" id="e1u-cd-d8N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aU-rC-ATn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,12 +502,12 @@
                     </view>
                     <connections>
                         <outlet property="markdownView" destination="QYe-Bz-0lp" id="e8j-CI-oDX"/>
-                        <segue destination="Vau-0O-xZk" kind="show" id="8hC-Pt-xTo"/>
+                        <segue destination="Vau-0O-xZk" kind="show" identifier="ShowEditRecipeViewController" id="8hC-Pt-xTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67i-Jm-jmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.884057971015" y="-1898.4375"/>
+            <point key="canvasLocation" x="3032" y="-1981"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sPZ-19-MET">

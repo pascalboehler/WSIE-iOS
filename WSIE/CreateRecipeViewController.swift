@@ -23,11 +23,7 @@ class CreateRecipeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? EditRecipeViewController {
-            
-        }
-    }
+    
     
     @IBAction func cancelButtonHandler(_ sender: Any) {
         print("On Cancel Button Pressed")
