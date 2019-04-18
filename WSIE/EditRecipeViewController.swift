@@ -20,9 +20,11 @@ class EditRecipeViewController: UIViewController {
     var pictureLabel: UILabel!
     var picturePicker: UIButton!
     var materialsLabel: UILabel!
-    var materialsTableView: UITableView!
+    //var materialsTableView: UITableView!
+    var materialsTextView: UITextView!
     var stepsLabel: UILabel!
-    var stepsTableView: UITableView!
+    //var stepsTableView: UITableView!
+    var stepsTextView: UITextView!
     
     // IBOutlets
     @IBOutlet weak var scrollView: UIScrollView!
@@ -77,6 +79,24 @@ class EditRecipeViewController: UIViewController {
         materialsLabel.textAlignment = .center
         scrollView.addSubview(materialsLabel)
         
+        materialsTextView = UITextView(frame: CGRect(x: 0, y: materialsLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
+        materialsTextView.isEditable = true
+        materialsTextView.autocapitalizationType = .sentences
+        materialsTextView.autocorrectionType = .default
+        scrollView.addSubview(materialsTextView)
+        
+        stepsLabel = UILabel(frame: CGRect(x: 0, y: materialsTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        stepsLabel.text = "Steps: "
+        stepsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        stepsLabel.textAlignment = .center
+        scrollView.addSubview(stepsLabel)
+        
+        stepsTextView = UITextView(frame: CGRect(x: 0, y: stepsLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
+        stepsTextView.isEditable = true
+        stepsTextView.autocapitalizationType = .sentences
+        stepsTextView.autocorrectionType = .default
+        scrollView.addSubview(stepsTextView)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -84,6 +104,7 @@ class EditRecipeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // Set variables to old values
+        /*
         recipeTitle = (currentRecipe.value(forKey: "recipeTitle") as! String)
         recipeShortDescription = (currentRecipe?.value(forKey: "recipeShortDescripton") as! String)
         recipeMaterials = (currentRecipe.value(forKey: "recipeMaterials") as! String)
@@ -93,6 +114,11 @@ class EditRecipeViewController: UIViewController {
         
         // update views
         titleTextField.text = recipeTitle!
+        // shortDescriptionTextView.text = recipeShortDescription!
+        materialsTextView.text = recipeMaterials!
+        stepsTextView.text = recipeSteps! */
+        
+        
         
     }
     
@@ -106,6 +132,7 @@ class EditRecipeViewController: UIViewController {
     
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {
         print("On cancel button pressed")
+        self.dismiss(animated: true, completion: nil)
     }
     
     
