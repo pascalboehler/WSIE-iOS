@@ -48,7 +48,7 @@ class EditRecipeViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true*/
     
         // Add all the additional elements to the view
-        self.scrollView.contentSize = CGSize(width: self.view.bounds.width, height: 1000)
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1000)
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isScrollEnabled = true
         
