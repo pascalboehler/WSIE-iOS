@@ -15,6 +15,8 @@ class CreateRecipeViewController: UIViewController {
     var titleTextField: UITextField!
     var shortDescriptionLabel: UILabel!
     var shortDescriptionTextView: UITextView!
+    var cookingTimeLabel: UILabel!
+    var cookingTimeDatePicker: UIDatePicker!
     var pictureLabel: UILabel!
     var picturePicker: UIButton!
     var materialsLabel: UILabel!
@@ -31,7 +33,7 @@ class CreateRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scrollView.contentSize = CGSize(width: self.view.bounds.width, height: 1000)
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1000)
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isScrollEnabled = true
         
@@ -41,22 +43,22 @@ class CreateRecipeViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         scrollView.addSubview(titleLabel)
         
-        titleTextField = UITextField(frame: CGRect(x: 0, y: 58, width: self.scrollView.bounds.width, height: 30))
+        titleTextField = UITextField(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 30))
         titleTextField.placeholder = "Insert a title for the recipe"
         self.scrollView.addSubview(titleTextField)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: 91, width: self.scrollView.bounds.width, height: 50))
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         pictureLabel.textAlignment = .center
         scrollView.addSubview(pictureLabel)
         
-        picturePicker = UIButton(frame: CGRect(x: 0, y: 154, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
+        picturePicker = UIButton(frame: CGRect(x: 0, y: pictureLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
         picturePicker.backgroundColor = UIColor.lightGray
         picturePicker.addTarget(self, action: #selector(picturePickerButtonHandler(sender:)), for: .touchUpInside)
         scrollView.addSubview(picturePicker)
         
-        materialsLabel = UILabel(frame: CGRect(x: 0, y: Int(154 + Int(self.picturePicker.bounds.height)), width: Int(self.scrollView.bounds.width), height: 50))
+        materialsLabel = UILabel(frame: CGRect(x: 0, y: Int(picturePicker.frame.maxY + 8), width: Int(self.scrollView.bounds.width), height: 50))
         materialsLabel.text = "Materials: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         materialsLabel.textAlignment = .center
@@ -66,6 +68,7 @@ class CreateRecipeViewController: UIViewController {
         materialsTextView.isEditable = true
         materialsTextView.autocapitalizationType = .sentences
         materialsTextView.autocorrectionType = .default
+        materialsTextView.delegate = self
         scrollView.addSubview(materialsTextView)
         
         stepsLabel = UILabel(frame: CGRect(x: 0, y: materialsTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
@@ -78,6 +81,7 @@ class CreateRecipeViewController: UIViewController {
         stepsTextView.isEditable = true
         stepsTextView.autocapitalizationType = .sentences
         stepsTextView.autocorrectionType = .default
+        stepsTextView.delegate = self
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
@@ -95,24 +99,21 @@ class CreateRecipeViewController: UIViewController {
     
     @IBAction func saveButtonHandler(_ sender: Any) {
         print("OnSaveButtonPressed")
-        /*
-        guard let title = self.titleTextField.text else {
-            self.missingElementAlert(missingElement: "title")
+        
+        guard let title = titleTextField.text else {
             return
         }
-        guard let shortDescription = self.shortDescriptionTextView.text else {
-            self.missingElementAlert(missingElement: "shortDecription")
+        
+        guard let shortDescription = shortDescriptionTextView.text else {
             return
         }
-        guard let imageLink = self.imageLinkTextView.text else {
-            self.missingElementAlert(missingElement: "imageLink")
-            return
-        }
-        saveRecipe(title: title, shortDescription: shortDescription, imageLink: imageLink) */
+        
+        // guard let cookingTime = cookingTimePicker.v
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveRecipe(title: String, shortDescription: String, imageLink: String) {
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, imageLink: String, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -123,9 +124,13 @@ class CreateRecipeViewController: UIViewController {
         
         let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        recipe.setValue(title, forKeyPath: "recipeTitle")
-        recipe.setValue(shortDescription, forKeyPath: "recipeShortDescription")
+        recipe.setValue(title, forKey: "recipeTitle")
+        recipe.setValue(shortDescription, forKey: "recipeShortDescription")
         recipe.setValue(imageLink, forKey: "recipeImageLink")
+        recipe.setValue(materials, forKey: "recipeMaterials")
+        recipe.setValue(steps, forKey: "recipeSteps")
+        recipe.setValue(isFavourite, forKey: "recipeIsFavourite")
+        recipe.setValue(recipeMarkDown, forKey: "recipeMarkdown")
         
         do {
             try managedContext.save()
@@ -188,7 +193,7 @@ class CreateRecipeViewController: UIViewController {
     
 }
 
-/*
+
 extension CreateRecipeViewController : UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
@@ -198,4 +203,4 @@ extension CreateRecipeViewController : UITextViewDelegate {
         return true
     }
 }
-*/
+
