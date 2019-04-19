@@ -90,12 +90,14 @@ extension RecipeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipe[indexPath.row]
-        if let recipeImageLink = currentRecipe.value(forKeyPath: "recipeImageLink") as? String {
-            cell.recipeImageView?.image = UIImage(named: recipeImageLink)
-        } else {
-            cell.recipeImageView?.image = UIImage(named: "Clock") // change to no photo image later...
+        if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
+            if let recipeImage = UIImage(data: imageData){
+                cell.recipeImageView?.image = recipeImage
+            } else {
+                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
+            }
         }
-        
+ 
         cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
         cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
         

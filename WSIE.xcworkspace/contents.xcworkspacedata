@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WSIE-iPad/WSIE-iPad.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:WSIE.xcodeproj">
    </FileRef>
    <FileRef

@@ -28,6 +28,8 @@ class CreateRecipeViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var imagePickerController: UIImagePickerController!
+    
     var currentIndex: Int?
     
     override func viewDidLoad() {
@@ -89,6 +91,31 @@ class CreateRecipeViewController: UIViewController {
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
         print("picturePicker pressed...")
+        // get the image
+        // initalice the imagePickerController
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        let imageSourceAlert = UIAlertController(title: "Input source", message: "Choose your input source", preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { _ in
+            self.imagePickerController.sourceType = .camera
+            self.present(self.imagePickerController, animated: true)
+        }
+        
+        let libraryAction = UIAlertAction(title: "Photo library", style: .default) { _ in
+            self.imagePickerController.sourceType = .photoLibrary
+            self.present(self.imagePickerController, animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        imageSourceAlert.addAction(cameraAction)
+        imageSourceAlert.addAction(libraryAction)
+        imageSourceAlert.addAction(cancelAction)
+        
+        present(imageSourceAlert, animated: true)
+        
     }
     
     @IBAction func cancelButtonHandler(_ sender: Any) {
@@ -104,15 +131,41 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
+        /*
         guard let shortDescription = shortDescriptionTextView.text else {
+            return
+        }*/
+        
+        // let cookingTime = Int(cookingTimeDatePicker.countDownDuration)
+        let cookingTime = 20
+        
+        
+        guard let image = picturePicker.currentBackgroundImage else {
+            print("Could not find background image...")
             return
         }
         
-        // guard let cookingTime = cookingTimePicker.v
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+            print("Cast to imageData went wrong")
+            return
+        }
+        
+        guard let materials = materialsTextView.text else {
+            return
+        }
+        
+        guard let steps = stepsTextView.text else {
+            return
+        }
+        
+        saveRecipe(title: title, shortDescription: "Lorem ipsum", cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+        
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, imageLink: String, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        
+        print("Recipe saved")
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -126,11 +179,11 @@ class CreateRecipeViewController: UIViewController {
         
         recipe.setValue(title, forKey: "recipeTitle")
         recipe.setValue(shortDescription, forKey: "recipeShortDescription")
-        recipe.setValue(imageLink, forKey: "recipeImageLink")
+        recipe.setValue(image, forKey: "recipeImageBinaryData")
         recipe.setValue(materials, forKey: "recipeMaterials")
         recipe.setValue(steps, forKey: "recipeSteps")
         recipe.setValue(isFavourite, forKey: "recipeIsFavourite")
-        recipe.setValue(recipeMarkDown, forKey: "recipeMarkdown")
+        recipe.setValue(recipeMarkDown, forKey: "recipeMarkdownCode")
         
         do {
             try managedContext.save()
@@ -148,21 +201,42 @@ class CreateRecipeViewController: UIViewController {
         })
     	let saveAlert = UIAlertAction(title: "Save", style: .default, handler: {
             _ in
+            
+            guard let title = self.titleTextField.text else {
+                self.missingElementAlert()
+                return
+            }
+            
             /*
-            guard let titleString = self.titleTextField.text else {
-                self.missingElementAlert(missingElement: "title")
+            guard let shortDescription = self.shortDescriptionTextView.text else {
+                self.missingElementAlert()
+                return
+            } */
+            
+            let cookingTime = 0 //Int(self.cookingTimeDatePicker.countDownDuration)
+            
+            guard let imageLink = self.picturePicker.currentImage else {
+                self.missingElementAlert()
                 return
             }
-            guard let shortDescriptionString = self.shortDescriptionTextView.text else {
-                self.missingElementAlert(missingElement: "shortDecription")
+            
+            guard let imageData = imageLink.jpegData(compressionQuality: 1.0) else {
+                self.missingElementAlert()
                 return
             }
-            guard let imageLink = self.imageLinkTextView.text else {
-                self.missingElementAlert(missingElement: "imageLink")
+            
+            guard let materials = self.materialsTextView.text else {
+                self.missingElementAlert()
                 return
             }
-            self.saveRecipe(title: titleString, shortDescription: shortDescriptionString, imageLink: imageLink)
- */
+            
+            guard let steps = self.stepsTextView.text else {
+                self.missingElementAlert()
+                return
+            }
+            
+            self.saveRecipe(title: title, shortDescription: "Lorem ipsum", cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+            
             self.dismiss(animated: true, completion: nil)
         })
     	alertController.addAction(cancelAlert)
@@ -170,9 +244,10 @@ class CreateRecipeViewController: UIViewController {
     	present(alertController, animated: true)
     }
     
-    func missingElementAlert(missingElement element: String) {
-        let alert = UIAlertController(title: "Missing Element", message: "", preferredStyle: .alert)
+    func missingElementAlert() {
+        let alert = UIAlertController(title: "Missing Element", message: "There is something wrong!", preferredStyle: .alert)
         
+        /*
         switch element {
         case "title":
             alert.message = "Please insert a title for the recipe!"
@@ -184,7 +259,9 @@ class CreateRecipeViewController: UIViewController {
             alert.message = "Please insert a image link for the recipe!" // change later to Image...
         default:
             alert.message = "Please insert the missing attributes for the recipe!"
-        }
+        } */
+        
+        
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(okAction)
         
@@ -201,6 +278,16 @@ extension CreateRecipeViewController : UITextViewDelegate {
             return false
         }
         return true
+    }
+}
+
+extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        picturePicker.setBackgroundImage(image, for: .normal)
+        
     }
 }
 
