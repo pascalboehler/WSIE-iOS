@@ -313,7 +313,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="yMX-fr-TI8">
                         <barButtonItem key="backBarButtonItem" title="Recipe" id="2K2-8S-0g4"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Bjm-qh-1CI"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qF2-9a-REv">
                             <connections>
                                 <action selector="addRecipeButtonHandler:" destination="uxI-Wj-2CD" id="y2A-e3-nkK"/>
@@ -530,6 +529,6 @@
         <image name="Star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8hC-Pt-xTo"/>
+        <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>

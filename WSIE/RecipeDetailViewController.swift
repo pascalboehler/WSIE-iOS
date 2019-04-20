@@ -12,6 +12,9 @@ import MarkdownView
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var markdownView: MarkdownView!
+    var currentRecipe: Recipe?
+    var currentRecipeIndex: Int?
+    var recipes: [Recipe] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +22,17 @@ class RecipeDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? EditRecipeViewController {
-            print("Segue prepared")
+            destinationViewController.currentRecipe = currentRecipe
+            destinationViewController.recipes = recipes
+            destinationViewController.currentRecipeIndex = currentRecipeIndex
         }
     }
     

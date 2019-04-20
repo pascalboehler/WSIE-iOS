@@ -20,10 +20,8 @@ class CreateRecipeViewController: UIViewController {
     var pictureLabel: UILabel!
     var picturePicker: UIButton!
     var materialsLabel: UILabel!
-    //var materialsTableView: UITableView!
     var materialsTextView: UITextView!
     var stepsLabel: UILabel!
-    //var stepsTableView: UITableView!
     var stepsTextView: UITextView!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -35,24 +33,49 @@ class CreateRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1000)
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1500)
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isScrollEnabled = true
         
         titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.scrollView.bounds.width, height: 50))
         titleLabel.text = "Recipe title: "
-        titleLabel.textAlignment = .center
+        titleLabel.textAlignment = .left
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         scrollView.addSubview(titleLabel)
         
         titleTextField = UITextField(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 30))
         titleTextField.placeholder = "Insert a title for the recipe"
-        self.scrollView.addSubview(titleTextField)
+        scrollView.addSubview(titleTextField)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        cookingTimeLabel.text = "Cooking time: "
+        cookingTimeLabel.textAlignment = .left
+        cookingTimeLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        scrollView.addSubview(cookingTimeLabel)
+        
+        cookingTimeDatePicker = UIDatePicker(frame: CGRect(x: 0, y: cookingTimeLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        cookingTimeDatePicker.datePickerMode = .countDownTimer
+        cookingTimeDatePicker.minuteInterval = 1
+        scrollView.addSubview(cookingTimeDatePicker)
+        
+        shortDescriptionLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        shortDescriptionLabel.text = "Recipe short description: "
+        shortDescriptionLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        shortDescriptionLabel.textAlignment = .left
+        scrollView.addSubview(shortDescriptionLabel)
+        
+        shortDescriptionTextView = UITextView(frame: CGRect(x: 0, y: shortDescriptionLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
+        shortDescriptionTextView.isEditable = true
+        shortDescriptionTextView.autocapitalizationType = .sentences
+        shortDescriptionTextView.autocorrectionType = .default
+        shortDescriptionTextView.delegate = self
+        scrollView.addSubview(shortDescriptionTextView)
+        
+        
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: shortDescriptionTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        pictureLabel.textAlignment = .center
+        pictureLabel.textAlignment = .left
         scrollView.addSubview(pictureLabel)
         
         picturePicker = UIButton(frame: CGRect(x: 0, y: pictureLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
@@ -63,7 +86,7 @@ class CreateRecipeViewController: UIViewController {
         materialsLabel = UILabel(frame: CGRect(x: 0, y: Int(picturePicker.frame.maxY + 8), width: Int(self.scrollView.bounds.width), height: 50))
         materialsLabel.text = "Materials: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        materialsLabel.textAlignment = .center
+        materialsLabel.textAlignment = .left
         scrollView.addSubview(materialsLabel)
         
         materialsTextView = UITextView(frame: CGRect(x: 0, y: materialsLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
@@ -76,7 +99,7 @@ class CreateRecipeViewController: UIViewController {
         stepsLabel = UILabel(frame: CGRect(x: 0, y: materialsTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         stepsLabel.text = "Steps: "
         stepsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        stepsLabel.textAlignment = .center
+        stepsLabel.textAlignment = .left
         scrollView.addSubview(stepsLabel)
         
         stepsTextView = UITextView(frame: CGRect(x: 0, y: stepsLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
@@ -131,13 +154,11 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
-        /*
         guard let shortDescription = shortDescriptionTextView.text else {
             return
-        }*/
+        }
         
-        // let cookingTime = Int(cookingTimeDatePicker.countDownDuration)
-        let cookingTime = 20
+        let cookingTime = Int(cookingTimeDatePicker.countDownDuration) / 60
         
         
         guard let image = picturePicker.currentBackgroundImage else {
@@ -158,7 +179,11 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
-        saveRecipe(title: title, shortDescription: "Lorem ipsum", cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+        let recipeMarkDown = markdownFormatter(recipeTitle: title, recipeShortDescription: shortDescription, recipeCookingTime: cookingTime, recipeMaterialsList: materials, recipeStepsList: steps)
+        
+        print(recipeMarkDown)
+        
+        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
         
         self.dismiss(animated: true, completion: nil)
     }
@@ -207,13 +232,12 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
-            /*
             guard let shortDescription = self.shortDescriptionTextView.text else {
                 self.missingElementAlert()
                 return
-            } */
+            }
             
-            let cookingTime = 0 //Int(self.cookingTimeDatePicker.countDownDuration)
+            let cookingTime = Int(self.cookingTimeDatePicker.countDownDuration)
             
             guard let imageLink = self.picturePicker.currentImage else {
                 self.missingElementAlert()
@@ -235,7 +259,7 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
-            self.saveRecipe(title: title, shortDescription: "Lorem ipsum", cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
             
             self.dismiss(animated: true, completion: nil)
         })
@@ -284,9 +308,10 @@ extension CreateRecipeViewController : UITextViewDelegate {
 extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         picturePicker.setBackgroundImage(image, for: .normal)
+        dismiss(animated: true, completion: nil)
         
     }
 }

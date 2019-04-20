@@ -21,6 +21,7 @@ class RecipeViewController: UIViewController {
         ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
     ] */
     var recipe: [Recipe] = []
+    var currentRecipe: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +43,19 @@ class RecipeViewController: UIViewController {
     @IBAction func addRecipeButtonHandler(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "ShowCreateRecipeViewController", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? RecipeDetailViewController {
+            destinationViewController.currentRecipe = recipe[currentRecipe]
+            destinationViewController.recipes = recipe
+            destinationViewController.currentRecipeIndex = currentRecipe
+        }
+    }
 }
 
 extension RecipeViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentRecipe = indexPath.row
         performSegue(withIdentifier: "ShowRecipeDetailViewController", sender: nil)
     }
     
