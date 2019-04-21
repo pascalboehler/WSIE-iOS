@@ -18,7 +18,7 @@ class RecipeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        markdownView.load(markdown: "# Hello World!")
+        // markdownView.load(markdown: "# Hello World!")
         // Do any additional setup after loading the view.
     }
     

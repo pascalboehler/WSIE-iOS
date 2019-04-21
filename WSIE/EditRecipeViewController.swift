@@ -116,7 +116,7 @@ class EditRecipeViewController: UIViewController {
         
         // update views
         titleTextField.text = recipeTitle!
-        shortDescriptionTextView.text = recipeShortDescription!
+        // shortDescriptionTextView.text = recipeShortDescription!
         materialsTextView.text = recipeMaterials!
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
