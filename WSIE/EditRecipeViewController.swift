@@ -15,6 +15,8 @@ class EditRecipeViewController: UIViewController {
     // Code defined
     var titleLabel: UILabel!
     var titleTextField: UITextField!
+    var cookingTimeLabel: UILabel!
+    var cookingTimeDatePicker: UIDatePicker!
     var shortDescriptionLabel: UILabel!
     var shortDescriptionTextView: UITextView!
     var pictureLabel: UILabel!
@@ -59,22 +61,33 @@ class EditRecipeViewController: UIViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         scrollView.addSubview(titleLabel)
         
-        titleTextField = UITextField(frame: CGRect(x: 0, y: 58, width: self.scrollView.bounds.width, height: 30))
+        titleTextField = UITextField(frame: CGRect(x: 0, y: titleLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 30))
         titleTextField.placeholder = "Insert a title for the recipe"
         self.scrollView.addSubview(titleTextField)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: 91, width: self.scrollView.bounds.width, height: 50))
+        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50)
+        cookingTimeLabel.text = "Cooking time: "
+        cookingTimeLabel.textAlignment = .left
+        cookingTimeLabel.font = UIFont.systemFont(ofSize(25, weight: .semibold)
+        scrollView.addSubview(cookingTimeLabel)
+        
+        cookingTimeDatePicker = UIDatePicker(frame: CGRect(x: 0, y: cookingTimeLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: )	
+        cookingTimeDatePicker.datePickerMode = .countDownTimer
+        cookingTimeDatePicker.minuteInterval = 1
+        scrollView.addSubview(cookingTimeDatePicker)
+        
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         pictureLabel.textAlignment = .left
         scrollView.addSubview(pictureLabel)
         
-        picturePicker = UIButton(frame: CGRect(x: 0, y: 154, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
+        picturePicker = UIButton(frame: CGRect(x: 0, y: pictureLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
         picturePicker.backgroundColor = UIColor.lightGray
         picturePicker.addTarget(self, action: #selector(picturePickerButtonHandler(sender:)), for: .touchUpInside)
         scrollView.addSubview(picturePicker)
 
-        materialsLabel = UILabel(frame: CGRect(x: 0, y: Int(154 + Int(self.picturePicker.bounds.height)), width: Int(self.scrollView.bounds.width), height: 50))
+        materialsLabel = UILabel(frame: CGRect(x: 0, y: picturePicker.frame.maxY + 8, width: Int(self.scrollView.bounds.width), height: 50))
         materialsLabel.text = "Materials: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         materialsLabel.textAlignment = .left
