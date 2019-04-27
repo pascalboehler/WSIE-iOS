@@ -118,7 +118,54 @@ class EditRecipeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // Set variables to old values
+        if let recipeTitleTemp = (currentRecipe?.value(forKey: "recipeTitle") as! String) {
+        	recipeTitle = recipeTitleTemp
+        } else {
+        	print("Something went wrong!")
+        	recipeTitle = ""
+        }
         
+        if let recipeShortDescriptionTemp = (currentRecipe?.value(forKey: "recipeShortDescription") as! String) {
+        	recipeShortDescription = recipeShortDescriptionTemp
+        } else {
+        	print("Something went wrong!")
+        	recipeShortDescription = ""
+   		}
+   		
+   		if let recipeMaterialsTemp = (currentRecipe?.value(forKey: "recipeMaterials") as! String) {
+   			recipeMaterials = recipeMaterialsTemp
+   		} else {
+   			print("Something went wrong!")
+   			recipeMaterials = ""
+   		}
+   		
+   		if let recipeStepsTemp = (currentRecipe?.value(forKey: "recipeSteps") as! String) {
+   			recipeSteps = recipeStepsTemp
+   		} else {
+   			print("Something went wrong!")
+   			recipeSteps = ""
+   		}
+   		
+   		if let recipeCookingTimeTemp = (currentRecipe?.value(forKey: "recipeSteps") as! Int) {
+   			recipeCookingTime = recipeCookingTimeTemp
+   		} else {
+   			print("Something went wrong!")
+   			recipeCookingTime = 0
+   		}
+   		
+   		if let recipeMarkdownCodeTemp = (currentRecipe?.value(forKey: "recipeMarkdownCode") as! String) {
+   			recipeMarkdownCode = recipeMarkdownCodeTemp
+   		} else {
+   			print("Something went wrong")
+   		}
+   		
+   		if let recipeImage = UIImage(data; Data(currentRecipe!.recupeImageBinaryData!)) {
+   		} else {
+   		    print("Something went wrong!")
+   		    recipeImage = UIImage(names: "Gray")
+   		}
+   	 
+   		/*
         recipeTitle = (currentRecipe?.value(forKey: "recipeTitle") as! String)
         recipeShortDescription = (currentRecipe?.value(forKey: "recipeShortDescription") as! String)
         recipeMaterials = (currentRecipe?.value(forKey: "recipeMaterials") as! String)
@@ -126,6 +173,7 @@ class EditRecipeViewController: UIViewController {
         recipeCookingTime = (currentRecipe?.value(forKey: "recipeCookingTime") as! Int)
         recipeMarkdownCode = (currentRecipe?.value(forKey: "recipeMarkdownCode") as! String)
         recipeImage = UIImage(data: Data(currentRecipe!.recipeImageBinaryData!))
+        */
         
         // update views
         titleTextField.text = recipeTitle!
