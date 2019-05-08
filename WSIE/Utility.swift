@@ -14,7 +14,7 @@ func markdownFormatter(recipeTitle: String, recipeShortDescription: String, reci
     let title = "# \(recipeTitle) \n"
     let shortDescription = "## Description: \n"
     let shortDescriptionContent = "\(recipeShortDescription) \n"
-    let cookingTime = "Time: \(recipeCookingTime) \n"
+    let cookingTime = "Time: \(recipeCookingTime) minutes\n"
     let materials = "## Materials: \n"
     let materialsContent = getMaterials(recipeMaterialsList) + "\n"
     let steps = "## Steps: \n"

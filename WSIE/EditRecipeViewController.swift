@@ -65,18 +65,18 @@ class EditRecipeViewController: UIViewController {
         titleTextField.placeholder = "Insert a title for the recipe"
         self.scrollView.addSubview(titleTextField)
         
-        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50)
+        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         cookingTimeLabel.text = "Cooking time: "
         cookingTimeLabel.textAlignment = .left
-        cookingTimeLabel.font = UIFont.systemFont(ofSize(25, weight: .semibold)
+        cookingTimeLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         scrollView.addSubview(cookingTimeLabel)
         
-        cookingTimeDatePicker = UIDatePicker(frame: CGRect(x: 0, y: cookingTimeLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: )	
+        cookingTimeDatePicker = UIDatePicker(frame: CGRect(x: 0, y: cookingTimeLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 100))
         cookingTimeDatePicker.datePickerMode = .countDownTimer
         cookingTimeDatePicker.minuteInterval = 1
         scrollView.addSubview(cookingTimeDatePicker)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         pictureLabel.textAlignment = .left
@@ -87,7 +87,7 @@ class EditRecipeViewController: UIViewController {
         picturePicker.addTarget(self, action: #selector(picturePickerButtonHandler(sender:)), for: .touchUpInside)
         scrollView.addSubview(picturePicker)
 
-        materialsLabel = UILabel(frame: CGRect(x: 0, y: picturePicker.frame.maxY + 8, width: Int(self.scrollView.bounds.width), height: 50))
+        materialsLabel = UILabel(frame: CGRect(x: 0, y: picturePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         materialsLabel.text = "Materials: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         materialsLabel.textAlignment = .left
@@ -118,6 +118,7 @@ class EditRecipeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // Set variables to old values
+        /*
         if let recipeTitleTemp = (currentRecipe?.value(forKey: "recipeTitle") as! String) {
         	recipeTitle = recipeTitleTemp
         } else {
@@ -159,13 +160,14 @@ class EditRecipeViewController: UIViewController {
    			print("Something went wrong")
    		}
    		
-   		if let recipeImage = UIImage(data; Data(currentRecipe!.recupeImageBinaryData!)) {
+        if let recipeImage = UIImage(data: Data(currentRecipe!.recipeImageBinaryData!)) {
    		} else {
    		    print("Something went wrong!")
-   		    recipeImage = UIImage(names: "Gray")
+            recipeImage = UIImage(named: "Gray")
    		}
-   	 
-   		/*
+ 
+        */
+   		
         recipeTitle = (currentRecipe?.value(forKey: "recipeTitle") as! String)
         recipeShortDescription = (currentRecipe?.value(forKey: "recipeShortDescription") as! String)
         recipeMaterials = (currentRecipe?.value(forKey: "recipeMaterials") as! String)
@@ -173,7 +175,7 @@ class EditRecipeViewController: UIViewController {
         recipeCookingTime = (currentRecipe?.value(forKey: "recipeCookingTime") as! Int)
         recipeMarkdownCode = (currentRecipe?.value(forKey: "recipeMarkdownCode") as! String)
         recipeImage = UIImage(data: Data(currentRecipe!.recipeImageBinaryData!))
-        */
+        
         
         // update views
         titleTextField.text = recipeTitle!

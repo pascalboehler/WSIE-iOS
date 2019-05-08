@@ -150,6 +150,8 @@ class CreateRecipeViewController: UIViewController {
     @IBAction func saveButtonHandler(_ sender: Any) {
         print("OnSaveButtonPressed")
         
+        let image: UIImage
+        
         guard let title = titleTextField.text else {
             return
         }
@@ -161,9 +163,12 @@ class CreateRecipeViewController: UIViewController {
         let cookingTime = Int(cookingTimeDatePicker.countDownDuration) / 60
         
         
-        guard let image = picturePicker.currentBackgroundImage else {
+        if let imageTemp = picturePicker.currentBackgroundImage{
+            // nothing happens
+            image = imageTemp
+        } else {
             print("Could not find background image...")
-            return
+            image = UIImage(named: "Gray")!
         }
         
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
@@ -228,34 +233,34 @@ class CreateRecipeViewController: UIViewController {
             _ in
             
             guard let title = self.titleTextField.text else {
-                self.missingElementAlert()
+                self.missingElementAlert(forElement: "title")
                 return
             }
             
             guard let shortDescription = self.shortDescriptionTextView.text else {
-                self.missingElementAlert()
+                self.missingElementAlert(forElement: "shortDescription")
                 return
             }
             
             let cookingTime = Int(self.cookingTimeDatePicker.countDownDuration)
             
             guard let imageLink = self.picturePicker.currentImage else {
-                self.missingElementAlert()
+                // self.missingElementAlert(forElement: "imageLink")
                 return
             }
             
             guard let imageData = imageLink.jpegData(compressionQuality: 1.0) else {
-                self.missingElementAlert()
+                // self.missingElementAlert()
                 return
             }
             
             guard let materials = self.materialsTextView.text else {
-                self.missingElementAlert()
+                self.missingElementAlert(forElement: "materials")
                 return
             }
             
             guard let steps = self.stepsTextView.text else {
-                self.missingElementAlert()
+                self.missingElementAlert(forElement: "steps")
                 return
             }
             
@@ -268,22 +273,24 @@ class CreateRecipeViewController: UIViewController {
     	present(alertController, animated: true)
     }
     
-    func missingElementAlert() {
+    func missingElementAlert(forElement cases: String) {
         let alert = UIAlertController(title: "Missing Element", message: "There is something wrong!", preferredStyle: .alert)
         
-        /*
-        switch element {
+        
+        switch cases {
         case "title":
             alert.message = "Please insert a title for the recipe!"
             break
         case "shortDescription":
             alert.message = "Please insert a short description for the recipe!"
             break
-        case "imageLink":
-            alert.message = "Please insert a image link for the recipe!" // change later to Image...
+        case "materials":
+            alert.message = "Please insert materials for the recipe!" // change later to Image...
+        case "steps":
+            alert.message = "Please insert steps for the recipe!"
         default:
             alert.message = "Please insert the missing attributes for the recipe!"
-        } */
+        }
         
         
         let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
