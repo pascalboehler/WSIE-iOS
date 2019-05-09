@@ -17,3 +17,6 @@ To read our markdown formatting tutorial with all the supported markdown express
 
 Screenshots of the application
 ![Test Image](/Assets/Clock/clock.png)
+
+## Planned fot the future:
+* Scan recipes and automatically format them for the app (made with Azure cognitive services)
