@@ -286,8 +286,10 @@ class CreateRecipeViewController: UIViewController {
             break
         case "materials":
             alert.message = "Please insert materials for the recipe!" // change later to Image...
+            break
         case "steps":
             alert.message = "Please insert steps for the recipe!"
+            break
         default:
             alert.message = "Please insert the missing attributes for the recipe!"
         }
