@@ -56,13 +56,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-2W-vOQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-2W-vOQ">
                                 <rect key="frame" x="8" y="775" width="199" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
-                                    <action selector="backButtonHandler:" destination="Lmv-NY-MJF" eventType="touchUpInside" id="leY-ZX-QSW"/>
-                                    <action selector="previousButtonHandler:" destination="Lmv-NY-MJF" eventType="touchUpInside" id="c0p-n7-ppE"/>
+                                    <action selector="previousButtonHandler:" destination="Lmv-NY-MJF" eventType="touchUpInside" id="ITz-2r-qOT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlK-VE-oB7">
