@@ -10,6 +10,8 @@ import UIKit
 
 class IdeasViewController: UIViewController {
 
+    @IBOutlet weak var ideaButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +19,10 @@ class IdeasViewController: UIViewController {
     }
     
 
+    @IBAction func buttonHandler(_ sender: UIButton) {
+        print("Button pressed!")
+        performSegue(withIdentifier: "ShowOurRecommendationViewController", sender: nil)
+    }
     /*
     // MARK: - Navigation
 

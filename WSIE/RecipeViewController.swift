@@ -51,6 +51,21 @@ class RecipeViewController: UIViewController {
             destinationViewController.currentRecipeIndex = currentRecipe
         }
     }
+    
+    func fetchData() -> [Recipe]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<Recipe>(entityName: "Recipe")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            return result
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
+        }
+        return []
+    }
 }
 
 extension RecipeViewController : UITableViewDelegate {
@@ -76,20 +91,6 @@ extension RecipeViewController : UITableViewDelegate {
         }
     }
     
-    func fetchData() -> [Recipe]{
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<Recipe>(entityName: "Recipe")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            return result
-        } catch let error as NSError {
-            // something went wrong, print the error.
-            print(error.description)
-        }
-        return []
-    }
 }
 
 extension RecipeViewController : UITableViewDataSource {
