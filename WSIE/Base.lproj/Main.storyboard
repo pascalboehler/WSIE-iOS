@@ -20,8 +20,8 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq2-dv-7H6">
                                 <rect key="frame" x="0.0" y="148" width="414" height="657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="Idea"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="34"/>
+                                <state key="normal" title="Give recommendation"/>
                                 <connections>
                                     <action selector="buttonHandler:" destination="iA7-Gm-W53" eventType="touchUpInside" id="Vqn-oa-fBd"/>
                                 </connections>
