@@ -19,11 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq2-dv-7H6">
-                                <rect key="frame" x="107" y="376.5" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mq2-dv-7H6" secondAttribute="height" multiplier="1:1" id="i6i-K4-pi3"/>
-                                    <constraint firstAttribute="height" constant="200" id="nr2-gz-ady"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="148" width="414" height="657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Idea"/>
                                 <connections>
@@ -33,8 +29,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mq2-dv-7H6" firstAttribute="width" secondItem="yRi-R1-O0Y" secondAttribute="width" id="1Io-ip-8Km"/>
+                            <constraint firstItem="khC-2Q-SOf" firstAttribute="bottom" secondItem="mq2-dv-7H6" secondAttribute="bottom" constant="8" id="DmU-7g-M7V"/>
                             <constraint firstItem="mq2-dv-7H6" firstAttribute="centerY" secondItem="khC-2Q-SOf" secondAttribute="centerY" id="Mwg-6K-7aX"/>
                             <constraint firstItem="mq2-dv-7H6" firstAttribute="centerX" secondItem="khC-2Q-SOf" secondAttribute="centerX" id="NcP-8T-vuH"/>
+                            <constraint firstItem="mq2-dv-7H6" firstAttribute="top" secondItem="khC-2Q-SOf" secondAttribute="top" constant="8" id="Z7w-Ke-FTq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="khC-2Q-SOf"/>
                     </view>
@@ -46,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecf-dE-mNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="141.96428571428569"/>
+            <point key="canvasLocation" x="1996" y="142"/>
         </scene>
         <!--Our Recommendation-->
         <scene sceneID="wad-nV-ezn">
@@ -98,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBP-tY-yx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3009" y="142"/>
+            <point key="canvasLocation" x="3032" y="142"/>
         </scene>
         <!--Create Recipe View Controller-->
         <scene sceneID="r29-6k-QqM">
@@ -155,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za8-FY-HdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="-617"/>
+            <point key="canvasLocation" x="3032" y="-619"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
