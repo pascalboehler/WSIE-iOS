@@ -474,10 +474,10 @@
             </objects>
             <point key="canvasLocation" x="3032" y="-2125"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="sPZ-19-MET">
             <objects>
-                <tabBarController id="kEI-sY-KB8" sceneMemberID="viewController">
+                <tabBarController id="kEI-sY-KB8" customClass="TabBarViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4rm-Jw-29S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
