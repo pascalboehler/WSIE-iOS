@@ -223,25 +223,36 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JH5-gV-slQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Favourites" id="KSU-4s-nSf"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="edv-AJ-7K9" firstAttribute="trailing" secondItem="bsv-35-oqM" secondAttribute="trailing" id="Gjm-lZ-7YD"/>
-                            <constraint firstItem="edv-AJ-7K9" firstAttribute="leading" secondItem="bsv-35-oqM" secondAttribute="leading" id="IU2-7M-nNU"/>
-                            <constraint firstItem="edv-AJ-7K9" firstAttribute="top" secondItem="bsv-35-oqM" secondAttribute="top" id="Kv3-lh-xyV"/>
-                            <constraint firstItem="edv-AJ-7K9" firstAttribute="bottom" secondItem="bsv-35-oqM" secondAttribute="bottom" id="Tne-lA-TN1"/>
+                            <constraint firstItem="edv-AJ-7K9" firstAttribute="top" secondItem="JH5-gV-slQ" secondAttribute="bottom" id="4rb-c5-ztl"/>
+                            <constraint firstItem="edv-AJ-7K9" firstAttribute="bottom" secondItem="bsv-35-oqM" secondAttribute="bottom" id="DgV-0C-Lji"/>
+                            <constraint firstItem="edv-AJ-7K9" firstAttribute="leading" secondItem="bsv-35-oqM" secondAttribute="leading" id="SFI-fM-uG6"/>
+                            <constraint firstItem="edv-AJ-7K9" firstAttribute="trailing" secondItem="bsv-35-oqM" secondAttribute="trailing" id="Ski-Tr-vQ2"/>
+                            <constraint firstItem="JH5-gV-slQ" firstAttribute="leading" secondItem="bsv-35-oqM" secondAttribute="leading" id="Yw6-cd-MBL"/>
+                            <constraint firstItem="JH5-gV-slQ" firstAttribute="top" secondItem="bsv-35-oqM" secondAttribute="top" id="pYT-wJ-FAz"/>
+                            <constraint firstItem="JH5-gV-slQ" firstAttribute="trailing" secondItem="bsv-35-oqM" secondAttribute="trailing" id="w6l-Fn-SDV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsv-35-oqM"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="Star" id="hN7-Lu-T2i"/>
                     <navigationItem key="navigationItem" title="Favourites" id="rie-k2-dOF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="edv-AJ-7K9" id="6lM-hV-jxh"/>
+                        <segue destination="jpL-so-aOx" kind="show" identifier="showRecipeDetailViewController" id="3JF-3D-WyC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyP-mU-HlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="889.95535714285711"/>
+            <point key="canvasLocation" x="927.536231884058" y="949.55357142857133"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="M4R-tK-hYB">
@@ -467,7 +478,7 @@
                     <connections>
                         <segue destination="jJL-U3-TII" kind="relationship" relationship="viewControllers" id="ut5-Zz-tbY"/>
                         <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="AfB-rn-tOS"/>
-                        <segue destination="42B-cV-MfZ" kind="relationship" relationship="viewControllers" id="R1X-Ou-De1"/>
+                        <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="tbb-rI-dbD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-3g-Hsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -512,25 +523,6 @@
             </objects>
             <point key="canvasLocation" x="927.536231884058" y="141.96428571428569"/>
         </scene>
-        <!--Favourites-->
-        <scene sceneID="8ZR-Ad-pZ0">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="42B-cV-MfZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favourites" image="Star" id="Uko-Rc-fy5"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="uOs-1d-AjQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XDb-kN-DPQ" kind="relationship" relationship="rootViewController" id="iiH-55-GQe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XmA-Dd-qrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="927.536231884058" y="889.95535714285711"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Book" width="30" height="30"/>
@@ -538,6 +530,7 @@
         <image name="Star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3JF-3D-WyC"/>
         <segue reference="8hC-Pt-xTo"/>
     </inferredMetricsTieBreakers>
 </document>
