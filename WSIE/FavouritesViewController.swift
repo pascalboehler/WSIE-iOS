@@ -16,6 +16,7 @@ class FavouritesViewController: UIViewController {
     var recipe: [Recipe] = []
     var recipeList: [Recipe] = []
     var currentRecipe: Int = 0
+    var recipeListIndexes: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class FavouritesViewController: UIViewController {
         print("View did appear...")
         recipe = fetchData()
         // reload the tableView data when view appears
+        recipeList = []
         prepareDataset()
         tableView.reloadData()
     }
@@ -37,8 +39,8 @@ class FavouritesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? RecipeDetailViewController {
             destinationViewController.currentRecipe = recipeList[currentRecipe]
-            destinationViewController.recipes = recipeList
-            destinationViewController.currentRecipeIndex = currentRecipe
+            destinationViewController.recipes = recipe
+            destinationViewController.currentRecipeIndex = recipeListIndexes[currentRecipe] // position of the recipe in the complete dataset
         }
     }
     
@@ -61,6 +63,7 @@ class FavouritesViewController: UIViewController {
         for i in 0...recipe.count - 1 {
             if recipe[i].recipeIsFavourite == true {
                 recipeList.append(recipe[i])
+                recipeListIndexes.append(i)
             } else {
                 continue
             }
@@ -72,40 +75,11 @@ extension FavouritesViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentRecipe = indexPath.row
-        performSegue(withIdentifier: "ShowRecipeDetailViewController", sender: nil)
+        performSegue(withIdentifier: "showRecipeDetailViewController", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        /*if editingStyle == .delete {
-            let alert = UIAlertController(title: "Delete recipe", message: "Are you sure that you want to delete this recipe", preferredStyle: .actionSheet)
-            
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-                self.deleteRecipe(forRowAt: indexPath)
-            }
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            alert.addAction(deleteAction)
-            alert.addAction(cancelAction)
-            
-            present(alert, animated: true, completion: nil)
-            
-        }*/
-    }
-    
-    func deleteRecipe(forRowAt indexPath: IndexPath) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        print("Deleted Recipe...")
-        let deletedRecipe = recipe[indexPath.row]
-        context.delete(deletedRecipe)
-        recipe.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        appDelegate.saveContext()
+        return false
     }
     
 }

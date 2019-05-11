@@ -242,7 +242,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bsv-35-oqM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourites" image="Star" id="hN7-Lu-T2i"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="StarFilled" id="hN7-Lu-T2i"/>
                     <navigationItem key="navigationItem" title="Favourites" id="rie-k2-dOF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -424,11 +424,18 @@
                                                 <action selector="backButtonHandler:" destination="jpL-so-aOx" id="UZg-jt-Y9g"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="s8v-gd-alQ">
-                                            <connections>
-                                                <action selector="editButtonHandler:" destination="jpL-so-aOx" id="GOi-7q-AoZ"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Favourite" image="StarFilled" id="j4G-Gv-fbt">
+                                                <connections>
+                                                    <action selector="favouriteBarButtonHandler:" destination="jpL-so-aOx" id="Jb4-MT-T77"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="edit" id="s8v-gd-alQ">
+                                                <connections>
+                                                    <action selector="editButtonHandler:" destination="jpL-so-aOx" id="GOi-7q-AoZ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -458,6 +465,7 @@
                         <viewLayoutGuide key="safeArea" id="nbO-Wv-OcH"/>
                     </view>
                     <connections>
+                        <outlet property="favouriteBarButton" destination="j4G-Gv-fbt" id="vuq-KA-w3x"/>
                         <outlet property="markdownView" destination="QYe-Bz-0lp" id="e8j-CI-oDX"/>
                         <segue destination="Vau-0O-xZk" kind="show" identifier="ShowEditRecipeViewController" id="8hC-Pt-xTo"/>
                     </connections>
@@ -527,7 +535,7 @@
     <resources>
         <image name="Book" width="30" height="30"/>
         <image name="Restaurant" width="30" height="30"/>
-        <image name="Star" width="30" height="30"/>
+        <image name="StarFilled" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3JF-3D-WyC"/>

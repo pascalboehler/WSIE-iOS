@@ -12,6 +12,8 @@ import MarkdownView
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var markdownView: MarkdownView!
+    @IBOutlet weak var favouriteBarButton: UIBarButtonItem!
+    
     var currentRecipe: Recipe?
     var currentRecipeIndex: Int?
     var recipes: [Recipe] = []
@@ -25,8 +27,20 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
+        if currentRecipe?.recipeIsFavourite == false {
+            favouriteBarButton.tintColor = UIColor.lightGray
+        } else {
+            favouriteBarButton.tintColor = UIColor.blue
+        }
     }
     
+    func updateDataset() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        recipes[currentRecipeIndex!] = currentRecipe!
+        appDelegate.saveContext()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? EditRecipeViewController {
@@ -36,6 +50,17 @@ class RecipeDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func favouriteBarButtonHandler(_ sender: UIBarButtonItem) {
+        if currentRecipe?.recipeIsFavourite == false {
+            currentRecipe?.recipeIsFavourite = true
+            favouriteBarButton.tintColor = UIColor.blue
+            updateDataset()
+        } else {
+            currentRecipe?.recipeIsFavourite = false
+            favouriteBarButton.tintColor = UIColor.lightGray
+            updateDataset()
+        }
+    }
     
     @IBAction func backButtonHandler(_ sender: Any) {
         // quits the ViewController
