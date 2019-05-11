@@ -235,6 +235,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Favourites" id="rie-k2-dOF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="edv-AJ-7K9" id="B14-28-yNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyP-mU-HlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
