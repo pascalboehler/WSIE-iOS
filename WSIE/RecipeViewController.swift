@@ -80,15 +80,31 @@ extension RecipeViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            print("Deleted Recipe...")
-            let deletedRecipe = recipe[indexPath.row]
-            context.delete(deletedRecipe)
-            recipe.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            appDelegate.saveContext()
+            let alert = UIAlertController(title: "Delete recipe", message: "Are you sure that you want to delete this recipe", preferredStyle: .actionSheet)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+                self.deleteRecipe(forRowAt: indexPath)
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            alert.addAction(deleteAction)
+            alert.addAction(cancelAction)
+            
+            present(alert, animated: true, completion: nil)
+            
         }
+    }
+    
+    func deleteRecipe(forRowAt indexPath: IndexPath) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        print("Deleted Recipe...")
+        let deletedRecipe = recipe[indexPath.row]
+        context.delete(deletedRecipe)
+        recipe.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        appDelegate.saveContext()
     }
     
 }
