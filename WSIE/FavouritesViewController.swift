@@ -60,12 +60,14 @@ class FavouritesViewController: UIViewController {
     }
     
     func prepareDataset() {
-        for i in 0...recipe.count - 1 {
-            if recipe[i].recipeIsFavourite == true {
-                recipeList.append(recipe[i])
-                recipeListIndexes.append(i)
-            } else {
-                continue
+        if recipe.count != 0 {
+            for i in 0...recipe.count - 1 {
+                if recipe[i].recipeIsFavourite == true {
+                    recipeList.append(recipe[i])
+                    recipeListIndexes.append(i)
+                } else {
+                    continue
+                }
             }
         }
     }
