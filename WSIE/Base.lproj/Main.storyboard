@@ -156,6 +156,35 @@
             </objects>
             <point key="canvasLocation" x="3032" y="-619"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="JZh-pG-7hg">
+            <objects>
+                <viewController id="yId-ST-dUc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EPh-uk-ob5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LW5-Hk-gY5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Settings" id="yVK-e2-2JM"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LW5-Hk-gY5" firstAttribute="trailing" secondItem="tVK-tq-H6r" secondAttribute="trailing" id="KjY-pI-9bZ"/>
+                            <constraint firstItem="LW5-Hk-gY5" firstAttribute="top" secondItem="tVK-tq-H6r" secondAttribute="top" id="UQz-BN-9cc"/>
+                            <constraint firstItem="LW5-Hk-gY5" firstAttribute="leading" secondItem="tVK-tq-H6r" secondAttribute="leading" id="Zug-Wm-bKi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tVK-tq-H6r"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="Weu-9M-M5h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0V-kr-2pf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="1759"/>
+        </scene>
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
             <objects>
@@ -333,7 +362,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="yMX-fr-TI8">
                         <barButtonItem key="backBarButtonItem" title="Recipe" id="2K2-8S-0g4"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qF2-9a-REv">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="pBq-ux-bwQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qF2-9a-REv">
                             <connections>
                                 <action selector="addRecipeButtonHandler:" destination="uxI-Wj-2CD" id="y2A-e3-nkK"/>
                             </connections>
@@ -487,6 +517,7 @@
                         <segue destination="jJL-U3-TII" kind="relationship" relationship="viewControllers" id="ut5-Zz-tbY"/>
                         <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="AfB-rn-tOS"/>
                         <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="tbb-rI-dbD"/>
+                        <segue destination="yId-ST-dUc" kind="relationship" relationship="viewControllers" id="tcy-Ak-6nF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-3g-Hsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,10 +566,11 @@
     <resources>
         <image name="Book" width="30" height="30"/>
         <image name="Restaurant" width="30" height="30"/>
+        <image name="Settings" width="30" height="30"/>
         <image name="StarFilled" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3JF-3D-WyC"/>
-        <segue reference="8hC-Pt-xTo"/>
+        <segue reference="vbL-Tj-unE"/>
+        <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>

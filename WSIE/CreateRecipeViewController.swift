@@ -305,13 +305,13 @@ class CreateRecipeViewController: UIViewController {
 
 
 extension CreateRecipeViewController : UITextViewDelegate {
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    /*func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
             return false
         }
         return true
-    }
+    }*/
 }
 
 extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
