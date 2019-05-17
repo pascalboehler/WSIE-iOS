@@ -81,7 +81,15 @@ extension FavouritesViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle = .delete {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            recipe[recipeListIndexes[indexPath.row]].recipeIsFavourite = false // set recipeIsFavourite to false
+            appDelegate.saveContext()
+        }
     }
     
 }
