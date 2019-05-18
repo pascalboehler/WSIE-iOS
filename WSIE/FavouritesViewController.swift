@@ -85,10 +85,12 @@ extension FavouritesViewController : UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle = .delete {
+        if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             recipe[recipeListIndexes[indexPath.row]].recipeIsFavourite = false // set recipeIsFavourite to false
+            recipeList.remove(at: indexPath.row) // delete recipe from Recipe favourites list
             appDelegate.saveContext()
+            tableView.reloadData()
         }
     }
     
