@@ -286,7 +286,7 @@
         <!--Stock-->
         <scene sceneID="3lq-QO-ovZ">
             <objects>
-                <viewController id="QpN-vD-vTt" sceneMemberID="viewController">
+                <viewController id="QpN-vD-vTt" customClass="StockViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gvP-Hl-njO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,7 +577,7 @@
         <!--Shopping List-->
         <scene sceneID="TR2-eN-NSV">
             <objects>
-                <viewController id="NtF-cN-MY9" sceneMemberID="viewController">
+                <viewController id="NtF-cN-MY9" customClass="ShoppingListViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SIY-qd-JuW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +586,11 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
                                     <navigationItem title="Shopping list" id="M0h-ED-osQ">
-                                        <barButtonItem key="leftBarButtonItem" title="Stock" image="ShoppingBag" id="GgI-2o-khg"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Stock" image="ShoppingBag" id="GgI-2o-khg">
+                                            <connections>
+                                                <action selector="stockButtonHandler:" destination="NtF-cN-MY9" id="Ow6-F1-rEX"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gEe-G4-ARi"/>
                                     </navigationItem>
                                 </items>
@@ -638,8 +642,8 @@
         <image name="StarFilled" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3JF-3D-WyC"/>
+        <segue reference="vbL-Tj-unE"/>
         <segue reference="Skm-Ea-IbK"/>
-        <segue reference="RWr-mY-3vl"/>
+        <segue reference="ZM5-ZU-FDD"/>
     </inferredMetricsTieBreakers>
 </document>
