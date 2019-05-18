@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        selectedIndex = 1
+        selectedIndex = 2
     }
 
     /*

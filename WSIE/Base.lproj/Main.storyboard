@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za8-FY-HdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3032" y="-619"/>
+            <point key="canvasLocation" x="3032" y="-1271"/>
         </scene>
         <!--Settings-->
         <scene sceneID="JZh-pG-7hg">
@@ -183,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0V-kr-2pf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="1759"/>
+            <point key="canvasLocation" x="928" y="2533"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
@@ -283,6 +283,35 @@
             </objects>
             <point key="canvasLocation" x="927.536231884058" y="949.55357142857133"/>
         </scene>
+        <!--Stock-->
+        <scene sceneID="3lq-QO-ovZ">
+            <objects>
+                <viewController id="QpN-vD-vTt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gvP-Hl-njO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-Sv-m0d">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Stock" id="bj0-rE-YWI"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fm3-Sv-m0d" firstAttribute="leading" secondItem="qhJ-pg-fdX" secondAttribute="leading" id="6q3-jD-2Xh"/>
+                            <constraint firstItem="fm3-Sv-m0d" firstAttribute="trailing" secondItem="qhJ-pg-fdX" secondAttribute="trailing" id="Aas-gr-tLx"/>
+                            <constraint firstItem="fm3-Sv-m0d" firstAttribute="top" secondItem="qhJ-pg-fdX" secondAttribute="top" id="Kum-Kw-g5g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qhJ-pg-fdX"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stock" image="ShoppingBag" id="gVa-XF-mC9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JU6-eV-u61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="1759"/>
+        </scene>
         <!--Recipe-->
         <scene sceneID="M4R-tK-hYB">
             <objects>
@@ -378,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDB-Z4-Zed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-1418"/>
+            <point key="canvasLocation" x="1996" y="-2070"/>
         </scene>
         <!--Edit Recipe View Controller-->
         <scene sceneID="CLp-BM-GNB">
@@ -435,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aU-rC-ATn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3032" y="-1418"/>
+            <point key="canvasLocation" x="3032" y="-2070"/>
         </scene>
         <!--Recipe Detail View Controller-->
         <scene sceneID="75L-rI-EYL">
@@ -502,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67i-Jm-jmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3032" y="-2125"/>
+            <point key="canvasLocation" x="3032" y="-2777"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="sPZ-19-MET">
@@ -514,10 +543,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jJL-U3-TII" kind="relationship" relationship="viewControllers" id="ut5-Zz-tbY"/>
-                        <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="AfB-rn-tOS"/>
-                        <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="tbb-rI-dbD"/>
-                        <segue destination="yId-ST-dUc" kind="relationship" relationship="viewControllers" id="tcy-Ak-6nF"/>
+                        <segue destination="jJL-U3-TII" kind="relationship" relationship="viewControllers" id="Sa7-8v-Uzt"/>
+                        <segue destination="NtF-cN-MY9" kind="relationship" relationship="viewControllers" id="JMv-LD-vYK"/>
+                        <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="YIp-0D-Nrh"/>
+                        <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="IqE-6s-OaK"/>
+                        <segue destination="QpN-vD-vTt" kind="relationship" relationship="viewControllers" id="RWr-mY-3vl"/>
+                        <segue destination="yId-ST-dUc" kind="relationship" relationship="viewControllers" id="4od-XY-s7q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-3g-Hsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -541,7 +572,42 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUU-eD-j85" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="-1418"/>
+            <point key="canvasLocation" x="928" y="-2070"/>
+        </scene>
+        <!--Shopping List-->
+        <scene sceneID="TR2-eN-NSV">
+            <objects>
+                <viewController id="NtF-cN-MY9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SIY-qd-JuW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CdK-8H-pMP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Shopping list" id="M0h-ED-osQ">
+                                        <barButtonItem key="leftBarButtonItem" title="Stock" image="ShoppingBag" id="GgI-2o-khg"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gEe-G4-ARi"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CdK-8H-pMP" firstAttribute="top" secondItem="DaP-OJ-SZZ" secondAttribute="top" id="BWP-ZR-Mds"/>
+                            <constraint firstItem="CdK-8H-pMP" firstAttribute="leading" secondItem="DaP-OJ-SZZ" secondAttribute="leading" id="Ge1-hb-mGA"/>
+                            <constraint firstItem="CdK-8H-pMP" firstAttribute="trailing" secondItem="DaP-OJ-SZZ" secondAttribute="trailing" id="b4M-Y3-Uke"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DaP-OJ-SZZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Shopping List" image="ShoppingCartEmpty" id="c8W-Vk-dyG"/>
+                    <connections>
+                        <segue destination="QpN-vD-vTt" kind="show" identifier="ShowStockViewController" id="ZM5-ZU-FDD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIk-2B-BeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="-585"/>
         </scene>
         <!--Ideas-->
         <scene sceneID="5Wj-k3-Qi4">
@@ -567,10 +633,13 @@
         <image name="Book" width="30" height="30"/>
         <image name="Restaurant" width="30" height="30"/>
         <image name="Settings" width="30" height="30"/>
+        <image name="ShoppingBag" width="30" height="30"/>
+        <image name="ShoppingCartEmpty" width="30" height="30"/>
         <image name="StarFilled" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vbL-Tj-unE"/>
+        <segue reference="3JF-3D-WyC"/>
         <segue reference="Skm-Ea-IbK"/>
+        <segue reference="RWr-mY-3vl"/>
     </inferredMetricsTieBreakers>
 </document>
