@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "17EB610089973D92AB36F8ABC97A8F52"
-               BuildableName = "libMarkdownView.a"
-               BlueprintName = "MarkdownView"
+               BlueprintIdentifier = "1598F9EE6C12B2F6BD62532E14232CD7"
+               BuildableName = "libCheckBox.a"
+               BlueprintName = "CheckBox"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
