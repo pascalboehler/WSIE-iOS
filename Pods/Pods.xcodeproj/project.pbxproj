@@ -45,28 +45,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01DFF2B095169188C966A5E38B84CA99 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
+		01DFF2B095169188C966A5E38B84CA99 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
 		0662BB143472A7A8B57044C55F69190C /* CheckBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckBox-umbrella.h"; sourceTree = "<group>"; };
 		09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSIE-umbrella.h"; sourceTree = "<group>"; };
 		158D86B9BFEA59AEF6921449463BE050 /* CheckBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CheckBox-dummy.m"; sourceTree = "<group>"; };
 		1A36A9F61B353A6F4F9D37ABC2510BA7 /* Pods-WSIE-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSIE-acknowledgements.plist"; sourceTree = "<group>"; };
 		1F16A243E9285F41C07BA911FFAEFEE6 /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
 		252026EE5AAA2A853202CD1503375B8C /* CheckBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CheckBox.modulemap; sourceTree = "<group>"; };
-		2731D03848068421AAABADF9E291581D /* libCheckBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCheckBox.a; path = libCheckBox.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		29004FDC7DD6FB9A5B79F98AD0AA3131 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WSIE.a"; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2ED0E07C3E0C373FB79D61378C31941E /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMarkdownView.a; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2731D03848068421AAABADF9E291581D /* libCheckBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCheckBox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		29004FDC7DD6FB9A5B79F98AD0AA3131 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED0E07C3E0C373FB79D61378C31941E /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3692A9BBE602F92CE00156BE5CB1EAD0 /* CheckBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CheckBox.xcconfig; sourceTree = "<group>"; };
-		3F59085E5AC18D8BD1C708C9EA0B8B53 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
+		3F59085E5AC18D8BD1C708C9EA0B8B53 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
 		43279AC49FBF53E0E4A5318D7FEE9B49 /* CheckBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckBox.swift; path = CheckBox/Classes/CheckBox.swift; sourceTree = "<group>"; };
 		44AB86A3A8F427EEF58B9BD32CC83FB0 /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
 		7F08B08E4D3DF1EF0D1F4AB6963E5D02 /* CheckBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckBox-prefix.pch"; sourceTree = "<group>"; };
 		8F71E654EB1B166427ECCED834CF76EB /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
 		9393B4825751D1EBC96975BF1E6DDD45 /* MarkdownView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownView.swift; path = MarkdownView/MarkdownView.swift; sourceTree = "<group>"; };
 		9CD05CB7E3A1D9245C0EDDC853772330 /* Pods-WSIE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WSIE-resources.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A90922CABAAD1B29D5C3B7CAEE77C330 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MarkdownView.bundle; path = "MarkdownView-MarkdownView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A90922CABAAD1B29D5C3B7CAEE77C330 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31C7E81B7A6A0128CC6A090BE4B4CBD /* Pods-WSIE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSIE.modulemap"; sourceTree = "<group>"; };
-		B3738103E070D3E9E7811223CE3731DC /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
+		B3738103E070D3E9E7811223CE3731DC /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
 		B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.xcconfig; sourceTree = "<group>"; };
 		DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSIE-dummy.m"; sourceTree = "<group>"; };
@@ -126,7 +126,6 @@
 				FB47EB1E2C34F391AED73ED2E6E57186 /* Resources */,
 				F4967847A6AA243930CACAFE99FC3B3E /* Support Files */,
 			);
-			name = MarkdownView;
 			path = MarkdownView;
 			sourceTree = "<group>";
 		};
@@ -149,7 +148,6 @@
 				43279AC49FBF53E0E4A5318D7FEE9B49 /* CheckBox.swift */,
 				65F636BC405E56C057979A4D9F882E0D /* Support Files */,
 			);
-			name = CheckBox;
 			path = CheckBox;
 			sourceTree = "<group>";
 		};
@@ -338,13 +336,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
@@ -595,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -706,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

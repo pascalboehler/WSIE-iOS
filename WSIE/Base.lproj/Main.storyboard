@@ -568,39 +568,38 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="XKf-F5-1Ah" customClass="ShoppingListItemTableViewCell" customModule="WSIE" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListItemTableViewCell" rowHeight="50" id="XKf-F5-1Ah" customClass="ShoppingListItemTableViewCell" customModule="WSIE" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKf-F5-1Ah" id="r4l-Nn-J6Q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPt-z4-QzR">
-                                                    <rect key="frame" x="8" y="8" width="33.5" height="33.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="XPt-z4-QzR" secondAttribute="height" multiplier="1:1" id="uya-Ke-roZ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="h"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopping List Item 1x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-fR-UJe">
                                                     <rect key="frame" x="49.5" y="8" width="356.5" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAY-fG-Hss">
+                                                    <rect key="frame" x="8" y="8" width="33.5" height="33.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="bAY-fG-Hss" secondAttribute="height" multiplier="1:1" id="08n-Bm-tit"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="3aE-fR-UJe" firstAttribute="top" secondItem="r4l-Nn-J6Q" secondAttribute="top" constant="8" id="02W-Sa-pWG"/>
-                                                <constraint firstItem="3aE-fR-UJe" firstAttribute="leading" secondItem="XPt-z4-QzR" secondAttribute="trailing" constant="8" id="1FH-Bb-ZBs"/>
+                                                <constraint firstItem="3aE-fR-UJe" firstAttribute="leading" secondItem="bAY-fG-Hss" secondAttribute="trailing" constant="8" id="21b-fE-vXk"/>
+                                                <constraint firstItem="bAY-fG-Hss" firstAttribute="top" secondItem="r4l-Nn-J6Q" secondAttribute="top" constant="8" id="ACg-yO-r0D"/>
                                                 <constraint firstAttribute="bottom" secondItem="3aE-fR-UJe" secondAttribute="bottom" constant="8" id="D1T-uW-k5W"/>
-                                                <constraint firstAttribute="bottom" secondItem="XPt-z4-QzR" secondAttribute="bottom" constant="8" id="Ddp-9W-DIE"/>
-                                                <constraint firstItem="XPt-z4-QzR" firstAttribute="top" secondItem="r4l-Nn-J6Q" secondAttribute="top" constant="8" id="N92-5x-1iK"/>
+                                                <constraint firstItem="bAY-fG-Hss" firstAttribute="leading" secondItem="r4l-Nn-J6Q" secondAttribute="leading" constant="8" id="Olz-1r-9zM"/>
                                                 <constraint firstAttribute="trailing" secondItem="3aE-fR-UJe" secondAttribute="trailing" constant="8" id="WvB-Jf-Jxp"/>
-                                                <constraint firstItem="XPt-z4-QzR" firstAttribute="leading" secondItem="r4l-Nn-J6Q" secondAttribute="leading" constant="8" id="suY-xU-cIB"/>
+                                                <constraint firstAttribute="bottom" secondItem="bAY-fG-Hss" secondAttribute="bottom" constant="8" id="lds-IL-YZY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="checkButton" destination="XPt-z4-QzR" id="nFn-6d-tpV"/>
                                             <outlet property="itemName" destination="3aE-fR-UJe" id="qA9-26-xaa"/>
                                         </connections>
                                     </tableViewCell>
