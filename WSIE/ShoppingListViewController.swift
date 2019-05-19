@@ -2,13 +2,13 @@
 //  ShoppingListViewController.swift
 //  WSIE
 //
-//  Created by Pascal Boehler on 18.05.19.
+//  Created by Pascal Boehler on 19.05.19.
 //  Copyright © 2019 Pascal Boehler. All rights reserved.
 //
 
 import UIKit
 
-class ShoppingListViewController: UITabBarController {
+class ShoppingListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,11 +16,10 @@ class ShoppingListViewController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func stockButtonHandler(_ sender: Any) {
-        performSegue(withIdentifier: "ShowStockViewController", sender: nil)
+
+    @IBAction func addItemButtonHandler(_ sender: Any) {
+        print("On add button pressed!")
     }
-    
-    
     /*
     // MARK: - Navigation
 
