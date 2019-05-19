@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		591D48AD643FF9912F202A49 /* libPods-WSIE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */; };
 		BB3C708022872B6300D84F28 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C707F22872B6300D84F28 /* TabBarViewController.swift */; };
+		BB79BA332291B32800C3DD48 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */; };
 		BB9E984822673DCF00C84191 /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */; };
 		BBB0C846226B4234001DFEDB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0C845226B4234001DFEDB /* Utility.swift */; };
+		BBB201FF229069F700703ACF /* StockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB201FE229069F700703ACF /* StockTableViewCell.swift */; };
 		BBC811942284717B00287369 /* OurRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC811932284717B00287369 /* OurRecommendationViewController.swift */; };
 		BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FAD2266559500153244 /* AppDelegate.swift */; };
 		BBE10FB32266559500153244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB12266559500153244 /* Main.storyboard */; };
@@ -28,8 +30,10 @@
 /* Begin PBXFileReference section */
 		4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
 		BB3C707F22872B6300D84F28 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		BBB0C845226B4234001DFEDB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		BBB201FE229069F700703ACF /* StockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTableViewCell.swift; sourceTree = "<group>"; };
 		BBC811932284717B00287369 /* OurRecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurRecommendationViewController.swift; sourceTree = "<group>"; };
 		BBE10FAA2266559500153244 /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE10FAD2266559500153244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				BBE10FC422665B3C00153244 /* RecipeViewController.swift */,
 				BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */,
 				BBC811932284717B00287369 /* OurRecommendationViewController.swift */,
+				BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			children = (
 				BBE10FC522665B3C00153244 /* RecipeTableViewCell.swift */,
 				BBB0C845226B4234001DFEDB /* Utility.swift */,
+				BBB201FE229069F700703ACF /* StockTableViewCell.swift */,
 			);
 			name = "Custom Classes";
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 				BBE10FCD22665B3C00153244 /* CreateRecipeViewController.swift in Sources */,
 				BBE10FCA22665B3C00153244 /* RecipeViewController.swift in Sources */,
 				BBE10FCC22665B3C00153244 /* IdeasViewController.swift in Sources */,
+				BBB201FF229069F700703ACF /* StockTableViewCell.swift in Sources */,
+				BB79BA332291B32800C3DD48 /* ShoppingListViewController.swift in Sources */,
 				BBC811942284717B00287369 /* OurRecommendationViewController.swift in Sources */,
 				BBE10FCE22665B3C00153244 /* FavouritesViewController.swift in Sources */,
 				BBE10FCB22665B3C00153244 /* RecipeTableViewCell.swift in Sources */,

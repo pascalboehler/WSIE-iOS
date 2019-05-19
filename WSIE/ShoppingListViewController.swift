@@ -1,22 +1,25 @@
 //
-//  TabBarViewController.swift
+//  ShoppingListViewController.swift
 //  WSIE
 //
-//  Created by Pascal Boehler on 11.05.19.
+//  Created by Pascal Boehler on 19.05.19.
 //  Copyright © 2019 Pascal Boehler. All rights reserved.
 //
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
-    
+class ShoppingListViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        selectedIndex = 2
     }
+    
 
+    @IBAction func addItemButtonHandler(_ sender: Any) {
+        print("On add button pressed!")
+    }
     /*
     // MARK: - Navigation
 
