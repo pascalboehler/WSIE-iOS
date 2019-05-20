@@ -587,6 +587,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bAY-fG-Hss" secondAttribute="height" multiplier="1:1" id="08n-Bm-tit"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circular" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="checkBoxButtonValueChanged:" destination="XKf-F5-1Ah" eventType="valueChanged" id="ZKB-Si-jit"/>
                                                     </connections>
