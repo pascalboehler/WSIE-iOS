@@ -7,27 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095805A84CAEB1AF804C3C074214EB08 /* MarkdownView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F71E654EB1B166427ECCED834CF76EB /* MarkdownView-dummy.m */; };
-		294B64C42C69065C1729055613A7CB2D /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9393B4825751D1EBC96975BF1E6DDD45 /* MarkdownView.swift */; };
-		3806511D6F20D85998CD1D6F1EC7C099 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43279AC49FBF53E0E4A5318D7FEE9B49 /* CheckBox.swift */; };
-		395857F781865382360A1408670FC52E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = B3738103E070D3E9E7811223CE3731DC /* index.html */; };
-		668B70331BB97084CED9B92D7DF69D86 /* Pods-WSIE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */; };
-		7E7D879E3B1F355647F5D8A471BE24C8 /* CheckBox-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 158D86B9BFEA59AEF6921449463BE050 /* CheckBox-dummy.m */; };
-		845E67DAB3C479E8A8089A194F1FF462 /* Pods-WSIE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A7A01ED54447802362CD2D420149F34D /* MarkdownView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F16A243E9285F41C07BA911FFAEFEE6 /* MarkdownView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C77049EDD20842D4EB1B618E88580160 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 01DFF2B095169188C966A5E38B84CA99 /* main.js */; };
-		D6C715304D0A5911A91CF3BC1A117711 /* CheckBox-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0662BB143472A7A8B57044C55F69190C /* CheckBox-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D81482465E05A8661F9A7C7B10E82294 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 3F59085E5AC18D8BD1C708C9EA0B8B53 /* main.css */; };
+		095805A84CAEB1AF804C3C074214EB08 /* MarkdownView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */; };
+		294B64C42C69065C1729055613A7CB2D /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */; };
+		31B1140D7F2A1B790288A460EB0EFC61 /* Pods-WSIE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */; };
+		395857F781865382360A1408670FC52E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D38F3248C241D0C8FD12C6B26A37B96B /* index.html */; };
+		A7A01ED54447802362CD2D420149F34D /* MarkdownView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C77049EDD20842D4EB1B618E88580160 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */; };
+		D81482465E05A8661F9A7C7B10E82294 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 27946AF02E8063E529D681B9D0842EF7 /* main.css */; };
+		DC57D7A87F92C7764DE9C7BF2A5CAC5E /* Pods-WSIE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		47F70AEA6B2F85ABA5D4FC0DE4748566 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 17EB610089973D92AB36F8ABC97A8F52;
-			remoteInfo = MarkdownView;
-		};
 		9171299E0E07A044040428820766B56D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -35,45 +25,38 @@
 			remoteGlobalIDString = A13C1EED3DDCB6334F8B5E4A1498203A;
 			remoteInfo = "MarkdownView-MarkdownView";
 		};
-		B2780C5D391DB74F2BEBDDF2430E33B5 /* PBXContainerItemProxy */ = {
+		C933DD868339D859DECF7B70EFA6C0D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1598F9EE6C12B2F6BD62532E14232CD7;
-			remoteInfo = CheckBox;
+			remoteGlobalIDString = 17EB610089973D92AB36F8ABC97A8F52;
+			remoteInfo = MarkdownView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01DFF2B095169188C966A5E38B84CA99 /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
-		0662BB143472A7A8B57044C55F69190C /* CheckBox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckBox-umbrella.h"; sourceTree = "<group>"; };
 		09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSIE-umbrella.h"; sourceTree = "<group>"; };
-		158D86B9BFEA59AEF6921449463BE050 /* CheckBox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CheckBox-dummy.m"; sourceTree = "<group>"; };
 		1A36A9F61B353A6F4F9D37ABC2510BA7 /* Pods-WSIE-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSIE-acknowledgements.plist"; sourceTree = "<group>"; };
-		1F16A243E9285F41C07BA911FFAEFEE6 /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
-		252026EE5AAA2A853202CD1503375B8C /* CheckBox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CheckBox.modulemap; sourceTree = "<group>"; };
-		2731D03848068421AAABADF9E291581D /* libCheckBox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCheckBox.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		29004FDC7DD6FB9A5B79F98AD0AA3131 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2ED0E07C3E0C373FB79D61378C31941E /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3692A9BBE602F92CE00156BE5CB1EAD0 /* CheckBox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CheckBox.xcconfig; sourceTree = "<group>"; };
-		3F59085E5AC18D8BD1C708C9EA0B8B53 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
-		43279AC49FBF53E0E4A5318D7FEE9B49 /* CheckBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckBox.swift; path = CheckBox/Classes/CheckBox.swift; sourceTree = "<group>"; };
-		44AB86A3A8F427EEF58B9BD32CC83FB0 /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
-		7F08B08E4D3DF1EF0D1F4AB6963E5D02 /* CheckBox-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckBox-prefix.pch"; sourceTree = "<group>"; };
-		8F71E654EB1B166427ECCED834CF76EB /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
-		9393B4825751D1EBC96975BF1E6DDD45 /* MarkdownView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownView.swift; path = MarkdownView/MarkdownView.swift; sourceTree = "<group>"; };
+		27946AF02E8063E529D681B9D0842EF7 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
+		2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
+		392416A7B131C203775ED344B668185F /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
+		82B9E70BE043120A106D984842931FFD /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
 		9CD05CB7E3A1D9245C0EDDC853772330 /* Pods-WSIE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WSIE-resources.sh"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A90922CABAAD1B29D5C3B7CAEE77C330 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31C7E81B7A6A0128CC6A090BE4B4CBD /* Pods-WSIE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSIE.modulemap"; sourceTree = "<group>"; };
-		B3738103E070D3E9E7811223CE3731DC /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
 		B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
-		D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.xcconfig; sourceTree = "<group>"; };
+		BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A7B6640147968ACCCEC7908E6AD453 /* MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarkdownView.modulemap; sourceTree = "<group>"; };
+		D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.xcconfig; sourceTree = "<group>"; };
+		D38F3248C241D0C8FD12C6B26A37B96B /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
+		D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
+		DAEFCDE39193AAFCE075CE779405B908 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MarkdownView-MarkdownView-Info.plist"; sourceTree = "<group>"; };
 		DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSIE-dummy.m"; sourceTree = "<group>"; };
+		DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownView.swift; path = MarkdownView/MarkdownView.swift; sourceTree = "<group>"; };
 		E76F940AFB54AC2CB1B40D674161826A /* Pods-WSIE-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WSIE-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EF51AA1C08086DC9B1EA602A91FD6543 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
-		F7E24F06B35082DB7C6603E80600D918 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MarkdownView-MarkdownView-Info.plist"; sourceTree = "<group>"; };
-		FB6CB4BDC8D573480B59CAAF4B55C7A1 /* MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarkdownView.modulemap; sourceTree = "<group>"; };
+		F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,14 +67,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3F0E7970049118900BF9F65C93196D10 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0197451B1D33B9C721A6E4FB7456596 /* Frameworks */ = {
+		8EA99DDBA2020AF2DAA01F7FC144F351 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,47 +84,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32C802C6D2A60E617E592211C30A9785 /* Products */ = {
+		17E096C81D40577BB1A08EE58256EE26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2731D03848068421AAABADF9E291581D /* libCheckBox.a */,
-				2ED0E07C3E0C373FB79D61378C31941E /* libMarkdownView.a */,
-				29004FDC7DD6FB9A5B79F98AD0AA3131 /* libPods-WSIE.a */,
-				A90922CABAAD1B29D5C3B7CAEE77C330 /* MarkdownView.bundle */,
+				392416A7B131C203775ED344B668185F /* libMarkdownView.a */,
+				BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */,
+				F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		56327AA37BA34D671EB14BC7B8899A30 /* MarkdownView */ = {
+		5ACBBA8A63E066B1A3F063C807918743 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9393B4825751D1EBC96975BF1E6DDD45 /* MarkdownView.swift */,
-				FB47EB1E2C34F391AED73ED2E6E57186 /* Resources */,
-				F4967847A6AA243930CACAFE99FC3B3E /* Support Files */,
-			);
-			path = MarkdownView;
-			sourceTree = "<group>";
-		};
-		65F636BC405E56C057979A4D9F882E0D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				252026EE5AAA2A853202CD1503375B8C /* CheckBox.modulemap */,
-				3692A9BBE602F92CE00156BE5CB1EAD0 /* CheckBox.xcconfig */,
-				158D86B9BFEA59AEF6921449463BE050 /* CheckBox-dummy.m */,
-				7F08B08E4D3DF1EF0D1F4AB6963E5D02 /* CheckBox-prefix.pch */,
-				0662BB143472A7A8B57044C55F69190C /* CheckBox-umbrella.h */,
+				C3A7B6640147968ACCCEC7908E6AD453 /* MarkdownView.modulemap */,
+				D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */,
+				D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */,
+				82B9E70BE043120A106D984842931FFD /* MarkdownView-prefix.pch */,
+				5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */,
+				DAEFCDE39193AAFCE075CE779405B908 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CheckBox";
+			path = "../Target Support Files/MarkdownView";
 			sourceTree = "<group>";
 		};
-		75606AF08D97DCEDC931BF24DCF36E03 /* CheckBox */ = {
+		5FF5A45ABA679A614AE641CF34B9163B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				43279AC49FBF53E0E4A5318D7FEE9B49 /* CheckBox.swift */,
-				65F636BC405E56C057979A4D9F882E0D /* Support Files */,
+				A1C72367AD37DC65BF3D6A6BE1DF910B /* MarkdownView */,
 			);
-			path = CheckBox;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76EDBB644CECABB30AC7425415F66B1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D38F3248C241D0C8FD12C6B26A37B96B /* index.html */,
+				27946AF02E8063E529D681B9D0842EF7 /* main.css */,
+				2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		A1C72367AD37DC65BF3D6A6BE1DF910B /* MarkdownView */ = {
+			isa = PBXGroup;
+			children = (
+				DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */,
+				76EDBB644CECABB30AC7425415F66B1E /* Resources */,
+				5ACBBA8A63E066B1A3F063C807918743 /* Support Files */,
+			);
+			path = MarkdownView;
 			sourceTree = "<group>";
 		};
 		C2C060E2BB2313AA1E87B7CC277799C3 /* Pods-WSIE */ = {
@@ -167,22 +152,13 @@
 			path = "Target Support Files/Pods-WSIE";
 			sourceTree = "<group>";
 		};
-		C4197C57D58F2C07523DE8BACB867745 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				75606AF08D97DCEDC931BF24DCF36E03 /* CheckBox */,
-				56327AA37BA34D671EB14BC7B8899A30 /* MarkdownView */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				C4197C57D58F2C07523DE8BACB867745 /* Pods */,
-				32C802C6D2A60E617E592211C30A9785 /* Products */,
+				5FF5A45ABA679A614AE641CF34B9163B /* Pods */,
+				17E096C81D40577BB1A08EE58256EE26 /* Products */,
 				EFFEADBAE87734DE0E05442F1CB95398 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -202,30 +178,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F4967847A6AA243930CACAFE99FC3B3E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB6CB4BDC8D573480B59CAAF4B55C7A1 /* MarkdownView.modulemap */,
-				D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */,
-				8F71E654EB1B166427ECCED834CF76EB /* MarkdownView-dummy.m */,
-				44AB86A3A8F427EEF58B9BD32CC83FB0 /* MarkdownView-prefix.pch */,
-				1F16A243E9285F41C07BA911FFAEFEE6 /* MarkdownView-umbrella.h */,
-				F7E24F06B35082DB7C6603E80600D918 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MarkdownView";
-			sourceTree = "<group>";
-		};
-		FB47EB1E2C34F391AED73ED2E6E57186 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B3738103E070D3E9E7811223CE3731DC /* index.html */,
-				3F59085E5AC18D8BD1C708C9EA0B8B53 /* main.css */,
-				01DFF2B095169188C966A5E38B84CA99 /* main.js */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -237,43 +189,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48523E6993F50449BF5B6E35BCCBD42E /* Headers */ = {
+		0EDBFED90A81795369252E1E7EA954C9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C715304D0A5911A91CF3BC1A117711 /* CheckBox-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B22855DFB264F49BB21D14108C15CF3D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				845E67DAB3C479E8A8089A194F1FF462 /* Pods-WSIE-umbrella.h in Headers */,
+				DC57D7A87F92C7764DE9C7BF2A5CAC5E /* Pods-WSIE-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1598F9EE6C12B2F6BD62532E14232CD7 /* CheckBox */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B2EB263D5B4131EF93325E6E4A537E1 /* Build configuration list for PBXNativeTarget "CheckBox" */;
-			buildPhases = (
-				48523E6993F50449BF5B6E35BCCBD42E /* Headers */,
-				4CA6C9CD860BA9A32549E2BAEBEF74E4 /* Sources */,
-				D0197451B1D33B9C721A6E4FB7456596 /* Frameworks */,
-				1C5C5EF393EDAE17501729D2F141B2EF /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CheckBox;
-			productName = CheckBox;
-			productReference = 2731D03848068421AAABADF9E291581D /* libCheckBox.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B5E624B58168138E1B2F6281631215D /* Build configuration list for PBXNativeTarget "MarkdownView" */;
@@ -290,26 +216,25 @@
 			);
 			name = MarkdownView;
 			productName = MarkdownView;
-			productReference = 2ED0E07C3E0C373FB79D61378C31941E /* libMarkdownView.a */;
+			productReference = 392416A7B131C203775ED344B668185F /* libMarkdownView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		673FBE0442CEA54A8303807EA6D0B94D /* Pods-WSIE */ = {
+		994083DC842AC47AF4CF6788CA84753A /* Pods-WSIE */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E792CC499CF5DEB3EAC634A21A27E35A /* Build configuration list for PBXNativeTarget "Pods-WSIE" */;
+			buildConfigurationList = B4EDEEB12D2A194BF1EE197C1B942B35 /* Build configuration list for PBXNativeTarget "Pods-WSIE" */;
 			buildPhases = (
-				B22855DFB264F49BB21D14108C15CF3D /* Headers */,
-				54FE5BB74552F46A821B14EADCB3976A /* Sources */,
-				3F0E7970049118900BF9F65C93196D10 /* Frameworks */,
+				0EDBFED90A81795369252E1E7EA954C9 /* Headers */,
+				2220D7755A2B6F40A195717E32E78697 /* Sources */,
+				8EA99DDBA2020AF2DAA01F7FC144F351 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9F1B55F27F06E6D640BFB1231E898ADB /* PBXTargetDependency */,
-				2787703FDB57B367D49436947AA65715 /* PBXTargetDependency */,
+				126E63F9BF4F47A6CF55AE46C620E7AC /* PBXTargetDependency */,
 			);
 			name = "Pods-WSIE";
 			productName = "Pods-WSIE";
-			productReference = 29004FDC7DD6FB9A5B79F98AD0AA3131 /* libPods-WSIE.a */;
+			productReference = BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */ = {
@@ -326,7 +251,7 @@
 			);
 			name = "MarkdownView-MarkdownView";
 			productName = "MarkdownView-MarkdownView";
-			productReference = A90922CABAAD1B29D5C3B7CAEE77C330 /* MarkdownView.bundle */;
+			productReference = F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -347,14 +272,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 32C802C6D2A60E617E592211C30A9785 /* Products */;
+			productRefGroup = 17E096C81D40577BB1A08EE58256EE26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1598F9EE6C12B2F6BD62532E14232CD7 /* CheckBox */,
 				17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */,
 				A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */,
-				673FBE0442CEA54A8303807EA6D0B94D /* Pods-WSIE */,
+				994083DC842AC47AF4CF6788CA84753A /* Pods-WSIE */,
 			);
 		};
 /* End PBXProject section */
@@ -373,30 +297,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C5C5EF393EDAE17501729D2F141B2EF /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/CheckBox/CheckBox.modulemap",
-				"${PODS_ROOT}/Headers/Public/CheckBox/CheckBox-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/CheckBox-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CheckBox/CheckBox.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CheckBox/CheckBox-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
 		CAEE7D4CBEBBF4117DB8D64341CB85FA /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,20 +324,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4CA6C9CD860BA9A32549E2BAEBEF74E4 /* Sources */ = {
+		2220D7755A2B6F40A195717E32E78697 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E7D879E3B1F355647F5D8A471BE24C8 /* CheckBox-dummy.m in Sources */,
-				3806511D6F20D85998CD1D6F1EC7C099 /* CheckBox.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		54FE5BB74552F46A821B14EADCB3976A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				668B70331BB97084CED9B92D7DF69D86 /* Pods-WSIE-dummy.m in Sources */,
+				31B1140D7F2A1B790288A460EB0EFC61 /* Pods-WSIE-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,24 +357,18 @@
 			target = A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */;
 			targetProxy = 9171299E0E07A044040428820766B56D /* PBXContainerItemProxy */;
 		};
-		2787703FDB57B367D49436947AA65715 /* PBXTargetDependency */ = {
+		126E63F9BF4F47A6CF55AE46C620E7AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MarkdownView;
 			target = 17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */;
-			targetProxy = 47F70AEA6B2F85ABA5D4FC0DE4748566 /* PBXContainerItemProxy */;
-		};
-		9F1B55F27F06E6D640BFB1231E898ADB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CheckBox;
-			target = 1598F9EE6C12B2F6BD62532E14232CD7 /* CheckBox */;
-			targetProxy = B2780C5D391DB74F2BEBDDF2430E33B5 /* PBXContainerItemProxy */;
+			targetProxy = C933DD868339D859DECF7B70EFA6C0D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0136D5593269A32F914B02601450121F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
@@ -499,7 +384,7 @@
 		};
 		10AD27BB379CD256A541B733802FE480 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -525,7 +410,7 @@
 		};
 		4ECA414E789DE06112414FD2931C6DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
@@ -539,7 +424,30 @@
 			};
 			name = Debug;
 		};
-		7F260F31CF5C5573981E40F6422D4A87 /* Release */ = {
+		651E5C91C8AA6FF2908CC0353AE47A64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WSIE/Pods-WSIE.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7275F91E77A805B063CE15EA33D71AB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF51AA1C08086DC9B1EA602A91FD6543 /* Pods-WSIE.release.xcconfig */;
 			buildSettings = {
@@ -558,33 +466,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		80F37E8FCBA15AD83FAD8561EEB12DC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3692A9BBE602F92CE00156BE5CB1EAD0 /* CheckBox.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/CheckBox/CheckBox-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MODULEMAP_FILE = Headers/Public/CheckBox/CheckBox.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CheckBox;
-				PRODUCT_NAME = CheckBox;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -651,35 +532,9 @@
 			};
 			name = Release;
 		};
-		A18F60A90FC67D424A1AB9F4BDF39493 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3692A9BBE602F92CE00156BE5CB1EAD0 /* CheckBox.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/CheckBox/CheckBox-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MODULEMAP_FILE = Headers/Public/CheckBox/CheckBox.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = CheckBox;
-				PRODUCT_NAME = CheckBox;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		B26D3041FC1E921BACDA1B3E13DF665E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D228ACEBA17BFB71CF04ADE621CD99B8 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -767,41 +622,9 @@
 			};
 			name = Debug;
 		};
-		DB552BBAEC84EA7527BC9487BA4CB3C4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WSIE/Pods-WSIE.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B2EB263D5B4131EF93325E6E4A537E1 /* Build configuration list for PBXNativeTarget "CheckBox" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A18F60A90FC67D424A1AB9F4BDF39493 /* Debug */,
-				80F37E8FCBA15AD83FAD8561EEB12DC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2B5E624B58168138E1B2F6281631215D /* Build configuration list for PBXNativeTarget "MarkdownView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -820,20 +643,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B4EDEEB12D2A194BF1EE197C1B942B35 /* Build configuration list for PBXNativeTarget "Pods-WSIE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				651E5C91C8AA6FF2908CC0353AE47A64 /* Debug */,
+				7275F91E77A805B063CE15EA33D71AB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CC8A2A33BEE36E50CD76215BD686F69A /* Build configuration list for PBXNativeTarget "MarkdownView-MarkdownView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4ECA414E789DE06112414FD2931C6DA9 /* Debug */,
 				0136D5593269A32F914B02601450121F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E792CC499CF5DEB3EAC634A21A27E35A /* Build configuration list for PBXNativeTarget "Pods-WSIE" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB552BBAEC84EA7527BC9487BA4CB3C4 /* Debug */,
-				7F260F31CF5C5573981E40F6422D4A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

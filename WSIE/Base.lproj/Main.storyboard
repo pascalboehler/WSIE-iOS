@@ -581,12 +581,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAY-fG-Hss">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAY-fG-Hss" customClass="CheckboxButton" customModule="WSIE" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="33.5" height="33.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="bAY-fG-Hss" secondAttribute="height" multiplier="1:1" id="08n-Bm-tit"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="checkBoxButtonValueChanged:" destination="XKf-F5-1Ah" eventType="valueChanged" id="ZKB-Si-jit"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -658,6 +661,9 @@
                         <viewLayoutGuide key="safeArea" id="XDK-Rk-vM3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shopping list" image="ShoppingCartEmpty" id="c8f-3c-4zV"/>
+                    <connections>
+                        <outlet property="tableView" destination="7bB-o0-zSv" id="MPI-JS-SwS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrx-lc-8Ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,20 +1,16 @@
 PODS:
-  - CheckBox (1.0.0)
   - MarkdownView (1.5.0)
 
 DEPENDENCIES:
-  - CheckBox
   - MarkdownView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CheckBox
     - MarkdownView
 
 SPEC CHECKSUMS:
-  CheckBox: c6f39d7dd72be096896205584b5943e4743a767b
   MarkdownView: 5bbee438c823db1cd189002d44c84fa909b3a896
 
-PODFILE CHECKSUM: 64976fda838ba310bac59b079fb0bdc81ea271e4
+PODFILE CHECKSUM: edbf36cc906a6684693b4489a891eb45f845a064
 
 COCOAPODS: 1.6.1

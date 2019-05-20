@@ -11,6 +11,10 @@ import UIKit
 class ShoppingListItemTableViewCell: UITableViewCell {
 
     @IBOutlet var itemName: UILabel!
-    @IBOutlet var checkButton: UIButton!
+    
+    @IBAction func checkBoxButtonValueChanged(_ sender: CheckboxButton) {
+        print("On Checkbox pressed")
+    }
+    
     
 }
