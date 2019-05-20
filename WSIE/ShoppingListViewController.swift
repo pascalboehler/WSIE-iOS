@@ -21,6 +21,7 @@ class ShoppingListViewController: UIViewController {
     var addItemViewIsVisible = false
     @IBOutlet weak var navigationBar: UINavigationBar!
     var barButtonStatus: BarButtonStatus = .add
+    @IBOutlet weak var textView: UITextField!
     
     var shoppingList: [ShoppingList] = []
     
@@ -83,7 +84,31 @@ class ShoppingListViewController: UIViewController {
     }
     */
     @IBAction func addNewItemButtonHandler(_ sender: Any) {
-        print("On addNewItemButton pressed")
+        if let newItem = textView.text {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "ShoppingList", in: managedContext)!
+            
+            let item = NSManagedObject(entity: entity, insertInto: managedContext)
+            
+            item.setValue(newItem, forKey: "name")
+            item.setValue(1, forKey: "amount")
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save recipe. \(error), \(error.userInfo)")
+            }
+            shoppingList = fetchData()
+            tableView.reloadData()
+            textView.text = ""
+        } else {
+            print("Error!!!")
+        }
     }
     
     // get the data from db
