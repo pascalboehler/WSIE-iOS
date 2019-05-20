@@ -555,13 +555,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-jY-ikw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
-                                    <navigationItem title="Shopping list" id="93P-XZ-LGs">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oy8-qP-nef">
-                                            <connections>
-                                                <action selector="addItemButtonHandler:" destination="pVD-9I-iaJ" id="Wur-d4-DZG"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Shopping list" id="93P-XZ-LGs"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-o0-zSv">
@@ -665,6 +659,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Shopping list" image="ShoppingCartEmpty" id="c8f-3c-4zV"/>
                     <connections>
+                        <outlet property="addItemViewFullHeightConstraint" destination="1JX-BN-2jn" id="AQv-Sp-ylb"/>
+                        <outlet property="addItemViewZeroHeightConstraint" destination="B5O-qi-ELe" id="rWC-SI-Bzp"/>
+                        <outlet property="navigationBar" destination="Df8-jY-ikw" id="OUV-wl-SIZ"/>
                         <outlet property="tableView" destination="7bB-o0-zSv" id="MPI-JS-SwS"/>
                     </connections>
                 </viewController>

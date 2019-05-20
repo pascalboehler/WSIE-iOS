@@ -8,9 +8,19 @@
 
 import UIKit
 
+enum BarButtonStatus {
+    case add, done
+}
+
 class ShoppingListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addItemViewFullHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addItemViewZeroHeightConstraint: NSLayoutConstraint!
+    var addItemViewIsVisible = false
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    var barButtonStatus: BarButtonStatus = .add
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +28,42 @@ class ShoppingListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItemButtonHandler))
+        navigationBar.topItem?.rightBarButtonItem = button
+        barButtonStatus = .add
+    }
 
-    @IBAction func addItemButtonHandler(_ sender: Any) {
+    @objc func addItemButtonHandler() {
         print("On add button pressed!")
+        if barButtonStatus == .add {
+            if addItemViewIsVisible == false {
+                addItemViewZeroHeightConstraint.isActive = false
+                addItemViewFullHeightConstraint.isActive = true
+                let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(addItemButtonHandler))
+                navigationBar.topItem?.rightBarButtonItem = button
+                barButtonStatus = .done
+                addItemViewIsVisible = true
+            } else {
+                return
+            }
+        } else if barButtonStatus == .done {
+            if addItemViewIsVisible == true {
+                // hide addItemView
+                addItemViewFullHeightConstraint.isActive = false
+                addItemViewZeroHeightConstraint.isActive = true
+                // change button back to add
+                let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItemButtonHandler))
+                navigationBar.topItem?.rightBarButtonItem = button
+                barButtonStatus = .add
+                addItemViewIsVisible = false
+            } else {
+                return
+            }
+        }
+        
     }
     /*
     // MARK: - Navigation
