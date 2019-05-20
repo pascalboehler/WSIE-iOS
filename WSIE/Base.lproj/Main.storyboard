@@ -559,7 +559,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-o0-zSv">
-                                <rect key="frame" x="0.0" y="140" width="414" height="603"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListItemTableViewCell" rowHeight="50" id="XKf-F5-1Ah" customClass="ShoppingListItemTableViewCell" customModule="WSIE" customModuleProvider="target">
@@ -606,38 +606,40 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysx-51-h4p">
-                                <rect key="frame" x="0.0" y="743" width="414" height="70"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XQ4-h7-YUY">
-                                        <rect key="frame" x="8" y="8" width="336" height="54"/>
+                                        <rect key="frame" x="8" y="8" width="390" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-ck-19l">
-                                        <rect key="frame" x="352" y="8" width="54" height="54"/>
+                                        <rect key="frame" x="406" y="0.0" width="0.0" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5UA-ck-19l" secondAttribute="height" multiplier="1:1" id="fom-C6-HqS"/>
-                                            <constraint firstAttribute="height" constant="54" id="lJN-xD-2Eu"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="ok"/>
+                                        <connections>
+                                            <action selector="addNewItemButtonHandler:" destination="pVD-9I-iaJ" eventType="touchUpInside" id="97h-Vl-the"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1JX-BN-2jn"/>
-                                    <constraint firstAttribute="bottom" secondItem="5UA-ck-19l" secondAttribute="bottom" constant="8" id="3vf-Nt-gmH"/>
+                                    <constraint firstAttribute="bottom" secondItem="5UA-ck-19l" secondAttribute="bottom" id="3vf-Nt-gmH"/>
                                     <constraint firstAttribute="height" id="B5O-qi-ELe"/>
-                                    <constraint firstAttribute="bottom" secondItem="XQ4-h7-YUY" secondAttribute="bottom" constant="8" id="NUA-Dz-ESS"/>
+                                    <constraint firstItem="5UA-ck-19l" firstAttribute="height" secondItem="Ysx-51-h4p" secondAttribute="height" id="BCf-yL-X4O"/>
+                                    <constraint firstItem="XQ4-h7-YUY" firstAttribute="top" secondItem="Ysx-51-h4p" secondAttribute="top" constant="8" id="Shf-dO-php"/>
                                     <constraint firstItem="XQ4-h7-YUY" firstAttribute="leading" secondItem="Ysx-51-h4p" secondAttribute="leading" constant="8" id="TTG-l7-ewn"/>
                                     <constraint firstItem="5UA-ck-19l" firstAttribute="leading" secondItem="XQ4-h7-YUY" secondAttribute="trailing" constant="8" id="aJK-Mm-wi5"/>
                                     <constraint firstAttribute="trailing" secondItem="5UA-ck-19l" secondAttribute="trailing" constant="8" id="jaR-5I-oca"/>
-                                    <constraint firstItem="XQ4-h7-YUY" firstAttribute="top" secondItem="Ysx-51-h4p" secondAttribute="top" constant="8" id="ut5-MC-90w"/>
-                                    <constraint firstItem="5UA-ck-19l" firstAttribute="top" secondItem="Ysx-51-h4p" secondAttribute="top" constant="8" id="yFt-eU-g7J"/>
+                                    <constraint firstItem="5UA-ck-19l" firstAttribute="top" secondItem="Ysx-51-h4p" secondAttribute="top" id="yFt-eU-g7J"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="B5O-qi-ELe"/>
+                                        <exclude reference="1JX-BN-2jn"/>
                                     </mask>
                                 </variation>
                             </view>
