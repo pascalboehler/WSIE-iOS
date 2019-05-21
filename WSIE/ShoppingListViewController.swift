@@ -133,6 +133,14 @@ class ShoppingListViewController: UIViewController {
         }
         return []
     }
+    
+    func updateDataset() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        appDelegate.saveContext()
+    }
 }
 
 extension ShoppingListViewController: UITableViewDataSource {
