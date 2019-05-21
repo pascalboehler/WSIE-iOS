@@ -169,5 +169,6 @@ extension ShoppingListViewController: UITableViewDelegate {
         print("On tableView pressed")
         shoppingList[indexPath.row].bought = !shoppingList[indexPath.row].bought
         tableView.reloadData()
+        updateDataset()
     }
 }
