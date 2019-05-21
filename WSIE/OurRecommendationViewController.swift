@@ -28,12 +28,23 @@ class OurRecommendationViewController: UIViewController {
         
         // get the data from the database
         recipe = fetchData()
-    
-        index = Int.random(in: 0 ..< recipe.count)
+        if recipe.count != 0 {
+            index = Int.random(in: 0 ..< recipe.count)
+            let currentRecipe: Recipe = recipe[index]
+            
+            markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+        } else {
+            // show alert...
+            let alertController = UIAlertController(title: "Sorry!", message: "There are no recipes created. Please create some recipes that we can give you a recommendation", preferredStyle: .alert)
+            let okAlert = UIAlertAction(title: "Ok", style: .default) { (_) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            alertController.addAction(okAlert)
+            present(alertController, animated: true, completion: nil)
+        }
         
-        let currentRecipe: Recipe = recipe[index]
         
-        markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+        
     }
     
     @IBAction func previousButtonHandler(_ sender: UIButton) {
