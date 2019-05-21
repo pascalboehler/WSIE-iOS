@@ -9,18 +9,7 @@
 import UIKit
 
 class ShoppingListItemTableViewCell: UITableViewCell {
-
     @IBOutlet var itemName: UILabel!
-    var indexPath: IndexPath!
-    
-    @IBAction func checkBoxButtonValueChanged(_ sender: CheckboxButton) {
-        print("On Checkbox pressed")
-        if sender.on {
-            print("ON")
-        } else {
-            print("OFF")
-        }
-    }
-    
-    
+    @IBOutlet weak var itemIsCompleted: UILabel!
 }
+

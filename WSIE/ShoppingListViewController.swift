@@ -28,6 +28,7 @@ class ShoppingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +43,12 @@ class ShoppingListViewController: UIViewController {
         // Load data from db
         shoppingList = fetchData()
         // reload the tableView's data
+//        shoppingList = []
+//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+//            return
+//        }
+//        appDelegate.saveContext()
+        
         tableView.reloadData()
     }
 
@@ -137,10 +144,22 @@ extension ShoppingListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingListItemTableViewCell") as! ShoppingListItemTableViewCell
         // create data
         cell.itemName.text = "\(shoppingList[indexPath.row].name ?? "Not available") \(shoppingList[indexPath.row].amount)x"
-        // store indexpath inside cell
-        cell.indexPath = indexPath
+        if shoppingList[indexPath.row].bought == true {
+            cell.itemIsCompleted.text = completed // to strikethrough
+        } else {
+            cell.itemIsCompleted.text = ""
+        }
         
         return cell
     }
     
+}
+
+
+extension ShoppingListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("On tableView pressed")
+        shoppingList[indexPath.row].bought = !shoppingList[indexPath.row].bought
+        tableView.reloadData()
+    }
 }
