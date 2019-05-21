@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
+var completed = "----------------------------------------------"
+
 func markdownFormatter(recipeTitle: String, recipeShortDescription: String, recipeCookingTime: Int, recipeMaterialsList: String, recipeStepsList: String) -> String {
     let title = "# \(recipeTitle) \n"
     let shortDescription = "## Description: \n"
