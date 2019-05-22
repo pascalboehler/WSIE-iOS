@@ -171,4 +171,16 @@ extension ShoppingListViewController: UITableViewDelegate {
         tableView.reloadData()
         updateDataset()
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            shoppingList.remove(at: indexPath.row)
+            updateDataset()
+            tableView.reloadData()
+        }
+    }
 }
