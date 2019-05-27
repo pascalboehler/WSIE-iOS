@@ -222,7 +222,7 @@ class EditRecipeViewController: UIViewController {
         currentRecipe?.recipeImageBinaryData = NSData(data: Data((picturePicker.backgroundImage(for: .normal)?.jpegData(compressionQuality: 1.0))!)) as Data
         currentRecipe?.recipeMaterials = materialsTextView.text
         currentRecipe?.recipeSteps = stepsTextView.text
-        currentRecipe?.recipeMarkdownCode = markdownFormatter(recipeTitle: (currentRecipe?.recipeTitle)!, recipeShortDescription: (currentRecipe?.recipeShortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.recipeMaterials)!, recipeStepsList: (currentRecipe?.recipeSteps)!)
+        currentRecipe?.recipeMarkdownCode = markdownFormatter(recipeTitle: (currentRecipe?.recipeTitle)!, recipeShortDescription: (currentRecipe?.recipeShortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.recipeMaterials)!, recipeStepsList: (currentRecipe?.recipeSteps)!, forPerson: 4)
         updateDataset()
     }
     

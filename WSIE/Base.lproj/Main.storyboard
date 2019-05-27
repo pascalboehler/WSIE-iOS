@@ -555,7 +555,13 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-jY-ikw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
-                                    <navigationItem title="Shopping list" id="93P-XZ-LGs"/>
+                                    <navigationItem title="Shopping list" id="93P-XZ-LGs">
+                                        <barButtonItem key="leftBarButtonItem" title="Filter" style="plain" id="9bH-83-87D">
+                                            <connections>
+                                                <action selector="filterButtonHandler:" destination="pVD-9I-iaJ" id="nrT-QA-tBI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-o0-zSv">

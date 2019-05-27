@@ -141,6 +141,10 @@ class ShoppingListViewController: UIViewController {
         
         appDelegate.saveContext()
     }
+    
+    @IBAction func filterButtonHandler(_ sender: Any) {
+        
+    }
 }
 
 extension ShoppingListViewController: UITableViewDataSource {

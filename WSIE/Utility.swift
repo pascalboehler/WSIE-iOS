@@ -12,8 +12,9 @@ import CoreData
 
 var completed = "----------------------------------------------"
 
-func markdownFormatter(recipeTitle: String, recipeShortDescription: String, recipeCookingTime: Int, recipeMaterialsList: String, recipeStepsList: String) -> String {
+func markdownFormatter(recipeTitle: String, recipeShortDescription: String, recipeCookingTime: Int, recipeMaterialsList: String, recipeStepsList: String, forPerson amount: Int16) -> String {
     let title = "# \(recipeTitle) \n"
+    let amountOfPeople = "for \(amount) persons"
     let shortDescription = "## Description: \n"
     let shortDescriptionContent = "\(recipeShortDescription) \n"
     let cookingTime = "Time: \(recipeCookingTime) minutes\n"
@@ -22,7 +23,7 @@ func markdownFormatter(recipeTitle: String, recipeShortDescription: String, reci
     let steps = "## Steps: \n"
     let stepsContent = getSteps(recipeStepsList) + "\n"
     
-    return title + shortDescription + shortDescriptionContent + cookingTime + materials + materialsContent + steps + stepsContent
+    return title + amountOfPeople + shortDescription + shortDescriptionContent + cookingTime + materials + materialsContent + steps + stepsContent
 }
 
 func getMaterials(_ materials: String) -> String {

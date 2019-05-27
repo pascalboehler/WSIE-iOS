@@ -184,7 +184,7 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
-        let recipeMarkDown = markdownFormatter(recipeTitle: title, recipeShortDescription: shortDescription, recipeCookingTime: cookingTime, recipeMaterialsList: materials, recipeStepsList: steps)
+        let recipeMarkDown = markdownFormatter(recipeTitle: title, recipeShortDescription: shortDescription, recipeCookingTime: cookingTime, recipeMaterialsList: materials, recipeStepsList: steps, forPerson: 1)
         
         print(recipeMarkDown)
         
