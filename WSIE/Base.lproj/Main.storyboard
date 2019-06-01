@@ -653,6 +653,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Ysx-51-h4p" firstAttribute="bottom" secondItem="XDK-Rk-vM3" secondAttribute="bottom" constant="216" id="0ik-sB-SIO"/>
                             <constraint firstItem="Ysx-51-h4p" firstAttribute="trailing" secondItem="XDK-Rk-vM3" secondAttribute="trailing" id="17V-ir-H51"/>
                             <constraint firstItem="Ysx-51-h4p" firstAttribute="leading" secondItem="XDK-Rk-vM3" secondAttribute="leading" id="1MH-Fx-nmN"/>
                             <constraint firstItem="7bB-o0-zSv" firstAttribute="top" secondItem="Df8-jY-ikw" secondAttribute="bottom" id="4hF-j5-HH6"/>
@@ -665,11 +666,18 @@
                             <constraint firstItem="Df8-jY-ikw" firstAttribute="trailing" secondItem="XDK-Rk-vM3" secondAttribute="trailing" id="z0v-nJ-hI4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XDK-Rk-vM3"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0ik-sB-SIO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shopping list" image="ShoppingCartEmpty" id="c8f-3c-4zV"/>
                     <connections>
                         <outlet property="addItemViewFullHeightConstraint" destination="1JX-BN-2jn" id="AQv-Sp-ylb"/>
+                        <outlet property="addItemViewZeroBottomConstraint" destination="wv6-Vu-X8C" id="eak-6n-JWm"/>
                         <outlet property="addItemViewZeroHeightConstraint" destination="B5O-qi-ELe" id="rWC-SI-Bzp"/>
+                        <outlet property="additemViewFullBottomConstraint" destination="0ik-sB-SIO" id="uxa-b7-xCY"/>
                         <outlet property="navigationBar" destination="Df8-jY-ikw" id="OUV-wl-SIZ"/>
                         <outlet property="tableView" destination="7bB-o0-zSv" id="MPI-JS-SwS"/>
                         <outlet property="textView" destination="XQ4-h7-YUY" id="loI-7h-ASl"/>
@@ -683,7 +691,7 @@
         <scene sceneID="5Wj-k3-Qi4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b1h-yM-3QM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ideas" image="Restaurant" id="SgL-7T-wGO"/>
+                    <tabBarItem key="tabBarItem" title="Ideas" image="idea" id="SgL-7T-wGO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9eh-3F-PbI">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -701,10 +709,10 @@
     </scenes>
     <resources>
         <image name="Book" width="30" height="30"/>
-        <image name="Restaurant" width="30" height="30"/>
         <image name="Settings" width="30" height="30"/>
         <image name="ShoppingCartEmpty" width="30" height="30"/>
         <image name="StarFilled" width="30" height="30"/>
+        <image name="idea" width="30" height="30"/>
         <image name="ok" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

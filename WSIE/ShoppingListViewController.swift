@@ -18,6 +18,8 @@ class ShoppingListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addItemViewFullHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var addItemViewZeroHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var additemViewFullBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addItemViewZeroBottomConstraint: NSLayoutConstraint!
     var addItemViewIsVisible = false
     @IBOutlet weak var navigationBar: UINavigationBar!
     var barButtonStatus: BarButtonStatus = .add
@@ -29,6 +31,7 @@ class ShoppingListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        textView.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -67,6 +70,8 @@ class ShoppingListViewController: UIViewController {
             }
         } else if barButtonStatus == .done {
             if addItemViewIsVisible == true {
+                // end editing
+                textView.endEditing(true) // hides keyboard when textView disappears
                 // hide addItemView
                 addItemViewFullHeightConstraint.isActive = false
                 addItemViewZeroHeightConstraint.isActive = true
@@ -81,6 +86,8 @@ class ShoppingListViewController: UIViewController {
         }
         
     }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -186,5 +193,20 @@ extension ShoppingListViewController: UITableViewDelegate {
             updateDataset()
             tableView.reloadData()
         }
+    }
+}
+
+extension ShoppingListViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("Textfield did begin editing") // go up 216 pts
+        addItemViewZeroBottomConstraint.isActive = false
+        addItemViewFullHeightConstraint.isActive = true
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("Textfield did end editing") // go down
+        addItemViewFullHeightConstraint.isActive = false
+        addItemViewZeroBottomConstraint.isActive = true
     }
 }
