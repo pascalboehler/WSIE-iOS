@@ -80,6 +80,7 @@ class ShoppingListViewController: UIViewController {
                 navigationBar.topItem?.rightBarButtonItem = button
                 barButtonStatus = .add
                 addItemViewIsVisible = false
+                textView.endEditing(true) // end editing to hide the keyboard => then it disappears...
             } else {
                 return
             }
