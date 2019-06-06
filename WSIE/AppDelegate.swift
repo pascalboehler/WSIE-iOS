@@ -36,6 +36,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // check if a value for settings is set
+        let settings = fetchSettingsData() // get the settings
+        if settings == [] { // if settings is not set, set default values => this should only be executed once when application is installeds
+            let managedContext = persistentContainer.viewContext
+            
+            let entity = NSEntityDescription.entity(forEntityName: "Settings", in: managedContext)!
+            
+            let item = NSManagedObject(entity: entity, insertInto: managedContext)
+            item.setValue(false, forKey: "iCloudSyncIsEnabled")
+            item.setValue(true, forKey: "dataEncryptionIsEnabled")
+            item.setValue(false, forKey: "touchIdIsEnabled")
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save recipe. \(error), \(error.userInfo)")
+            }
+
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -88,6 +108,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    // get the data from db
+    func fetchSettingsData() -> [Settings]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<Settings>(entityName: "Settings")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            return result
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
+        }
+        return []
+    }
+    
+    // get the data from db
+    func fetchRecipeData() -> [Recipe]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<Recipe>(entityName: "Settings")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            return result
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
+        }
+        return []
+    }
 }
 

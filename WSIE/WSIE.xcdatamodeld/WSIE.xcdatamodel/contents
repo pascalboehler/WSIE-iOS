@@ -7,9 +7,16 @@
         <attribute name="recipeMarkdownCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipeMaterials" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipePersonAmount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recipePropertyIsVegeterian" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recipePropertyTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipeShortDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipeSteps" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recipeTitle" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="dataEncryptionIsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="iCloudSyncIsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="touchIdIsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="ShoppingList" representedClassName="ShoppingList" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -17,7 +24,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="ShoppingList" positionX="-63" positionY="45" width="128" height="90"/>
+        <element name="Settings" positionX="-63" positionY="63" width="128" height="90"/>
     </elements>
 </model>
