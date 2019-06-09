@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class CreateRecipeViewController: UIViewController {
     
@@ -29,6 +30,8 @@ class CreateRecipeViewController: UIViewController {
     var imagePickerController: UIImagePickerController!
     
     var currentIndex: Int?
+    
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +113,11 @@ class CreateRecipeViewController: UIViewController {
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
+        // init db
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
     }
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
@@ -193,6 +201,7 @@ class CreateRecipeViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    /*Ü
     func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
         
         print("Recipe saved")
@@ -221,6 +230,26 @@ class CreateRecipeViewController: UIViewController {
             print("Could not save recipe. \(error), \(error.userInfo)")
         }
         print("Saved item..")
+    } */
+    
+    // Firebase version
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        // create document if document already exists under this title override document
+        db.collection("recipe").document(title).setData([
+            "title": title,
+            "shortDescription": shortDescription,
+            "cookingTime": cookingTime,
+            "materials": materials,
+            "steps": steps,
+            "isFavourite": isFavourite,
+            "md-code": recipeMarkDown
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
     
     func showSaveAlert() {

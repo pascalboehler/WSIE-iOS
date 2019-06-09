@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>240049270898-b4n7j2sm1hgu4m08nv08gh41nmppciad.apps.googleusercontent.com</string>
+	<string>138806766835-m4o6uopdor25nfikncf1qbg309199blr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.240049270898-b4n7j2sm1hgu4m08nv08gh41nmppciad</string>
+	<string>com.googleusercontent.apps.138806766835-m4o6uopdor25nfikncf1qbg309199blr</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBm8bLpx26rfF7PLr9FYzbnwTwr9EiV7PM</string>
+	<string>AIzaSyDd15qdYKYV15PUuV2DhfuG1NjgQ_rq19o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>240049270898</string>
+	<string>138806766835</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.pascalboehler.wsie</string>
+	<string>com.pascalboehler.WSIE</string>
 	<key>PROJECT_ID</key>
-	<string>wsie-ios</string>
+	<string>wsie-51a85</string>
 	<key>STORAGE_BUCKET</key>
-	<string>wsie-ios.appspot.com</string>
+	<string>wsie-51a85.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:240049270898:ios:4913d023c77d2947</string>
+	<string>1:138806766835:ios:ae6715231d0b780e</string>
 	<key>DATABASE_URL</key>
-	<string>https://wsie-ios.firebaseio.com</string>
+	<string>https://wsie-51a85.firebaseio.com</string>
 </dict>
 </plist>
