@@ -130,6 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // get the data from db
+    /*
     func fetchRecipeData() -> [Recipe]{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -143,6 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error.description)
         }
         return []
-    }
+    } */
 }
 

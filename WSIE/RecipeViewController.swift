@@ -24,7 +24,7 @@ class RecipeViewController: UIViewController {
         ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
     ] */
     //var recipe: [Recipe] = []
-    var recipe: [[String: Any]] = [] // Array of dictionaries to store data
+    var recipe: [Recipe] = [] // Array of dictionaries to store data
     var recipeIds: [String] = []
     var currentRecipe: Int = 0
     
@@ -42,7 +42,8 @@ class RecipeViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         
-        recipe = fetchData()
+        recipe = fetchRecipeData(db: db)
+        print(recipeData)
 
     }
     
@@ -170,9 +171,10 @@ extension RecipeViewController : UITableViewDataSource {
         return cell */
         
         let currentRecipe = recipe[indexPath.row] // get the recipe for the row
-        
+        /*
         cell.titleLabel.text = currentRecipe["title"] as? String // get the recipe title
         cell.shortDescriptionLabel.text = currentRecipe["shortDescription"] as? String // get the recipe short description
+         */
         return cell
     }
     

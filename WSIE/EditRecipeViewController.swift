@@ -167,7 +167,7 @@ class EditRecipeViewController: UIViewController {
    		}
  
         */
-   		
+   		/*
         recipeTitle = (currentRecipe?.value(forKey: "recipeTitle") as! String)
         recipeShortDescription = (currentRecipe?.value(forKey: "recipeShortDescription") as! String)
         recipeMaterials = (currentRecipe?.value(forKey: "recipeMaterials") as! String)
@@ -183,7 +183,7 @@ class EditRecipeViewController: UIViewController {
         materialsTextView.text = recipeMaterials!
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
-        
+        */
     }
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
@@ -216,6 +216,7 @@ class EditRecipeViewController: UIViewController {
 
     @IBAction func saveButtonHandler(_ sender: UIBarButtonItem) {
         print("On save button pressed")
+        /*
         currentRecipe?.recipeTitle = titleTextField.text
         currentRecipe?.recipeShortDescription = shortDescriptionTextView.text
         // currentRecipe?.recipeCookingTime =
@@ -223,7 +224,7 @@ class EditRecipeViewController: UIViewController {
         currentRecipe?.recipeMaterials = materialsTextView.text
         currentRecipe?.recipeSteps = stepsTextView.text
         currentRecipe?.recipeMarkdownCode = markdownFormatter(recipeTitle: (currentRecipe?.recipeTitle)!, recipeShortDescription: (currentRecipe?.recipeShortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.recipeMaterials)!, recipeStepsList: (currentRecipe?.recipeSteps)!, forPerson: 4)
-        updateDataset()
+        updateDataset() */
     }
     
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {

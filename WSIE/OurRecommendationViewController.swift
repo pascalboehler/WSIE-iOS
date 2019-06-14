@@ -27,12 +27,12 @@ class OurRecommendationViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // get the data from the database
-        recipe = fetchData()
+        /*recipe = fetchData()
         if recipe.count != 0 {
             index = Int.random(in: 0 ..< recipe.count)
             let currentRecipe: Recipe = recipe[index]
             
-            markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+            // markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
         } else {
             // show alert...
             let alertController = UIAlertController(title: "Sorry!", message: "There are no recipes created. Please create some recipes that we can give you a recommendation", preferredStyle: .alert)
@@ -41,7 +41,7 @@ class OurRecommendationViewController: UIViewController {
             }
             alertController.addAction(okAlert)
             present(alertController, animated: true, completion: nil)
-        }
+        } */
         
         
         
@@ -52,10 +52,10 @@ class OurRecommendationViewController: UIViewController {
         if !(index <= 0) {
             index -= 1
         }
-        
+        /*
         let currentRecipe: Recipe = recipe[index]
         
-        markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+        markdownView.load(markdown: currentRecipe.recipeMarkdownCode) */
     }
     
     @IBAction func nextButtonHandler(_ sender: UIButton) {
@@ -68,10 +68,10 @@ class OurRecommendationViewController: UIViewController {
         }
         
         let currentRecipe: Recipe = recipe[index]
-        
-        markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+        /*
+        markdownView.load(markdown: currentRecipe.recipeMarkdownCode) */
     }
-    
+    /*
     func fetchData() -> [Recipe]{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -85,6 +85,6 @@ class OurRecommendationViewController: UIViewController {
             print(error.description)
         }
         return []
-    }
+    }*/
 
 }

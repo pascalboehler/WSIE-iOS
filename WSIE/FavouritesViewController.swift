@@ -29,10 +29,10 @@ class FavouritesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("View did appear...")
-        recipe = fetchData()
+        //recipe = fetchData()
         // reload the tableView data when view appears
         recipeList = []
-        prepareDataset()
+        //prepareDataset()
         tableView.reloadData()
     }
     
@@ -43,7 +43,7 @@ class FavouritesViewController: UIViewController {
             destinationViewController.currentRecipeIndex = recipeListIndexes[currentRecipe] // position of the recipe in the complete dataset
         }
     }
-    
+    /*
     func fetchData() -> [Recipe]{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -57,8 +57,8 @@ class FavouritesViewController: UIViewController {
             print(error.description)
         }
         return []
-    }
-    
+    }*/
+    /*
     func prepareDataset() {
         if recipe.count != 0 {
             for i in 0...recipe.count - 1 {
@@ -70,7 +70,7 @@ class FavouritesViewController: UIViewController {
                 }
             }
         }
-    }
+    } */
 }
 
 extension FavouritesViewController : UITableViewDelegate {
@@ -87,7 +87,7 @@ extension FavouritesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            recipe[recipeListIndexes[indexPath.row]].recipeIsFavourite = false // set recipeIsFavourite to false
+           // recipe[recipeListIndexes[indexPath.row]].recipeIsFavourite = false // set recipeIsFavourite to false
             recipeList.remove(at: indexPath.row) // delete recipe from Recipe favourites list
             appDelegate.saveContext()
             tableView.reloadData()
@@ -104,7 +104,7 @@ extension FavouritesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipeList[indexPath.row]
-        if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
+        /*if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
             if let recipeImage = UIImage(data: imageData){
                 cell.recipeImageView?.image = recipeImage
             } else {
@@ -114,7 +114,7 @@ extension FavouritesViewController : UITableViewDataSource {
         
         cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
         cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
-        
+        */
         return cell
     }
     

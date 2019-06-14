@@ -26,12 +26,12 @@ class RecipeDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
+        /*markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
         if currentRecipe?.recipeIsFavourite == false {
             favouriteBarButton.tintColor = UIColor.lightGray
         } else {
             favouriteBarButton.tintColor = UIColor.blue
-        }
+        } */
     }
     
     func updateDataset() {
@@ -51,7 +51,7 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favouriteBarButtonHandler(_ sender: UIBarButtonItem) {
-        if currentRecipe?.recipeIsFavourite == false {
+        /*if currentRecipe?.recipeIsFavourite == false {
             currentRecipe?.recipeIsFavourite = true
             favouriteBarButton.tintColor = UIColor.blue
             updateDataset()
@@ -59,7 +59,7 @@ class RecipeDetailViewController: UIViewController {
             currentRecipe?.recipeIsFavourite = false
             favouriteBarButton.tintColor = UIColor.lightGray
             updateDataset()
-        }
+        } */
     }
     
     @IBAction func backButtonHandler(_ sender: Any) {
