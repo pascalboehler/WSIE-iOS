@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095805A84CAEB1AF804C3C074214EB08 /* MarkdownView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */; };
-		294B64C42C69065C1729055613A7CB2D /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */; };
-		31B1140D7F2A1B790288A460EB0EFC61 /* Pods-WSIE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */; };
+		31B1140D7F2A1B790288A460EB0EFC61 /* Pods-WSIE-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8378C641C11B2655DADA682B9395DA8 /* Pods-WSIE-dummy.m */; };
 		395857F781865382360A1408670FC52E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = D38F3248C241D0C8FD12C6B26A37B96B /* index.html */; };
-		A7A01ED54447802362CD2D420149F34D /* MarkdownView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5608BAF257F1252BDC737FEA4A106FC9 /* MarkdownView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52CF65A46496E47216E4DBFE454A8975 /* MarkdownView-dummy.m */; };
+		A54CE6021361A8615E4B778BD475E922 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */; };
+		A7A01ED54447802362CD2D420149F34D /* MarkdownView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D50C10B5D1761D1E12675E16FAAB030B /* MarkdownView-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C77049EDD20842D4EB1B618E88580160 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = 2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */; };
 		D81482465E05A8661F9A7C7B10E82294 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 27946AF02E8063E529D681B9D0842EF7 /* main.css */; };
-		DC57D7A87F92C7764DE9C7BF2A5CAC5E /* Pods-WSIE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DC57D7A87F92C7764DE9C7BF2A5CAC5E /* Pods-WSIE-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FFB0E9E73F74E5E769084FC18E5AA9E /* Pods-WSIE-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,41 +22,41 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A13C1EED3DDCB6334F8B5E4A1498203A;
+			remoteGlobalIDString = A04E94702B62931D2A5061F58579BBC4;
 			remoteInfo = "MarkdownView-MarkdownView";
 		};
 		C933DD868339D859DECF7B70EFA6C0D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 17EB610089973D92AB36F8ABC97A8F52;
+			remoteGlobalIDString = 9CE7BB59885E11A7F43D648F9B1D6D12;
 			remoteInfo = MarkdownView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSIE-umbrella.h"; sourceTree = "<group>"; };
-		1A36A9F61B353A6F4F9D37ABC2510BA7 /* Pods-WSIE-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSIE-acknowledgements.plist"; sourceTree = "<group>"; };
-		27946AF02E8063E529D681B9D0842EF7 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
-		2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
-		392416A7B131C203775ED344B668185F /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
-		82B9E70BE043120A106D984842931FFD /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
-		9CD05CB7E3A1D9245C0EDDC853772330 /* Pods-WSIE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WSIE-resources.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B31C7E81B7A6A0128CC6A090BE4B4CBD /* Pods-WSIE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSIE.modulemap"; sourceTree = "<group>"; };
-		B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
-		BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3A7B6640147968ACCCEC7908E6AD453 /* MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarkdownView.modulemap; sourceTree = "<group>"; };
-		D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.xcconfig; sourceTree = "<group>"; };
-		D38F3248C241D0C8FD12C6B26A37B96B /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
-		D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
-		DAEFCDE39193AAFCE075CE779405B908 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MarkdownView-MarkdownView-Info.plist"; sourceTree = "<group>"; };
-		DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSIE-dummy.m"; sourceTree = "<group>"; };
+		14F6A6551D506B87DF6926D218481A79 /* MarkdownView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarkdownView.modulemap; sourceTree = "<group>"; };
+		209039795703F925DC2A9D91BF5B7821 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MarkdownView.bundle; path = "MarkdownView-MarkdownView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27946AF02E8063E529D681B9D0842EF7 /* main.css */ = {isa = PBXFileReference; includeInIndex = 1; name = main.css; path = webassets/dist/main.css; sourceTree = "<group>"; };
+		2F7BE041FBAB8BB27D1DC21579C7DB7A /* main.js */ = {isa = PBXFileReference; includeInIndex = 1; name = main.js; path = webassets/dist/main.js; sourceTree = "<group>"; };
+		3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarkdownView.xcconfig; sourceTree = "<group>"; };
+		52CF65A46496E47216E4DBFE454A8975 /* MarkdownView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarkdownView-dummy.m"; sourceTree = "<group>"; };
+		6FFB0E9E73F74E5E769084FC18E5AA9E /* Pods-WSIE-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WSIE-umbrella.h"; sourceTree = "<group>"; };
+		702CE5644EF1F26425C05E058547C562 /* libMarkdownView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMarkdownView.a; path = libMarkdownView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		733A71387D6AF7416481099AB05E7D06 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-WSIE.a"; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83E3890396026F76D402517ED1B7D40E /* MarkdownView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-prefix.pch"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A8378C641C11B2655DADA682B9395DA8 /* Pods-WSIE-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WSIE-dummy.m"; sourceTree = "<group>"; };
+		B192CAF7A3F215B9A44A855DDFC8AA87 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		C497DE133EC24994D9A5C005650493FF /* Pods-WSIE-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WSIE-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D38F3248C241D0C8FD12C6B26A37B96B /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = webassets/dist/index.html; sourceTree = "<group>"; };
+		D426CA32E789ACBF0A39822DAC5F2505 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MarkdownView-MarkdownView-Info.plist"; sourceTree = "<group>"; };
+		D50C10B5D1761D1E12675E16FAAB030B /* MarkdownView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarkdownView-umbrella.h"; sourceTree = "<group>"; };
 		DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarkdownView.swift; path = MarkdownView/MarkdownView.swift; sourceTree = "<group>"; };
-		E76F940AFB54AC2CB1B40D674161826A /* Pods-WSIE-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WSIE-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EF51AA1C08086DC9B1EA602A91FD6543 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
-		F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkdownView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E55336EDCC19307C1C306C68792D0ED7 /* Pods-WSIE-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WSIE-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2278825F048D629D59F1DF206BED516 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
+		F8BBABBE7C78F4C2AA1C166F4F1977FF /* Pods-WSIE-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WSIE-resources.sh"; sourceTree = "<group>"; };
+		FAC6CE8128B3C7374788EBC819280149 /* Pods-WSIE.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WSIE.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,36 +84,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17E096C81D40577BB1A08EE58256EE26 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				392416A7B131C203775ED344B668185F /* libMarkdownView.a */,
-				BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */,
-				F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5ACBBA8A63E066B1A3F063C807918743 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C3A7B6640147968ACCCEC7908E6AD453 /* MarkdownView.modulemap */,
-				D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */,
-				D84CCEB4BB078473B696DDFA786406B7 /* MarkdownView-dummy.m */,
-				82B9E70BE043120A106D984842931FFD /* MarkdownView-prefix.pch */,
-				5EE0D3247EAB59D6C3BCF07475245FE0 /* MarkdownView-umbrella.h */,
-				DAEFCDE39193AAFCE075CE779405B908 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MarkdownView";
-			sourceTree = "<group>";
-		};
 		5FF5A45ABA679A614AE641CF34B9163B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				A1C72367AD37DC65BF3D6A6BE1DF910B /* MarkdownView */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		63E05B746EFB3CC343E8A761B4C00EEA /* Pods-WSIE */ = {
+			isa = PBXGroup;
+			children = (
+				FAC6CE8128B3C7374788EBC819280149 /* Pods-WSIE.modulemap */,
+				C497DE133EC24994D9A5C005650493FF /* Pods-WSIE-acknowledgements.markdown */,
+				E55336EDCC19307C1C306C68792D0ED7 /* Pods-WSIE-acknowledgements.plist */,
+				A8378C641C11B2655DADA682B9395DA8 /* Pods-WSIE-dummy.m */,
+				F8BBABBE7C78F4C2AA1C166F4F1977FF /* Pods-WSIE-resources.sh */,
+				6FFB0E9E73F74E5E769084FC18E5AA9E /* Pods-WSIE-umbrella.h */,
+				F2278825F048D629D59F1DF206BED516 /* Pods-WSIE.debug.xcconfig */,
+				B192CAF7A3F215B9A44A855DDFC8AA87 /* Pods-WSIE.release.xcconfig */,
+			);
+			name = "Pods-WSIE";
+			path = "Target Support Files/Pods-WSIE";
 			sourceTree = "<group>";
 		};
 		76EDBB644CECABB30AC7425415F66B1E /* Resources */ = {
@@ -131,25 +123,24 @@
 			children = (
 				DEF13B3D74AD7E8884BD501E3AEEDBB5 /* MarkdownView.swift */,
 				76EDBB644CECABB30AC7425415F66B1E /* Resources */,
-				5ACBBA8A63E066B1A3F063C807918743 /* Support Files */,
+				C2C089D93675D894378F41F374157F34 /* Support Files */,
 			);
+			name = MarkdownView;
 			path = MarkdownView;
 			sourceTree = "<group>";
 		};
-		C2C060E2BB2313AA1E87B7CC277799C3 /* Pods-WSIE */ = {
+		C2C089D93675D894378F41F374157F34 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B31C7E81B7A6A0128CC6A090BE4B4CBD /* Pods-WSIE.modulemap */,
-				E76F940AFB54AC2CB1B40D674161826A /* Pods-WSIE-acknowledgements.markdown */,
-				1A36A9F61B353A6F4F9D37ABC2510BA7 /* Pods-WSIE-acknowledgements.plist */,
-				DD68D2AF40845FAA49CDA677148E2282 /* Pods-WSIE-dummy.m */,
-				9CD05CB7E3A1D9245C0EDDC853772330 /* Pods-WSIE-resources.sh */,
-				09467CB39C2912057AC54D2758CA31C0 /* Pods-WSIE-umbrella.h */,
-				B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */,
-				EF51AA1C08086DC9B1EA602A91FD6543 /* Pods-WSIE.release.xcconfig */,
+				14F6A6551D506B87DF6926D218481A79 /* MarkdownView.modulemap */,
+				3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */,
+				52CF65A46496E47216E4DBFE454A8975 /* MarkdownView-dummy.m */,
+				83E3890396026F76D402517ED1B7D40E /* MarkdownView-prefix.pch */,
+				D50C10B5D1761D1E12675E16FAAB030B /* MarkdownView-umbrella.h */,
+				D426CA32E789ACBF0A39822DAC5F2505 /* ResourceBundle-MarkdownView-MarkdownView-Info.plist */,
 			);
-			name = "Pods-WSIE";
-			path = "Target Support Files/Pods-WSIE";
+			name = "Support Files";
+			path = "../Target Support Files/MarkdownView";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -158,7 +149,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
 				5FF5A45ABA679A614AE641CF34B9163B /* Pods */,
-				17E096C81D40577BB1A08EE58256EE26 /* Products */,
+				F88EF79D9DA9C3A067C5D9EFD42AAE88 /* Products */,
 				EFFEADBAE87734DE0E05442F1CB95398 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -173,9 +164,19 @@
 		EFFEADBAE87734DE0E05442F1CB95398 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C2C060E2BB2313AA1E87B7CC277799C3 /* Pods-WSIE */,
+				63E05B746EFB3CC343E8A761B4C00EEA /* Pods-WSIE */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F88EF79D9DA9C3A067C5D9EFD42AAE88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				702CE5644EF1F26425C05E058547C562 /* libMarkdownView.a */,
+				733A71387D6AF7416481099AB05E7D06 /* libPods-WSIE.a */,
+				209039795703F925DC2A9D91BF5B7821 /* MarkdownView.bundle */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,26 +201,7 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5E624B58168138E1B2F6281631215D /* Build configuration list for PBXNativeTarget "MarkdownView" */;
-			buildPhases = (
-				08ACC1DDC2EA086EC2B8420707EFCD38 /* Headers */,
-				8BF0A846888BD57362A2A55C9B674345 /* Sources */,
-				0E5B82EFEBE17193CD026722D955ABD9 /* Frameworks */,
-				CAEE7D4CBEBBF4117DB8D64341CB85FA /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05E07EE019C8B0D13DDF369F9C83CFE6 /* PBXTargetDependency */,
-			);
-			name = MarkdownView;
-			productName = MarkdownView;
-			productReference = 392416A7B131C203775ED344B668185F /* libMarkdownView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		994083DC842AC47AF4CF6788CA84753A /* Pods-WSIE */ = {
+		3C5176272C30BF6E6A776B14B22C67EE /* Pods-WSIE */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4EDEEB12D2A194BF1EE197C1B942B35 /* Build configuration list for PBXNativeTarget "Pods-WSIE" */;
 			buildPhases = (
@@ -234,10 +216,29 @@
 			);
 			name = "Pods-WSIE";
 			productName = "Pods-WSIE";
-			productReference = BD3E7302CD088F5BCB378FF5823B0F3B /* libPods-WSIE.a */;
+			productReference = 733A71387D6AF7416481099AB05E7D06 /* libPods-WSIE.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */ = {
+		9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B5E624B58168138E1B2F6281631215D /* Build configuration list for PBXNativeTarget "MarkdownView" */;
+			buildPhases = (
+				08ACC1DDC2EA086EC2B8420707EFCD38 /* Headers */,
+				D0366DCB8547E6A34CD5BFD9860960F3 /* Sources */,
+				0E5B82EFEBE17193CD026722D955ABD9 /* Frameworks */,
+				CAEE7D4CBEBBF4117DB8D64341CB85FA /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05E07EE019C8B0D13DDF369F9C83CFE6 /* PBXTargetDependency */,
+			);
+			name = MarkdownView;
+			productName = MarkdownView;
+			productReference = 702CE5644EF1F26425C05E058547C562 /* libMarkdownView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC8A2A33BEE36E50CD76215BD686F69A /* Build configuration list for PBXNativeTarget "MarkdownView-MarkdownView" */;
 			buildPhases = (
@@ -251,7 +252,7 @@
 			);
 			name = "MarkdownView-MarkdownView";
 			productName = "MarkdownView-MarkdownView";
-			productReference = F358A21BE817876DEEA7AFB0A378BE55 /* MarkdownView.bundle */;
+			productReference = 209039795703F925DC2A9D91BF5B7821 /* MarkdownView.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -261,24 +262,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 17E096C81D40577BB1A08EE58256EE26 /* Products */;
+			productRefGroup = F88EF79D9DA9C3A067C5D9EFD42AAE88 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */,
-				A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */,
-				994083DC842AC47AF4CF6788CA84753A /* Pods-WSIE */,
+				9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */,
+				A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */,
+				3C5176272C30BF6E6A776B14B22C67EE /* Pods-WSIE */,
 			);
 		};
 /* End PBXProject section */
@@ -339,12 +339,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BF0A846888BD57362A2A55C9B674345 /* Sources */ = {
+		D0366DCB8547E6A34CD5BFD9860960F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095805A84CAEB1AF804C3C074214EB08 /* MarkdownView-dummy.m in Sources */,
-				294B64C42C69065C1729055613A7CB2D /* MarkdownView.swift in Sources */,
+				5608BAF257F1252BDC737FEA4A106FC9 /* MarkdownView-dummy.m in Sources */,
+				A54CE6021361A8615E4B778BD475E922 /* MarkdownView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,13 +354,13 @@
 		05E07EE019C8B0D13DDF369F9C83CFE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MarkdownView-MarkdownView";
-			target = A13C1EED3DDCB6334F8B5E4A1498203A /* MarkdownView-MarkdownView */;
+			target = A04E94702B62931D2A5061F58579BBC4 /* MarkdownView-MarkdownView */;
 			targetProxy = 9171299E0E07A044040428820766B56D /* PBXContainerItemProxy */;
 		};
 		126E63F9BF4F47A6CF55AE46C620E7AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MarkdownView;
-			target = 17EB610089973D92AB36F8ABC97A8F52 /* MarkdownView */;
+			target = 9CE7BB59885E11A7F43D648F9B1D6D12 /* MarkdownView */;
 			targetProxy = C933DD868339D859DECF7B70EFA6C0D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -368,7 +368,7 @@
 /* Begin XCBuildConfiguration section */
 		0136D5593269A32F914B02601450121F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = 3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
@@ -382,35 +382,9 @@
 			};
 			name = Release;
 		};
-		10AD27BB379CD256A541B733802FE480 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = Headers/Public/MarkdownView/MarkdownView.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MarkdownView;
-				PRODUCT_NAME = MarkdownView;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		4ECA414E789DE06112414FD2931C6DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
+			baseConfigurationReference = 3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MarkdownView";
@@ -426,7 +400,7 @@
 		};
 		651E5C91C8AA6FF2908CC0353AE47A64 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7AD018EAEA62FF8F97EDB0DF8D5C7C4 /* Pods-WSIE.debug.xcconfig */;
+			baseConfigurationReference = F2278825F048D629D59F1DF206BED516 /* Pods-WSIE.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -449,7 +423,7 @@
 		};
 		7275F91E77A805B063CE15EA33D71AB4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF51AA1C08086DC9B1EA602A91FD6543 /* Pods-WSIE.release.xcconfig */;
+			baseConfigurationReference = B192CAF7A3F215B9A44A855DDFC8AA87 /* Pods-WSIE.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -471,11 +445,35 @@
 			};
 			name = Release;
 		};
+		7BE7F527D4B6C8B4FE4B707B0444C80D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/MarkdownView/MarkdownView.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MarkdownView;
+				PRODUCT_NAME = MarkdownView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		84A06F28E9E7D9EB0A9B476A8668FD60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -532,36 +530,10 @@
 			};
 			name = Release;
 		};
-		B26D3041FC1E921BACDA1B3E13DF665E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1E7755CC2BAE1B38AC937310A244E74 /* MarkdownView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MODULEMAP_FILE = Headers/Public/MarkdownView/MarkdownView.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MarkdownView;
-				PRODUCT_NAME = MarkdownView;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 		D0FE574C7B3479C6425BC136AA57D8C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -622,14 +594,38 @@
 			};
 			name = Debug;
 		};
+		E7F83E7FA7FB4C4E4527D5D0A2DAE16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E9F365B53153FF2E9F6264EA3DFB78D /* MarkdownView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/MarkdownView/MarkdownView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/MarkdownView/MarkdownView.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = MarkdownView;
+				PRODUCT_NAME = MarkdownView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2B5E624B58168138E1B2F6281631215D /* Build configuration list for PBXNativeTarget "MarkdownView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B26D3041FC1E921BACDA1B3E13DF665E /* Debug */,
-				10AD27BB379CD256A541B733802FE480 /* Release */,
+				E7F83E7FA7FB4C4E4527D5D0A2DAE16B /* Debug */,
+				7BE7F527D4B6C8B4FE4B707B0444C80D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

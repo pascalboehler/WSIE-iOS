@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A13C1EED3DDCB6334F8B5E4A1498203A"
+               BlueprintIdentifier = "A04E94702B62931D2A5061F58579BBC4"
                BuildableName = "MarkdownView.bundle"
                BlueprintName = "MarkdownView-MarkdownView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A13C1EED3DDCB6334F8B5E4A1498203A"
+            BlueprintIdentifier = "A04E94702B62931D2A5061F58579BBC4"
             BuildableName = "MarkdownView.bundle"
             BlueprintName = "MarkdownView-MarkdownView"
             ReferencedContainer = "container:Pods.xcodeproj">
