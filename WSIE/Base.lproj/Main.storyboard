@@ -756,11 +756,50 @@
                         <outlet property="navigationBar" destination="Df8-jY-ikw" id="OUV-wl-SIZ"/>
                         <outlet property="tableView" destination="7bB-o0-zSv" id="MPI-JS-SwS"/>
                         <outlet property="textView" destination="XQ4-h7-YUY" id="loI-7h-ASl"/>
+                        <segue destination="J6l-rl-1f3" kind="show" identifier="showShoppingListItemDetailViewController" id="QAg-Od-9cN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrx-lc-8Ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927.536231884058" y="-1047.3214285714284"/>
+            <point key="canvasLocation" x="1012" y="-1047"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3hh-Id-SaQ">
+            <objects>
+                <viewController id="J6l-rl-1f3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WHB-Xc-laj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E9D-2P-xh3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <items>
+                                    <navigationItem title="Shopping List Item Detail" id="5aG-qk-Kkc">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="rIQ-ev-uwq"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVV-Fs-oDs">
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items/>
+                            </tabBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fVV-Fs-oDs" firstAttribute="trailing" secondItem="AhR-zf-hjf" secondAttribute="trailing" id="387-JF-HR3"/>
+                            <constraint firstItem="fVV-Fs-oDs" firstAttribute="leading" secondItem="AhR-zf-hjf" secondAttribute="leading" id="3PY-B9-eDq"/>
+                            <constraint firstItem="E9D-2P-xh3" firstAttribute="trailing" secondItem="AhR-zf-hjf" secondAttribute="trailing" id="9Aa-2O-gc8"/>
+                            <constraint firstItem="E9D-2P-xh3" firstAttribute="top" secondItem="AhR-zf-hjf" secondAttribute="top" id="ckS-Cy-DgK"/>
+                            <constraint firstAttribute="bottom" secondItem="fVV-Fs-oDs" secondAttribute="bottom" id="lpH-Dy-7TX"/>
+                            <constraint firstItem="E9D-2P-xh3" firstAttribute="leading" secondItem="AhR-zf-hjf" secondAttribute="leading" id="u73-1T-PjH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AhR-zf-hjf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckI-oh-7G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113" y="-1047"/>
         </scene>
         <!--Ideas-->
         <scene sceneID="5Wj-k3-Qi4">
