@@ -24,7 +24,7 @@ class RecipeViewController: UIViewController {
         ["Clock", "Clock", "Clock", "Clock", "Clock"], // Images (links to images
     ] */
     //var recipe: [Recipe] = []
-    var recipe: [Recipe] = [] // Array of dictionaries to store data
+    var recipes: [Recipe] = [] // Array of dictionaries to store data
     var recipeIds: [String] = []
     var currentRecipe: Int = 0
     
@@ -42,9 +42,10 @@ class RecipeViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         
-        recipe = fetchRecipeData(db: db)
-        print(recipeData)
-
+        fetchRecipeDataAndUpdateTableView(db: db) // get data and update tableView
+        /*recipe = fetchRecipeData(db: db)
+        print(recipe)
+        tableView.reloadData()*/
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,16 +60,16 @@ class RecipeViewController: UIViewController {
         performSegue(withIdentifier: "ShowCreateRecipeViewController", sender: nil)
     }
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? RecipeDetailViewController {
-            destinationViewController.currentRecipe = recipe[currentRecipe]
-            destinationViewController.recipes = recipe
+            destinationViewController.currentRecipe = recipes[currentRecipe]
+            destinationViewController.recipes = recipes
             destinationViewController.currentRecipeIndex = currentRecipe
         }
-    }*/
+    }
     /*
-    func fetchData() -> [Recipe]{
+    func fetchDatag() -> [Recipe]{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<Recipe>(entityName: "Recipe")
@@ -102,6 +103,27 @@ class RecipeViewController: UIViewController {
         print(data)
         print(recipeIds)
         return data
+    }
+    
+    func fetchRecipeDataAndUpdateTableView(db: Firestore) {
+        db.collection("recipe").getDocuments() { (querySnapshot, err) -> Void in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                print("Fetched documents successfully")
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    //print(document.data()["title"] as! String)
+                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String)
+                    //print(recipe)
+                    self.recipes.append(recipe)
+                    //print(recipes)
+                    print(self.recipes)
+                    self.tableView.reloadData() // reload data when fetching completed
+                }
+                
+            }
+        }
     }
 }
 
@@ -150,7 +172,7 @@ extension RecipeViewController : UITableViewDelegate {
 
 extension RecipeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipe.count
+        return recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -170,7 +192,7 @@ extension RecipeViewController : UITableViewDataSource {
         
         return cell */
         
-        let currentRecipe = recipe[indexPath.row] // get the recipe for the row
+        let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         /*
         cell.titleLabel.text = currentRecipe["title"] as? String // get the recipe title
         cell.shortDescriptionLabel.text = currentRecipe["shortDescription"] as? String // get the recipe short description
