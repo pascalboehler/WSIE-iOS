@@ -27,6 +27,7 @@ class RecipeViewController: UIViewController {
     var recipes: [Recipe] = [] // Array of dictionaries to store data
     var recipeIds: [String] = []
     var currentRecipe: Int = 0
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +42,7 @@ class RecipeViewController: UIViewController {
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
-        
-        fetchRecipeDataAndUpdateTableView(db: db) // get data and update tableView
-        /*recipe = fetchRecipeData(db: db)
-        print(recipe)
-        tableView.reloadData()*/
+        tableView.refreshControl = refreshControl // add refreshControl to tableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +50,8 @@ class RecipeViewController: UIViewController {
         print("View did appear...")
         // recipe = fetchData()
         // reload the tableView data when view appears
-        tableView.reloadData()
+        fetchRecipeDataAndUpdateTableView(db: db)
+        //tableView.reloadData()
     }
     
     @IBAction func addRecipeButtonHandler(_ sender: UIBarButtonItem) {
@@ -84,7 +82,7 @@ class RecipeViewController: UIViewController {
         return []
     }*/
     
-    func fetchData() -> [[String: Any]] {
+    /*func fetchData() -> [[String: Any]] {
         var data: [[String: Any]] = [[:]]
         var dataTemp: [String: Any] = [:]
         db.collection("recipe").getDocuments() { (querySnapshot, err) in
@@ -103,9 +101,10 @@ class RecipeViewController: UIViewController {
         print(data)
         print(recipeIds)
         return data
-    }
+    }*/
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
+        recipes = [] // clear recipes
         db.collection("recipe").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -114,7 +113,7 @@ class RecipeViewController: UIViewController {
                 for document in querySnapshot!.documents {
                     //print("\(document.documentID) => \(document.data())")
                     //print(document.data()["title"] as! String)
-                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String)
+                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
                     //print(recipe)
                     self.recipes.append(recipe)
                     //print(recipes)
@@ -171,6 +170,7 @@ extension RecipeViewController : UITableViewDelegate {
 }
 
 extension RecipeViewController : UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
@@ -193,11 +193,19 @@ extension RecipeViewController : UITableViewDataSource {
         return cell */
         
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
-        /*
-        cell.titleLabel.text = currentRecipe["title"] as? String // get the recipe title
-        cell.shortDescriptionLabel.text = currentRecipe["shortDescription"] as? String // get the recipe short description
-         */
+        
+        cell.titleLabel.text = currentRecipe.title as? String // get the recipe title
+        cell.shortDescriptionLabel.text = currentRecipe.shortDescription as? String // get the recipe short description
+        /*if let imageData = currentRecipe.image as? Data {
+            if let recipeImage = UIImage(data: imageData){
+                cell.recipeImageView?.image = recipeImage
+            } else {
+                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
+            }
+        }*/
+        let image = currentRecipe.image as! UIImage
+        cell.recipeImageView.image = image
+        
         return cell
     }
-    
 }

@@ -17,5 +17,5 @@ struct Recipe {
     var steps: String
     var materials: String
     var markDownCode: String
-    // var image: UIImage
+    var image: UIImage
 }

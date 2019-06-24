@@ -26,12 +26,12 @@ class RecipeDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        /*markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
-        if currentRecipe?.recipeIsFavourite == false {
+        markdownView.load(markdown: currentRecipe!.markDownCode)
+        if currentRecipe?.isFavourite == false {
             favouriteBarButton.tintColor = UIColor.lightGray
         } else {
             favouriteBarButton.tintColor = UIColor.blue
-        } */
+        }
     }
     
     func updateDataset() {

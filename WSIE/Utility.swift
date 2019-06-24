@@ -14,7 +14,7 @@ var completed = "----------------------------------------------"
 
 func markdownFormatter(recipeTitle: String, recipeShortDescription: String, recipeCookingTime: Int, recipeMaterialsList: String, recipeStepsList: String, forPerson amount: Int16) -> String {
     let title = "# \(recipeTitle) \n"
-    let amountOfPeople = "for \(amount) persons"
+    let amountOfPeople = "for \(amount) persons\n"
     let shortDescription = "## Description: \n"
     let shortDescriptionContent = "\(recipeShortDescription) \n"
     let cookingTime = "Time: \(recipeCookingTime) minutes\n"
