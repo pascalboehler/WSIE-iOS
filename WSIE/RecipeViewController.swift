@@ -27,7 +27,7 @@ class RecipeViewController: UIViewController {
     var recipes: [Recipe] = [] // Array of dictionaries to store data
     var recipeIds: [String] = []
     var currentRecipe: Int = 0
-    var refreshControl = UIRefreshControl()
+    @objc var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,11 @@ class RecipeViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         tableView.refreshControl = refreshControl // add refreshControl to tableView
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+    }
+    
+    @objc func refreshTableView() {
+        fetchRecipeDataAndUpdateTableView(db: db)
     }
     
     override func viewDidAppear(_ animated: Bool) {
