@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  WSIE
 //
 //  Created by Pascal Boehler on 26.06.19.
@@ -9,10 +9,10 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwortTextField: UITextField!
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -26,35 +26,28 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
-    @IBAction func loginButtonHandler(_ sender: Any) {
-        print("On login button pressed")
+
+    @IBAction func signUpButtonHandler(_ sender: UIButton) {
+        print("On sign up button pressed")
         guard let email = emailTextField.text else {
             print("Error no email entered")
             return
         }
-        guard let password = passwordTextField.text else {
+        guard let password = passwortTextField.text else {
             print("No password entered")
             return
         }
-        
-        // [START headless_email_auth]
-        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if error != nil {
-                print("Something happened \(error)")
+                print("An error occured! \(error)")
             } else {
-                print("Successfully logged in")
-                /*let user = Auth.auth().currentUser
-                print(user!.uid)
-                print(user!.email!)*/
+                print("User successfully logged in!")
                 self.performSegue(withIdentifier: "showMainApplication", sender: nil)
             }
-        }
+        } // create a new user
     }
-    
     /*
     // MARK: - Navigation
 

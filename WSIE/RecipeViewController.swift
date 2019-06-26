@@ -51,8 +51,8 @@ class RecipeViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         print("View did appear...")
         // recipe = fetchData()
         // reload the tableView data when view appears
