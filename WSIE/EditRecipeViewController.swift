@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditRecipeViewController: UIViewController {
 
@@ -47,6 +48,9 @@ class EditRecipeViewController: UIViewController {
     var recipePreparationtime: Int?
     var recipeMarkdownCode: String?
     
+    // Firebase
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -76,7 +80,20 @@ class EditRecipeViewController: UIViewController {
         cookingTimeDatePicker.minuteInterval = 1
         scrollView.addSubview(cookingTimeDatePicker)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        shortDescriptionLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        shortDescriptionLabel.text = "Recipe short description: "
+        shortDescriptionLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        shortDescriptionLabel.textAlignment = .left
+        scrollView.addSubview(shortDescriptionLabel)
+        
+        shortDescriptionTextView = UITextView(frame: CGRect(x: 0, y: shortDescriptionLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
+        shortDescriptionTextView.isEditable = true
+        shortDescriptionTextView.autocapitalizationType = .sentences
+        shortDescriptionTextView.autocorrectionType = .default
+        //shortDescriptionTextView.delegate = self
+        scrollView.addSubview(shortDescriptionTextView)
+        
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: shortDescriptionTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         pictureLabel.textAlignment = .left
@@ -112,6 +129,10 @@ class EditRecipeViewController: UIViewController {
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
+        // Init firestore
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -167,23 +188,23 @@ class EditRecipeViewController: UIViewController {
    		}
  
         */
-   		/*
-        recipeTitle = (currentRecipe?.value(forKey: "recipeTitle") as! String)
-        recipeShortDescription = (currentRecipe?.value(forKey: "recipeShortDescription") as! String)
-        recipeMaterials = (currentRecipe?.value(forKey: "recipeMaterials") as! String)
-        recipeSteps = (currentRecipe?.value(forKey: "recipeSteps") as! String)
-        recipeCookingTime = (currentRecipe?.value(forKey: "recipeCookingTime") as! Int)
-        recipeMarkdownCode = (currentRecipe?.value(forKey: "recipeMarkdownCode") as! String)
-        recipeImage = UIImage(data: Data(currentRecipe!.recipeImageBinaryData!))
+   		
+        recipeTitle = (currentRecipe?.title as! String)
+        recipeShortDescription = (currentRecipe?.shortDescription as! String)
+        recipeMaterials = (currentRecipe?.materials as! String)
+        recipeSteps = (currentRecipe?.steps as! String)
+        recipeCookingTime = (currentRecipe?.cookingTime as! Int)
+        recipeMarkdownCode = (currentRecipe?.markDownCode as! String)
+        recipeImage = (currentRecipe?.image as! UIImage)
         
         
         // update views
         titleTextField.text = recipeTitle!
-        // shortDescriptionTextView.text = recipeShortDescription!
+        shortDescriptionTextView.text = recipeShortDescription!
         materialsTextView.text = recipeMaterials!
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
-        */
+        
     }
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
@@ -216,15 +237,36 @@ class EditRecipeViewController: UIViewController {
 
     @IBAction func saveButtonHandler(_ sender: UIBarButtonItem) {
         print("On save button pressed")
-        /*
-        currentRecipe?.recipeTitle = titleTextField.text
-        currentRecipe?.recipeShortDescription = shortDescriptionTextView.text
+        
+        currentRecipe?.title = titleTextField.text!
+        currentRecipe?.shortDescription = shortDescriptionTextView.text!
         // currentRecipe?.recipeCookingTime =
-        currentRecipe?.recipeImageBinaryData = NSData(data: Data((picturePicker.backgroundImage(for: .normal)?.jpegData(compressionQuality: 1.0))!)) as Data
-        currentRecipe?.recipeMaterials = materialsTextView.text
-        currentRecipe?.recipeSteps = stepsTextView.text
-        currentRecipe?.recipeMarkdownCode = markdownFormatter(recipeTitle: (currentRecipe?.recipeTitle)!, recipeShortDescription: (currentRecipe?.recipeShortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.recipeMaterials)!, recipeStepsList: (currentRecipe?.recipeSteps)!, forPerson: 4)
-        updateDataset() */
+        //currentRecipe?.image = NSData(data: Data((picturePicker.backgroundImage(for: .normal)?.jpegData(compressionQuality: 1.0))!)) as Data
+        currentRecipe?.materials = materialsTextView.text
+        currentRecipe?.steps = stepsTextView.text
+        let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
+        saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: UIImage(named: "Gray")!.jpegData(compressionQuality: 1.0)! as NSData, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode)
+        currentRecipe?.markDownCode = mdcode
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        // create document if document already exists under this title override document
+        db.collection("recipe").document(title).setData([
+            "title": title,
+            "shortDescription": shortDescription,
+            "cookingTime": cookingTime,
+            "materials": materials,
+            "steps": steps,
+            "isFavourite": isFavourite,
+            "md-code": recipeMarkDown
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
     }
     
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {

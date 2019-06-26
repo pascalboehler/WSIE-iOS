@@ -235,7 +235,7 @@ class CreateRecipeViewController: UIViewController {
     // Firebase version
     func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
         // create document if document already exists under this title override document
-        db.collection("recipe").document(title).setData([
+        db.collection("recipe").document(title).updateData([
             "title": title,
             "shortDescription": shortDescription,
             "cookingTime": cookingTime,
