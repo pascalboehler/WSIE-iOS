@@ -97,26 +97,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle"
-  install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MarkdownView/MarkdownView.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle"
-  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle"
-  install_resource "${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MarkdownView/MarkdownView.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle"
 fi
