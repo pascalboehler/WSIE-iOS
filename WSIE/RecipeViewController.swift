@@ -48,6 +48,7 @@ class RecipeViewController: UIViewController {
     
     @objc func refreshTableView() {
         fetchRecipeDataAndUpdateTableView(db: db)
+        refreshControl.endRefreshing()
     }
     
     override func viewDidAppear(_ animated: Bool) {
