@@ -22,6 +22,7 @@ class StartupViewController: UIViewController {
         super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
             print("quitted vc")
+            print(Auth.auth().currentUser?.uid)
             performSegue(withIdentifier: "showMainApplication", sender: nil)
             //dismiss(animated: true, completion: nil)
         }

@@ -10,6 +10,7 @@
 		591D48AD643FF9912F202A49 /* libPods-WSIE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */; };
 		BB3C708022872B6300D84F28 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C707F22872B6300D84F28 /* TabBarViewController.swift */; };
 		BB58419322A950D8005E6501 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58419222A950D8005E6501 /* SettingsViewController.swift */; };
+		BB6A0DA222CA5E0800903C85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB6A0DA122CA5E0800903C85 /* GoogleService-Info.plist */; };
 		BB79BA332291B32800C3DD48 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */; };
 		BB9E984822673DCF00C84191 /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */; };
 		BBAA84A922C3AF6D003293FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA84A822C3AF6D003293FF /* LoginViewController.swift */; };
@@ -30,7 +31,6 @@
 		BBE10FCD22665B3C00153244 /* CreateRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC722665B3C00153244 /* CreateRecipeViewController.swift */; };
 		BBE10FCE22665B3C00153244 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC822665B3C00153244 /* FavouritesViewController.swift */; };
 		BBE10FCF22665B3C00153244 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FC922665B3C00153244 /* RecipeDetailViewController.swift */; };
-		BBFE963D22AD2AB600292DEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBFE963C22AD2AB600292DEE /* GoogleService-Info.plist */; };
 		BBFE964122AD307E00292DEE /* Datatypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE964022AD307E00292DEE /* Datatypes.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 		4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
 		BB3C707F22872B6300D84F28 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BB58419222A950D8005E6501 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BB6A0DA122CA5E0800903C85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
 		BBAA84A822C3AF6D003293FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		BBE10FC722665B3C00153244 /* CreateRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewController.swift; sourceTree = "<group>"; };
 		BBE10FC822665B3C00153244 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		BBE10FC922665B3C00153244 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
-		BBFE963C22AD2AB600292DEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBFE964022AD307E00292DEE /* Datatypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datatypes.swift; sourceTree = "<group>"; };
 		E53FA53E6D19D8BC669AF482 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		FD23278DE8C4B3BCBF89A073 /* libPods-WSIE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WSIE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +123,7 @@
 				BBE10FB92266559600153244 /* LaunchScreen.storyboard */,
 				BBE10FB72266559600153244 /* Assets.xcassets */,
 				BBE10FBC2266559600153244 /* Info.plist */,
-				BBFE963C22AD2AB600292DEE /* GoogleService-Info.plist */,
+				BB6A0DA122CA5E0800903C85 /* GoogleService-Info.plist */,
 				BBE10FB42266559500153244 /* WSIE.xcdatamodeld */,
 			);
 			path = WSIE;
@@ -222,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE10FBB2266559600153244 /* LaunchScreen.storyboard in Resources */,
-				BBFE963D22AD2AB600292DEE /* GoogleService-Info.plist in Resources */,
+				BB6A0DA222CA5E0800903C85 /* GoogleService-Info.plist in Resources */,
 				BBE10FB82266559600153244 /* Assets.xcassets in Resources */,
 				BBE10FB32266559500153244 /* Main.storyboard in Resources */,
 			);
