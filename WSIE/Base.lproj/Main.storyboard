@@ -250,11 +250,11 @@
             <objects>
                 <viewController id="yId-ST-dUc" customClass="SettingsViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EPh-uk-ob5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud Backup:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keI-9n-rWH">
-                                <rect key="frame" x="8" y="8" width="343" height="50"/>
+                                <rect key="frame" x="8" y="52" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Qr-ZW-Xv7"/>
                                 </constraints>
@@ -263,14 +263,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-34-7r5">
-                                <rect key="frame" x="359" y="18" width="49" height="50"/>
+                                <rect key="frame" x="359" y="62" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="SpD-WP-c8n"/>
                                     <constraint firstAttribute="height" constant="50" id="gUZ-xa-vvC"/>
                                 </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Encryption:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-bk-HCg">
-                                <rect key="frame" x="8" y="66" width="343" height="50"/>
+                                <rect key="frame" x="8" y="110" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QRK-5k-IKT"/>
                                 </constraints>
@@ -279,14 +279,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIg-kM-pIY">
-                                <rect key="frame" x="359" y="76" width="49" height="50"/>
+                                <rect key="frame" x="359" y="120" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="LWf-Rc-Twe"/>
                                     <constraint firstAttribute="height" constant="50" id="fga-Pi-zS4"/>
                                 </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUr-CK-S4R">
-                                <rect key="frame" x="8" y="124" width="343" height="50"/>
+                                <rect key="frame" x="8" y="168" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ASP-4l-jVy"/>
                                 </constraints>
@@ -295,14 +295,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-Bo-fJ2">
-                                <rect key="frame" x="359" y="134" width="49" height="50"/>
+                                <rect key="frame" x="359" y="178" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="Ig6-cn-GsK"/>
                                     <constraint firstAttribute="height" constant="50" id="L9m-v2-Fz5"/>
                                 </constraints>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-pX-ams">
-                                <rect key="frame" x="8" y="182" width="398" height="50"/>
+                                <rect key="frame" x="8" y="226" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jla-jt-lpD"/>
                                 </constraints>
@@ -315,7 +315,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-fU-odN">
-                                <rect key="frame" x="8" y="240" width="398" height="50"/>
+                                <rect key="frame" x="8" y="284" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E7h-EI-V7B"/>
                                 </constraints>
@@ -354,16 +354,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tVK-tq-H6r"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="AjH-gP-mcC"/>
                     <navigationItem key="navigationItem" title="Settings" id="O5A-SI-6YG"/>
                     <connections>
                         <outlet property="dataEncryptionSwitch" destination="QIg-kM-pIY" id="EHQ-nP-fBH"/>
                         <outlet property="iCloudBackupSwitch" destination="FJz-34-7r5" id="qJd-5f-jYe"/>
                         <outlet property="touchIDSwitch" destination="COQ-Bo-fJ2" id="bOH-4u-r3p"/>
+                        <segue destination="KQC-IU-hDO" kind="show" identifier="showStartUpViewController" id="f9v-Pu-aIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0V-kr-2pf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.68115942029" y="1698.8839285714284"/>
+            <point key="canvasLocation" x="928" y="1739"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
@@ -837,7 +839,7 @@
                         <segue destination="pVD-9I-iaJ" kind="relationship" relationship="viewControllers" id="Rcn-ud-cjq"/>
                         <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="qMH-cL-Zde"/>
                         <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="QUk-ja-13e"/>
-                        <segue destination="d5a-kn-MNZ" kind="relationship" relationship="viewControllers" id="NvO-RI-TtH"/>
+                        <segue destination="yId-ST-dUc" kind="relationship" relationship="viewControllers" id="Hvj-2E-BPJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-3g-Hsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1024,25 +1026,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8e-zK-27w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927.536231884058" y="141.96428571428569"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="x5z-Gz-bZ8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d5a-kn-MNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="Weu-9M-M5h"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="UpA-W1-Db4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="yId-ST-dUc" kind="relationship" relationship="rootViewController" id="Ntz-2D-DIh"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fGI-SJ-0Fc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="927.536231884058" y="1698.8839285714284"/>
         </scene>
     </scenes>
     <resources>
