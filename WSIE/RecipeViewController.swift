@@ -120,10 +120,7 @@ class RecipeViewController: UIViewController {
                     //print("\(document.documentID) => \(document.data())")
                     //print(document.data()["title"] as! String)
                     let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
-                    //print(recipe)
                     self.recipes.append(recipe)
-                    //print(recipes)
-                    print(self.recipes)
                     self.tableView.reloadData() // reload data when fetching completed
                 }
                 
