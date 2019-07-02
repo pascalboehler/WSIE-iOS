@@ -314,6 +314,19 @@
                                     <action selector="externalDatasourcesButtonHandler:" destination="yId-ST-dUc" eventType="touchUpInside" id="Qsd-pW-NBC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-fU-odN">
+                                <rect key="frame" x="8" y="240" width="398" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="E7h-EI-V7B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <state key="normal" title="Sign out">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonHandler:" destination="yId-ST-dUc" eventType="touchUpInside" id="wxt-CU-Ayg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -325,14 +338,17 @@
                             <constraint firstItem="tVK-tq-H6r" firstAttribute="trailing" secondItem="COQ-Bo-fJ2" secondAttribute="trailing" constant="8" id="Aeg-7X-KFe"/>
                             <constraint firstItem="tVK-tq-H6r" firstAttribute="trailing" secondItem="dAH-pX-ams" secondAttribute="trailing" constant="8" id="BDx-XH-1y5"/>
                             <constraint firstItem="COQ-Bo-fJ2" firstAttribute="leading" secondItem="YUr-CK-S4R" secondAttribute="trailing" constant="8" id="Esw-XS-k7y"/>
+                            <constraint firstItem="tVK-tq-H6r" firstAttribute="trailing" secondItem="KwE-fU-odN" secondAttribute="trailing" constant="8" id="JHn-U8-Yxg"/>
                             <constraint firstItem="QIg-kM-pIY" firstAttribute="top" secondItem="FJz-34-7r5" secondAttribute="bottom" constant="8" id="JKs-ZN-g0u"/>
                             <constraint firstItem="YUr-CK-S4R" firstAttribute="leading" secondItem="tVK-tq-H6r" secondAttribute="leading" constant="8" id="K2L-7Y-Idc"/>
                             <constraint firstItem="dAH-pX-ams" firstAttribute="leading" secondItem="tVK-tq-H6r" secondAttribute="leading" constant="8" id="Mop-b7-znS"/>
+                            <constraint firstItem="KwE-fU-odN" firstAttribute="leading" secondItem="tVK-tq-H6r" secondAttribute="leading" constant="8" id="RC1-l7-GJD"/>
                             <constraint firstItem="tVK-tq-H6r" firstAttribute="trailing" secondItem="QIg-kM-pIY" secondAttribute="trailing" constant="8" id="RcA-g9-cgL"/>
                             <constraint firstItem="QIg-kM-pIY" firstAttribute="leading" secondItem="7ms-bk-HCg" secondAttribute="trailing" constant="8" id="TL5-zy-Uec"/>
                             <constraint firstItem="YUr-CK-S4R" firstAttribute="top" secondItem="7ms-bk-HCg" secondAttribute="bottom" constant="8" id="UZN-BS-BD2"/>
                             <constraint firstItem="7ms-bk-HCg" firstAttribute="leading" secondItem="tVK-tq-H6r" secondAttribute="leading" constant="8" id="Vca-8i-LLH"/>
                             <constraint firstItem="7ms-bk-HCg" firstAttribute="top" secondItem="keI-9n-rWH" secondAttribute="bottom" constant="8" id="b3M-mA-6Iq"/>
+                            <constraint firstItem="KwE-fU-odN" firstAttribute="top" secondItem="dAH-pX-ams" secondAttribute="bottom" constant="8" id="kmN-gZ-OJq"/>
                             <constraint firstItem="FJz-34-7r5" firstAttribute="leading" secondItem="keI-9n-rWH" secondAttribute="trailing" constant="8" id="mIq-UI-Nkl"/>
                             <constraint firstItem="FJz-34-7r5" firstAttribute="top" secondItem="tVK-tq-H6r" secondAttribute="top" constant="18" id="rBL-ae-m67"/>
                         </constraints>

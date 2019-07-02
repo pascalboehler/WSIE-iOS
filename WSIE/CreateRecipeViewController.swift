@@ -236,14 +236,16 @@ class CreateRecipeViewController: UIViewController {
     func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
         print("Executed!")
         // create document if document already exists under this title override document NO VALIDATION!!!!
-        db.collection("recipe").document(title).setData([
+        db.collection("recipes").document(title).setData([
             "title": title,
             "shortDescription": shortDescription,
             "cookingTime": cookingTime,
             "materials": materials,
             "steps": steps,
             "isFavourite": isFavourite,
-            "md-code": recipeMarkDown
+            "md-code": recipeMarkDown,
+            "userId": Auth.auth().currentUser!.uid, // store the user who created doc
+            "public": false // for later use
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")

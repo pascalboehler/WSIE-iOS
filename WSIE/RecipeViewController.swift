@@ -38,7 +38,7 @@ class RecipeViewController: UIViewController {
         // Do any additional setup after loading the view.
         // setup database
         let settings = FirestoreSettings()
-        
+        // print(Auth.auth().currentUser?.uid)
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
@@ -111,7 +111,7 @@ class RecipeViewController: UIViewController {
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
-        db.collection("recipe").getDocuments() { (querySnapshot, err) -> Void in
+        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

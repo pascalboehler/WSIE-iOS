@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class SettingsViewController: UIViewController {
 
@@ -31,6 +32,13 @@ class SettingsViewController: UIViewController {
         print("On external datasource button pressed")
     }
     
+    @IBAction func signOutButtonHandler(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("SOMETHING WENT WRONG: ")
+        }
+    }
     /*
     // MARK: - Navigation
 
