@@ -76,6 +76,18 @@ class EditRecipeViewController: UIViewController {
         cookingTimeDatePicker.minuteInterval = 1
         scrollView.addSubview(cookingTimeDatePicker)
         
+        shortDescriptionLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        shortDescriptionLabel.text = "Short description:"
+        shortDescriptionLabel.textAlignment = .left
+        shortDescriptionLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        scrollView.addSubview(shortDescriptionLabel)
+        
+        shortDescriptionTextView = UITextView(frame: CGRect(x: 0, y: shortDescriptionLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 150))
+        shortDescriptionTextView.isEditable = true
+        shortDescriptionTextView.autocapitalizationType = .sentences
+        shortDescriptionTextView.autocorrectionType = .default
+        scrollView.addSubview(shortDescriptionTextView)
+        
         pictureLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
