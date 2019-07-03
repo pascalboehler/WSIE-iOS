@@ -333,7 +333,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="yMX-fr-TI8">
                         <barButtonItem key="backBarButtonItem" title="Recipe" id="2K2-8S-0g4"/>
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="pBq-ux-bwQ"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qF2-9a-REv">
                             <connections>
                                 <action selector="addRecipeButtonHandler:" destination="uxI-Wj-2CD" id="y2A-e3-nkK"/>
@@ -525,13 +524,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-jY-ikw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
-                                    <navigationItem title="Shopping list" id="93P-XZ-LGs">
-                                        <barButtonItem key="leftBarButtonItem" title="Filter" style="plain" id="9bH-83-87D">
-                                            <connections>
-                                                <action selector="filterButtonHandler:" destination="pVD-9I-iaJ" id="nrT-QA-tBI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Shopping list" id="93P-XZ-LGs"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-o0-zSv">
@@ -724,7 +717,7 @@
         <image name="ok" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3JF-3D-WyC"/>
-        <segue reference="8hC-Pt-xTo"/>
+        <segue reference="vbL-Tj-unE"/>
+        <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>
