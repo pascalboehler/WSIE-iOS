@@ -51,7 +51,7 @@ class EditRecipeViewController: UIViewController {
         super.viewDidLoad()
     
         // Add all the additional elements to the view
-        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1000)
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1500)
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isScrollEnabled = true
         
@@ -88,7 +88,7 @@ class EditRecipeViewController: UIViewController {
         shortDescriptionTextView.autocorrectionType = .default
         scrollView.addSubview(shortDescriptionTextView)
         
-        pictureLabel = UILabel(frame: CGRect(x: 0, y: cookingTimeDatePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        pictureLabel = UILabel(frame: CGRect(x: 0, y: shortDescriptionTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         pictureLabel.text = "Recipe image: "
         pictureLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         pictureLabel.textAlignment = .left
@@ -191,7 +191,7 @@ class EditRecipeViewController: UIViewController {
         
         // update views
         titleTextField.text = recipeTitle!
-        // shortDescriptionTextView.text = recipeShortDescription!
+        shortDescriptionTextView.text = recipeShortDescription!
         materialsTextView.text = recipeMaterials!
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
@@ -236,6 +236,7 @@ class EditRecipeViewController: UIViewController {
         currentRecipe?.recipeSteps = stepsTextView.text
         currentRecipe?.recipeMarkdownCode = markdownFormatter(recipeTitle: (currentRecipe?.recipeTitle)!, recipeShortDescription: (currentRecipe?.recipeShortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.recipeMaterials)!, recipeStepsList: (currentRecipe?.recipeSteps)!, forPerson: 4)
         updateDataset()
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButtonHandler(_ sender: UIBarButtonItem) {

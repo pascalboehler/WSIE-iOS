@@ -14,16 +14,16 @@ var completed = "----------------------------------------------"
 
 func markdownFormatter(recipeTitle: String, recipeShortDescription: String, recipeCookingTime: Int, recipeMaterialsList: String, recipeStepsList: String, forPerson amount: Int16) -> String {
     let title = "# \(recipeTitle) \n"
-    let amountOfPeople = "for \(amount) persons\n"
+    let amountOfPeople = "for \(amount) persons\n\n"
     let shortDescription = "## Description: \n"
     let shortDescriptionContent = "\(recipeShortDescription) \n"
-    let cookingTime = "Time: \(recipeCookingTime) minutes\n"
+    let cookingTime = "#### ***Time: \(recipeCookingTime) minutes***\n"
     let materials = "## Materials: \n"
     let materialsContent = getMaterials(recipeMaterialsList) + "\n"
     let steps = "## Steps: \n"
     let stepsContent = getSteps(recipeStepsList) + "\n"
     
-    return title + amountOfPeople + shortDescription + shortDescriptionContent + cookingTime + materials + materialsContent + steps + stepsContent
+    return title + amountOfPeople + cookingTime + shortDescription + shortDescriptionContent + materials + materialsContent + steps + stepsContent
 }
 
 func getMaterials(_ materials: String) -> String {
