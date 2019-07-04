@@ -68,7 +68,6 @@ class CreateRecipeViewController: UIViewController {
         shortDescriptionTextView.isEditable = true
         shortDescriptionTextView.autocapitalizationType = .sentences
         shortDescriptionTextView.autocorrectionType = .default
-        shortDescriptionTextView.delegate = self
         scrollView.addSubview(shortDescriptionTextView)
         
         
@@ -93,7 +92,6 @@ class CreateRecipeViewController: UIViewController {
         materialsTextView.isEditable = true
         materialsTextView.autocapitalizationType = .sentences
         materialsTextView.autocorrectionType = .default
-        materialsTextView.delegate = self
         scrollView.addSubview(materialsTextView)
         
         stepsLabel = UILabel(frame: CGRect(x: 0, y: materialsTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
@@ -106,7 +104,6 @@ class CreateRecipeViewController: UIViewController {
         stepsTextView.isEditable = true
         stepsTextView.autocapitalizationType = .sentences
         stepsTextView.autocorrectionType = .default
-        stepsTextView.delegate = self
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
@@ -115,7 +112,7 @@ class CreateRecipeViewController: UIViewController {
     @objc func picturePickerButtonHandler(sender: UIButton) {
         print("picturePicker pressed...")
         // get the image
-        // initalice the imagePickerController
+        // initalize the imagePickerController
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -144,7 +141,6 @@ class CreateRecipeViewController: UIViewController {
     @IBAction func cancelButtonHandler(_ sender: Any) {
         print("On Cancel Button Pressed")
         showSaveAlert()
-        // self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonHandler(_ sender: Any) {
@@ -164,7 +160,6 @@ class CreateRecipeViewController: UIViewController {
         
         
         if let imageTemp = picturePicker.currentBackgroundImage{
-            // nothing happens
             image = imageTemp
         } else {
             print("Could not find background image...")
@@ -245,12 +240,10 @@ class CreateRecipeViewController: UIViewController {
             let cookingTime = Int(self.cookingTimeDatePicker.countDownDuration)
             
             guard let imageLink = self.picturePicker.currentImage else {
-                // self.missingElementAlert(forElement: "imageLink")
                 return
             }
             
             guard let imageData = imageLink.jpegData(compressionQuality: 1.0) else {
-                // self.missingElementAlert()
                 return
             }
             
@@ -304,15 +297,6 @@ class CreateRecipeViewController: UIViewController {
 }
 
 
-extension CreateRecipeViewController : UITextViewDelegate {
-    /*func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }*/
-}
 
 extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

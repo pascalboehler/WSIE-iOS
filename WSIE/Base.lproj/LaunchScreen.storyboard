@@ -17,13 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="tOP-ro-FJA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.23529411759999999" green="0.40784313729999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App icon" translatesAutoresizingMaskIntoConstraints="NO" id="xw1-z9-eLn">
+                                <rect key="frame" x="86.5" y="333" width="241" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="2dp-GR-Shu"/>
+                                    <constraint firstAttribute="width" secondItem="xw1-z9-eLn" secondAttribute="height" multiplier="1:1" constant="1" id="UgZ-Wd-3uQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xw1-z9-eLn" firstAttribute="centerX" secondItem="i4P-iX-sG1" secondAttribute="centerX" id="2Qd-3k-z5p"/>
+                            <constraint firstItem="xw1-z9-eLn" firstAttribute="centerY" secondItem="i4P-iX-sG1" secondAttribute="centerY" id="Q7v-zS-ruo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i4P-iX-sG1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZV-oi-cuR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="375"/>
+            <point key="canvasLocation" x="995.65217391304361" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="App icon" width="512" height="512"/>
+    </resources>
 </document>
