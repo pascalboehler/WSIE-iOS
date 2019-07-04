@@ -33,6 +33,7 @@ class OurRecommendationViewController: UIViewController {
             let currentRecipe: Recipe = recipe[index]
             
             markdownView.load(markdown: currentRecipe.recipeMarkdownCode)
+            markdownView.translatesAutoresizingMaskIntoConstraints = true
         } else {
             // show alert...
             let alertController = UIAlertController(title: "Sorry!", message: "There are no recipes created. Please create some recipes that we can give you a recommendation", preferredStyle: .alert)

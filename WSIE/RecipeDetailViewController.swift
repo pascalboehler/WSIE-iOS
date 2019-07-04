@@ -27,6 +27,8 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
+        markdownView.isScrollEnabled = true
+        markdownView.translatesAutoresizingMaskIntoConstraints = true // hopefully works
         if currentRecipe?.recipeIsFavourite == false {
             favouriteBarButton.tintColor = UIColor.lightGray
         } else {

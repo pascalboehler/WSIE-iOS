@@ -444,33 +444,46 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-Bz-0lp" customClass="MarkdownView" customModule="MarkdownView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-9R-QNX">
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-7O-8BR" customClass="MarkdownView" customModule="MarkdownView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CiU-7O-8BR" firstAttribute="width" secondItem="OuW-9R-QNX" secondAttribute="width" id="854-hL-HEC"/>
+                                    <constraint firstItem="CiU-7O-8BR" firstAttribute="height" secondItem="OuW-9R-QNX" secondAttribute="height" id="HWT-EX-Bcg"/>
+                                    <constraint firstAttribute="trailing" secondItem="CiU-7O-8BR" secondAttribute="trailing" id="Jjl-0p-s1b"/>
+                                    <constraint firstAttribute="bottom" secondItem="CiU-7O-8BR" secondAttribute="bottom" id="ZoT-Oi-nYt"/>
+                                    <constraint firstItem="CiU-7O-8BR" firstAttribute="top" secondItem="OuW-9R-QNX" secondAttribute="top" id="vI4-Ft-qTu"/>
+                                    <constraint firstItem="CiU-7O-8BR" firstAttribute="leading" secondItem="OuW-9R-QNX" secondAttribute="leading" id="vqa-CJ-SK2"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="diN-0n-eWr" firstAttribute="trailing" secondItem="nbO-Wv-OcH" secondAttribute="trailing" id="2Oh-D3-xkV"/>
-                            <constraint firstItem="nbO-Wv-OcH" firstAttribute="trailing" secondItem="QYe-Bz-0lp" secondAttribute="trailing" id="A4K-h1-a5w"/>
-                            <constraint firstItem="QYe-Bz-0lp" firstAttribute="leading" secondItem="nbO-Wv-OcH" secondAttribute="leading" id="B09-9I-VQC"/>
+                            <constraint firstItem="OuW-9R-QNX" firstAttribute="leading" secondItem="nbO-Wv-OcH" secondAttribute="leading" id="83H-m8-vI9"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="leading" secondItem="nbO-Wv-OcH" secondAttribute="leading" id="BKv-BS-p4e"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="top" secondItem="nbO-Wv-OcH" secondAttribute="top" id="C3G-E5-0X2"/>
                             <constraint firstAttribute="bottom" secondItem="diN-0n-eWr" secondAttribute="bottom" id="ECD-hm-UXi"/>
-                            <constraint firstItem="QYe-Bz-0lp" firstAttribute="top" secondItem="bvE-Ry-U7U" secondAttribute="bottom" id="Mfd-n0-Oy6"/>
-                            <constraint firstItem="QYe-Bz-0lp" firstAttribute="top" secondItem="bvE-Ry-U7U" secondAttribute="bottom" id="T3V-ZH-mD7"/>
+                            <constraint firstItem="nbO-Wv-OcH" firstAttribute="trailing" secondItem="OuW-9R-QNX" secondAttribute="trailing" id="M5Y-ap-vDT"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="top" secondItem="nbO-Wv-OcH" secondAttribute="top" id="VE6-tO-CPo"/>
-                            <constraint firstItem="diN-0n-eWr" firstAttribute="top" secondItem="QYe-Bz-0lp" secondAttribute="bottom" id="XfN-VX-NaS"/>
+                            <constraint firstItem="diN-0n-eWr" firstAttribute="top" secondItem="OuW-9R-QNX" secondAttribute="bottom" id="a39-zP-dYK"/>
                             <constraint firstItem="diN-0n-eWr" firstAttribute="leading" secondItem="nbO-Wv-OcH" secondAttribute="leading" id="dgE-Gx-6So"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="trailing" secondItem="nbO-Wv-OcH" secondAttribute="trailing" id="f12-1t-Qfd"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="leading" secondItem="nbO-Wv-OcH" secondAttribute="leading" id="fFi-NH-vYY"/>
+                            <constraint firstItem="OuW-9R-QNX" firstAttribute="top" secondItem="bvE-Ry-U7U" secondAttribute="bottom" id="y39-OZ-J5v"/>
                             <constraint firstItem="bvE-Ry-U7U" firstAttribute="trailing" secondItem="nbO-Wv-OcH" secondAttribute="trailing" id="yoc-d6-bgU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nbO-Wv-OcH"/>
                     </view>
                     <connections>
                         <outlet property="favouriteBarButton" destination="j4G-Gv-fbt" id="vuq-KA-w3x"/>
-                        <outlet property="markdownView" destination="QYe-Bz-0lp" id="e8j-CI-oDX"/>
+                        <outlet property="markdownView" destination="CiU-7O-8BR" id="qg8-3y-fCM"/>
                         <segue destination="Vau-0O-xZk" kind="show" identifier="ShowEditRecipeViewController" id="8hC-Pt-xTo"/>
                     </connections>
                 </viewController>
