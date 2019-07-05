@@ -136,10 +136,10 @@ extension RecipeViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
     
-    /*
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "Delete recipe", message: "Are you sure that you want to delete this recipe", preferredStyle: .actionSheet)
@@ -157,19 +157,23 @@ extension RecipeViewController : UITableViewDelegate {
             
         }
     }
- */
-    /*
+ 
+    
     func deleteRecipe(forRowAt indexPath: IndexPath) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        print("Deleted Recipe...")
-        let deletedRecipe = recipe[indexPath.row]
-        context.delete(deletedRecipe)
-        recipe.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        appDelegate.saveContext()
+        db.collection("recipes").document(recipes[indexPath.row].title).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+                let alert = UIAlertController(title: "Error deleting recipe!", message: "An error occured while deleting the recipe, please try again later.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                print("Document successfully removed!")
+                self.fetchRecipeDataAndUpdateTableView(db: self.db) // reload data...
+            }
+        }
     }
-    */
+    
 }
 
 extension RecipeViewController : UITableViewDataSource {
