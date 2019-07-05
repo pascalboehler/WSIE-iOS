@@ -214,12 +214,12 @@
                                 </items>
                             </navigationBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vvr-BV-FUe">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLz-tU-uW6">
-                                <rect key="frame" x="8" y="148" width="398" height="691"/>
+                                <rect key="frame" x="8" y="148" width="398" height="657"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -387,7 +387,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-IA-ldE">
-                                                    <rect key="frame" x="20" y="11" width="335" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="kfI-Zg-3qj"/>
                                                     </constraints>
@@ -403,7 +403,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAN-zY-7cs" userLabel="Shortdescription">
-                                                    <rect key="frame" x="120.5" y="47" width="226.5" height="59"/>
+                                                    <rect key="frame" x="120.5" y="47" width="265.5" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="c8e-Ya-CKc"/>
                                                     </constraints>
@@ -485,7 +485,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-i4-zOj">
-                                                    <rect key="frame" x="20" y="11" width="335" height="28"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="hzr-Xd-nqJ"/>
                                                     </constraints>
@@ -501,7 +501,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-rf-TnV" userLabel="Shortdescription">
-                                                    <rect key="frame" x="120.5" y="47" width="226.5" height="59"/>
+                                                    <rect key="frame" x="120.5" y="47" width="265.5" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="c2m-f1-8h6"/>
                                                     </constraints>
@@ -588,12 +588,12 @@
                                 </items>
                             </navigationBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTd-IF-9gt">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8y2-xb-0kI">
-                                <rect key="frame" x="8" y="148" width="398" height="691"/>
+                                <rect key="frame" x="8" y="148" width="398" height="657"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -652,12 +652,12 @@
                                 </items>
                             </navigationBar>
                             <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diN-0n-eWr">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items/>
                             </tabBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYe-Bz-0lp" customClass="MarkdownView" customModule="MarkdownView">
-                                <rect key="frame" x="0.0" y="140" width="414" height="707"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -897,7 +897,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopping List Item 1x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-fR-UJe">
-                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="33.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33.5" id="BUN-Qm-JFx"/>
                                                     </constraints>
@@ -906,7 +906,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----------------------------------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNK-un-r2S">
-                                                    <rect key="frame" x="28" y="19" width="319" height="12"/>
+                                                    <rect key="frame" x="28" y="19" width="358" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="sbw-nL-XuC"/>
                                                     </constraints>

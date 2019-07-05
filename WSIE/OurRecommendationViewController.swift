@@ -27,13 +27,14 @@ class OurRecommendationViewController: UIViewController {
         // [END setup]
         db = Firestore.firestore()
         // Do any additional setup after loading the view.
-        markdownView.translatesAutoresizingMaskIntoConstraints = true
+        // markdownView.translatesAutoresizingMaskIntoConstraints = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         fetchRecipeDataAndLoadToMarkDownView(db: db)
+        markdownView.translatesAutoresizingMaskIntoConstraints = true
         
         
         
