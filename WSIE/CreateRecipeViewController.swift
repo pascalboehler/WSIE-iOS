@@ -32,6 +32,8 @@ class CreateRecipeViewController: UIViewController {
     var currentIndex: Int?
     
     var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,11 +115,14 @@ class CreateRecipeViewController: UIViewController {
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
+        // Firebase setup
         // init db
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-        
+        // init storage service
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
@@ -179,10 +184,11 @@ class CreateRecipeViewController: UIViewController {
             image = UIImage(named: "Gray")!
         }
         
+        /*
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             print("Cast to imageData went wrong")
             return
-        }
+        }*/
         
         guard let materials = materialsTextView.text else {
             return
@@ -196,58 +202,50 @@ class CreateRecipeViewController: UIViewController {
         
         print(recipeMarkDown)
         
-        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
+        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: image, materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*Ü
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
-        
-        print("Recipe saved")
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: managedContext)!
-        
-        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        recipe.setValue(title, forKey: "recipeTitle")
-        recipe.setValue(shortDescription, forKey: "recipeShortDescription")
-        recipe.setValue(image, forKey: "recipeImageBinaryData")
-        recipe.setValue(materials, forKey: "recipeMaterials")
-        recipe.setValue(steps, forKey: "recipeSteps")
-        recipe.setValue(isFavourite, forKey: "recipeIsFavourite")
-        recipe.setValue(recipeMarkDown, forKey: "recipeMarkdownCode")
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save recipe. \(error), \(error.userInfo)")
-        }
-        print("Saved item..")
-    } */
-    
     // Firebase version
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
-        // create document if document already exists under this title override document
-        db.collection("recipe").document(title).updateData([
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        print("Executed!")
+        // db
+        // create document if document already exists under this title override document NO VALIDATION!!!!
+        db.collection("recipes").document(title).setData([
             "title": title,
             "shortDescription": shortDescription,
             "cookingTime": cookingTime,
             "materials": materials,
             "steps": steps,
             "isFavourite": isFavourite,
-            "md-code": recipeMarkDown
+            "md-code": recipeMarkDown,
+            "userId": Auth.auth().currentUser!.uid, // store the user who created doc
+            "public": false // for later use
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+            }
+        }
+        // storage
+        let recipeFolderRef = storageRef.child("recipe")
+        let recipeRef = recipeFolderRef.child(title) // create new folder
+        let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
+        
+        let uploadTask = recipeTitleImageRef.putData(Data(image.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
+            /*guard let metadata = metadata else {
+                return
+            }
+            let size = metadata.size
+            self.storageRef.downloadURL(completion: { (url, err) in
+                guard let downloadUrl = url else {
+                    return
+                }
+            })*/
+            if let err = err {
+                print("Something went wrong \(err)")
             }
         }
     }
@@ -278,10 +276,11 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
+            /*
             guard let imageData = imageLink.jpegData(compressionQuality: 1.0) else {
                 // self.missingElementAlert()
                 return
-            }
+            }*/
             
             guard let materials = self.materialsTextView.text else {
                 self.missingElementAlert(forElement: "materials")
@@ -293,7 +292,7 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
-            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: imageLink, materials: materials, steps: steps, recipeMarkDown: "")
             
             self.dismiss(animated: true, completion: nil)
         })

@@ -13,6 +13,8 @@ import Firebase
 class RecipeViewController: UIViewController {
 
     var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -36,14 +38,19 @@ class RecipeViewController: UIViewController {
         //recipe = fetchData()
         tableView.reloadData()
         // Do any additional setup after loading the view.
+        // Firebase
+        // db
         // setup database
         let settings = FirestoreSettings()
-        
+        // print(Auth.auth().currentUser?.uid)
         Firestore.firestore().settings = settings
         // [END setup]
         db = Firestore.firestore()
         tableView.refreshControl = refreshControl // add refreshControl to tableView
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        // storage
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     @objc func refreshTableView() {
@@ -51,8 +58,8 @@ class RecipeViewController: UIViewController {
         refreshControl.endRefreshing()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         print("View did appear...")
         // recipe = fetchData()
         // reload the tableView data when view appears
@@ -111,7 +118,8 @@ class RecipeViewController: UIViewController {
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
-        db.collection("recipe").getDocuments() { (querySnapshot, err) -> Void in
+        // db
+        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -120,15 +128,37 @@ class RecipeViewController: UIViewController {
                     //print("\(document.documentID) => \(document.data())")
                     //print(document.data()["title"] as! String)
                     let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
-                    //print(recipe)
                     self.recipes.append(recipe)
-                    //print(recipes)
-                    print(self.recipes)
-                    self.tableView.reloadData() // reload data when fetching completed
+                    //self.tableView.reloadData() // reload data when fetching completed
                 }
-                
+                /*
+                let recipeFolderRef = self.storageRef.child("recipe")
+                if self.recipes.count == 0 {
+                    self.tableView.reloadData()
+                } else {
+                    print(self.recipes.count)
+                    for i in 0...self.recipes.count - 1{
+                        let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
+                        let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
+                        // Download the image
+                        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in // 20 MB => filesize 5.9 MB
+                            if let err = err {
+                                print("Something went wrong with \(err)")
+                                self.recipes[i].image = UIImage(named: "NoPhoto")!
+                                print("Set image to NoPhoto")
+                            } else {
+                                self.recipes[i].image = UIImage(data: data!)!
+                            }
+                        }
+                    }
+                    print("Reload data...")
+                    self.tableView.reloadData()
+                    print("Reloaded TableViewData")
+                }*/
+                self.tableView.reloadData()
             }
         }
+        
     }
 }
 
@@ -139,10 +169,10 @@ extension RecipeViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+        return true
     }
     
-    /*
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alert = UIAlertController(title: "Delete recipe", message: "Are you sure that you want to delete this recipe", preferredStyle: .actionSheet)
@@ -160,19 +190,23 @@ extension RecipeViewController : UITableViewDelegate {
             
         }
     }
- */
-    /*
+ 
+    
     func deleteRecipe(forRowAt indexPath: IndexPath) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        print("Deleted Recipe...")
-        let deletedRecipe = recipe[indexPath.row]
-        context.delete(deletedRecipe)
-        recipe.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        appDelegate.saveContext()
+        db.collection("recipes").document(recipes[indexPath.row].title).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+                let alert = UIAlertController(title: "Error deleting recipe!", message: "An error occured while deleting the recipe, please try again later.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                print("Document successfully removed!")
+                self.fetchRecipeDataAndUpdateTableView(db: self.db) // reload data...
+            }
+        }
     }
-    */
+    
 }
 
 extension RecipeViewController : UITableViewDataSource {
@@ -183,34 +217,24 @@ extension RecipeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        /*
-        let currentRecipe = recipe[indexPath.row]
-        if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
-            } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
-            }
-        }
- 
-        cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
-        cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
-        
-        return cell */
-        
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         
-        cell.titleLabel.text = currentRecipe.title as? String // get the recipe title
-        cell.shortDescriptionLabel.text = currentRecipe.shortDescription as? String // get the recipe short description
-        /*if let imageData = currentRecipe.image as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
+        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        
+        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
+            if let err = err {
+                print("An error occured \(err)")
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(named: "NoPhoto")
             } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(data: data!)
             }
-        }*/
-        let image = currentRecipe.image as! UIImage
-        cell.recipeImageView.image = image
+        }
+        
+        
         
         return cell
     }

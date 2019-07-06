@@ -8,15 +8,19 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class FavouritesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var recipe: [Recipe] = []
+    var recipes: [Recipe] = []
     var recipeList: [Recipe] = []
     var currentRecipe: Int = 0
     var recipeListIndexes: [Int] = []
+    var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,53 +28,61 @@ class FavouritesViewController: UIViewController {
         tableView.delegate = self
         
         // Do any additional setup after loading the view.
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("View did appear...")
-        //recipe = fetchData()
-        // reload the tableView data when view appears
-        recipeList = []
-        //prepareDataset()
-        tableView.reloadData()
+        fetchRecipeDataAndUpdateTableView(db: db)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? RecipeDetailViewController {
             destinationViewController.currentRecipe = recipeList[currentRecipe]
-            destinationViewController.recipes = recipe
+            destinationViewController.recipes = recipes
             destinationViewController.currentRecipeIndex = recipeListIndexes[currentRecipe] // position of the recipe in the complete dataset
         }
     }
-    /*
-    func fetchData() -> [Recipe]{
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<Recipe>(entityName: "Recipe")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            return result
-        } catch let error as NSError {
-            // something went wrong, print the error.
-            print(error.description)
+    
+    func fetchRecipeDataAndUpdateTableView(db: Firestore) {
+        recipes = [] // clear recipes
+        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                print("Fetched documents successfully")
+                for document in querySnapshot!.documents {
+                    //print("\(document.documentID) => \(document.data())")
+                    //print(document.data()["title"] as! String)
+                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
+                    self.recipes.append(recipe)
+                    self.prepareDataset()
+                    self.tableView.reloadData() // reload data when fetching completed
+                }
+                
+            }
         }
-        return []
-    }*/
-    /*
+    }
+    
     func prepareDataset() {
-        if recipe.count != 0 {
-            for i in 0...recipe.count - 1 {
-                if recipe[i].recipeIsFavourite == true {
-                    recipeList.append(recipe[i])
+        recipeList = []
+        if recipes.count != 0 {
+            for i in 0...recipes.count - 1 {
+                if recipes[i].isFavourite == true {
+                    recipeList.append(recipes[i])
                     recipeListIndexes.append(i)
                 } else {
                     continue
                 }
             }
         }
-    } */
+    }
 }
 
 extension FavouritesViewController : UITableViewDelegate {
@@ -86,10 +98,14 @@ extension FavouritesViewController : UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-           // recipe[recipeListIndexes[indexPath.row]].recipeIsFavourite = false // set recipeIsFavourite to false
-            recipeList.remove(at: indexPath.row) // delete recipe from Recipe favourites list
-            appDelegate.saveContext()
+            db.collection("recipes").document(recipeList[indexPath.row].title).updateData(["isFavourite": false]) { (err) in
+                if let err = err {
+                    print("Error updating dataset \(err)")
+                } else {
+                    print("Document updated successfully")
+                }
+            }
+            recipeList.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -103,20 +119,26 @@ extension FavouritesViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        let currentRecipe = recipeList[indexPath.row]
-        /*if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
+        let currentRecipe = recipeList[indexPath.row] // get the recipe for the row
+        
+        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        
+        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
+            if let err = err {
+                print("An error occured \(err)")
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(named: "NoPhoto")
             } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(data: data!)
             }
         }
         
-        cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
-        cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
-        */
-        return cell
-    }
+        
+        
+        return cell    }
     
     
 }

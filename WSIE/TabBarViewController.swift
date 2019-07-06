@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        selectedIndex = 2
+        selectedIndex = 2 // make IdeaVC first displayed item
     }
     
 }
