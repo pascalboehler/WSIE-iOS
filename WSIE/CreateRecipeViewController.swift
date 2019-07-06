@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class CreateRecipeViewController: UIViewController {
     
@@ -29,6 +30,10 @@ class CreateRecipeViewController: UIViewController {
     var imagePickerController: UIImagePickerController!
     
     var currentIndex: Int?
+    
+    var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +73,7 @@ class CreateRecipeViewController: UIViewController {
         shortDescriptionTextView.isEditable = true
         shortDescriptionTextView.autocapitalizationType = .sentences
         shortDescriptionTextView.autocorrectionType = .default
+        shortDescriptionTextView.delegate = self
         scrollView.addSubview(shortDescriptionTextView)
         
         
@@ -92,6 +98,7 @@ class CreateRecipeViewController: UIViewController {
         materialsTextView.isEditable = true
         materialsTextView.autocapitalizationType = .sentences
         materialsTextView.autocorrectionType = .default
+        materialsTextView.delegate = self
         scrollView.addSubview(materialsTextView)
         
         stepsLabel = UILabel(frame: CGRect(x: 0, y: materialsTextView.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
@@ -104,15 +111,24 @@ class CreateRecipeViewController: UIViewController {
         stepsTextView.isEditable = true
         stepsTextView.autocapitalizationType = .sentences
         stepsTextView.autocorrectionType = .default
+        stepsTextView.delegate = self
         scrollView.addSubview(stepsTextView)
         
         // Do any additional setup after loading the view.
+        // Firebase setup
+        // init db
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        // init storage service
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     @objc func picturePickerButtonHandler(sender: UIButton) {
         print("picturePicker pressed...")
         // get the image
-        // initalize the imagePickerController
+        // initalice the imagePickerController
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         
@@ -141,6 +157,7 @@ class CreateRecipeViewController: UIViewController {
     @IBAction func cancelButtonHandler(_ sender: Any) {
         print("On Cancel Button Pressed")
         showSaveAlert()
+        // self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveButtonHandler(_ sender: Any) {
@@ -160,16 +177,18 @@ class CreateRecipeViewController: UIViewController {
         
         
         if let imageTemp = picturePicker.currentBackgroundImage{
+            // nothing happens
             image = imageTemp
         } else {
             print("Could not find background image...")
             image = UIImage(named: "Gray")!
         }
         
+        /*
         guard let imageData = image.jpegData(compressionQuality: 1.0) else {
             print("Cast to imageData went wrong")
             return
-        }
+        }*/
         
         guard let materials = materialsTextView.text else {
             return
@@ -183,39 +202,52 @@ class CreateRecipeViewController: UIViewController {
         
         print(recipeMarkDown)
         
-        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
+        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: image, materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
-        
-        print("Recipe saved")
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
+    // Firebase version
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+        print("Executed!")
+        // db
+        // create document if document already exists under this title override document NO VALIDATION!!!!
+        db.collection("recipes").document(title).setData([
+            "title": title,
+            "shortDescription": shortDescription,
+            "cookingTime": cookingTime,
+            "materials": materials,
+            "steps": steps,
+            "isFavourite": isFavourite,
+            "md-code": recipeMarkDown,
+            "userId": Auth.auth().currentUser!.uid, // store the user who created doc
+            "public": false // for later use
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
         }
+        // storage
+        let recipeFolderRef = storageRef.child("recipe")
+        let recipeRef = recipeFolderRef.child(title) // create new folder
+        let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
         
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: managedContext)!
-        
-        let recipe = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        recipe.setValue(title, forKey: "recipeTitle")
-        recipe.setValue(shortDescription, forKey: "recipeShortDescription")
-        recipe.setValue(image, forKey: "recipeImageBinaryData")
-        recipe.setValue(materials, forKey: "recipeMaterials")
-        recipe.setValue(steps, forKey: "recipeSteps")
-        recipe.setValue(isFavourite, forKey: "recipeIsFavourite")
-        recipe.setValue(recipeMarkDown, forKey: "recipeMarkdownCode")
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save recipe. \(error), \(error.userInfo)")
+        let uploadTask = recipeTitleImageRef.putData(Data(image.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
+            /*guard let metadata = metadata else {
+                return
+            }
+            let size = metadata.size
+            self.storageRef.downloadURL(completion: { (url, err) in
+                guard let downloadUrl = url else {
+                    return
+                }
+            })*/
+            if let err = err {
+                print("Something went wrong \(err)")
+            }
         }
-        print("Saved item..")
     }
     
     func showSaveAlert() {
@@ -240,12 +272,15 @@ class CreateRecipeViewController: UIViewController {
             let cookingTime = Int(self.cookingTimeDatePicker.countDownDuration)
             
             guard let imageLink = self.picturePicker.currentImage else {
+                // self.missingElementAlert(forElement: "imageLink")
                 return
             }
             
+            /*
             guard let imageData = imageLink.jpegData(compressionQuality: 1.0) else {
+                // self.missingElementAlert()
                 return
-            }
+            }*/
             
             guard let materials = self.materialsTextView.text else {
                 self.missingElementAlert(forElement: "materials")
@@ -257,7 +292,7 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
-            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: NSData(data: imageData), materials: materials, steps: steps, recipeMarkDown: "")
+            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: imageLink, materials: materials, steps: steps, recipeMarkDown: "")
             
             self.dismiss(animated: true, completion: nil)
         })
@@ -297,6 +332,15 @@ class CreateRecipeViewController: UIViewController {
 }
 
 
+extension CreateRecipeViewController : UITextViewDelegate {
+    /*func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }*/
+}
 
 extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

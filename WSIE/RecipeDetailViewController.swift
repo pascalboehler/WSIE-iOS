@@ -8,6 +8,7 @@
 
 import UIKit
 import MarkdownView
+import Firebase
 
 class RecipeDetailViewController: UIViewController {
 
@@ -17,19 +18,22 @@ class RecipeDetailViewController: UIViewController {
     var currentRecipe: Recipe?
     var currentRecipeIndex: Int?
     var recipes: [Recipe] = []
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // markdownView.load(markdown: "# Hello World!")
         // Do any additional setup after loading the view.
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        markdownView.load(markdown: currentRecipe!.recipeMarkdownCode)
-        markdownView.isScrollEnabled = true
-        markdownView.translatesAutoresizingMaskIntoConstraints = true // hopefully works
-        if currentRecipe?.recipeIsFavourite == false {
+        markdownView.load(markdown: currentRecipe!.markDownCode)
+        markdownView.translatesAutoresizingMaskIntoConstraints = true
+        if currentRecipe?.isFavourite == false {
             favouriteBarButton.tintColor = UIColor.lightGray
         } else {
             favouriteBarButton.tintColor = UIColor.blue
@@ -37,11 +41,13 @@ class RecipeDetailViewController: UIViewController {
     }
     
     func updateDataset() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
+        db.collection("recipes").document(currentRecipe!.title).updateData(["isFavourite": currentRecipe!.isFavourite]) { (err) in
+            if let err = err {
+                print("Error updating dataset \(err)")
+            } else {
+                print("Document updated successfully")
+            }
         }
-        recipes[currentRecipeIndex!] = currentRecipe!
-        appDelegate.saveContext()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,12 +59,12 @@ class RecipeDetailViewController: UIViewController {
     }
     
     @IBAction func favouriteBarButtonHandler(_ sender: UIBarButtonItem) {
-        if currentRecipe?.recipeIsFavourite == false {
-            currentRecipe?.recipeIsFavourite = true
+        if currentRecipe?.isFavourite == false {
+            currentRecipe?.isFavourite = true
             favouriteBarButton.tintColor = UIColor.blue
             updateDataset()
         } else {
-            currentRecipe?.recipeIsFavourite = false
+            currentRecipe?.isFavourite = false
             favouriteBarButton.tintColor = UIColor.lightGray
             updateDataset()
         }
