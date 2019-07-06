@@ -131,6 +131,7 @@ class RecipeViewController: UIViewController {
                     self.recipes.append(recipe)
                     //self.tableView.reloadData() // reload data when fetching completed
                 }
+                /*
                 let recipeFolderRef = self.storageRef.child("recipe")
                 if self.recipes.count == 0 {
                     self.tableView.reloadData()
@@ -153,7 +154,8 @@ class RecipeViewController: UIViewController {
                     print("Reload data...")
                     self.tableView.reloadData()
                     print("Reloaded TableViewData")
-                }
+                }*/
+                self.tableView.reloadData()
             }
         }
         
@@ -217,9 +219,21 @@ extension RecipeViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         
-        cell.titleLabel.text = currentRecipe.title // get the recipe title
-        cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
-        cell.recipeImageView.image = currentRecipe.image
+        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        
+        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
+            if let err = err {
+                print("An error occured \(err)")
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(named: "NoPhoto")
+            } else {
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(data: data!)
+            }
+        }
+        
         
         
         return cell
