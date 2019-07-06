@@ -241,16 +241,16 @@ class EditRecipeViewController: UIViewController {
         currentRecipe?.title = titleTextField.text!
         currentRecipe?.shortDescription = shortDescriptionTextView.text!
         // currentRecipe?.recipeCookingTime =
-        //currentRecipe?.image = NSData(data: Data((picturePicker.backgroundImage(for: .normal)?.jpegData(compressionQuality: 1.0))!)) as Data
+        currentRecipe?.image = picturePicker.backgroundImage(for: .normal)!
         currentRecipe?.materials = materialsTextView.text
         currentRecipe?.steps = stepsTextView.text
         let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
-        saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: UIImage(named: "Gray")!.jpegData(compressionQuality: 1.0)! as NSData, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode)
+        saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: currentRecipe!.image, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode)
         currentRecipe?.markDownCode = mdcode
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: NSData, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
         // create document if document already exists under this title override document
         db.collection("recipes").document(title).setData([
             "title": title,

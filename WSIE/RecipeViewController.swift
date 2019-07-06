@@ -13,6 +13,8 @@ import Firebase
 class RecipeViewController: UIViewController {
 
     var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -36,6 +38,8 @@ class RecipeViewController: UIViewController {
         //recipe = fetchData()
         tableView.reloadData()
         // Do any additional setup after loading the view.
+        // Firebase
+        // db
         // setup database
         let settings = FirestoreSettings()
         // print(Auth.auth().currentUser?.uid)
@@ -44,6 +48,9 @@ class RecipeViewController: UIViewController {
         db = Firestore.firestore()
         tableView.refreshControl = refreshControl // add refreshControl to tableView
         refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+        // storage
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     @objc func refreshTableView() {
@@ -111,6 +118,7 @@ class RecipeViewController: UIViewController {
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
+        // db
         db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -121,11 +129,26 @@ class RecipeViewController: UIViewController {
                     //print(document.data()["title"] as! String)
                     let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
                     self.recipes.append(recipe)
-                    self.tableView.reloadData() // reload data when fetching completed
+                    //self.tableView.reloadData() // reload data when fetching completed
                 }
-                
+                let recipeFolderRef = self.storageRef.child("recipe")
+                for i in 0...self.recipes.count - 1{
+                    let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
+                    let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
+                    // Download the image
+                    imageRef.getData(maxSize: 6 * 1024 * 1024) { (data, err) in // 6 MB => filesize 5.9 MB
+                        if let err = err {
+                            print("Something went wrong with \(err)")
+                            self.recipes[i].image = UIImage(named: "Gray")!
+                        } else {
+                            self.recipes[i].image = UIImage(data: data!)!
+                        }
+                    }
+                }
+                self.tableView.reloadData()
             }
         }
+        
     }
 }
 
@@ -203,15 +226,8 @@ extension RecipeViewController : UITableViewDataSource {
         
         cell.titleLabel.text = currentRecipe.title as? String // get the recipe title
         cell.shortDescriptionLabel.text = currentRecipe.shortDescription as? String // get the recipe short description
-        /*if let imageData = currentRecipe.image as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
-            } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
-            }
-        }*/
-        let image = currentRecipe.image as! UIImage
-        cell.recipeImageView.image = image
+        cell.recipeImageView.image = currentRecipe.image
+        
         
         return cell
     }

@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure() // configure the Firebase instance
-        let db = Firestore.firestore()
+        let db = Firestore.firestore() // get the database for recipe data
+        let storage = Storage.storage() // get the storage service for recipe images
         print(db)
         return true
     }
