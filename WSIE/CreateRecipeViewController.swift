@@ -244,6 +244,9 @@ class CreateRecipeViewController: UIViewController {
                     return
                 }
             })*/
+            if let err = err {
+                print("Something went wrong \(err)")
+            }
         }
     }
     

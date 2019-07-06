@@ -132,20 +132,28 @@ class RecipeViewController: UIViewController {
                     //self.tableView.reloadData() // reload data when fetching completed
                 }
                 let recipeFolderRef = self.storageRef.child("recipe")
-                for i in 0...self.recipes.count - 1{
-                    let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
-                    let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
-                    // Download the image
-                    imageRef.getData(maxSize: 6 * 1024 * 1024) { (data, err) in // 6 MB => filesize 5.9 MB
-                        if let err = err {
-                            print("Something went wrong with \(err)")
-                            self.recipes[i].image = UIImage(named: "Gray")!
-                        } else {
-                            self.recipes[i].image = UIImage(data: data!)!
+                if self.recipes.count == 0 {
+                    self.tableView.reloadData()
+                } else {
+                    print(self.recipes.count)
+                    for i in 0...self.recipes.count - 1{
+                        let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
+                        let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
+                        // Download the image
+                        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in // 20 MB => filesize 5.9 MB
+                            if let err = err {
+                                print("Something went wrong with \(err)")
+                                self.recipes[i].image = UIImage(named: "NoPhoto")!
+                                print("Set image to NoPhoto")
+                            } else {
+                                self.recipes[i].image = UIImage(data: data!)!
+                            }
                         }
                     }
+                    print("Reload data...")
+                    self.tableView.reloadData()
+                    print("Reloaded TableViewData")
                 }
-                self.tableView.reloadData()
             }
         }
         
@@ -207,25 +215,10 @@ extension RecipeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        /*
-        let currentRecipe = recipe[indexPath.row]
-        if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
-            } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
-            }
-        }
- 
-        cell.titleLabel.text = currentRecipe.value(forKeyPath: "recipeTitle") as? String
-        cell.shortDescriptionLabel.text = currentRecipe.value(forKeyPath: "recipeShortDescription") as? String
-        
-        return cell */
-        
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         
-        cell.titleLabel.text = currentRecipe.title as? String // get the recipe title
-        cell.shortDescriptionLabel.text = currentRecipe.shortDescription as? String // get the recipe short description
+        cell.titleLabel.text = currentRecipe.title // get the recipe title
+        cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
         cell.recipeImageView.image = currentRecipe.image
         
         
