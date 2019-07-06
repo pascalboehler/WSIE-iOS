@@ -19,6 +19,8 @@ class FavouritesViewController: UIViewController {
     var currentRecipe: Int = 0
     var recipeListIndexes: [Int] = []
     var db: Firestore!
+    var storage: Storage!
+    var storageRef: StorageReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,8 @@ class FavouritesViewController: UIViewController {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
-
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -116,19 +119,26 @@ extension FavouritesViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
-        let currentRecipe = recipeList[indexPath.row]
-        /*if let imageData = currentRecipe.value(forKeyPath: "recipeImageBinaryData") as? Data {
-            if let recipeImage = UIImage(data: imageData){
-                cell.recipeImageView?.image = recipeImage
-            } else {
-                cell.recipeImageView?.image = UIImage(named: "Gray") // change to no photo image later...
-            }
-        }*/
+        let currentRecipe = recipeList[indexPath.row] // get the recipe for the row
         
-        cell.titleLabel.text = currentRecipe.title
-        cell.shortDescriptionLabel.text = currentRecipe.shortDescription
-        return cell
-    }
+        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        
+        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
+            if let err = err {
+                print("An error occured \(err)")
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(named: "NoPhoto")
+            } else {
+                cell.titleLabel.text = currentRecipe.title // get the recipe title
+                cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
+                cell.recipeImageView.image = UIImage(data: data!)
+            }
+        }
+        
+        
+        
+        return cell    }
     
     
 }
