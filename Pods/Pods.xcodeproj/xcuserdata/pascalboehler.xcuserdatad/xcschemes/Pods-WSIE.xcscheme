@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3C5176272C30BF6E6A776B14B22C67EE"
-               BuildableName = "libPods-WSIE.a"
+               BuildableName = "Pods-WSIE.framework"
                BlueprintName = "Pods-WSIE"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

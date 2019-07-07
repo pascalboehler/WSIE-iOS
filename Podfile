@@ -1,3 +1,4 @@
+use_frameworks!
 workspace 'WSIE'
 target 'WSIE' do
     pod 'MarkdownView'
@@ -5,5 +6,4 @@ target 'WSIE' do
     pod 'Firebase/Firestore'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
-    pod 'SVProgressHUD'
 end

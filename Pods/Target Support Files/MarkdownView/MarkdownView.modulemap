@@ -1,4 +1,4 @@
-module MarkdownView {
+framework module MarkdownView {
   umbrella header "MarkdownView-umbrella.h"
 
   export *

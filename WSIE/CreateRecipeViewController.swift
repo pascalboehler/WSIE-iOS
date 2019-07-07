@@ -235,15 +235,6 @@ class CreateRecipeViewController: UIViewController {
         let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
         
         let uploadTask = recipeTitleImageRef.putData(Data(image.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
-            /*guard let metadata = metadata else {
-                return
-            }
-            let size = metadata.size
-            self.storageRef.downloadURL(completion: { (url, err) in
-                guard let downloadUrl = url else {
-                    return
-                }
-            })*/
             if let err = err {
                 print("Something went wrong \(err)")
             }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CE7BB59885E11A7F43D648F9B1D6D12"
-               BuildableName = "libMarkdownView.a"
+               BuildableName = "MarkdownView.framework"
                BlueprintName = "MarkdownView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
