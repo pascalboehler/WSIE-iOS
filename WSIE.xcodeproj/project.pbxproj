@@ -21,6 +21,7 @@
 		BBB934C42291C6C000CCA08A /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */; };
 		BBB934C62291CE5A00CCA08A /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB934C52291CE5A00CCA08A /* CheckboxButton.swift */; };
 		BBC811942284717B00287369 /* OurRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC811932284717B00287369 /* OurRecommendationViewController.swift */; };
+		BBD0603622D25F2A004D3B33 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0603522D25F2A004D3B33 /* RoundedButton.swift */; };
 		BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FAD2266559500153244 /* AppDelegate.swift */; };
 		BBE10FB32266559500153244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB12266559500153244 /* Main.storyboard */; };
 		BBE10FB62266559500153244 /* WSIE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FB42266559500153244 /* WSIE.xcdatamodeld */; };
@@ -49,6 +50,7 @@
 		BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		BBB934C52291CE5A00CCA08A /* CheckboxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		BBC811932284717B00287369 /* OurRecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurRecommendationViewController.swift; sourceTree = "<group>"; };
+		BBD0603522D25F2A004D3B33 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BBE10FAA2266559500153244 /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE10FAD2266559500153244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE10FB22266559500153244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		BBE10FD322665C5E00153244 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BBD0603522D25F2A004D3B33 /* RoundedButton.swift */,
 				BBB934C52291CE5A00CCA08A /* CheckboxButton.swift */,
 				BBE10FC522665B3C00153244 /* RecipeTableViewCell.swift */,
 				BBB0C845226B4234001DFEDB /* Utility.swift */,
@@ -281,6 +284,7 @@
 				BBB0C846226B4234001DFEDB /* Utility.swift in Sources */,
 				BBFE964122AD307E00292DEE /* Datatypes.swift in Sources */,
 				BB9E984822673DCF00C84191 /* EditRecipeViewController.swift in Sources */,
+				BBD0603622D25F2A004D3B33 /* RoundedButton.swift in Sources */,
 				BBAA84AD22C3B221003293FF /* StartupViewController.swift in Sources */,
 				BBB934C42291C6C000CCA08A /* ShoppingListItemTableViewCell.swift in Sources */,
 				BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */,

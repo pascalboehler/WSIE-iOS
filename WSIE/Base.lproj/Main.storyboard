@@ -102,6 +102,7 @@
         <!--Login View Controller-->
         <scene sceneID="07l-D4-obm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ER-Eq-m7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qbN-kv-kdW" customClass="LoginViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fND-fv-cXT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -184,9 +185,8 @@
                         <segue destination="kEI-sY-KB8" kind="show" identifier="showMainApplication" id="Q1z-gl-Mzd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1ER-Eq-m7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1220" y="-479"/>
+            <point key="canvasLocation" x="-2416" y="-479"/>
         </scene>
         <!--Create Recipe View Controller-->
         <scene sceneID="r29-6k-QqM">
@@ -686,9 +686,84 @@
             </objects>
             <point key="canvasLocation" x="3032" y="-3667"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dIv-hm-ITw">
+            <objects>
+                <viewController id="bhp-wI-8Te" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sJB-1Q-zf3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="WhG-2N-rG3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5W-P0-K40">
+                                <rect key="frame" x="8" y="54" width="398" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kzg-cD-Ljc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gz4-B3-EQe">
+                                <rect key="frame" x="8" y="249" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNE-Ep-ihO">
+                                <rect key="frame" x="8" y="287" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNZ-AX-XOV">
+                                <rect key="frame" x="8" y="325" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS2-Dn-q1j" customClass="RoundedButton" customModule="WSIE" customModuleProvider="target">
+                                <rect key="frame" x="78" y="363" width="258" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-aO-eK3">
+                                <rect key="frame" x="8" y="211" width="386" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pIY-8g-CfE" firstAttribute="bottom" secondItem="WhG-2N-rG3" secondAttribute="bottom" constant="-34" id="Ast-AD-xNA"/>
+                            <constraint firstItem="z5W-P0-K40" firstAttribute="leading" secondItem="pIY-8g-CfE" secondAttribute="leading" constant="8" id="DWN-7g-PW7"/>
+                            <constraint firstItem="WhG-2N-rG3" firstAttribute="top" secondItem="pIY-8g-CfE" secondAttribute="top" constant="-44" id="Iwy-VD-iTZ"/>
+                            <constraint firstItem="pIY-8g-CfE" firstAttribute="trailing" secondItem="WhG-2N-rG3" secondAttribute="trailing" id="Tfb-kR-VkZ"/>
+                            <constraint firstItem="pIY-8g-CfE" firstAttribute="trailing" secondItem="z5W-P0-K40" secondAttribute="trailing" constant="8" id="gbV-Zt-3oz"/>
+                            <constraint firstItem="z5W-P0-K40" firstAttribute="top" secondItem="pIY-8g-CfE" secondAttribute="top" constant="10" id="ltH-3l-8ts"/>
+                            <constraint firstItem="WhG-2N-rG3" firstAttribute="leading" secondItem="pIY-8g-CfE" secondAttribute="leading" id="zMx-gK-woR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pIY-8g-CfE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c18-f7-Tf9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3592.753623188406" y="-440.625"/>
+        </scene>
         <!--Startup View Controller-->
         <scene sceneID="jvl-xA-EQ2">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOH-D6-09M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="KQC-IU-hDO" customClass="StartupViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Neq-ix-eIb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -731,13 +806,13 @@
                         <segue destination="kEI-sY-KB8" kind="show" identifier="showMainApplication" id="CkU-Ku-R94"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LOH-D6-09M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2317" y="142"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ihC-Ku-UCg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AY6-0k-Jyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lUO-xD-q7R" customClass="SignUpViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c1L-De-9jB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -821,7 +896,6 @@
                         <segue destination="kEI-sY-KB8" kind="show" identifier="showMainApplication" id="z9n-rp-tuf"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AY6-0k-Jyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1220" y="801"/>
         </scene>
@@ -1030,6 +1104,7 @@
     </scenes>
     <resources>
         <image name="Book" width="30" height="30"/>
+        <image name="LoginBackgroundImage" width="850.5" height="1512"/>
         <image name="Settings" width="30" height="30"/>
         <image name="ShoppingCartEmpty" width="30" height="30"/>
         <image name="StarFilled" width="30" height="30"/>
