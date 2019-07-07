@@ -212,7 +212,7 @@ class CreateRecipeViewController: UIViewController {
         print("Executed!")
         // db
         // create document if document already exists under this title override document NO VALIDATION!!!!
-        db.collection("recipes").document(title).setData([
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(title).setData([
             "title": title,
             "shortDescription": shortDescription,
             "cookingTime": cookingTime,
