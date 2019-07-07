@@ -119,7 +119,7 @@ class RecipeViewController: UIViewController {
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
         // db
-        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
