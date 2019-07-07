@@ -202,6 +202,14 @@ extension RecipeViewController : UITableViewDelegate {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 print("Document successfully removed!")
+                let imageRef = self.storageRef.child("recipe/\(self.recipes[indexPath.row].title)/titleImage.jpg")
+                imageRef.delete() { err in
+                    if let err = err {
+                        print("Something went wrong \(err)")
+                    } else {
+                        print("Deleted image")
+                    }
+                }
                 self.fetchRecipeDataAndUpdateTableView(db: self.db) // reload data...
             }
         }
