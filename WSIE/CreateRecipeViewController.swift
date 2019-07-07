@@ -230,7 +230,7 @@ class CreateRecipeViewController: UIViewController {
             }
         }
         // storage
-        let recipeFolderRef = storageRef.child("recipe")
+        let recipeFolderRef = storageRef.child("recipe\(Auth.auth().currentUser!.uid)")
         let recipeRef = recipeFolderRef.child(title) // create new folder
         let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
         
