@@ -41,7 +41,7 @@ class RecipeDetailViewController: UIViewController {
     }
     
     func updateDataset() {
-        db.collection("recipes").document(currentRecipe!.title).updateData(["isFavourite": currentRecipe!.isFavourite]) { (err) in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(currentRecipe!.title).updateData(["isFavourite": currentRecipe!.isFavourite]) { (err) in
             if let err = err {
                 print("Error updating dataset \(err)")
             } else {

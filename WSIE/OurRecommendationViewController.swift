@@ -85,7 +85,7 @@ class OurRecommendationViewController: UIViewController {
     
     func fetchRecipeDataAndLoadToMarkDownView(db: Firestore) {
         recipes = [] // clear recipes
-        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
