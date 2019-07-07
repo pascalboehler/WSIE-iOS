@@ -227,7 +227,7 @@ extension RecipeViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         
-        let imageRef = storageRef.child("recipe\(Auth.auth().currentUser!.uid)/\(currentRecipe.title)/titleImage.jpg")
+        let imageRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)/\(currentRecipe.title)/titleImage.jpg")
         
         imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
             if let err = err {
