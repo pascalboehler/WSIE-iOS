@@ -233,7 +233,13 @@ class CreateRecipeViewController: UIViewController {
         let recipeFolderRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)")
         let recipeRef = recipeFolderRef.child(title) // create new folder
         let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
-        let newImage = resizeImage(image: image, targetSize: CGSize(width: 900.0, height: 600.0))
+        let newImage: UIImage
+        if image.size.width > image.size.height {
+            newImage = resizeImage(image: image, targetSize: CGSize(width: 900.0, height: 600.0)) // landscape
+        } else {
+            newImage = resizeImage(image: image, targetSize: CGSize(width: 600.0, height: 900.0)) // portrait
+        }
+        
         let uploadTask = recipeTitleImageRef.putData(Data(newImage.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Something went wrong \(err)")
