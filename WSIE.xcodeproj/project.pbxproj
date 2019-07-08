@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7DFE8D7CD03A7A2F8695F0C4 /* Pods_WSIE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4656788FCEE79D47008D351 /* Pods_WSIE.framework */; };
+		BB0D0EEE22D33CA20045C290 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0D0EED22D33CA20045C290 /* LoginViewController.swift */; };
 		BB39703922CF4B4800447052 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB39703822CF4B4800447052 /* Assets.xcassets */; };
 		BB3C708022872B6300D84F28 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C707F22872B6300D84F28 /* TabBarViewController.swift */; };
 		BB58419322A950D8005E6501 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58419222A950D8005E6501 /* SettingsViewController.swift */; };
 		BB6A0DA222CA5E0800903C85 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB6A0DA122CA5E0800903C85 /* GoogleService-Info.plist */; };
 		BB79BA332291B32800C3DD48 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */; };
 		BB9E984822673DCF00C84191 /* EditRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */; };
-		BBAA84A922C3AF6D003293FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA84A822C3AF6D003293FF /* LoginViewController.swift */; };
-		BBAA84AB22C3B207003293FF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA84AA22C3B207003293FF /* SignUpViewController.swift */; };
-		BBAA84AD22C3B221003293FF /* StartupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA84AC22C3B221003293FF /* StartupViewController.swift */; };
 		BBB0C846226B4234001DFEDB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0C845226B4234001DFEDB /* Utility.swift */; };
 		BBB934C42291C6C000CCA08A /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */; };
 		BBB934C62291CE5A00CCA08A /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB934C52291CE5A00CCA08A /* CheckboxButton.swift */; };
@@ -37,15 +35,13 @@
 
 /* Begin PBXFileReference section */
 		4E4D9BC565599AAFB583E10A /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		BB0D0EED22D33CA20045C290 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BB39703822CF4B4800447052 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB3C707F22872B6300D84F28 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BB58419222A950D8005E6501 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BB6A0DA122CA5E0800903C85 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		BB9E984722673DCF00C84191 /* EditRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeViewController.swift; sourceTree = "<group>"; };
-		BBAA84A822C3AF6D003293FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BBAA84AA22C3B207003293FF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		BBAA84AC22C3B221003293FF /* StartupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		BBB0C845226B4234001DFEDB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
 		BBB934C52291CE5A00CCA08A /* CheckboxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
@@ -144,9 +140,7 @@
 				BBC811932284717B00287369 /* OurRecommendationViewController.swift */,
 				BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */,
 				BB58419222A950D8005E6501 /* SettingsViewController.swift */,
-				BBAA84A822C3AF6D003293FF /* LoginViewController.swift */,
-				BBAA84AA22C3B207003293FF /* SignUpViewController.swift */,
-				BBAA84AC22C3B221003293FF /* StartupViewController.swift */,
+				BB0D0EED22D33CA20045C290 /* LoginViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -280,16 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBAA84A922C3AF6D003293FF /* LoginViewController.swift in Sources */,
 				BBB0C846226B4234001DFEDB /* Utility.swift in Sources */,
 				BBFE964122AD307E00292DEE /* Datatypes.swift in Sources */,
 				BB9E984822673DCF00C84191 /* EditRecipeViewController.swift in Sources */,
 				BBD0603622D25F2A004D3B33 /* RoundedButton.swift in Sources */,
-				BBAA84AD22C3B221003293FF /* StartupViewController.swift in Sources */,
+				BB0D0EEE22D33CA20045C290 /* LoginViewController.swift in Sources */,
 				BBB934C42291C6C000CCA08A /* ShoppingListItemTableViewCell.swift in Sources */,
 				BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */,
 				BBE10FB62266559500153244 /* WSIE.xcdatamodeld in Sources */,
-				BBAA84AB22C3B207003293FF /* SignUpViewController.swift in Sources */,
 				BB3C708022872B6300D84F28 /* TabBarViewController.swift in Sources */,
 				BBE10FCF22665B3C00153244 /* RecipeDetailViewController.swift in Sources */,
 				BB58419322A950D8005E6501 /* SettingsViewController.swift in Sources */,
