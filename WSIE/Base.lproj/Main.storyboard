@@ -613,6 +613,7 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="8y2-xb-0kI" id="VVs-XO-OL9"/>
+                        <segue destination="jpL-so-aOx" kind="show" identifier="showRecipeDetailViewController" id="zwq-uy-bgi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aU-rC-ATn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1038,7 +1039,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q1z-gl-Mzd"/>
-        <segue reference="vbL-Tj-unE"/>
+        <segue reference="zwq-uy-bgi"/>
         <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>

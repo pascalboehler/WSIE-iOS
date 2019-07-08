@@ -31,6 +31,7 @@ class RecipeDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        fetchData()
         markdownView.load(markdown: currentRecipe!.markDownCode)
         markdownView.translatesAutoresizingMaskIntoConstraints = true
         if currentRecipe?.isFavourite == false {
@@ -46,6 +47,18 @@ class RecipeDetailViewController: UIViewController {
                 print("Error updating dataset \(err)")
             } else {
                 print("Document updated successfully")
+            }
+        }
+    }
+    
+    func fetchData() {
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(currentRecipe!.title).getDocument { (documentSnapShot, err) in
+            if err == nil {
+                self.currentRecipe?.markDownCode = documentSnapShot?.data()!["md-code"] as! String
+                self.markdownView.load(markdown: self.currentRecipe?.markDownCode)
+            } else {
+                print("Something went wrong")
+                return
             }
         }
     }

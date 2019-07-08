@@ -55,7 +55,7 @@ class EditRecipeViewController: UIViewController {
         super.viewDidLoad()
     
         // Add all the additional elements to the view
-        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1000)
+        self.scrollView.contentSize = CGSize(width: self.view.bounds.width - 16, height: 1500)
         scrollView.showsVerticalScrollIndicator = true
         scrollView.isScrollEnabled = true
         
@@ -189,13 +189,13 @@ class EditRecipeViewController: UIViewController {
  
         */
    		
-        recipeTitle = (currentRecipe?.title as! String)
-        recipeShortDescription = (currentRecipe?.shortDescription as! String)
-        recipeMaterials = (currentRecipe?.materials as! String)
-        recipeSteps = (currentRecipe?.steps as! String)
-        recipeCookingTime = (currentRecipe?.cookingTime as! Int)
-        recipeMarkdownCode = (currentRecipe?.markDownCode as! String)
-        recipeImage = (currentRecipe?.image as! UIImage)
+        recipeTitle = (currentRecipe?.title)
+        recipeShortDescription = (currentRecipe?.shortDescription)
+        recipeMaterials = (currentRecipe?.materials)
+        recipeSteps = (currentRecipe?.steps)
+        recipeCookingTime = (currentRecipe?.cookingTime)
+        recipeMarkdownCode = (currentRecipe?.markDownCode)
+        recipeImage = (currentRecipe?.image)
         
         
         // update views
@@ -204,6 +204,7 @@ class EditRecipeViewController: UIViewController {
         materialsTextView.text = recipeMaterials!
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
+        cookingTimeDatePicker.countDownDuration = TimeInterval(recipeCookingTime!*60)
         
     }
     
@@ -240,11 +241,11 @@ class EditRecipeViewController: UIViewController {
         
         currentRecipe?.title = titleTextField.text!
         currentRecipe?.shortDescription = shortDescriptionTextView.text!
-        // currentRecipe?.recipeCookingTime =
+        currentRecipe?.cookingTime = Int(cookingTimeDatePicker.countDownDuration / 60) // to get minutes
         currentRecipe?.image = picturePicker.backgroundImage(for: .normal)!
         currentRecipe?.materials = materialsTextView.text
         currentRecipe?.steps = stepsTextView.text
-        let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: 10, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
+        let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: currentRecipe!.cookingTime, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
         saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: currentRecipe!.image, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode)
         currentRecipe?.markDownCode = mdcode
         self.dismiss(animated: true, completion: nil)
@@ -281,6 +282,15 @@ class EditRecipeViewController: UIViewController {
         recipes[currentRecipeIndex!] = currentRecipe!
         appDelegate.saveContext()
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? RecipeDetailViewController {
+            destinationViewController.currentRecipe = currentRecipe
+            destinationViewController.recipes = recipes
+            destinationViewController.currentRecipeIndex = currentRecipeIndex
+        }
+    }*/
 }
 
 extension EditRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
