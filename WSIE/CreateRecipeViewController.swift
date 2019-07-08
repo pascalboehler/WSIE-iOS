@@ -212,7 +212,7 @@ class CreateRecipeViewController: UIViewController {
         print("Executed!")
         // db
         // create document if document already exists under this title override document NO VALIDATION!!!!
-        db.collection("recipes").document(title).setData([
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(title).setData([
             "title": title,
             "shortDescription": shortDescription,
             "cookingTime": cookingTime,
@@ -230,20 +230,11 @@ class CreateRecipeViewController: UIViewController {
             }
         }
         // storage
-        let recipeFolderRef = storageRef.child("recipe")
+        let recipeFolderRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)")
         let recipeRef = recipeFolderRef.child(title) // create new folder
         let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
-        
-        let uploadTask = recipeTitleImageRef.putData(Data(image.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
-            /*guard let metadata = metadata else {
-                return
-            }
-            let size = metadata.size
-            self.storageRef.downloadURL(completion: { (url, err) in
-                guard let downloadUrl = url else {
-                    return
-                }
-            })*/
+        let newImage = resizeImage(image: image, targetSize: CGSize(width: 900.0, height: 600.0))
+        let uploadTask = recipeTitleImageRef.putData(Data(newImage.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Something went wrong \(err)")
             }

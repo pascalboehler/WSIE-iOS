@@ -119,7 +119,7 @@ class RecipeViewController: UIViewController {
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
         // db
-        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -193,7 +193,7 @@ extension RecipeViewController : UITableViewDelegate {
  
     
     func deleteRecipe(forRowAt indexPath: IndexPath) {
-        db.collection("recipes").document(recipes[indexPath.row].title).delete() { err in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(recipes[indexPath.row].title).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
                 let alert = UIAlertController(title: "Error deleting recipe!", message: "An error occured while deleting the recipe, please try again later.", preferredStyle: .alert)
@@ -202,7 +202,7 @@ extension RecipeViewController : UITableViewDelegate {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 print("Document successfully removed!")
-                let imageRef = self.storageRef.child("recipe/\(self.recipes[indexPath.row].title)/titleImage.jpg")
+                let imageRef = self.storageRef.child("recipes\(Auth.auth().currentUser!.uid)/\(self.recipes[indexPath.row].title)/titleImage.jpg")
                 imageRef.delete() { err in
                     if let err = err {
                         print("Something went wrong \(err)")
@@ -227,7 +227,7 @@ extension RecipeViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipes[indexPath.row] // get the recipe for the row
         
-        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        let imageRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)/\(currentRecipe.title)/titleImage.jpg")
         
         imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
             if let err = err {

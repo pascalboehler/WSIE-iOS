@@ -52,7 +52,7 @@ class FavouritesViewController: UIViewController {
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
-        db.collection("recipes").getDocuments() { (querySnapshot, err) -> Void in
+        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -121,7 +121,7 @@ extension FavouritesViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as! RecipeTableViewCell
         let currentRecipe = recipeList[indexPath.row] // get the recipe for the row
         
-        let imageRef = storageRef.child("recipe/\(currentRecipe.title)/titleImage.jpg")
+        let imageRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)/\(currentRecipe.title)/titleImage.jpg")
         
         imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in
             if let err = err {

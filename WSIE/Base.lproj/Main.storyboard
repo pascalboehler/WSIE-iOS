@@ -386,7 +386,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-IA-ldE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deS-IA-ldE">
                                                     <rect key="frame" x="20" y="11" width="374" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="kfI-Zg-3qj"/>
@@ -402,7 +402,7 @@
                                                         <constraint firstAttribute="width" secondItem="KDx-Bl-5uM" secondAttribute="height" multiplier="3:2" id="spQ-df-5cI"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAN-zY-7cs" userLabel="Shortdescription">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAN-zY-7cs" userLabel="Shortdescription">
                                                     <rect key="frame" x="120.5" y="47" width="265.5" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="c8e-Ya-CKc"/>
@@ -484,7 +484,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-i4-zOj">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gS-i4-zOj">
                                                     <rect key="frame" x="20" y="11" width="374" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="hzr-Xd-nqJ"/>
@@ -500,7 +500,7 @@
                                                         <constraint firstAttribute="height" constant="69.670000000000002" id="swM-aR-GEo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Description" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-rf-TnV" userLabel="Shortdescription">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEx-rf-TnV" userLabel="Shortdescription">
                                                     <rect key="frame" x="120.5" y="47" width="265.5" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="c2m-f1-8h6"/>
@@ -1038,7 +1038,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q1z-gl-Mzd"/>
-        <segue reference="3JF-3D-WyC"/>
-        <segue reference="8hC-Pt-xTo"/>
+        <segue reference="vbL-Tj-unE"/>
+        <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>

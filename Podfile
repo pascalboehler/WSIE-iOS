@@ -1,3 +1,4 @@
+use_frameworks!
 workspace 'WSIE'
 target 'WSIE' do
     pod 'MarkdownView'
