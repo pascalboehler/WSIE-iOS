@@ -345,6 +345,7 @@ extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigat
         
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         picturePicker.setBackgroundImage(image, for: .normal)
+        print("Updated image")
         dismiss(animated: true, completion: nil)
         
     }

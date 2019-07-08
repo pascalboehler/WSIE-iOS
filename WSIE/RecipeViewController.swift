@@ -239,6 +239,7 @@ extension RecipeViewController : UITableViewDataSource {
                 cell.titleLabel.text = currentRecipe.title // get the recipe title
                 cell.shortDescriptionLabel.text = currentRecipe.shortDescription // get the recipe short description
                 cell.recipeImageView.image = UIImage(data: data!)
+                self.recipes[indexPath.row].image = UIImage(data: data!)! // set the image in recipe array
             }
         }
         

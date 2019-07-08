@@ -51,6 +51,10 @@ class EditRecipeViewController: UIViewController {
     // Firebase
     var db: Firestore!
     
+    // Storage
+    var storage: Storage!
+    var storageRef: StorageReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -133,6 +137,9 @@ class EditRecipeViewController: UIViewController {
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
+        // Storage
+        storage = Storage.storage()
+        storageRef = storage.reference()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -242,7 +249,11 @@ class EditRecipeViewController: UIViewController {
         currentRecipe?.title = titleTextField.text!
         currentRecipe?.shortDescription = shortDescriptionTextView.text!
         currentRecipe?.cookingTime = Int(cookingTimeDatePicker.countDownDuration / 60) // to get minutes
-        currentRecipe?.image = picturePicker.backgroundImage(for: .normal)!
+        if let image = picturePicker.image(for: .normal) {
+            currentRecipe?.image = image
+        } else {
+            currentRecipe?.image = picturePicker.backgroundImage(for: .normal)!
+        }
         currentRecipe?.materials = materialsTextView.text
         currentRecipe?.steps = stepsTextView.text
         let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: currentRecipe!.cookingTime, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
@@ -266,6 +277,22 @@ class EditRecipeViewController: UIViewController {
                 print("Error writing document: \(err)")
             } else {
                 print("Document successfully written!")
+            }
+        }
+        // storage
+        let recipeFolderRef = storageRef.child("recipes\(Auth.auth().currentUser!.uid)")
+        let recipeRef = recipeFolderRef.child(title) // create new folder
+        let recipeTitleImageRef = recipeRef.child("titleImage.jpg")
+        let newImage: UIImage
+        if image.size.width > image.size.height {
+            newImage = resizeImage(image: image, targetSize: CGSize(width: 900.0, height: 600.0)) // landscape
+        } else {
+            newImage = resizeImage(image: image, targetSize: CGSize(width: 600.0, height: 900.0)) // portrait
+        }
+        
+        let uploadTask = recipeTitleImageRef.putData(Data(newImage.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
+            if let err = err {
+                print("Something went wrong \(err)")
             }
         }
     }
@@ -295,10 +322,11 @@ class EditRecipeViewController: UIViewController {
 
 extension EditRecipeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        picturePicker.setBackgroundImage(image, for: .normal)
+        picturePicker.setImage(image, for: .normal)
+        print("Updated image")
         dismiss(animated: true, completion: nil)
         
     }
