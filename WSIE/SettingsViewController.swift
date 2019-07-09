@@ -35,7 +35,7 @@ class SettingsViewController: UIViewController {
     @IBAction func signOutButtonHandler(_ sender: Any) {
         do {
             try Auth.auth().signOut()
-            performSegue(withIdentifier: "showStartUpViewController", sender: nil)
+            performSegue(withIdentifier: "showLoginViewController", sender: nil)
         } catch {
             print("SOMETHING WENT WRONG: ")
         }
