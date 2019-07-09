@@ -60,6 +60,8 @@ class LoginViewController: UIViewController {
                 // print("Something went wrong while logging in user with error: \(err)")
                 let userOrPasswordInvalidAlert = UIAlertController(title: "Unable to sign in user", message: err.localizedDescription, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                userOrPasswordInvalidAlert.addAction(okAction)
+                self.present(userOrPasswordInvalidAlert, animated: true, completion: nil)
             } else {
                 // print("Successfully logged in user")
                 self.performSegue(withIdentifier: "showTabBarViewController", sender: nil)
