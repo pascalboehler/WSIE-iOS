@@ -18,6 +18,7 @@
 		BBAA84A922C3AF6D003293FF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAA84A822C3AF6D003293FF /* LoginViewController.swift */; };
 		BBB0C846226B4234001DFEDB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0C845226B4234001DFEDB /* Utility.swift */; };
 		BBB934C42291C6C000CCA08A /* ShoppingListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */; };
+		BBC0F54022D4E1E8009164AA /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC0F53F22D4E1E8009164AA /* PrivacyPolicyViewController.swift */; };
 		BBC811942284717B00287369 /* OurRecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC811932284717B00287369 /* OurRecommendationViewController.swift */; };
 		BBE10FAE2266559500153244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE10FAD2266559500153244 /* AppDelegate.swift */; };
 		BBE10FB32266559500153244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE10FB12266559500153244 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		BBAA84A822C3AF6D003293FF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBB0C845226B4234001DFEDB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BBB934C32291C6C000CCA08A /* ShoppingListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItemTableViewCell.swift; sourceTree = "<group>"; };
+		BBC0F53F22D4E1E8009164AA /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		BBC811932284717B00287369 /* OurRecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurRecommendationViewController.swift; sourceTree = "<group>"; };
 		BBE10FAA2266559500153244 /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE10FAD2266559500153244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				BB79BA322291B32800C3DD48 /* ShoppingListViewController.swift */,
 				BB58419222A950D8005E6501 /* SettingsViewController.swift */,
 				BBAA84A822C3AF6D003293FF /* LoginViewController.swift */,
+				BBC0F53F22D4E1E8009164AA /* PrivacyPolicyViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				BBE10FCF22665B3C00153244 /* RecipeDetailViewController.swift in Sources */,
 				BB58419322A950D8005E6501 /* SettingsViewController.swift in Sources */,
 				BBE10FCD22665B3C00153244 /* CreateRecipeViewController.swift in Sources */,
+				BBC0F54022D4E1E8009164AA /* PrivacyPolicyViewController.swift in Sources */,
 				BBE10FCA22665B3C00153244 /* RecipeViewController.swift in Sources */,
 				BBE10FCC22665B3C00153244 /* IdeasViewController.swift in Sources */,
 				BB3C6C4022D4DE010056477D /* RoundedButton.swift in Sources */,

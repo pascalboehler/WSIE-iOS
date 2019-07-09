@@ -32,6 +32,10 @@ class SettingsViewController: UIViewController {
         print("On external datasource button pressed")
     }
     
+    @IBAction func privacyPolicyButtonHandler(_ sender: Any) {
+        performSegue(withIdentifier: "showPrivacyPolicyViewController", sender: nil)
+    }
+    
     @IBAction func signOutButtonHandler(_ sender: Any) {
         do {
             try Auth.auth().signOut()
