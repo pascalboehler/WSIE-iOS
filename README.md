@@ -11,7 +11,7 @@ Functions of the application:
 * Share your recipes with your friends just with a click
 * Format your recipes with Markdown or with the included editor (supports markdown and a graphical interface)
 
-To read our markdown formatting guide (to make sure that you get the best experience) please visit our website under: http://pascalboehler.github.io/wsie-ios/markdown-guide
+To read our markdown formatting guide (to make sure that you get the best experience) please visit our website under: https://pascalboehler.github.io/WSIE-iOS/markdownguide.html
 
 To read our markdown formatting tutorial with all the supported markdown expressions please visit our website under: http://pascalboehler.github.io/wsie-ios/markdown-tutorial
 
