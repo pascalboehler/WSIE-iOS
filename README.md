@@ -21,4 +21,4 @@ Screenshots of the application
 ## Planned fot the future:
 * Scan recipes and automatically format them for the app (made with Azure cognitive services)
 
-*Our privacy polica is available under: https://pascalboehler.github.io/WSIE-iOS/privacypolicy.html
+*Our privacy policy is available under: https://pascalboehler.github.io/WSIE-iOS/privacypolicy.html*
