@@ -25,10 +25,9 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if Auth.auth().currentUser != nil {
-            print("quitted vc")
-            print(Auth.auth().currentUser?.uid)
+            // print("quitted vc")
+            // print(Auth.auth().currentUser?.uid)
             performSegue(withIdentifier: "showTabBarViewController", sender: nil)
-            //dismiss(animated: true, completion: nil)
         }
     }
     
@@ -58,9 +57,11 @@ class LoginViewController: UIViewController {
         }
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
             if let err = err {
-                print("Something went wrong while logging in user with error: \(err)")
+                // print("Something went wrong while logging in user with error: \(err)")
+                let userOrPasswordInvalidAlert = UIAlertController(title: "Unable to sign in user", message: err.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
             } else {
-                print("Successfully logged in user")
+                // print("Successfully logged in user")
                 self.performSegue(withIdentifier: "showTabBarViewController", sender: nil)
             }
         }
@@ -78,13 +79,13 @@ class LoginViewController: UIViewController {
         }
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
-                //print("Something went wrong while signing up new user with error \(error)")
-                var userExistsAlert = UIAlertController(title: "Error signing up new user", message: error.localizedDescription, preferredStyle: .alert)
-                var okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                // print("Something went wrong while signing up new user with error \(error)")
+                let userExistsAlert = UIAlertController(title: "Error signing up new user", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 userExistsAlert.addAction(okAction)
                 self.present(userExistsAlert, animated: true, completion: nil)
             } else {
-                print("Successfully created new user")
+                // print("Successfully created new user")
                 self.performSegue(withIdentifier: "showTabBarViewController", sender: nil)
             }
         }
