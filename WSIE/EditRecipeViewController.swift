@@ -106,6 +106,7 @@ class EditRecipeViewController: UIViewController {
         picturePicker = UIButton(frame: CGRect(x: 0, y: pictureLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: CGFloat(self.scrollView.bounds.width*(2.0/3.0))))
         picturePicker.backgroundColor = UIColor.lightGray
         picturePicker.addTarget(self, action: #selector(picturePickerButtonHandler(sender:)), for: .touchUpInside)
+        picturePicker.imageView?.contentMode = .scaleAspectFit
         scrollView.addSubview(picturePicker)
 
         materialsLabel = UILabel(frame: CGRect(x: 0, y: picturePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
