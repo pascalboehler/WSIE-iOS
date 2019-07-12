@@ -17,11 +17,13 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Please allow WSIE to access your camera. We need the access to give you the possibility to take picture for your stored recipes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow WSIe to access your photo library. We need the access to give you the possibility to choose pictures for your stored recipe from your photo library.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
