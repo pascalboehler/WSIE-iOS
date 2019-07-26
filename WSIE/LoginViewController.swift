@@ -23,12 +23,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if Auth.auth().currentUser != nil {
-            // print("quitted vc")
-            // print(Auth.auth().currentUser?.uid)
-            performSegue(withIdentifier: "showTabBarViewController", sender: nil)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

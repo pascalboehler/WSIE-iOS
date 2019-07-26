@@ -646,7 +646,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="sPZ-19-MET">
             <objects>
-                <tabBarController id="kEI-sY-KB8" customClass="TabBarViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kEI-sY-KB8" customClass="TabBarViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4rm-Jw-29S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -842,7 +842,7 @@
         <!--Login View Controller-->
         <scene sceneID="Z7I-Ig-JRQ">
             <objects>
-                <viewController id="Azj-YJ-72j" customClass="LoginViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="Azj-YJ-72j" customClass="LoginViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nMh-59-t3f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
