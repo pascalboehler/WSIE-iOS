@@ -422,7 +422,7 @@
             </objects>
             <point key="canvasLocation" x="927.536231884058" y="949.55357142857133"/>
         </scene>
-        <!--Recipe-->
+        <!--My recipes-->
         <scene sceneID="M4R-tK-hYB">
             <objects>
                 <viewController id="uxI-Wj-2CD" customClass="RecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
@@ -499,7 +499,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kW3-9s-Rzc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Recipe" id="yMX-fr-TI8">
+                    <navigationItem key="navigationItem" title="My recipes" id="yMX-fr-TI8">
                         <barButtonItem key="backBarButtonItem" title="Recipe" id="2K2-8S-0g4"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="qF2-9a-REv">
                             <connections>
