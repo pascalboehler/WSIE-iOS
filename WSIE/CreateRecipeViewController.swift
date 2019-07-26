@@ -89,7 +89,7 @@ class CreateRecipeViewController: UIViewController {
         scrollView.addSubview(picturePicker)
         
         materialsLabel = UILabel(frame: CGRect(x: 0, y: Int(picturePicker.frame.maxY + 8), width: Int(self.scrollView.bounds.width), height: 50))
-        materialsLabel.text = "Materials: "
+        materialsLabel.text = "Incredients: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         materialsLabel.textAlignment = .left
         scrollView.addSubview(materialsLabel)
