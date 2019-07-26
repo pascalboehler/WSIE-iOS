@@ -18,7 +18,7 @@
         <attribute name="iCloudSyncIsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="touchIdIsEnabled" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
-    <entity name="ShoppingList" representedClassName="ShoppingList" syncable="YES" codeGenerationType="class">
+    <entity name="ShoppingListCoreData" representedClassName="ShoppingListCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="bought" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +30,7 @@
     <elements>
         <element name="RecipeCoreData" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="Settings" positionX="-63" positionY="63" width="128" height="90"/>
-        <element name="ShoppingList" positionX="-63" positionY="45" width="128" height="90"/>
+        <element name="ShoppingListCoreData" positionX="-63" positionY="45" width="128" height="90"/>
         <element name="UserData" positionX="-63" positionY="63" width="128" height="75"/>
     </elements>
 </model>

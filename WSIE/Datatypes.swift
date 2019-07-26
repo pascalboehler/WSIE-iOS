@@ -19,3 +19,9 @@ struct Recipe {
     var markDownCode: String
     var image: UIImage
 }
+
+struct ShoppingList {
+    // var amount: Int
+    var bought: Bool
+    var name: String
+}

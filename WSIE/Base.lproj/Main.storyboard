@@ -761,7 +761,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="ok"/>
                                         <connections>
-                                            <action selector="addNewItemButtonHandler:" destination="pVD-9I-iaJ" eventType="touchUpInside" id="97h-Vl-the"/>
+                                            <action selector="addNewItemButtonHandler:" destination="pVD-9I-iaJ" eventType="touchUpInside" id="82D-Ib-4Jq"/>
                                         </connections>
                                     </button>
                                 </subviews>
