@@ -110,7 +110,7 @@ class EditRecipeViewController: UIViewController {
         scrollView.addSubview(picturePicker)
 
         materialsLabel = UILabel(frame: CGRect(x: 0, y: picturePicker.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
-        materialsLabel.text = "Materials: "
+        materialsLabel.text = "Incredients: "
         materialsLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
         materialsLabel.textAlignment = .left
         scrollView.addSubview(materialsLabel)

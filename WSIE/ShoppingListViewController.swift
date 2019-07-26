@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 enum BarButtonStatus {
     case add, done
@@ -27,6 +28,8 @@ class ShoppingListViewController: UIViewController {
     
     var shoppingList: [ShoppingList] = []
     
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -44,7 +47,7 @@ class ShoppingListViewController: UIViewController {
         barButtonStatus = .add
         
         // Load data from db
-        shoppingList = fetchData()
+        //shoppingList = fetchData()
         // reload the tableView's data
 //        shoppingList = []
 //        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -52,7 +55,12 @@ class ShoppingListViewController: UIViewController {
 //        }
 //        appDelegate.saveContext()
         
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
         tableView.reloadData()
+        fetchDataAndAddToTableView()
     }
 
     @objc func addItemButtonHandler() {
@@ -98,6 +106,9 @@ class ShoppingListViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // OLD FUNCS:
+    /*
     @IBAction func addNewItemButtonHandler(_ sender: Any) {
         if let newItem = textView.text {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -153,6 +164,68 @@ class ShoppingListViewController: UIViewController {
     @IBAction func filterButtonHandler(_ sender: Any) {
         
     }
+ */
+    // New funcs:
+    
+    @IBAction func addNewItemButtonHandler(_ sender: Any) {
+        guard let itemName = textView.text else {
+            // show alert (insert text
+            return
+        }
+        db.collection("shoppingList\(Auth.auth().currentUser!.uid)").document(itemName).setData([
+            "name": itemName,
+            "bought": false
+        ]) { err in
+            if let err = err {
+                print("Something went wrong with error: \(err)")
+                self.fetchDataAndAddToTableView()
+                self.textView.text = ""
+            }
+        }
+    }
+    
+    func updateDataset(atIndex index: Int) {
+        db.collection("shoppingList\(Auth.auth().currentUser!.uid)").document(shoppingList[index].name).updateData([
+            "name": shoppingList[index].name,
+            "bought": shoppingList[index].bought
+        ]) { err in
+            if let err = err {
+                print("Could not update element! Failed with error: \(err)")
+            } else {
+                self.fetchDataAndAddToTableView()
+            }
+        }
+        
+    }
+    
+    func deleteDataset(atIndex index: Int) {
+        db.collection("shoppingList\(Auth.auth().currentUser!.uid)").document(shoppingList[index].name).delete { (err) in
+            if let err = err {
+                print("Something went wrong with error: \(err)")
+                return
+            } else {
+                self.fetchDataAndAddToTableView()
+            }
+        }
+    }
+    
+    func fetchDataAndAddToTableView() {
+        // get data
+        shoppingList = []
+        db.collection("shoppingList\(Auth.auth().currentUser!.uid)").getDocuments { (snapshot, err) in
+            if let err = err {
+                print("Something went wrong while fetching data with error: \(err)")
+            } else {
+                if let docs = snapshot?.documents {
+                    for element in docs {
+                        let shoppingListElement: ShoppingList = ShoppingList(bought: element.data()["bought"] as! Bool, name: element.data()["name"] as! String)
+                        self.shoppingList.append(shoppingListElement)
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 extension ShoppingListViewController: UITableViewDataSource {
@@ -163,7 +236,7 @@ extension ShoppingListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingListItemTableViewCell") as! ShoppingListItemTableViewCell
         // create data
-        cell.itemName.text = "\(shoppingList[indexPath.row].name ?? "Not available") \(shoppingList[indexPath.row].amount)x"
+        cell.itemName.text = "\(shoppingList[indexPath.row].name)"
         if shoppingList[indexPath.row].bought == true {
             cell.itemIsCompleted.text = completed // to strikethrough
         } else {
@@ -181,7 +254,7 @@ extension ShoppingListViewController: UITableViewDelegate {
         print("On tableView pressed")
         shoppingList[indexPath.row].bought = !shoppingList[indexPath.row].bought
         tableView.reloadData()
-        updateDataset()
+        updateDataset(atIndex: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -190,9 +263,7 @@ extension ShoppingListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            shoppingList.remove(at: indexPath.row)
-            updateDataset()
-            tableView.reloadData()
+            deleteDataset(atIndex: indexPath.row)
         }
     }
 }
