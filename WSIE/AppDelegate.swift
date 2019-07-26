@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure() // configure the Firebase instance
         let db = Firestore.firestore() // get the database for recipe data
         let storage = Storage.storage() // get the storage service for recipe images
-        print(db)
+        print(db) // silence warnings
+        print(storage) // silence warnings
         return true
     }
 
