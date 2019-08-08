@@ -58,9 +58,14 @@ class FavouritesViewController: UIViewController {
             } else {
                 print("Fetched documents successfully")
                 for document in querySnapshot!.documents {
-                    //print("\(document.documentID) => \(document.data())")
-                    //print(document.data()["title"] as! String)
-                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!)
+                    let personAmount: Int
+                    if document.data()["forPerson"] == nil {
+                        personAmount = 4 // fall back value for old recipes
+                    } else {
+                        personAmount = document.data()["forPerson"] as! Int
+                    }
+                    
+                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!, personAmount: personAmount)
                     self.recipes.append(recipe)
                     self.prepareDataset()
                     self.tableView.reloadData() // reload data when fetching completed

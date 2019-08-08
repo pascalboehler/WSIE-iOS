@@ -18,6 +18,7 @@ struct Recipe {
     var materials: String
     var markDownCode: String
     var image: UIImage
+    var personAmount: Int
 }
 
 struct ShoppingList {

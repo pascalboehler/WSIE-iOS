@@ -16,6 +16,8 @@ class EditRecipeViewController: UIViewController {
     // Code defined
     var titleLabel: UILabel!
     var titleTextField: UITextField!
+    var personAmountLabel: UILabel!
+    var personAmountCounter: UIPickerView!
     var cookingTimeLabel: UILabel!
     var cookingTimeDatePicker: UIDatePicker!
     var shortDescriptionLabel: UILabel!
@@ -47,6 +49,7 @@ class EditRecipeViewController: UIViewController {
     var recipeCookingTime: Int?
     var recipePreparationtime: Int?
     var recipeMarkdownCode: String?
+    var recipePersonAmount: Int?
     
     // Firebase
     var db: Firestore!
@@ -73,7 +76,18 @@ class EditRecipeViewController: UIViewController {
         titleTextField.placeholder = "Insert a title for the recipe"
         self.scrollView.addSubview(titleTextField)
         
-        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountLabel = UILabel(frame: CGRect(x: 0, y: self.titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountLabel.text = "For persons: "
+        personAmountLabel.textAlignment = .left
+        personAmountLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        scrollView.addSubview(personAmountLabel)
+        
+        personAmountCounter = UIPickerView(frame: CGRect(x: 0, y: personAmountLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountCounter.delegate = self
+        personAmountCounter.dataSource = self
+        scrollView.addSubview(personAmountCounter)
+        
+        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: personAmountCounter.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         cookingTimeLabel.text = "Cooking time: "
         cookingTimeLabel.textAlignment = .left
         cookingTimeLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
@@ -204,6 +218,8 @@ class EditRecipeViewController: UIViewController {
         recipeCookingTime = (currentRecipe?.cookingTime)
         recipeMarkdownCode = (currentRecipe?.markDownCode)
         recipeImage = (currentRecipe?.image)
+        recipePersonAmount = (currentRecipe?.personAmount)
+        
         
         
         // update views
@@ -213,6 +229,7 @@ class EditRecipeViewController: UIViewController {
         stepsTextView.text = recipeSteps!
         picturePicker.setBackgroundImage(recipeImage, for: .normal)
         cookingTimeDatePicker.countDownDuration = TimeInterval(recipeCookingTime!*60)
+        personAmountCounter.selectRow(recipePersonAmount! - 1, inComponent: 0, animated: true)
         
     }
     
@@ -257,13 +274,14 @@ class EditRecipeViewController: UIViewController {
         }
         currentRecipe?.materials = materialsTextView.text
         currentRecipe?.steps = stepsTextView.text
-        let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: currentRecipe!.cookingTime, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: 4)
-        saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: currentRecipe!.image, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode)
+        currentRecipe?.personAmount = personAmountCounter.selectedRow(inComponent: 0) + 1
+        let mdcode = markdownFormatter(recipeTitle: (currentRecipe?.title)!, recipeShortDescription: (currentRecipe?.shortDescription)!, recipeCookingTime: currentRecipe!.cookingTime, recipeMaterialsList: (currentRecipe?.materials)!, recipeStepsList: (currentRecipe?.steps)!, forPerson: Int16(currentRecipe!.personAmount))
+        saveRecipe(title: currentRecipe!.title, shortDescription: currentRecipe!.shortDescription, cookingTime: currentRecipe!.cookingTime, image: currentRecipe!.image, materials: currentRecipe!.materials, steps: currentRecipe!.steps, recipeMarkDown: mdcode, forPerson: currentRecipe!.personAmount)
         currentRecipe?.markDownCode = mdcode
         self.dismiss(animated: true, completion: nil)
     }
     
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String, forPerson: Int) {
         // create document if document already exists under this title override document
         db.collection("recipes\(Auth.auth().currentUser!.uid)").document(title).setData([
             "title": title,
@@ -272,7 +290,8 @@ class EditRecipeViewController: UIViewController {
             "materials": materials,
             "steps": steps,
             "isFavourite": isFavourite,
-            "md-code": recipeMarkDown
+            "md-code": recipeMarkDown,
+            "forPerson": forPerson
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -330,5 +349,23 @@ extension EditRecipeViewController: UIImagePickerControllerDelegate, UINavigatio
         print("Updated image")
         dismiss(animated: true, completion: nil)
         
+    }
+}
+
+extension EditRecipeViewController: UIPickerViewDelegate {
+    
+}
+
+extension EditRecipeViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 100
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row + 1)"
     }
 }
