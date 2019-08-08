@@ -16,6 +16,8 @@ class CreateRecipeViewController: UIViewController {
     var titleTextField: UITextField!
     var shortDescriptionLabel: UILabel!
     var shortDescriptionTextView: UITextView!
+    var personAmountLabel: UILabel!
+    var personAmountCounter: UIPickerView!
     var cookingTimeLabel: UILabel!
     var cookingTimeDatePicker: UIDatePicker!
     var pictureLabel: UILabel!
@@ -52,7 +54,18 @@ class CreateRecipeViewController: UIViewController {
         titleTextField.placeholder = "Insert a title for the recipe"
         scrollView.addSubview(titleTextField)
         
-        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountLabel = UILabel(frame: CGRect(x: 0, y: self.titleTextField.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountLabel.text = "For persons: "
+        personAmountLabel.textAlignment = .left
+        personAmountLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
+        scrollView.addSubview(personAmountLabel)
+        
+        personAmountCounter = UIPickerView(frame: CGRect(x: 0, y: personAmountLabel.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
+        personAmountCounter.delegate = self
+        personAmountCounter.dataSource = self
+        scrollView.addSubview(personAmountCounter)
+        
+        cookingTimeLabel = UILabel(frame: CGRect(x: 0, y: personAmountCounter.frame.maxY + 8, width: self.scrollView.bounds.width, height: 50))
         cookingTimeLabel.text = "Cooking time: "
         cookingTimeLabel.textAlignment = .left
         cookingTimeLabel.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
@@ -173,6 +186,8 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
+        let personAmount = personAmountCounter.selectedRow(inComponent: 0) + 1
+        
         let cookingTime = Int(cookingTimeDatePicker.countDownDuration) / 60
         
         
@@ -198,17 +213,17 @@ class CreateRecipeViewController: UIViewController {
             return
         }
         
-        let recipeMarkDown = markdownFormatter(recipeTitle: title, recipeShortDescription: shortDescription, recipeCookingTime: cookingTime, recipeMaterialsList: materials, recipeStepsList: steps, forPerson: 1)
+        let recipeMarkDown = markdownFormatter(recipeTitle: title, recipeShortDescription: shortDescription, recipeCookingTime: cookingTime, recipeMaterialsList: materials, recipeStepsList: steps, forPerson: Int16(personAmount))
         
         print(recipeMarkDown)
         
-        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: image, materials: materials, steps: steps, recipeMarkDown: recipeMarkDown)
+        saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: image, materials: materials, steps: steps, recipeMarkDown: recipeMarkDown, forPerson: personAmount)
         
         self.dismiss(animated: true, completion: nil)
     }
     
     // Firebase version
-    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String) {
+    func saveRecipe(title: String, shortDescription: String, cookingTime: Int, image: UIImage, materials: String, steps: String, isFavourite: Bool = false, recipeMarkDown: String, forPerson: Int) {
         print("Executed!")
         // db
         // create document if document already exists under this title override document NO VALIDATION!!!!
@@ -221,7 +236,8 @@ class CreateRecipeViewController: UIViewController {
             "isFavourite": isFavourite,
             "md-code": recipeMarkDown,
             "userId": Auth.auth().currentUser!.uid, // store the user who created doc
-            "public": false // for later use
+            "public": false, // for later use
+            "forPerson": forPerson
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -268,6 +284,8 @@ class CreateRecipeViewController: UIViewController {
             
             let cookingTime = Int(self.cookingTimeDatePicker.countDownDuration)
             
+            let personAmount = self.personAmountCounter.selectedRow(inComponent: 0) + 1
+            
             guard let imageLink = self.picturePicker.currentImage else {
                 // self.missingElementAlert(forElement: "imageLink")
                 return
@@ -289,7 +307,7 @@ class CreateRecipeViewController: UIViewController {
                 return
             }
             
-            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: imageLink, materials: materials, steps: steps, recipeMarkDown: "")
+            self.saveRecipe(title: title, shortDescription: shortDescription, cookingTime: cookingTime, image: imageLink, materials: materials, steps: steps, recipeMarkDown: "", forPerson: personAmount)
             
             self.dismiss(animated: true, completion: nil)
         })
@@ -348,6 +366,24 @@ extension CreateRecipeViewController: UIImagePickerControllerDelegate, UINavigat
         print("Updated image")
         dismiss(animated: true, completion: nil)
         
+    }
+}
+
+extension CreateRecipeViewController: UIPickerViewDelegate {
+    
+}
+
+extension CreateRecipeViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 100
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(row + 1)"
     }
 }
 
