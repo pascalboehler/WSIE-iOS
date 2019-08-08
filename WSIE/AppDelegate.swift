@@ -89,11 +89,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if let shortcutItem = shortcutItemToProcess {
-            print(shortcutItem.type)
             if shortcutItem.type == "FavouritesAction" {
                 if let window = self.window, let rootViewController = window.rootViewController  as? TabBarViewController {
-                    var currentController = rootViewController
+                    let currentController = rootViewController
                     currentController.selectedIndex = 3
+                }
+            }
+            if shortcutItem.type == "RecipeAction" {
+                if let window = self.window, let rootViewController = window.rootViewController  as? TabBarViewController {
+                    let currentController = rootViewController
+                    currentController.selectedIndex = 0
                 }
             }
         }
