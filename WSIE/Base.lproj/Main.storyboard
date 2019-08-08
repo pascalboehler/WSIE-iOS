@@ -327,7 +327,7 @@
         <!--Favourites-->
         <scene sceneID="1SX-Oz-iq8">
             <objects>
-                <viewController id="XDb-kN-DPQ" customClass="FavouritesViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favouritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XDb-kN-DPQ" customClass="FavouritesViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="amZ-Rx-jOE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1007,7 +1007,7 @@
         <image name="ok" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vbL-Tj-unE"/>
+        <segue reference="3JF-3D-WyC"/>
         <segue reference="Skm-Ea-IbK"/>
     </inferredMetricsTieBreakers>
 </document>

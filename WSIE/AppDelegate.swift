@@ -14,17 +14,24 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var shortcutItemToProcess: UIApplicationShortcutItem!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Firebase stuff
         FirebaseApp.configure() // configure the Firebase instance
         let db = Firestore.firestore() // get the database for recipe data
         let storage = Storage.storage() // get the storage service for recipe images
         print(db) // silence warnings
         print(storage) // silence warnings
         
+        // Quick Actions:
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            shortcutItemToProcess = shortcutItem
+        }
         
+        // window stuff
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -79,6 +86,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Could not save recipe. \(error), \(error.userInfo)")
             }
 
+        }
+        
+        if let shortcutItem = shortcutItemToProcess {
+            print(shortcutItem.type)
+            if shortcutItem.type == "FavouritesAction" {
+                if let window = self.window, let rootViewController = window.rootViewController  as? TabBarViewController {
+                    var currentController = rootViewController
+                    currentController.selectedIndex = 3
+                }
+            }
         }
     }
 
@@ -165,5 +182,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return []
     } */
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        shortcutItemToProcess = shortcutItem
+    }
 }
 
