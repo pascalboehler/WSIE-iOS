@@ -310,7 +310,7 @@ class EditRecipeViewController: UIViewController {
             newImage = resizeImage(image: image, targetSize: CGSize(width: 600.0, height: 900.0)) // portrait
         }
         
-        let uploadTask = recipeTitleImageRef.putData(Data(newImage.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
+        _ = recipeTitleImageRef.putData(Data(newImage.jpegData(compressionQuality: 1.0)!), metadata: nil) { (metadata, err) in
             if let err = err {
                 print("Something went wrong \(err)")
             }
