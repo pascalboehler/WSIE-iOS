@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarViewController: UITabBarController {
     
@@ -15,6 +16,10 @@ class TabBarViewController: UITabBarController {
 
         // Do any additional setup after loading the view.
         selectedIndex = 2 // make IdeaVC first displayed item
+        
+        if Auth.auth().currentUser?.uid == nil {
+            self.performSegue(withIdentifier: "showLoginViewController", sender: nil)
+        }
     }
     
 }

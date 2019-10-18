@@ -35,15 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if Auth.auth().currentUser?.uid != nil { // user IS logged in
-            let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarViewController") as! TabBarViewController
-            window?.rootViewController = tabBarController
-            
-        } else { // user IS NOT logged on
-            let loginViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-            window?.rootViewController = loginViewController
-        }
-
+        let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarViewController") as! TabBarViewController
+        window?.rootViewController = tabBarController
+        
         return true
     }
 

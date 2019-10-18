@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
                 self.present(userOrPasswordInvalidAlert, animated: true, completion: nil)
             } else {
                 // print("Successfully logged in user")
-                self.performSegue(withIdentifier: "showTabBarViewController", sender: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

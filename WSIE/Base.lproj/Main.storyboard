@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="iA7-Gm-W53" customClass="IdeasViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yRi-R1-O0Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq2-dv-7H6">
-                                <rect key="frame" x="0.0" y="116" width="414" height="635"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="657"/>
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="34"/>
                                 <state key="normal" title="Give recommendation"/>
                                 <connections>
@@ -50,11 +50,11 @@
             <objects>
                 <viewController title="Our Recommendation" id="Lmv-NY-MJF" customClass="OurRecommendationViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xfU-kg-zhP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-2W-vOQ">
-                                <rect key="frame" x="8" y="721" width="199" height="30"/>
+                                <rect key="frame" x="8" y="775" width="199" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Previous"/>
                                 <connections>
@@ -62,14 +62,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlK-VE-oB7">
-                                <rect key="frame" x="207" y="721" width="199" height="30"/>
+                                <rect key="frame" x="207" y="775" width="199" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonHandler:" destination="Lmv-NY-MJF" eventType="touchUpInside" id="18Z-oa-R8r"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3U-RU-C1n" customClass="MarkdownView" customModule="MarkdownView">
-                                <rect key="frame" x="8" y="116" width="398" height="597"/>
+                                <rect key="frame" x="8" y="148" width="398" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -159,11 +159,11 @@
             <objects>
                 <viewController id="yId-ST-dUc" customClass="SettingsViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EPh-uk-ob5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud Backup:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keI-9n-rWH">
-                                <rect key="frame" x="8" y="8" width="343" height="50"/>
+                                <rect key="frame" x="8" y="148" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Qr-ZW-Xv7"/>
                                 </constraints>
@@ -172,14 +172,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJz-34-7r5">
-                                <rect key="frame" x="359" y="18" width="49" height="50"/>
+                                <rect key="frame" x="359" y="158" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="SpD-WP-c8n"/>
                                     <constraint firstAttribute="height" constant="50" id="gUZ-xa-vvC"/>
                                 </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data Encryption:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ms-bk-HCg">
-                                <rect key="frame" x="8" y="66" width="343" height="50"/>
+                                <rect key="frame" x="8" y="206" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QRK-5k-IKT"/>
                                 </constraints>
@@ -188,14 +188,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIg-kM-pIY">
-                                <rect key="frame" x="359" y="76" width="49" height="50"/>
+                                <rect key="frame" x="359" y="216" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="LWf-Rc-Twe"/>
                                     <constraint firstAttribute="height" constant="50" id="fga-Pi-zS4"/>
                                 </constraints>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUr-CK-S4R">
-                                <rect key="frame" x="8" y="124" width="343" height="50"/>
+                                <rect key="frame" x="8" y="264" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ASP-4l-jVy"/>
                                 </constraints>
@@ -204,14 +204,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-Bo-fJ2">
-                                <rect key="frame" x="359" y="134" width="49" height="50"/>
+                                <rect key="frame" x="359" y="274" width="49" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="Ig6-cn-GsK"/>
                                     <constraint firstAttribute="height" constant="50" id="L9m-v2-Fz5"/>
                                 </constraints>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-pX-ams">
-                                <rect key="frame" x="8" y="182" width="398" height="50"/>
+                                <rect key="frame" x="8" y="322" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jla-jt-lpD"/>
                                 </constraints>
@@ -224,7 +224,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-fU-odN">
-                                <rect key="frame" x="8" y="240" width="398" height="50"/>
+                                <rect key="frame" x="8" y="380" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E7h-EI-V7B"/>
                                 </constraints>
@@ -237,7 +237,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-V8-pxM">
-                                <rect key="frame" x="8" y="298" width="398" height="50"/>
+                                <rect key="frame" x="8" y="438" width="398" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MEb-Jb-Apy"/>
                                 </constraints>
@@ -285,7 +285,6 @@
                         <outlet property="iCloudBackupSwitch" destination="FJz-34-7r5" id="qJd-5f-jYe"/>
                         <outlet property="touchIDSwitch" destination="COQ-Bo-fJ2" id="bOH-4u-r3p"/>
                         <segue destination="c4G-1w-8bt" kind="show" identifier="showPrivacyPolicyViewController" id="XNX-5q-a9V"/>
-                        <segue destination="Azj-YJ-72j" kind="presentation" identifier="showLoginViewController" id="Zj0-MT-4a8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0V-kr-2pf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,11 +296,11 @@
             <objects>
                 <viewController title="Privacy policy" id="c4G-1w-8bt" customClass="PrivacyPolicyViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OWc-bY-Ud2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="734"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-AM-SoS" customClass="MarkdownView" customModule="MarkdownView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="705"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -327,11 +326,11 @@
             <objects>
                 <viewController storyboardIdentifier="favouritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XDb-kN-DPQ" customClass="FavouritesViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="amZ-Rx-jOE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="edv-AJ-7K9">
-                                <rect key="frame" x="0.0" y="108" width="414" height="651"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeTableViewCell" id="Hhg-IY-Svn" customClass="RecipeTableViewCell" customModule="WSIE" customModuleProvider="target">
@@ -390,7 +389,7 @@
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JH5-gV-slQ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
                                     <navigationItem title="Favourites" id="KSU-4s-nSf"/>
                                 </items>
@@ -425,11 +424,11 @@
             <objects>
                 <viewController id="uxI-Wj-2CD" customClass="RecipeViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jc1-E7-zWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRC-nY-aYc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="757"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecipeTableViewCell" id="BaR-FU-f0G" customClass="RecipeTableViewCell" customModule="WSIE" customModuleProvider="target">
@@ -656,6 +655,7 @@
                         <segue destination="b1h-yM-3QM" kind="relationship" relationship="viewControllers" id="qMH-cL-Zde"/>
                         <segue destination="XDb-kN-DPQ" kind="relationship" relationship="viewControllers" id="QUk-ja-13e"/>
                         <segue destination="QUN-Gw-LvA" kind="relationship" relationship="viewControllers" id="Hvj-2E-BPJ"/>
+                        <segue destination="Azj-YJ-72j" kind="show" identifier="showLoginViewController" id="PEl-ou-yyN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wd3-3g-Hsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -668,8 +668,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jJL-U3-TII" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Recipe" image="Book" id="S6u-r5-HEU"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="35f-ub-Y2r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="35f-ub-Y2r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -686,17 +686,17 @@
             <objects>
                 <viewController id="pVD-9I-iaJ" customClass="ShoppingListViewController" customModule="WSIE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lL4-H3-dXq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Df8-jY-ikw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                                 <items>
                                     <navigationItem title="Shopping list" id="93P-XZ-LGs"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7bB-o0-zSv">
-                                <rect key="frame" x="0.0" y="108" width="414" height="651"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListItemTableViewCell" rowHeight="50" id="XKf-F5-1Ah" customClass="ShoppingListItemTableViewCell" customModule="WSIE" customModuleProvider="target">
@@ -744,7 +744,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysx-51-h4p">
-                                <rect key="frame" x="0.0" y="759" width="414" height="0.0"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="0.0"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XQ4-h7-YUY">
                                         <rect key="frame" x="8" y="8" width="390" height="34"/>
@@ -824,7 +824,7 @@
                     <tabBarItem key="tabBarItem" title="Ideas" image="idea" id="SgL-7T-wGO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="9eh-3F-PbI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -962,10 +962,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lVE-KL-aQK"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eHI-yK-QJ3"/>
                     <connections>
                         <outlet property="emailTextField" destination="l6M-XD-IWh" id="jvl-B6-S8W"/>
                         <outlet property="passwordTextField" destination="fjb-3z-LAh" id="aXv-UY-9VE"/>
-                        <segue destination="kEI-sY-KB8" kind="show" identifier="showTabBarViewController" id="DCZ-l6-8gF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="av6-my-OKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -978,8 +978,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QUN-Gw-LvA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="AjH-gP-mcC"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="ido-EW-am6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ido-EW-am6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
