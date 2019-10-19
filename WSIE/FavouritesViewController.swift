@@ -52,27 +52,46 @@ class FavouritesViewController: UIViewController {
     
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
-        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                print("Fetched documents successfully")
-                for document in querySnapshot!.documents {
-                    let personAmount: Int
-                    if document.data()["forPerson"] == nil {
-                        personAmount = 4 // fall back value for old recipes
-                    } else {
-                        personAmount = document.data()["forPerson"] as! Int
+        if Auth.auth().currentUser?.uid != nil {
+            db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in, please login to get your recipes!", preferredStyle: .alert)
+                    let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                        let loginViewController = LoginViewController()
+                        self.present(loginViewController, animated: true) // show login view controller that user can login
+                    }
+                    alert.addAction(loginAction)
+                    self.present(alert, animated: true)
+                } else {
+                    print("Fetched documents successfully")
+                    for document in querySnapshot!.documents {
+                        let personAmount: Int
+                        if document.data()["forPerson"] == nil {
+                            personAmount = 4 // fall back value for old recipes
+                        } else {
+                            personAmount = document.data()["forPerson"] as! Int
+                        }
+                        
+                        let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!, personAmount: personAmount)
+                        self.recipes.append(recipe)
+                        self.prepareDataset()
+                        self.tableView.reloadData() // reload data when fetching completed
                     }
                     
-                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!, personAmount: personAmount)
-                    self.recipes.append(recipe)
-                    self.prepareDataset()
-                    self.tableView.reloadData() // reload data when fetching completed
                 }
-                
             }
+        } else {
+            // show information that user is not logged in anymore
+            let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in", preferredStyle: .alert)
+            let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                let loginViewController = LoginViewController()
+                self.present(loginViewController, animated: true) // show login view controller that user can login
+            }
+            alert.addAction(loginAction)
+            self.present(alert, animated: true)
         }
+        
     }
     
     func prepareDataset() {

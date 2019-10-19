@@ -52,14 +52,30 @@ class RecipeDetailViewController: UIViewController {
     }
     
     func fetchData() {
-        db.collection("recipes\(Auth.auth().currentUser!.uid)").document(currentRecipe!.title).getDocument { (documentSnapShot, err) in
-            if err == nil {
-                self.currentRecipe?.markDownCode = documentSnapShot?.data()!["md-code"] as! String
-                self.markdownView.load(markdown: self.currentRecipe?.markDownCode)
-            } else {
-                print("Something went wrong")
-                return
+        if Auth.auth().currentUser?.uid != nil {
+            db.collection("recipes\(Auth.auth().currentUser!.uid)").document(currentRecipe!.title).getDocument { (documentSnapShot, err) in
+                if err == nil {
+                    self.currentRecipe?.markDownCode = documentSnapShot?.data()!["md-code"] as! String
+                    self.markdownView.load(markdown: self.currentRecipe?.markDownCode)
+                } else {
+                    print("Something went wrong")
+                    let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in, please login to get your recipes!", preferredStyle: .alert)
+                    let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                        let loginViewController = LoginViewController()
+                        self.present(loginViewController, animated: true) // show login view controller that user can login
+                    }
+                    alert.addAction(loginAction)
+                    self.present(alert, animated: true)
+                }
             }
+        } else {
+            let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in, please login to get your recipes!", preferredStyle: .alert)
+            let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                let loginViewController = LoginViewController()
+                self.present(loginViewController, animated: true) // show login view controller that user can login
+            }
+            alert.addAction(loginAction)
+            self.present(alert, animated: true)
         }
     }
     

@@ -119,53 +119,69 @@ class RecipeViewController: UIViewController {
     func fetchRecipeDataAndUpdateTableView(db: Firestore) {
         recipes = [] // clear recipes
         // db
-        db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                print("Fetched documents successfully")
-                for document in querySnapshot!.documents {
-                    //print("\(document.documentID) => \(document.data())")
-                    //print(document.data()["title"] as! String)
-                    let personAmount: Int
-                    if document.data()["forPerson"] == nil {
-                        personAmount = 4 // fall back value for old recipes
-                    } else {
-                        personAmount = document.data()["forPerson"] as! Int
+        if Auth.auth().currentUser?.uid != nil {
+            db.collection("recipes\(Auth.auth().currentUser!.uid)").getDocuments() { (querySnapshot, err) -> Void in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in, please login to get your recipes!", preferredStyle: .alert)
+                    let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                        let loginViewController = LoginViewController()
+                        self.present(loginViewController, animated: true) // show login view controller that user can login
                     }
-                    
-                    let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!, personAmount: personAmount)
-                    self.recipes.append(recipe)
-                    //self.tableView.reloadData() // reload data when fetching completed
-                }
-                /*
-                let recipeFolderRef = self.storageRef.child("recipe")
-                if self.recipes.count == 0 {
-                    self.tableView.reloadData()
+                    alert.addAction(loginAction)
+                    self.present(alert, animated: true)
                 } else {
-                    print(self.recipes.count)
-                    for i in 0...self.recipes.count - 1{
-                        let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
-                        let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
-                        // Download the image
-                        imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in // 20 MB => filesize 5.9 MB
-                            if let err = err {
-                                print("Something went wrong with \(err)")
-                                self.recipes[i].image = UIImage(named: "NoPhoto")!
-                                print("Set image to NoPhoto")
-                            } else {
-                                self.recipes[i].image = UIImage(data: data!)!
+                    print("Fetched documents successfully")
+                    for document in querySnapshot!.documents {
+                        //print("\(document.documentID) => \(document.data())")
+                        //print(document.data()["title"] as! String)
+                        let personAmount: Int
+                        if document.data()["forPerson"] == nil {
+                            personAmount = 4 // fall back value for old recipes
+                        } else {
+                            personAmount = document.data()["forPerson"] as! Int
+                        }
+                        
+                        let recipe: Recipe = Recipe(title: document.data()["title"] as! String, shortDescription: document.data()["shortDescription"] as! String, cookingTime: document.data()["cookingTime"] as! Int, isFavourite: document.data()["isFavourite"] as! Bool, steps: document.data()["steps"] as! String, materials: document.data()["materials"] as! String, markDownCode: document.data()["md-code"] as! String, image: UIImage(named: "Gray")!, personAmount: personAmount)
+                        self.recipes.append(recipe)
+                        //self.tableView.reloadData() // reload data when fetching completed
+                    }
+                    /*
+                    let recipeFolderRef = self.storageRef.child("recipe")
+                    if self.recipes.count == 0 {
+                        self.tableView.reloadData()
+                    } else {
+                        print(self.recipes.count)
+                        for i in 0...self.recipes.count - 1{
+                            let imageFolderRef = recipeFolderRef.child(self.recipes[i].title)
+                            let imageRef = imageFolderRef.child("titleImage.jpg") // URL to image in cloud storage
+                            // Download the image
+                            imageRef.getData(maxSize: 20 * 1024 * 1024) { (data, err) in // 20 MB => filesize 5.9 MB
+                                if let err = err {
+                                    print("Something went wrong with \(err)")
+                                    self.recipes[i].image = UIImage(named: "NoPhoto")!
+                                    print("Set image to NoPhoto")
+                                } else {
+                                    self.recipes[i].image = UIImage(data: data!)!
+                                }
                             }
                         }
-                    }
-                    print("Reload data...")
+                        print("Reload data...")
+                        self.tableView.reloadData()
+                        print("Reloaded TableViewData")
+                    }*/
                     self.tableView.reloadData()
-                    print("Reloaded TableViewData")
-                }*/
-                self.tableView.reloadData()
+                }
             }
+        } else {
+            let alert = UIAlertController(title: "Not logged in", message: "It seems that you are not logged in, please login to get your recipes!", preferredStyle: .alert)
+            let loginAction = UIAlertAction(title: "Log in", style: .default) { (nil) in
+                let loginViewController = LoginViewController()
+                self.present(loginViewController, animated: true) // show login view controller that user can login
+            }
+            alert.addAction(loginAction)
+            self.present(alert, animated: true)
         }
-        
     }
 }
 
