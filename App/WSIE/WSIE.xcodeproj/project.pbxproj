@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		61630369CA0891F4C9974CC0 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WSIETestPlan.xctestplan; sourceTree = "<group>"; };
 		BBE3DF61237C2F40007CAA1E /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 				61630369CA0891F4C9974CC0 /* Pods-WSIE.debug.xcconfig */,
 				797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -151,6 +151,7 @@
 		BBE3DF7D237C2F42007CAA1E /* WSIETests */ = {
 			isa = PBXGroup;
 			children = (
+				BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */,
 				BBE3DF7E237C2F42007CAA1E /* WSIETests.swift */,
 				BBE3DF80237C2F42007CAA1E /* Info.plist */,
 			);
