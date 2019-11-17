@@ -1,0 +1,6 @@
+framework module Hasher {
+  umbrella header "Hasher-umbrella.h"
+
+  export *
+  module * { export * }
+}
