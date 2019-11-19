@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/pascalboehler/WSIE-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/pascalboehler/WSIE-iOS) [![Build Status](https://travis-ci.org/pascalboehler/WSIE-iOS.svg?branch=master)](https://travis-ci.org/pascalboehler/WSIE-iOS)
 # WSIE - What Should I Eat?
 
 Did you ever had the situation in your family or just alone when you ask your self what can I eat today for lunch or dinner? Than this app is probably the best solution for your problem. Just insert your favorite recipes (or all recipes you have => It's your choice!) and ask the app what you can eat today for dinner or lunch. The app will than give you a few ideas (how many you can choose) and also shows you how often you ate this dish in the last couple of days, the last week, the last months or the last year! 
