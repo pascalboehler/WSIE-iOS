@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode11
 script: 
         - pod install
-        - xcodebuild -scheme WSIE -workspace WSIE.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.2.2' build test
+        - xcodebuild -scheme WSIE -workspace WSIE.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.0' build test
                 
 after_succes:
        - bash <(curl -s https://odecove.io/bash) -t 14866cf0-a315-47bb-b93e-907262763bcf
