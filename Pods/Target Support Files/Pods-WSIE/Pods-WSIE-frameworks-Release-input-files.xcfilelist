@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-WSIE/Pods-WSIE-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/Hasher/Hasher.framework
+${BUILT_PRODUCTS_DIR}/MSAL/MSAL.framework

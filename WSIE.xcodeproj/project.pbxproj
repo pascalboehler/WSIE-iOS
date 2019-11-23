@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA3D8025936F94EDD70C6FE3 /* Pods_WSIE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */; };
+		BB2393F52389981500D9C96B /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F42389981500D9C96B /* TabbarView.swift */; };
 		BBE3DF65237C2F40007CAA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */; };
 		BBE3DF67237C2F40007CAA1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */; };
 		BBE3DF6A237C2F40007CAA1E /* WSIE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF68237C2F40007CAA1E /* WSIE.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 		BBE3DF74237C2F42007CAA1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE3DF72237C2F42007CAA1E /* LaunchScreen.storyboard */; };
 		BBE3DF7F237C2F42007CAA1E /* WSIETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF7E237C2F42007CAA1E /* WSIETests.swift */; };
 		BBE3DF8A237C2F42007CAA1E /* WSIEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */; };
+		BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF38F8B2388365F0042B837 /* MyRecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 /* Begin PBXFileReference section */
 		61630369CA0891F4C9974CC0 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		BB2393F42389981500D9C96B /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WSIETestPlan.xctestplan; sourceTree = "<group>"; };
 		BBE3DF61237C2F40007CAA1E /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSIEUITests.swift; sourceTree = "<group>"; };
 		BBE3DF8B237C2F42007CAA1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE3DF97237C2FF3007CAA1E /* WSIE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSIE.entitlements; sourceTree = "<group>"; };
+		BBF38F8B2388365F0042B837 /* MyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeView.swift; sourceTree = "<group>"; };
 		D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,8 @@
 		BBE3DF63237C2F40007CAA1E /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
+				BBF38F8E238836780042B837 /* Helping Views */,
+				BBF38F8D2388366B0042B837 /* Main Views */,
 				BBE3DF97237C2FF3007CAA1E /* WSIE.entitlements */,
 				BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */,
 				BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */,
@@ -165,6 +171,22 @@
 				BBE3DF8B237C2F42007CAA1E /* Info.plist */,
 			);
 			path = WSIEUITests;
+			sourceTree = "<group>";
+		};
+		BBF38F8D2388366B0042B837 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBF38F8B2388365F0042B837 /* MyRecipeView.swift */,
+				BB2393F42389981500D9C96B /* TabbarView.swift */,
+			);
+			name = "Main Views";
+			sourceTree = "<group>";
+		};
+		BBF38F8E238836780042B837 /* Helping Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Helping Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2393F52389981500D9C96B /* TabbarView.swift in Sources */,
+				BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */,
 				BBE3DF65237C2F40007CAA1E /* AppDelegate.swift in Sources */,
 				BBE3DF67237C2F40007CAA1E /* SceneDelegate.swift in Sources */,
 				BBE3DF6C237C2F40007CAA1E /* ContentView.swift in Sources */,

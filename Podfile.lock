@@ -1,20 +1,26 @@
 PODS:
   - Alamofire (4.8.2)
   - Hasher (0.1.0)
+  - MSAL (0.5.0):
+    - MSAL/app-lib (= 0.5.0)
+  - MSAL/app-lib (0.5.0)
 
 DEPENDENCIES:
   - Alamofire
   - Hasher
+  - MSAL
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Hasher
+    - MSAL
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Hasher: 0253fad5775fad5c5f6a671ef40c8e3cffedc501
+  MSAL: 2ef13d86e7d1c5096ade5a7e61c5ad0f2643f812
 
-PODFILE CHECKSUM: 9f36dbbaf13e551689683a75faf9fc50003a56be
+PODFILE CHECKSUM: 2e1783265717b0c2fa09bde92be2aadcff7c4f96
 
 COCOAPODS: 1.7.5
