@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode11.2
 xcode_workspace: WSIE.xcworkspace
 xcode_scheme: WSIE
-xcode_destination: platform=iOS Simulator,OS=13.2,name=iPhone 8
+xcode_destination: platform=iOS Simulator,name=iPhone 8
                 
 after_succes:
        - bash <(curl -s https://odecove.io/bash) -t 14866cf0-a315-47bb-b93e-907262763bcf
