@@ -11,9 +11,13 @@ import SwiftUI
 struct MyRecipeView: View {
     var body: some View {
         NavigationView {
-            VStack {
+            /*VStack {
                 Text("Hallo")
                 Text("Test")
+            }*/
+            List {
+                RecipeListItemView()
+                    .border(Color.gray, width: 4)
             }
             .navigationBarTitle(Text("My Recipes"))
         }
