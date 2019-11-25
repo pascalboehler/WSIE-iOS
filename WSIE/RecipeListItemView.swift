@@ -10,12 +10,33 @@ import SwiftUI
 
 struct RecipeListItemView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("NoPhoto")
+                .resizable()
+                .frame(height: 200)
+                .clipped()
+
+            Spacer()
+            Text("Recipe title")
+            HStack {
+                Spacer()
+                Text("For x person")
+                Spacer()
+                Image(systemName: "clock.fill")
+                Text("12 min")
+                    .multilineTextAlignment(.leading)
+                    .padding(.trailing)
+                Spacer()
+            }
+            Spacer()
+        }
     }
 }
 
 struct RecipeListItemView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeListItemView()
+            .previewLayout(.fixed(width: 300, height: 270))
     }
 }
+

@@ -9,15 +9,44 @@
 import SwiftUI
 
 struct MyRecipeView: View {
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
         NavigationView {
-            /*VStack {
-                Text("Hallo")
-                Text("Test")
-            }*/
             List {
-                RecipeListItemView()
-                    .border(Color.gray, width: 4)
+                HStack {
+                    Spacer()
+                    RecipeListItemView()
+                    .frame(height: 270, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    .cornerRadius(25)
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    RecipeListItemView()
+                    .frame(height: 270, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    .cornerRadius(25)
+                    Spacer()
+                }
+                HStack {
+                    Spacer()
+                    RecipeListItemView()
+                    .frame(height: 270, alignment: .center)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    .cornerRadius(25)
+                    Spacer()
+                }
             }
             .navigationBarTitle(Text("My Recipes"))
         }

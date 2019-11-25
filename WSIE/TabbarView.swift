@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
         TabView {
             MyRecipeView()
