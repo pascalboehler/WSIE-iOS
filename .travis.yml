@@ -5,4 +5,4 @@ xcode_scheme: WSIE
 xcode_destination: platform=iOS Simulator,name=iPhone 8
                 
 after_succes:
-       - bash <(curl -s https://odecove.io/bash) -t 14866cf0-a315-47bb-b93e-907262763bcf
+       - bash <(curl -s https://codecove.io/bash) -t 14866cf0-a315-47bb-b93e-907262763bcf
