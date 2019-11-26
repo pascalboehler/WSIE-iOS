@@ -12,7 +12,7 @@ import SwiftUI
 struct Recipe: Hashable, Codable, Identifiable {
     var id: Int
     var title: String
-    var duration: String
+    var timeNeeded: String
     var isFavourite: Bool
     var materials: [String]
     var steps: [String]

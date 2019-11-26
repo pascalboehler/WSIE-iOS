@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "title": "Recipe Test",
+        "timeNeeded": "12 min",
+        "isFavourite": false,
+        "materials": [
+            "Butter",
+            "Milk"
+        ],
+        "steps": [
+            "Step 1",
+            "Step 2"
+        ],
+        "shortDescription": "This is an short description",
+        "imageName": "NoPhoto",
+        "uid": "UID"
+    },
+    {
+        "id": 2,
+        "title": "Recipe Test",
+        "timeNeeded": "12 min",
+        "isFavourite": false,
+        "materials": [
+            "Butter",
+            "Milk"
+        ],
+        "steps": [
+            "Step 1",
+            "Step 2"
+        ],
+        "shortDescription": "This is an short description",
+        "imageName": "NoPhoto",
+        "uid": "UID"
+    }
+]

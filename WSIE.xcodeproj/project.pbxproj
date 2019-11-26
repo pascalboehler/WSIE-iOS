@@ -10,6 +10,8 @@
 		AA3D8025936F94EDD70C6FE3 /* Pods_WSIE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */; };
 		BB2393F52389981500D9C96B /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F42389981500D9C96B /* TabbarView.swift */; };
 		BB2393F723899BAC00D9C96B /* RecipeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F623899BAC00D9C96B /* RecipeListItemView.swift */; };
+		BB51E38D238D350000D8B8E3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51E38C238D350000D8B8E3 /* Data.swift */; };
+		BB51E390238D35DD00D8B8E3 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = BB51E38F238D35DD00D8B8E3 /* recipes.json */; };
 		BB51FF83238BD775005AD29F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF82238BD775005AD29F /* UserData.swift */; };
 		BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF85238BD7E5005AD29F /* Recipe.swift */; };
 		BBE3DF65237C2F40007CAA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */; };
@@ -46,7 +48,10 @@
 		797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
 		BB2393F42389981500D9C96B /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		BB2393F623899BAC00D9C96B /* RecipeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListItemView.swift; sourceTree = "<group>"; };
+		BB420333238D1DCC004701C0 /* WSIE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSIE.entitlements; sourceTree = "<group>"; };
 		BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WSIETestPlan.xctestplan; sourceTree = "<group>"; };
+		BB51E38C238D350000D8B8E3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BB51E38F238D35DD00D8B8E3 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		BB51FF82238BD775005AD29F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BB51FF85238BD7E5005AD29F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BBE3DF61237C2F40007CAA1E /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +116,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB51E38E238D35B200D8B8E3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB51E38F238D35DD00D8B8E3 /* recipes.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BB51FF84238BD7D1005AD29F /* Datamodels */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,8 @@
 		BBE3DF63237C2F40007CAA1E /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
+				BB51E38C238D350000D8B8E3 /* Data.swift */,
+				BB420333238D1DCC004701C0 /* WSIE.entitlements */,
 				BB51FF84238BD7D1005AD29F /* Datamodels */,
 				BBF38F8E238836780042B837 /* Helping Views */,
 				BBF38F8D2388366B0042B837 /* Main Views */,
@@ -152,6 +167,7 @@
 				BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */,
 				BBE3DF6B237C2F40007CAA1E /* ContentView.swift */,
 				BBE3DF6D237C2F42007CAA1E /* Assets.xcassets */,
+				BB51E38E238D35B200D8B8E3 /* Resources */,
 				BBE3DF72237C2F42007CAA1E /* LaunchScreen.storyboard */,
 				BBE3DF75237C2F42007CAA1E /* Info.plist */,
 				BBE3DF68237C2F40007CAA1E /* WSIE.xcdatamodeld */,
@@ -313,6 +329,7 @@
 				BBE3DF74237C2F42007CAA1E /* LaunchScreen.storyboard in Resources */,
 				BBE3DF71237C2F42007CAA1E /* Preview Assets.xcassets in Resources */,
 				BBE3DF6E237C2F42007CAA1E /* Assets.xcassets in Resources */,
+				BB51E390238D35DD00D8B8E3 /* recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2393F52389981500D9C96B /* TabbarView.swift in Sources */,
+				BB51E38D238D350000D8B8E3 /* Data.swift in Sources */,
 				BB2393F723899BAC00D9C96B /* RecipeListItemView.swift in Sources */,
 				BB51FF83238BD775005AD29F /* UserData.swift in Sources */,
 				BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */,
