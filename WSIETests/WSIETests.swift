@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import WSIE
 
 class WSIETests: XCTestCase {
@@ -24,6 +25,14 @@ class WSIETests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    func testRecipeDataLoading() {
+        let recipes = recipeData
+        if (recipes == []) {
+            XCTFail("Unable to load recipes!")
+        }
+        XCTAssert(true)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

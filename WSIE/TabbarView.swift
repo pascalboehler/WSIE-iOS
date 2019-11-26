@@ -15,7 +15,11 @@ struct MainView: View {
         TabView {
             MyRecipeView()
                 .tabItem {
-                    Image(systemName: "book")
+                    if (userData.showFavouritesOnly) {
+                        Image(systemName: "star.circle.fill")
+                    } else {
+                        Image(systemName: "book")
+                    }
                     Text("My Recipes")
                 }
             Text("Another Tab")

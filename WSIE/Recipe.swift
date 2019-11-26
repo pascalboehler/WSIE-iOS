@@ -14,11 +14,12 @@ struct Recipe: Hashable, Codable, Identifiable {
     var title: String
     var timeNeeded: String
     var isFavourite: Bool
-    var materials: [String]
+    var ingredients: [Ingredient]
     var steps: [String]
     var shortDescription: String
     var uid: String
-    fileprivate var imageName: String = "NoPhoto"
+    var imageName: String = "NoPhoto"
+    var personAmount: Int = 4
     
     enum Category: String, CaseIterable, Codable, Hashable {
         case breakfast = "Breakfast"

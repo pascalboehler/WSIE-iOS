@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 
-// FIXME
 // With local file:
 let recipeData: [Recipe] = loadLocal("recipes.json")
 

@@ -9,21 +9,23 @@
 import SwiftUI
 
 struct RecipeListItemView: View {
+    let recipe: Recipe
+    
     var body: some View {
         VStack {
-            Image("NoPhoto")
+            Image(recipe.imageName)
                 .resizable()
                 .frame(height: 200)
                 .clipped()
 
             Spacer()
-            Text("Recipe title")
+            Text(recipe.title)
             HStack {
                 Spacer()
-                Text("For x person")
+                Text("For \(recipe.personAmount) person")
                 Spacer()
                 Image(systemName: "clock.fill")
-                Text("12 min")
+                Text(recipe.timeNeeded)
                     .multilineTextAlignment(.leading)
                     .padding(.trailing)
                 Spacer()
@@ -35,7 +37,7 @@ struct RecipeListItemView: View {
 
 struct RecipeListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeListItemView()
+        RecipeListItemView(recipe: recipeData[0])
             .previewLayout(.fixed(width: 300, height: 270))
     }
 }

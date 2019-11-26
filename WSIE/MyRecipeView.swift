@@ -14,38 +14,29 @@ struct MyRecipeView: View {
     var body: some View {
         NavigationView {
             List {
-                HStack {
-                    Spacer()
-                    RecipeListItemView()
-                    .frame(height: 270, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.gray, lineWidth: 2)
-                    )
-                    .cornerRadius(25)
-                    Spacer()
+                Toggle(isOn: $userData.showFavouritesOnly) {
+                    HStack {
+                        Image(systemName: "star.circle")
+                        Text("Favourites only")
+                    }
                 }
-                HStack {
-                    Spacer()
-                    RecipeListItemView()
-                    .frame(height: 270, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.gray, lineWidth: 2)
-                    )
-                    .cornerRadius(25)
-                    Spacer()
-                }
-                HStack {
-                    Spacer()
-                    RecipeListItemView()
-                    .frame(height: 270, alignment: .center)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.gray, lineWidth: 2)
-                    )
-                    .cornerRadius(25)
-                    Spacer()
+                
+                ForEach(userData.recipes) { recipe in
+                    if !self.userData.showFavouritesOnly || recipe.isFavourite {
+                        NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                            HStack {
+                               Spacer()
+                               RecipeListItemView(recipe: recipe)
+                               .frame(height: 270, alignment: .center)
+                               .overlay(
+                                   RoundedRectangle(cornerRadius: 25)
+                                       .stroke(Color.gray, lineWidth: 2)
+                               )
+                               .cornerRadius(25)
+                               Spacer()
+                            }
+                        }
+                    }
                 }
             }
             .navigationBarTitle(Text("My Recipes"))

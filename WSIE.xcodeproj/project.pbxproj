@@ -14,6 +14,7 @@
 		BB51E390238D35DD00D8B8E3 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = BB51E38F238D35DD00D8B8E3 /* recipes.json */; };
 		BB51FF83238BD775005AD29F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF82238BD775005AD29F /* UserData.swift */; };
 		BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF85238BD7E5005AD29F /* Recipe.swift */; };
+		BBD4EE26238D3EEC00A6EAD3 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD4EE25238D3EEC00A6EAD3 /* RecipeDetailView.swift */; };
 		BBE3DF65237C2F40007CAA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */; };
 		BBE3DF67237C2F40007CAA1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */; };
 		BBE3DF6A237C2F40007CAA1E /* WSIE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF68237C2F40007CAA1E /* WSIE.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 		BBE3DF7F237C2F42007CAA1E /* WSIETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF7E237C2F42007CAA1E /* WSIETests.swift */; };
 		BBE3DF8A237C2F42007CAA1E /* WSIEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */; };
 		BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF38F8B2388365F0042B837 /* MyRecipeView.swift */; };
+		BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFB0B21238D79F300027505 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,7 @@
 		BB51E38F238D35DD00D8B8E3 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		BB51FF82238BD775005AD29F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BB51FF85238BD7E5005AD29F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		BBD4EE25238D3EEC00A6EAD3 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		BBE3DF61237C2F40007CAA1E /* WSIE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSIE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE3DF64237C2F40007CAA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBE3DF66237C2F40007CAA1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSIEUITests.swift; sourceTree = "<group>"; };
 		BBE3DF8B237C2F42007CAA1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF38F8B2388365F0042B837 /* MyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeView.swift; sourceTree = "<group>"; };
+		BBFB0B21238D79F300027505 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 			children = (
 				BB51FF85238BD7E5005AD29F /* Recipe.swift */,
 				BB51FF82238BD775005AD29F /* UserData.swift */,
+				BBFB0B21238D79F300027505 /* Ingredient.swift */,
 			);
 			name = Datamodels;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF38F8B2388365F0042B837 /* MyRecipeView.swift */,
+				BBD4EE25238D3EEC00A6EAD3 /* RecipeDetailView.swift */,
 				BB2393F42389981500D9C96B /* TabbarView.swift */,
 			);
 			name = "Main Views";
@@ -403,6 +409,8 @@
 				BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */,
 				BBE3DF65237C2F40007CAA1E /* AppDelegate.swift in Sources */,
 				BBE3DF67237C2F40007CAA1E /* SceneDelegate.swift in Sources */,
+				BBD4EE26238D3EEC00A6EAD3 /* RecipeDetailView.swift in Sources */,
+				BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */,
 				BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */,
 				BBE3DF6C237C2F40007CAA1E /* ContentView.swift in Sources */,
 				BBE3DF6A237C2F40007CAA1E /* WSIE.xcdatamodeld in Sources */,
@@ -577,6 +585,7 @@
 				DEVELOPMENT_TEAM = JHCL23JCJU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WSIE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -600,6 +609,7 @@
 				DEVELOPMENT_TEAM = JHCL23JCJU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WSIE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

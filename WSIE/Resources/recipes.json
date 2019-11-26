@@ -4,9 +4,17 @@
         "title": "Recipe Test",
         "timeNeeded": "12 min",
         "isFavourite": false,
-        "materials": [
-            "Butter",
-            "Milk"
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "Milk",
+                "amount": "1 Liter"
+            },
+            {
+                "id": 1,
+                "name": "Butter",
+                "amount": "250 Gr."
+            }
         ],
         "steps": [
             "Step 1",
@@ -14,16 +22,25 @@
         ],
         "shortDescription": "This is an short description",
         "imageName": "NoPhoto",
+        "personAmount": 4,
         "uid": "UID"
     },
     {
         "id": 2,
         "title": "Recipe Test",
         "timeNeeded": "12 min",
-        "isFavourite": false,
-        "materials": [
-            "Butter",
-            "Milk"
+        "isFavourite": true,
+        "ingredients": [
+            {
+                "id": 0,
+                "name": "Milk",
+                "amount": "1 Liter"
+            },
+            {
+                "id": 1,
+                "name": "Butter",
+                "amount": "250 Gr."
+            }
         ],
         "steps": [
             "Step 1",
@@ -31,6 +48,7 @@
         ],
         "shortDescription": "This is an short description",
         "imageName": "NoPhoto",
+        "personAmount": 4,
         "uid": "UID"
     }
 ]
