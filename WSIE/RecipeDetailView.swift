@@ -11,44 +11,73 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipe: Recipe
     var body: some View {
-        //Text("Hallo")
-        VStack {
-            Image(recipe.imageName)
-                .resizable()
-                .cornerRadius(25)
-                .aspectRatio(3/2, contentMode: .fit)
-                
-            Divider()
-            HStack {
-                Text("For \(recipe.personAmount) person")
-                    .font(Font.system(size: 12))
-                Spacer()
-                Image(systemName: "clock")
-                Text(recipe.timeNeeded)
-                    .font(Font.system(size: 12))
+        ScrollView {
+            Group { // Image
+                Image(recipe.imageName)
+                    .resizable()
+                    .cornerRadius(CGFloat(25))
+                    .aspectRatio(3/2, contentMode: .fit)
+                    
+                Divider()
             }
-            Divider()
-            Text(recipe.shortDescription)
-                .font(Font.system(size: 14))
-                .multilineTextAlignment(.leading)
-            Divider()
-            HStack {
-                Text("Materials needed:")
-                    .fontWeight(.bold)
-                    .padding()
-                Spacer()
-                Button(action: {
-                    print("Delete button tapped!")
-                }) {
-                    Image(systemName: "cart")
-                    Text("Add to list")
+            Group { // Person Amount and needed Cookingtime
+                HStack {
+                    Text("For \(recipe.personAmount) person")
+                        .font(Font.system(size: 12))
+                    Spacer()
+                    Image(systemName: "clock")
+                    Text(recipe.timeNeeded)
+                        .font(Font.system(size: 12))
+                }
+                Divider()
+            }
+            
+            Group { // Short description
+                Text(recipe.shortDescription)
+                    .font(Font.system(size: 14))
+                    .multilineTextAlignment(.leading)
+                Divider()
+            }
+            
+            Group { // Materials
+                HStack {
+                    Text("Materials needed:")
                         .fontWeight(.bold)
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(40)
+                    Spacer()
+                    Button(action: {
+                        print("Delete button tapped!")
+                    }) {
+                        Image(systemName: "cart.badge.plus")
+                        Text("Add to list")
+                            .fontWeight(.bold)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(40)
+                    }
+                }
+                Divider()
+                ForEach(recipe.ingredients) { ingredient in
+                    IngredientsListItem(ingredient: ingredient)
+                    Divider()
                 }
             }
+            
+            Group { // Steps
+                HStack() {
+                    Text("Steps to prepare:")
+                        .fontWeight(.bold)
+                        .padding()
+                    Spacer()
+                }
+                ForEach(recipe.steps) { step in
+                    StepsListItem(step: step)
+                    Divider()
+                }
+            }
+            
+            // The end
             Spacer()
                 
             

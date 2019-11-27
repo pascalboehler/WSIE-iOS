@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct RecipeListItemView: View {
+struct RecipeListItem: View {
     let recipe: Recipe
     
     var body: some View {
@@ -35,9 +35,9 @@ struct RecipeListItemView: View {
     }
 }
 
-struct RecipeListItemView_Previews: PreviewProvider {
+struct RecipeListItem_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeListItemView(recipe: recipeData[0])
+        RecipeListItem(recipe: recipeData[0])
             .previewLayout(.fixed(width: 300, height: 270))
     }
 }

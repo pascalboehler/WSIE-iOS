@@ -26,7 +26,7 @@ struct MyRecipeView: View {
                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                             HStack {
                                Spacer()
-                               RecipeListItemView(recipe: recipe)
+                               RecipeListItem(recipe: recipe)
                                .frame(height: 270, alignment: .center)
                                .overlay(
                                    RoundedRectangle(cornerRadius: 25)
@@ -35,13 +35,14 @@ struct MyRecipeView: View {
                                .cornerRadius(25)
                                Spacer()
                             }
-                        }
+                        }.buttonStyle(PlainButtonStyle())
                     }
                 }
             }
             .navigationBarTitle(Text("My Recipes"))
         }
     }
+    
 }
 
 struct MyRecipeView_Previews: PreviewProvider {

@@ -17,8 +17,16 @@
             }
         ],
         "steps": [
-            "Step 1",
-            "Step 2"
+            {
+                "id": 0,
+                "description": "The Description \n new line \n another line1",
+                "image": "none"
+            },
+            {
+                "id": 1,
+                "description": "The Description \n new line \n another line2r \n asfhadjfgsdkf\n sjd.fgsdkfg",
+                "image": "none"
+            }
         ],
         "shortDescription": "This is an short description",
         "imageName": "NoPhoto",
@@ -43,8 +51,16 @@
             }
         ],
         "steps": [
-            "Step 1",
-            "Step 2"
+            {
+                "id": 0,
+                "description": "The Description \n new line \n another line",
+                "image": "none"
+            },
+            {
+                "id": 1,
+                "description": "The Description \n new line \n another line \n adkfsldkfhslkdf ",
+                "image": "none"
+            }
         ],
         "shortDescription": "This is an short description",
         "imageName": "NoPhoto",
