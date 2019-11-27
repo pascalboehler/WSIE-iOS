@@ -25,15 +25,15 @@ struct MyRecipeView: View {
                     if !self.userData.showFavouritesOnly || recipe.isFavourite {
                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                             HStack {
-                               Spacer()
-                               RecipeListItem(recipe: recipe)
-                               .frame(height: 270, alignment: .center)
-                               .overlay(
-                                   RoundedRectangle(cornerRadius: 25)
-                                       .stroke(Color.gray, lineWidth: 2)
-                               )
-                               .cornerRadius(25)
-                               Spacer()
+                                Spacer()
+                                RecipeListItem(recipe: recipe)
+                                    .aspectRatio(300/200, contentMode: .fit)
+                                    .overlay(
+                                       RoundedRectangle(cornerRadius: 25)
+                                           .stroke(Color.gray, lineWidth: 2)
+                                    )
+                                    .cornerRadius(25)
+                                Spacer()
                             }
                         }.buttonStyle(PlainButtonStyle())
                     }
