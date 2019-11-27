@@ -11,6 +11,7 @@ import Combine
 
 public class UserData: ObservableObject {
     @Published var showFavouritesOnly: Bool = false
-    @Published var isLoggedIn: Bool = false
+    @Published var isLoggedIn: Bool = true
     @Published var recipes = recipeData
+    
 }

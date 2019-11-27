@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct TabbarView: View {
     @EnvironmentObject var userData: UserData
     
     var body: some View {
@@ -37,8 +37,8 @@ struct MainView: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        TabbarView()
     }
 }

@@ -5,5 +5,6 @@ target 'WSIE' do
     pod 'Alamofire'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Analytics'
 end
 

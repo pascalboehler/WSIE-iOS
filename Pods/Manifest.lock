@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
+  - Firebase/Analytics (6.5.0):
+    - Firebase/Core
   - Firebase/Auth (6.5.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.2.1)
@@ -65,6 +67,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
   - Hasher
@@ -98,6 +101,6 @@ SPEC CHECKSUMS:
   Hasher: 0253fad5775fad5c5f6a671ef40c8e3cffedc501
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: afcc4884a9617167fcfd75fea27e0149d4b90fb6
+PODFILE CHECKSUM: 1152087ad5c7dcacf7d18830a80e68d49ff55070
 
 COCOAPODS: 1.7.5
