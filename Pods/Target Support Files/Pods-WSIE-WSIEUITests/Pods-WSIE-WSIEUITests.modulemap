@@ -1,0 +1,6 @@
+framework module Pods_WSIE_WSIEUITests {
+  umbrella header "Pods-WSIE-WSIEUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

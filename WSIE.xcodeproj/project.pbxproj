@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7484C2A4B0FCEE9755608F /* Pods_WSIE_WSIETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F0AFF8D65A2CCAAB20D473C /* Pods_WSIE_WSIETests.framework */; };
+		45B4D282610038CA0790F48E /* Pods_WSIE_WSIEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B7487D1CC2E35DFF845286 /* Pods_WSIE_WSIEUITests.framework */; };
 		AA3D8025936F94EDD70C6FE3 /* Pods_WSIE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */; };
 		BB2393F52389981500D9C96B /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F42389981500D9C96B /* TabbarView.swift */; };
 		BB2393F723899BAC00D9C96B /* RecipeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F623899BAC00D9C96B /* RecipeListItem.swift */; };
@@ -52,8 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1C9E83D8572DBBB8003669 /* Pods-WSIEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIEUITests.debug.xcconfig"; path = "Target Support Files/Pods-WSIEUITests/Pods-WSIEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D3BBE418A4514D41ED1FBC0 /* Pods-WSIE-WSIEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIEUITests.release.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIEUITests/Pods-WSIE-WSIEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1653DA60C7150AB8E9697C46 /* Pods-WSIEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIEUITests.release.xcconfig"; path = "Target Support Files/Pods-WSIEUITests/Pods-WSIEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		48FE246A30BDCA20731F34A6 /* Pods-WSIETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIETests.debug.xcconfig"; path = "Target Support Files/Pods-WSIETests/Pods-WSIETests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EC5A8D535AFA0BE1822936B /* Pods-WSIETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIETests.release.xcconfig"; path = "Target Support Files/Pods-WSIETests/Pods-WSIETests.release.xcconfig"; sourceTree = "<group>"; };
 		61630369CA0891F4C9974CC0 /* Pods-WSIE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.debug.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.debug.xcconfig"; sourceTree = "<group>"; };
 		797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE.release.xcconfig"; path = "Target Support Files/Pods-WSIE/Pods-WSIE.release.xcconfig"; sourceTree = "<group>"; };
+		7A9FAA41BAB67828A61E97EA /* Pods-WSIE-WSIEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIEUITests.debug.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIEUITests/Pods-WSIE-WSIEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		80689E917CDBC496C5C240AE /* Pods-WSIE-WSIETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIETests.release.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests.release.xcconfig"; sourceTree = "<group>"; };
+		9F0AFF8D65A2CCAAB20D473C /* Pods_WSIE_WSIETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE_WSIETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB2393F42389981500D9C96B /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		BB2393F623899BAC00D9C96B /* RecipeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListItem.swift; sourceTree = "<group>"; };
 		BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListItem.swift; sourceTree = "<group>"; };
@@ -86,7 +96,9 @@
 		BBE3DF8B237C2F42007CAA1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF38F8B2388365F0042B837 /* MyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeView.swift; sourceTree = "<group>"; };
 		BBFB0B21238D79F300027505 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		CA8FE5094D2E067D75744EF0 /* Pods-WSIE-WSIETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIETests.debug.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests.debug.xcconfig"; sourceTree = "<group>"; };
 		D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B7487D1CC2E35DFF845286 /* Pods_WSIE_WSIEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE_WSIEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7484C2A4B0FCEE9755608F /* Pods_WSIE_WSIETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B4D282610038CA0790F48E /* Pods_WSIE_WSIEUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +134,14 @@
 			children = (
 				61630369CA0891F4C9974CC0 /* Pods-WSIE.debug.xcconfig */,
 				797F04897FC4B85A1368D7E5 /* Pods-WSIE.release.xcconfig */,
+				48FE246A30BDCA20731F34A6 /* Pods-WSIETests.debug.xcconfig */,
+				4EC5A8D535AFA0BE1822936B /* Pods-WSIETests.release.xcconfig */,
+				0D1C9E83D8572DBBB8003669 /* Pods-WSIEUITests.debug.xcconfig */,
+				1653DA60C7150AB8E9697C46 /* Pods-WSIEUITests.release.xcconfig */,
+				CA8FE5094D2E067D75744EF0 /* Pods-WSIE-WSIETests.debug.xcconfig */,
+				80689E917CDBC496C5C240AE /* Pods-WSIE-WSIETests.release.xcconfig */,
+				7A9FAA41BAB67828A61E97EA /* Pods-WSIE-WSIEUITests.debug.xcconfig */,
+				0D3BBE418A4514D41ED1FBC0 /* Pods-WSIE-WSIEUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -128,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */,
+				9F0AFF8D65A2CCAAB20D473C /* Pods_WSIE_WSIETests.framework */,
+				F3B7487D1CC2E35DFF845286 /* Pods_WSIE_WSIEUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE3DF91237C2F42007CAA1E /* Build configuration list for PBXNativeTarget "WSIETests" */;
 			buildPhases = (
+				FE60954A9451FE1CC53B701C /* [CP] Check Pods Manifest.lock */,
 				BBE3DF76237C2F42007CAA1E /* Sources */,
 				BBE3DF77237C2F42007CAA1E /* Frameworks */,
 				BBE3DF78237C2F42007CAA1E /* Resources */,
+				BF7C48B240ADB61438D64DBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE3DF94237C2F42007CAA1E /* Build configuration list for PBXNativeTarget "WSIEUITests" */;
 			buildPhases = (
+				2BA50948000B619F5B8F5E0B /* [CP] Check Pods Manifest.lock */,
 				BBE3DF81237C2F42007CAA1E /* Sources */,
 				BBE3DF82237C2F42007CAA1E /* Frameworks */,
 				BBE3DF83237C2F42007CAA1E /* Resources */,
+				70606A8CC7831E4B78A98230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -375,6 +403,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BA50948000B619F5B8F5E0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WSIE-WSIEUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70606A8CC7831E4B78A98230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIEUITests/Pods-WSIE-WSIEUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIEUITests/Pods-WSIE-WSIEUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIEUITests/Pods-WSIE-WSIEUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF7C48B240ADB61438D64DBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0D792853CD395E35CBD3075 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +496,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSIE/Pods-WSIE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE60954A9451FE1CC53B701C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WSIE-WSIETests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -648,6 +754,7 @@
 		};
 		BBE3DF92237C2F42007CAA1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA8FE5094D2E067D75744EF0 /* Pods-WSIE-WSIETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -670,6 +777,7 @@
 		};
 		BBE3DF93237C2F42007CAA1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80689E917CDBC496C5C240AE /* Pods-WSIE-WSIETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -692,6 +800,7 @@
 		};
 		BBE3DF95237C2F42007CAA1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A9FAA41BAB67828A61E97EA /* Pods-WSIE-WSIEUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -712,6 +821,7 @@
 		};
 		BBE3DF96237C2F42007CAA1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D3BBE418A4514D41ED1FBC0 /* Pods-WSIE-WSIEUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
