@@ -14,7 +14,7 @@ struct StepsListItem: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Step \(step.id + 1):")
+                Text(String.localizedStringWithFormat(NSLocalizedString("Step %d", comment: "Step title label"), (step.id + 1)))
                     .fontWeight(.bold)
                     .padding()
                 Spacer()
