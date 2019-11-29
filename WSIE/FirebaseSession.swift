@@ -15,6 +15,8 @@ class FirebaseSession: ObservableObject {
     // MARK: Properties
     @Published var firebaseSession: User?
     @Published var isLoggedIn: Bool = false
+    @Published var showAlert: Bool = false
+    @Published var errorMessage: Error? = nil
     @EnvironmentObject var userData: UserData
     
     // MARK: Functions
@@ -31,10 +33,12 @@ class FirebaseSession: ObservableObject {
         })
     }
     
-    func logIn(email: String, password: String) {
+    func logIn(email: String, password: String){
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, err) in
             if let err = err {
-                print("Something went wrong \(err.localizedDescription)")
+                print("Something went wrong with error: \(err.localizedDescription)")
+                self.errorMessage = err
+                self.showAlert = true
             } else {
                 if let authResult = authResult {
                     let user = authResult.user
@@ -69,6 +73,4 @@ class FirebaseSession: ObservableObject {
             }
         }
     }
-    
-    
 }

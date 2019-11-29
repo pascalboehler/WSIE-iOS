@@ -14,33 +14,40 @@ struct LoginView: View {
     
     @State var email: String = ""
     @State var password: String = ""
+    @State var showActivityIndicator: Bool = false
     
     var body: some View {
-        
-        VStack(spacing: 20) {
-                Text("Sign In")
-                TextField("Email", text: $email)
-                
-                SecureField("Password", text: $password)
-                Button(action: {
-                    self.firebaseSession.logIn(email: self.email, password: self.password)
-                    self.email = ""
-                    self.password = ""
-                }) {
-                    Text("Sign In")
+        ZStack {
+            VStack(spacing: 20) {
+                    TextField("Email", text: $email)
+                    
+                    SecureField("Password", text: $password)
+                    Button(action: {
+                        self.firebaseSession.logIn(email: self.email, password: self.password)
+                        self.email = ""
+                        self.password = ""
+                        self.showActivityIndicator = true
+                    }) {
+                        Text("Sign In")
+                    }
+                    .padding()
+                    Button(action: {
+                        self.firebaseSession.signUp(email: self.email, password: self.password)
+                        self.email = ""
+                        self.password = ""
+                    }) {
+                        Text("Sign Up")
+                    }
+                    .padding()
                 }
-                .padding()
-                Button(action: {
-                    self.firebaseSession.signUp(email: self.email, password: self.password)
-                    self.email = ""
-                    self.password = ""
-                }) {
-                    Text("Sign Up")
-                }
-                .padding()
+            .padding()
+            .alert(isPresented: $firebaseSession.showAlert) { () -> Alert in
+                Alert(title: Text("Login failed"), message: Text("\(firebaseSession.errorMessage?.localizedDescription ?? "Something went wrong!")"))
             }
-        .padding()
-
+            if (showActivityIndicator) {
+                ActivityIndicator(style: .large)
+            }
+        }
     }
 }
 

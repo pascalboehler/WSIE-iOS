@@ -15,3 +15,6 @@
 "Steps to prepare" = "Steps to prepare:";
 "Add to list" = "Add to list";
 "Step %d" = "Step %d:";
+
+// Login view
+"Sign In" = "Sign In";

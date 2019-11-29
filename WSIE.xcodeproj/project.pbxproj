@@ -11,6 +11,7 @@
 		45B4D282610038CA0790F48E /* Pods_WSIE_WSIEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B7487D1CC2E35DFF845286 /* Pods_WSIE_WSIEUITests.framework */; };
 		AA3D8025936F94EDD70C6FE3 /* Pods_WSIE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */; };
 		BB021F1523917BAE00FD796B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB021F1423917BAE00FD796B /* Settings.swift */; };
+		BB021F172391830D00FD796B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB021F162391830D00FD796B /* ActivityIndicator.swift */; };
 		BB2393F52389981500D9C96B /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F42389981500D9C96B /* TabbarView.swift */; };
 		BB2393F723899BAC00D9C96B /* RecipeListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2393F623899BAC00D9C96B /* RecipeListItem.swift */; };
 		BB2DA13C238DB1D70067E0F6 /* IngredientsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */; };
@@ -70,6 +71,7 @@
 		80689E917CDBC496C5C240AE /* Pods-WSIE-WSIETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIETests.release.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests.release.xcconfig"; sourceTree = "<group>"; };
 		9F0AFF8D65A2CCAAB20D473C /* Pods_WSIE_WSIETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE_WSIETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB021F1423917BAE00FD796B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		BB021F162391830D00FD796B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		BB2393F42389981500D9C96B /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		BB2393F623899BAC00D9C96B /* RecipeListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListItem.swift; sourceTree = "<group>"; };
 		BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListItem.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				BB2393F623899BAC00D9C96B /* RecipeListItem.swift */,
 				BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */,
 				BB2DA141238DBC400067E0F6 /* StepsListItem.swift */,
+				BB021F162391830D00FD796B /* ActivityIndicator.swift */,
 			);
 			name = "Helping Views";
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				BBCEB6A8238E6C1C00DCD3E7 /* LoginView.swift in Sources */,
 				BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */,
 				BB2DA142238DBC400067E0F6 /* StepsListItem.swift in Sources */,
+				BB021F172391830D00FD796B /* ActivityIndicator.swift in Sources */,
 				BB2DA13C238DB1D70067E0F6 /* IngredientsListItem.swift in Sources */,
 				BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */,
 				BB021F1523917BAE00FD796B /* Settings.swift in Sources */,
