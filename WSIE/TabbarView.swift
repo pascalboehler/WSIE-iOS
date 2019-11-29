@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TabbarView: View {
     @EnvironmentObject var userData: UserData
+    @EnvironmentObject var firebaseSession: FirebaseSession
     
     var body: some View {
         TabView {
@@ -27,11 +28,13 @@ struct TabbarView: View {
                     Image(systemName: "2.square.fill")
                     Text("Second")
                 }
-            Text("The Last Tab")
+            
+            Settings()
                 .tabItem {
-                    Image(systemName: "3.square.fill")
-                    Text("Third")
+                    Image(systemName: "gear")
+                    Text("Settings")
                 }
+                .environmentObject(firebaseSession)
         }
         
     }

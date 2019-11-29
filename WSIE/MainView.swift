@@ -7,16 +7,18 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct MainView: View {
-    @EnvironmentObject var userData: UserData
-    
+    @ObservedObject var firebaseSession = FirebaseSession()
+        
     var body: some View {
         Group {
-            if (userData.isLoggedIn) {
-                TabbarView()
+            if (firebaseSession.isLoggedIn || firebaseSession.firebaseSession != nil || Auth.auth().currentUser != nil) {
+                TabbarView().environmentObject(firebaseSession)
             } else {
-                LoginView()
+                LoginView().environmentObject(firebaseSession)
             }
         }
     }
