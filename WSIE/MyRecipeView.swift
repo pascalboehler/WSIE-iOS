@@ -39,7 +39,7 @@ struct MyRecipeView: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("My Recipes"))
+            .navigationBarTitle(Text(NSLocalizedString("My Recipes", comment: "My Recipes Navigation bar title")))
         }
     }
     

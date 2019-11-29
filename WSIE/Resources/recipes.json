@@ -31,7 +31,11 @@
         "shortDescription": "This is an short description",
         "imageName": "NoPhoto",
         "personAmount": 4,
-        "uid": "UID"
+        "uid": "UID",
+        "sharedWith": [
+            "uid",
+            "uid"
+        ]
     },
     {
         "id": 2,
