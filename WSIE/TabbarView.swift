@@ -20,7 +20,7 @@ struct TabbarView: View {
                     } else {
                         Image(systemName: "book")
                     }
-                    Text("My Recipes")
+                    Text(NSLocalizedString("My Recipes", comment: "My Recipes View Tabbar title"))
                 }
             Text("Another Tab")
                 .tabItem {

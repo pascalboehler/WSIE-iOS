@@ -17,12 +17,12 @@ struct MyRecipeView: View {
                 Toggle(isOn: $userData.showFavouritesOnly) {
                     HStack {
                         Image(systemName: "star.circle")
-                        Text("Favourites only")
+                        Text(NSLocalizedString("Favourites only", comment: "Only show favourites when switch is toggled."))
                     }
                 }
                 
                 ForEach(userData.recipes) { recipe in
-                    if !self.userData.showFavouritesOnly || recipe.isFavourite {
+                    if (!self.userData.showFavouritesOnly || recipe.isFavourite) && recipe.language == Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first{
                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                             HStack {
                                 Spacer()
@@ -39,7 +39,7 @@ struct MyRecipeView: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("My Recipes"))
+            .navigationBarTitle(Text(NSLocalizedString("My Recipes", comment: "/")))
         }
     }
     

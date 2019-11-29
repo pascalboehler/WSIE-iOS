@@ -22,7 +22,8 @@ struct RecipeDetailView: View {
             }
             Group { // Person Amount and needed Cookingtime
                 HStack {
-                    Text("For \(recipe.personAmount) person")
+                    //Text("For \(recipe.personAmount) person")
+                    Text(String.localizedStringWithFormat(NSLocalizedString("For %d Person", comment: "Display the number of person the recipe is made for"), recipe.personAmount))
                         .font(Font.system(size: 12))
                     Spacer()
                     Image(systemName: "clock")
@@ -41,12 +42,12 @@ struct RecipeDetailView: View {
             
             Group { // Materials
                 HStack {
-                    Text("Materials needed:")
+                    Text(NSLocalizedString("Ingredients needed", comment: "Title for ingredients list"))
                         .fontWeight(.bold)
                         .padding()
                     Spacer()
                     Button(action: {
-                        print("Delete button tapped!")
+                        print("Add to list button tapped!")
                     }) {
                         Image(systemName: "cart.badge.plus")
                         Text("Add to list")
@@ -66,7 +67,7 @@ struct RecipeDetailView: View {
             
             Group { // Steps
                 HStack() {
-                    Text("Steps to prepare:")
+                    Text(NSLocalizedString("Steps to prepare", comment: "Title for steps list"))
                         .fontWeight(.bold)
                         .padding()
                     Spacer()

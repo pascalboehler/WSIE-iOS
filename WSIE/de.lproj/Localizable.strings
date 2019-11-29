@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  WSIE
+
+  Created by Pascal Boehler on 29.11.19.
+  Copyright © 2019 Pascal Boehler. All rights reserved.
+*/
+// RecipeView
+"My Recipes" = "Meine Rezepte";
+"For %d Person" = "Für %d Personen";
+"Favourites only" = "Favoriten";
+
+// RecipeDetailView
+"Ingredients needed" = "Benötigte Zutaten:";
+"Steps to prepare" = "Zubereitungsschritte:";
+"Add to list" = "Hinzufügen";
+"Step %d" = "Schritt %d:";

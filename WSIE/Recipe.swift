@@ -21,6 +21,7 @@ struct Recipe: Hashable, Codable, Identifiable {
     var imageName: String = "NoPhoto"
     var personAmount: Int = 4
     var sharedWith: [String] // for future see kanban for information
+    var language: String = "de"
     
     enum Category: String, CaseIterable, Codable, Hashable {
         case breakfast = "Breakfast"

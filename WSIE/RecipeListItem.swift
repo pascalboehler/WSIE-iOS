@@ -22,7 +22,8 @@ struct RecipeListItem: View {
             Text(recipe.title)
             HStack {
                 Spacer()
-                Text("For \(recipe.personAmount) person")
+                //Text("For \(recipe.personAmount) person")
+                Text(String.localizedStringWithFormat(NSLocalizedString("For %d Person", comment: "Display the amount of perosn the recipe is made for"), recipe.personAmount))
                 Spacer()
                 Image(systemName: "clock.fill")
                 Text(recipe.timeNeeded)
