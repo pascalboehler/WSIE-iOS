@@ -8,9 +8,12 @@
 
 import UIKit
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 // With local file:
-let recipeData: [Recipe] = loadLocal("recipes.json")
+var recipeData: [Recipe] = loadLocal("recipes.json")
+fileprivate var db: Firestore!
 
 func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data
@@ -34,4 +37,29 @@ func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T 
     }
 }
 
-// fetch from server:
+// fetch from server
+func loadFirebase() -> [Recipe] {
+    db.collection("recipes").getDocuments() { (querySnapshot, err) in
+        if let err = err {
+            print("Error getting documents: \(err)")
+        } else {
+            for document in querySnapshot!.documents {
+                let data = document.data()
+                print("\(document.documentID) => \(document.data())")
+                recipeData.append(Recipe(id: data["id"] as! Int, title: data["title"] as! String, timeNeeded: data["timeNeeded"] as! String, isFavourite: data["isFavourite"] as! Bool, ingredients: data["ingredients"] as! [Ingredient], steps: data["steps"] as! [Step], shortDescription: data["shortDescription"] as! String, uid: data["userId"] as! String, imageName: data["imageName"] as! String, personAmount: data["personAmount"] as! Int, sharedWith: data["sharedWith"] as! [String], language: data["language"] as! String))
+            }
+        }
+    }
+    return []
+}
+
+func initFirebase() {
+    // init firebase
+    let settings = FirestoreSettings()
+    Firestore.firestore().settings = settings
+    db = Firestore.firestore()
+}
+
+func refreshData() {
+    recipeData = loadFirebase()
+}

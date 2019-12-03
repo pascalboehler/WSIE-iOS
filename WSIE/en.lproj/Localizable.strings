@@ -5,16 +5,16 @@
   Created by Pascal Boehler on 29.11.19.
   Copyright © 2019 Pascal Boehler. All rights reserved.
 */
-// RecipeView + RecipeListItem
+// MARK: - RecipeView + RecipeListItem
 "My Recipes" = "My Recipes";
 "For %d Person" = "For %d Person";
 "Favourites only" = "Favourites only";
 
-// Recipe detail view + StepsListItem
+// MARK: - Recipe detail view + StepsListItem
 "Ingredients needed" = "Ingredients needed:";
 "Steps to prepare" = "Steps to prepare:";
 "Add to list" = "Add to list";
 "Step %d" = "Step %d:";
 
-// Login view
+// MARK: - Login view
 "Sign In" = "Sign In";
