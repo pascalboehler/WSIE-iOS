@@ -38,7 +38,7 @@ func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T 
 }
 
 // fetch from server
-func loadFirebase() -> [Recipe] {
+func loadFirebase() {
     db.collection("recipes").getDocuments() { (querySnapshot, err) in
         if let err = err {
             print("Error getting documents: \(err)")
@@ -50,7 +50,6 @@ func loadFirebase() -> [Recipe] {
             }
         }
     }
-    return []
 }
 
 func initFirebase() {
@@ -58,6 +57,25 @@ func initFirebase() {
     let settings = FirestoreSettings()
     Firestore.firestore().settings = settings
     db = Firestore.firestore()
+}
+
+func writeDummyData(recipe: Recipe) {
+    // MARK: NOT WORKING!
+    /*
+    db.collection("recipes").document(recipe.title).setData([
+        "id": recipe.id,
+        "title": recipe.title,
+        "timeNeeded": recipe.timeNeeded,
+        "isFavourite": recipe.isFavourite,
+        "ingredients": recipe.ingredients,
+        "steps": recipe.steps,
+        "uid": recipe.uid,
+        "imageName": recipe.imageName,
+        "personAmount": recipe.personAmount,
+        "sharedWith": recipe.sharedWith,
+        "language": recipe.language
+        
+    ])*/
 }
 
 func refreshData() {
