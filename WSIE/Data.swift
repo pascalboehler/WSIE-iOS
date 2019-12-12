@@ -74,10 +74,9 @@ func writeDummyData(recipe: Recipe) {
         "personAmount": recipe.personAmount,
         "sharedWith": recipe.sharedWith,
         "language": recipe.language
-        
     ])*/
 }
 
 func refreshData() {
-    recipeData = loadFirebase()
+    loadFirebase()
 }
