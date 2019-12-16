@@ -12,11 +12,19 @@ struct Settings: View {
     @EnvironmentObject var firebaseSession: FirebaseSession
     
     var body: some View {
-        Button(action: {
-            try! self.firebaseSession.logOut()
-        }) {
-            Text("Sign out")
+        VStack {
+            Button(action: {
+                try! self.firebaseSession.logOut()
+            }) {
+                Text("Sign out")
+            }
+            Button(action: {
+                print("Hallo Welt")
+            }) {
+                Text("Change language")
+            }   
         }
+        .navigationBarTitle("Settings")
     }
 }
 
