@@ -5,16 +5,20 @@
   Created by Pascal Boehler on 29.11.19.
   Copyright © 2019 Pascal Boehler. All rights reserved.
 */
-// RecipeView
+// MARK: - RecipeView + RecipeListItem
 "My Recipes" = "Meine Rezepte";
 "For %d Person" = "Für %d Personen";
 "Favourites only" = "Favoriten";
 
-// RecipeDetailView
+// MARK: - Recipe detail view + StepsListItem
 "Ingredients needed" = "Benötigte Zutaten:";
 "Steps to prepare" = "Zubereitungsschritte:";
 "Add to list" = "Hinzufügen";
 "Step %d" = "Schritt %d:";
 
-// Login View
+// MARK: - Login view
 "Sign In" = "Anmelden";
+
+// MARK: - Settings View
+"Settings" = "Einstellungen";
+"Language" = "Sprache";

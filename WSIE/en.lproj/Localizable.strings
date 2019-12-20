@@ -18,3 +18,7 @@
 
 // MARK: - Login view
 "Sign In" = "Sign In";
+
+// MARK: - Settings view
+"Settings" = "Settings";
+"Language" = "Language";

@@ -12,19 +12,31 @@ struct Settings: View {
     @EnvironmentObject var firebaseSession: FirebaseSession
     
     var body: some View {
-        VStack {
-            Button(action: {
-                try! self.firebaseSession.logOut()
-            }) {
-                Text("Sign out")
+        NavigationView {
+            VStack {
+                Divider()
+                Text("Profile...")
+                HStack {
+                    Button(action: {
+                        try! self.firebaseSession.logOut()
+                    }) {
+                        Text("Sign out")
+                    }
+                    Spacer()
+
+                }.padding()
+                Divider()
+                Text(NSLocalizedString("Language", comment: "User prefs like language etc."))
+                Button(action: {
+                    print("Hallo Welt")
+                }) {
+                    Text("Change language")
+                    // TODO: Open Settings when button is clicked
+                }
+                Spacer()
             }
-            Button(action: {
-                print("Hallo Welt")
-            }) {
-                Text("Change language")
-            }   
+        .navigationBarTitle(NSLocalizedString("Settings", comment: "Settings view nav bar title"))
         }
-        .navigationBarTitle("Settings")
     }
 }
 
