@@ -9,11 +9,14 @@
 import UIKit
 import SwiftUI
 import Firebase
-import FirebaseFirestore
+import Alamofire
 
 // With local file:
-var recipeData: [Recipe] = loadLocal("recipes.json")
-fileprivate var db: Firestore!
+//var recipeData: [Recipe] = loadLocal("recipes.json")
+// from server
+var recipeData: [Recipe] = loadFromApi()
+
+//fileprivate var db: Firestore!
 
 func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data
@@ -37,46 +40,55 @@ func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T 
     }
 }
 
-// fetch from server
-func loadFirebase() {
-    db.collection("recipes").getDocuments() { (querySnapshot, err) in
-        if let err = err {
-            print("Error getting documents: \(err)")
-        } else {
-            for document in querySnapshot!.documents {
-                let data = document.data()
-                print("\(document.documentID) => \(document.data())")
-                recipeData.append(Recipe(id: data["id"] as! Int, title: data["title"] as! String, timeNeeded: data["timeNeeded"] as! String, isFavourite: data["isFavourite"] as! Bool, ingredients: data["ingredients"] as! [Ingredient], steps: data["steps"] as! [Step], shortDescription: data["shortDescription"] as! String, uid: data["userId"] as! String, imageName: data["imageName"] as! String, personAmount: data["personAmount"] as! Int, sharedWith: data["sharedWith"] as! [String], language: data["language"] as! String))
+func loadFromApi() -> [Recipe] {
+    var recipes: [Recipe] = []
+    //let urlString = "http://localhost:8080/recipe/UID/\(Auth.auth().currentUser!.uid)"
+    
+    let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
+    guard let url = URL(string: urlString) else {
+        return []
+    }
+    Alamofire.request(url, method: .get).validate().responseData { response in
+        guard response.result.isSuccess else {
+            print("ERROR WHILE FETCHING DATA")
+            return
+        }
+        do {
+            let decoder = JSONDecoder()
+            try recipes =  decoder.decode([Recipe].self, from: response.result.value!)
+        } catch {
+            fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
+        }
+    }
+    print(recipes)
+    return recipes
+}
+
+class NetworkManager : ObservableObject {
+   @Published  var recipes: [Recipe] = []
+    
+    init() {
+        loadFromApi()
+    }
+    
+    func loadFromApi() {
+        let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
+        guard let url = URL(string: urlString) else {
+            print("WRONG URL")
+            return
+        }
+        Alamofire.request(url, method: .get).validate().responseData { response in
+            guard response.result.isSuccess else {
+                print("ERROR WHILE FETCHING DATA")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                try self.recipes =  decoder.decode([Recipe].self, from: response.result.value!)
+                print(self.recipes)
+            } catch {
+                fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
             }
         }
     }
-}
-
-func initFirebase() {
-    // init firebase
-    let settings = FirestoreSettings()
-    Firestore.firestore().settings = settings
-    db = Firestore.firestore()
-}
-
-func writeDummyData(recipe: Recipe) {
-    // MARK: NOT WORKING!
-    /*
-    db.collection("recipes").document(recipe.title).setData([
-        "id": recipe.id,
-        "title": recipe.title,
-        "timeNeeded": recipe.timeNeeded,
-        "isFavourite": recipe.isFavourite,
-        "ingredients": recipe.ingredients,
-        "steps": recipe.steps,
-        "uid": recipe.uid,
-        "imageName": recipe.imageName,
-        "personAmount": recipe.personAmount,
-        "sharedWith": recipe.sharedWith,
-        "language": recipe.language
-    ])*/
-}
-
-func refreshData() {
-    loadFirebase()
 }

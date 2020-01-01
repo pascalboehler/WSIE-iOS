@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MyRecipeView: View {
     @EnvironmentObject var userData: UserData
+    @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
         NavigationView {
@@ -21,7 +22,7 @@ struct MyRecipeView: View {
                     }
                 }
                 
-                ForEach(userData.recipes) { recipe in
+                ForEach(networkManager.recipes) { recipe in
                     if (!self.userData.showFavouritesOnly || recipe.isFavourite) && recipe.language == Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first{
                         NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                             HStack {

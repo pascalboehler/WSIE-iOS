@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
-import FirebaseFirestore
+//import FirebaseFirestore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        _ = Firestore.firestore()
-        initFirebase()
+        //_ = Firestore.firestore()
+        //initFirebase()
         return true
     }
 
