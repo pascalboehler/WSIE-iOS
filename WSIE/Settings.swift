@@ -28,7 +28,7 @@ struct Settings: View {
                 Divider()
                 Text(NSLocalizedString("Language", comment: "User prefs like language etc."))
                 Button(action: {
-                    print("Hallo Welt")
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                 }) {
                     Text("Change language")
                     // TODO: Open Settings when button is clicked

@@ -17,7 +17,7 @@
 		BB2DA13C238DB1D70067E0F6 /* IngredientsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */; };
 		BB2DA140238DB81A0067E0F6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA13F238DB81A0067E0F6 /* Step.swift */; };
 		BB2DA142238DBC400067E0F6 /* StepsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA141238DBC400067E0F6 /* StepsListItem.swift */; };
-		BB51E38D238D350000D8B8E3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51E38C238D350000D8B8E3 /* Data.swift */; };
+		BB51E38D238D350000D8B8E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51E38C238D350000D8B8E3 /* NetworkManager.swift */; };
 		BB51E390238D35DD00D8B8E3 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = BB51E38F238D35DD00D8B8E3 /* recipes.json */; };
 		BB51FF83238BD775005AD29F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF82238BD775005AD29F /* UserData.swift */; };
 		BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF85238BD7E5005AD29F /* Recipe.swift */; };
@@ -79,7 +79,7 @@
 		BB2DA141238DBC400067E0F6 /* StepsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsListItem.swift; sourceTree = "<group>"; };
 		BB420333238D1DCC004701C0 /* WSIE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSIE.entitlements; sourceTree = "<group>"; };
 		BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WSIETestPlan.xctestplan; sourceTree = "<group>"; };
-		BB51E38C238D350000D8B8E3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BB51E38C238D350000D8B8E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BB51E38F238D35DD00D8B8E3 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		BB51FF82238BD775005AD29F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BB51FF85238BD7E5005AD29F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		BBE3DF63237C2F40007CAA1E /* WSIE */ = {
 			isa = PBXGroup;
 			children = (
-				BB51E38C238D350000D8B8E3 /* Data.swift */,
+				BB51E38C238D350000D8B8E3 /* NetworkManager.swift */,
 				BBDAF6EF23916A9D0064DB86 /* Utility.swift */,
 				BBDAF6F9239171B00064DB86 /* FirebaseSession.swift */,
 				BB420333238D1DCC004701C0 /* WSIE.entitlements */,
@@ -558,7 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2393F52389981500D9C96B /* TabbarView.swift in Sources */,
-				BB51E38D238D350000D8B8E3 /* Data.swift in Sources */,
+				BB51E38D238D350000D8B8E3 /* NetworkManager.swift in Sources */,
 				BBDAF6F023916A9D0064DB86 /* Utility.swift in Sources */,
 				BB2DA140238DB81A0067E0F6 /* Step.swift in Sources */,
 				BB2393F723899BAC00D9C96B /* RecipeListItem.swift in Sources */,
