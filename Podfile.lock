@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.8.2)
+  - Countly (19.02):
+    - Countly/NotificationService (= 19.02)
+  - Countly/NotificationService (19.02)
   - Firebase/Auth (6.5.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.2.1)
@@ -65,6 +68,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Countly
   - Firebase/Auth
   - Firebase/Core
   - Hasher
@@ -72,6 +76,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Countly
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -86,6 +91,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Countly: f4f9d6b8eb9bb7914a05d28b8adca12a27b2e61a
   Firebase: dedc9e48ea3f3649ad5f6b982f8a0c73508a14b5
   FirebaseAnalytics: 3fb375bc9d13779add4039716f868d233a473fad
   FirebaseAuth: a06ad63e9bf4c86165b54cceb1c14d4f4c38d419
@@ -98,6 +104,6 @@ SPEC CHECKSUMS:
   Hasher: 0253fad5775fad5c5f6a671ef40c8e3cffedc501
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 2111ad0431c4591b3e337d1bbf9b9e3df166d61f
+PODFILE CHECKSUM: bc814c8175f5b887a89afe03f5c60e984b0d7b7f
 
 COCOAPODS: 1.7.5
