@@ -314,6 +314,8 @@
 			dependencies = (
 			);
 			name = WSIE;
+			packageProductDependencies = (
+			);
 			productName = WSIE;
 			productReference = BBE3DF61237C2F40007CAA1E /* WSIE.app */;
 			productType = "com.apple.product-type.application";
@@ -391,6 +393,8 @@
 				de,
 			);
 			mainGroup = BBE3DF58237C2F40007CAA1E;
+			packageReferences = (
+			);
 			productRefGroup = BBE3DF62237C2F40007CAA1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

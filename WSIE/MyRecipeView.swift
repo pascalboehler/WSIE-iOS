@@ -11,8 +11,10 @@ import SwiftUI
 struct MyRecipeView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var networkManager: NetworkManager
+    @State var isLoading: Bool = false
     
     var body: some View {
+        
         NavigationView {
             List {
                 Toggle(isOn: $userData.showFavouritesOnly) {
@@ -20,7 +22,20 @@ struct MyRecipeView: View {
                         Image(systemName: "star.circle")
                         Text(NSLocalizedString("Favourites only", comment: "Only show favourites when switch is toggled."))
                     }
-                }
+                }.background(
+                    GeometryReader { g -> Text in
+                        let frame = g.frame(in: CoordinateSpace.global)
+                        if frame.origin.y > 250 && !self.networkManager.isLoading{
+                            self.networkManager.isLoading = true
+                            self.networkManager.reloadData()
+                            return Text("")
+                        } else {
+                            return Text("")
+                        }
+                    }
+                )
+                
+                
                 
                 ForEach(networkManager.recipes) { recipe in
                     if (!self.userData.showFavouritesOnly || recipe.isFavourite) && recipe.language == Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first{

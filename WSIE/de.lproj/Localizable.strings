@@ -9,6 +9,7 @@
 "My Recipes" = "Meine Rezepte";
 "For %d Person" = "Für %d Personen";
 "Favourites only" = "Favoriten";
+"Loading" = "Lade Rezepte ...";
 
 // MARK: - Recipe detail view + StepsListItem
 "Ingredients needed" = "Benötigte Zutaten:";

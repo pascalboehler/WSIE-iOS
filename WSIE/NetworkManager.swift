@@ -65,13 +65,14 @@ func loadFromApi() -> [Recipe] {
 }
 
 class NetworkManager : ObservableObject {
-   @Published  var recipes: [Recipe] = []
+    @Published var recipes: [Recipe] = []
+    @Published var isLoading: Bool = false
     
     init() {
         loadFromApi()
     }
     
-    func loadFromApi() {
+    private func loadFromApi() {
         let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
@@ -85,10 +86,14 @@ class NetworkManager : ObservableObject {
             do {
                 let decoder = JSONDecoder()
                 try self.recipes =  decoder.decode([Recipe].self, from: response.result.value!)
-                print(self.recipes)
+                self.isLoading = false
             } catch {
                 fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
             }
         }
+    }
+    
+    func reloadData() {
+        loadFromApi()
     }
 }
