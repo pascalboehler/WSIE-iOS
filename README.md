@@ -1,4 +1,6 @@
-[![codecov](https://codecov.io/gh/pascalboehler/WSIE-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/pascalboehler/WSIE-iOS) [![Build Status](https://travis-ci.org/pascalboehler/WSIE-iOS.svg?branch=master)](https://travis-ci.org/pascalboehler/WSIE-iOS)<a href="https://count.ly/f/badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/dark.svg" alt="Countly - Product Analytics" /></a>
+[![codecov](https://codecov.io/gh/pascalboehler/WSIE-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/pascalboehler/WSIE-iOS) [![Build Status](https://travis-ci.org/pascalboehler/WSIE-iOS.svg?branch=master)](https://travis-ci.org/pascalboehler/WSIE-iOS)
+
+<a href="https://count.ly/f/badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/dark.svg" alt="Countly - Product Analytics" /></a>
 
 # WSIE - What Should I Eat?
 
