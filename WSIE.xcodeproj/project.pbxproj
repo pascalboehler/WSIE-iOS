@@ -17,11 +17,15 @@
 		BB2DA13C238DB1D70067E0F6 /* IngredientsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */; };
 		BB2DA140238DB81A0067E0F6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA13F238DB81A0067E0F6 /* Step.swift */; };
 		BB2DA142238DBC400067E0F6 /* StepsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2DA141238DBC400067E0F6 /* StepsListItem.swift */; };
+		BB41B6B423BFC0550088F52A /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41B6B323BFC0550088F52A /* ShoppingList.swift */; };
 		BB51E38D238D350000D8B8E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51E38C238D350000D8B8E3 /* NetworkManager.swift */; };
 		BB51E390238D35DD00D8B8E3 /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = BB51E38F238D35DD00D8B8E3 /* recipes.json */; };
 		BB51FF83238BD775005AD29F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF82238BD775005AD29F /* UserData.swift */; };
 		BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF85238BD7E5005AD29F /* Recipe.swift */; };
+		BB6AB49523C234DC00C698A3 /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */; };
 		BBBEE60C2390FEDD004EC2C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBBEE60E2390FEDD004EC2C7 /* Localizable.strings */; };
+		BBCB0A9323BFCB9A0083ABC0 /* ShoppingListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB0A9223BFCB9A0083ABC0 /* ShoppingListElement.swift */; };
+		BBCB0A9723BFCC0C0083ABC0 /* shoppingListItems.json in Resources */ = {isa = PBXBuildFile; fileRef = BBCB0A9623BFCC0C0083ABC0 /* shoppingListItems.json */; };
 		BBCEB6A4238E524E00DCD3E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBCEB6A3238E524E00DCD3E7 /* GoogleService-Info.plist */; };
 		BBCEB6A6238E6B5200DCD3E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCEB6A5238E6B5200DCD3E7 /* MainView.swift */; };
 		BBCEB6A8238E6C1C00DCD3E7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCEB6A7238E6C1C00DCD3E7 /* LoginView.swift */; };
@@ -77,15 +81,19 @@
 		BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsListItem.swift; sourceTree = "<group>"; };
 		BB2DA13F238DB81A0067E0F6 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		BB2DA141238DBC400067E0F6 /* StepsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsListItem.swift; sourceTree = "<group>"; };
+		BB41B6B323BFC0550088F52A /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		BB420333238D1DCC004701C0 /* WSIE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSIE.entitlements; sourceTree = "<group>"; };
 		BB4BA2E6237DA8DB006598CB /* WSIETestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WSIETestPlan.xctestplan; sourceTree = "<group>"; };
 		BB51E38C238D350000D8B8E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BB51E38F238D35DD00D8B8E3 /* recipes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = recipes.json; sourceTree = "<group>"; };
 		BB51FF82238BD775005AD29F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BB51FF85238BD7E5005AD29F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
 		BBBEE60B2390FE7B004EC2C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BBBEE60D2390FEDD004EC2C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BBBEE60F2390FEEA004EC2C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BBCB0A9223BFCB9A0083ABC0 /* ShoppingListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListElement.swift; sourceTree = "<group>"; };
+		BBCB0A9623BFCC0C0083ABC0 /* shoppingListItems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoppingListItems.json; sourceTree = "<group>"; };
 		BBCEB6A3238E524E00DCD3E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBCEB6A5238E6B5200DCD3E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BBCEB6A7238E6C1C00DCD3E7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -174,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				BB51E38F238D35DD00D8B8E3 /* recipes.json */,
+				BBCB0A9623BFCC0C0083ABC0 /* shoppingListItems.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,6 +195,7 @@
 				BB51FF85238BD7E5005AD29F /* Recipe.swift */,
 				BBFB0B21238D79F300027505 /* Ingredient.swift */,
 				BB2DA13F238DB81A0067E0F6 /* Step.swift */,
+				BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */,
 			);
 			name = Datamodels;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 			children = (
 				BBF38F8B2388365F0042B837 /* MyRecipeView.swift */,
 				BBD4EE25238D3EEC00A6EAD3 /* RecipeDetailView.swift */,
+				BB41B6B323BFC0550088F52A /* ShoppingList.swift */,
 				BB021F1423917BAE00FD796B /* Settings.swift */,
 				BBCEB6A7238E6C1C00DCD3E7 /* LoginView.swift */,
 				BB2393F42389981500D9C96B /* TabbarView.swift */,
@@ -292,6 +303,7 @@
 				BB2DA13B238DB1D70067E0F6 /* IngredientsListItem.swift */,
 				BB2DA141238DBC400067E0F6 /* StepsListItem.swift */,
 				BB021F162391830D00FD796B /* ActivityIndicator.swift */,
+				BBCB0A9223BFCB9A0083ABC0 /* ShoppingListElement.swift */,
 			);
 			name = "Helping Views";
 			sourceTree = "<group>";
@@ -412,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE3DF74237C2F42007CAA1E /* LaunchScreen.storyboard in Resources */,
+				BBCB0A9723BFCC0C0083ABC0 /* shoppingListItems.json in Resources */,
 				BBBEE60C2390FEDD004EC2C7 /* Localizable.strings in Resources */,
 				BBE3DF71237C2F42007CAA1E /* Preview Assets.xcassets in Resources */,
 				BBCEB6A4238E524E00DCD3E7 /* GoogleService-Info.plist in Resources */,
@@ -563,6 +576,7 @@
 			files = (
 				BB2393F52389981500D9C96B /* TabbarView.swift in Sources */,
 				BB51E38D238D350000D8B8E3 /* NetworkManager.swift in Sources */,
+				BBCB0A9323BFCB9A0083ABC0 /* ShoppingListElement.swift in Sources */,
 				BBDAF6F023916A9D0064DB86 /* Utility.swift in Sources */,
 				BB2DA140238DB81A0067E0F6 /* Step.swift in Sources */,
 				BB2393F723899BAC00D9C96B /* RecipeListItem.swift in Sources */,
@@ -578,8 +592,10 @@
 				BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */,
 				BB2DA142238DBC400067E0F6 /* StepsListItem.swift in Sources */,
 				BB021F172391830D00FD796B /* ActivityIndicator.swift in Sources */,
+				BB6AB49523C234DC00C698A3 /* ShoppingListItem.swift in Sources */,
 				BB2DA13C238DB1D70067E0F6 /* IngredientsListItem.swift in Sources */,
 				BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */,
+				BB41B6B423BFC0550088F52A /* ShoppingList.swift in Sources */,
 				BB021F1523917BAE00FD796B /* Settings.swift in Sources */,
 				BBE3DF6C237C2F40007CAA1E /* ContentView.swift in Sources */,
 				BBE3DF6A237C2F40007CAA1E /* WSIE.xcdatamodeld in Sources */,

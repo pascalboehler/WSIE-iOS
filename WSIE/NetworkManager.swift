@@ -15,6 +15,7 @@ import Alamofire
 //var recipeData: [Recipe] = loadLocal("recipes.json")
 // from server
 var recipeData: [Recipe] = loadFromApi()
+var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
 
 //fileprivate var db: Firestore!
 
@@ -69,10 +70,10 @@ class NetworkManager : ObservableObject {
     @Published var isLoading: Bool = false
     
     init() {
-        loadFromApi()
+        loadRecipesFromApi()
     }
     
-    private func loadFromApi() {
+    private func loadRecipesFromApi() {
         let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
@@ -93,7 +94,7 @@ class NetworkManager : ObservableObject {
         }
     }
     
-    func reloadData() {
-        loadFromApi()
+    func reloadRecipeData() {
+        loadRecipesFromApi()
     }
 }

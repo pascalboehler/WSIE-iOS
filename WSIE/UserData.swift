@@ -12,4 +12,6 @@ import Combine
 public class UserData: ObservableObject {
     @Published var showFavouritesOnly: Bool = false
     //@Published var recipes = recipeData
+    @Published var shoppingList = shoppingListTestData
+    @Published var showCompleted: Bool = false
 }

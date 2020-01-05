@@ -27,7 +27,7 @@ struct MyRecipeView: View {
                         let frame = g.frame(in: CoordinateSpace.global)
                         if frame.origin.y > 250 && !self.networkManager.isLoading{
                             self.networkManager.isLoading = true
-                            self.networkManager.reloadData()
+                            self.networkManager.reloadRecipeData()
                             return Text("")
                         } else {
                             return Text("")
