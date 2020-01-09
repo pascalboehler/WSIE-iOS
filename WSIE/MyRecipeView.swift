@@ -25,8 +25,9 @@ struct MyRecipeView: View {
                 }.background(
                     GeometryReader { g -> Text in
                         let frame = g.frame(in: CoordinateSpace.global)
-                        if frame.origin.y > 250 && !self.networkManager.isLoading{
-                            self.networkManager.isLoading = true
+                        if frame.origin.y > 250 && !self.networkManager.isLoadingRecipes{
+                            print("Loading....")
+                            self.networkManager.isLoadingRecipes = true
                             self.networkManager.reloadRecipeData()
                             return Text("")
                         } else {
@@ -53,6 +54,13 @@ struct MyRecipeView: View {
                             }
                         }.buttonStyle(PlainButtonStyle())
                     }
+                }.onDelete { (offset) in
+                    guard let index = offset.first else {
+                        print("Unable to delete element!")
+                        return
+                    }
+                    self.networkManager.deleteRecipe(recipeId: index)
+                    self.networkManager.recipes.remove(atOffsets: offset)
                 }
             }
             .navigationBarTitle(Text(NSLocalizedString("My Recipes", comment: "/")))

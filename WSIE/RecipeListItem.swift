@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct RecipeListItem: View {
-    let recipe: Recipe
+    @State var recipe: Recipe
+    @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
         VStack {
@@ -17,7 +18,6 @@ struct RecipeListItem: View {
                 .resizable()
                 .frame(height: 200)
                 .clipped()
-
             Spacer()
             Text(recipe.title)
             HStack {

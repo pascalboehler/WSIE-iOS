@@ -11,5 +11,6 @@ import Foundation
 struct Ingredient: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    var amount: String
+    var amount: Int
+    var unit: String
 }

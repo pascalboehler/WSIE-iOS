@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ShoppingList: View {
     @EnvironmentObject var userData: UserData
+    @EnvironmentObject var networkManager: NetworkManager
     
     var body: some View {
         NavigationView {
@@ -22,15 +23,28 @@ struct ShoppingList: View {
                         } else {
                             Image(systemName: "checkmark")
                         }
-                        Text(NSLocalizedString("Show completed", comment: "Also show completed elements when switch is toggled."))
+                        Text(NSLocalizedString("Show completed", comment: "Show all elements"))
                     }
-                }
-                ForEach(userData.shoppingList) { item in
+                }.background(
+                    GeometryReader { g -> Text in
+                        let frame = g.frame(in: CoordinateSpace.global)
+                        if frame.origin.y > 250 && !self.networkManager.isLoadingList{
+                            print("Loading....")
+                            self.networkManager.isLoadingList = true
+                            self.networkManager.reloadShoppingListData()
+                            return Text("")
+                        } else {
+                            return Text("")
+                        }
+                    }
+                )
+                
+                ForEach(networkManager.shoppingList) { item in
                     if (self.userData.showCompleted || !item.isCompleted) {
-                        ShoppingListElement(itemId: item.id)
-                            
+                        ShoppingListElement(item: item)
                     }
-                    
+                }.onDelete { (offset) in
+                    print(offset.count)
                 }
             }
             .navigationBarTitle(Text(NSLocalizedString("Shopping List", comment: "Shopping List View Nav Bar Title")))
@@ -40,6 +54,6 @@ struct ShoppingList: View {
 
 struct ShoppingList_Previews: PreviewProvider {
     static var previews: some View {
-        ShoppingList()
+        ShoppingList().environmentObject(UserData()).environmentObject(NetworkManager())
     }
 }

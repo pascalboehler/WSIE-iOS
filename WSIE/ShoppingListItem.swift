@@ -8,8 +8,10 @@
 import Foundation
 
 struct ShoppingListItem: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: Int?
     var itemTitle: String
-    var itemAmount: String
+    var itemAmount: Int
+    var itemUnit: String
     var isCompleted: Bool = false
+    var uid: String
 }

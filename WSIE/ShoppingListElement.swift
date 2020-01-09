@@ -9,24 +9,25 @@
 import SwiftUI
 
 struct ShoppingListElement: View {
-    @EnvironmentObject var userData: UserData
-    var itemId: Int
+    @EnvironmentObject var networkManager: NetworkManager
+    @State var item: ShoppingListItem
     
     var body: some View {
         //Text("Hallo")
         HStack {
             Button(action: {
-                self.userData.shoppingList[self.itemId].isCompleted = !self.userData.shoppingList[self.itemId].isCompleted
+                self.item.isCompleted = !self.item.isCompleted
+                self.networkManager.updateShoppingListItem(itemId: self.item.id!, updatedItem: self.item)
             }) {
-                if (userData.shoppingList[itemId].isCompleted) {
-                    Image(systemName: "checkmark.square.fill")
+                if (item.isCompleted) {
+                    Image(systemName: "checkmark.square")
                         .foregroundColor(/*@START_MENU_TOKEN@*/.green/*@END_MENU_TOKEN@*/)
                 } else {
-                    Image(systemName: "checkmark.square")
+                    Image(systemName: "square")
                 }
             }
-            Text(userData.shoppingList[itemId].itemAmount)
-            Text(userData.shoppingList[itemId].itemTitle)
+            Text("\(item.itemAmount) \(item.itemUnit)")
+            Text(item.itemTitle)
             Spacer()
         }
             .padding(10)
@@ -46,6 +47,6 @@ fileprivate func completeItem(item: ShoppingListItem) -> ShoppingListItem {
 
 struct ShoppingListElement_Previews: PreviewProvider {
     static var previews: some View {
-        ShoppingListElement(itemId: 0)
+        ShoppingListElement(item: shoppingListTestData[0])
     }
 }

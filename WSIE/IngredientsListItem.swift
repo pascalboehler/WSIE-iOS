@@ -13,7 +13,7 @@ struct IngredientsListItem: View {
     
     var body: some View {
         HStack {
-            Text(ingredient.amount)
+            Text("\(ingredient.amount) \(ingredient.unit)")
             Spacer()
             Text(ingredient.name)
         }
