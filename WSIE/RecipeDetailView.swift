@@ -9,20 +9,47 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
-    let recipe: Recipe
+    @State var recipe: Recipe
+    @EnvironmentObject var networkManager: NetworkManager
+    
     var body: some View {
         ScrollView {
-            Group { // Image
-                Image(recipe.imageName)
-                    .resizable()
-                    .cornerRadius(CGFloat(25))
-                    .aspectRatio(3/2, contentMode: .fit)
-                    
-                Divider()
+            ZStack {
+                VStack { // Image
+                    Image(recipe.imageName)
+                        .resizable()
+                        .cornerRadius(CGFloat(25))
+                        .aspectRatio(3/2, contentMode: .fit)
+                        
+                    Divider()
+                }
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            self.recipe.isFavourite = !self.recipe.isFavourite
+                            self.networkManager.updateRecipeItem(itemId: self.recipe.id!, updatedRecipe: self.recipe)
+                        }) {
+                            if (self.recipe.isFavourite) {
+                                Image(systemName: "star.circle.fill")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 33, height: 33)
+                            } else {
+                                Image(systemName: "star.circle")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 33, height: 33)
+                            }
+                            
+                        }
+                    }.padding()
+                    Spacer()
+                }
             }
+            
             Group { // Person Amount and needed Cookingtime
                 HStack {
-                    //Text("For \(recipe.personAmount) person")
                     Text(String.localizedStringWithFormat(NSLocalizedString("For %d Person", comment: "Display the number of person the recipe is made for"), recipe.personAmount))
                         .font(Font.system(size: 12))
                     Spacer()
@@ -48,6 +75,9 @@ struct RecipeDetailView: View {
                     Spacer()
                     Button(action: {
                         print("Add to list button tapped!")
+                        for ingredient in self.recipe.ingredients {
+                            self.networkManager.createNewShoppingListItemFromIngredient(ingredient: ingredient)
+                        }
                     }) {
                         Image(systemName: "cart.badge.plus")
                         Text("Add to list")
@@ -84,6 +114,15 @@ struct RecipeDetailView: View {
             
         }
         .navigationBarTitle(recipe.title)
+        .navigationBarItems(trailing:
+            HStack {
+                Button(action: {
+                    print("Hallo")
+                }) {
+                    Text("Edit")
+                }
+            }
+        )
         .padding()
     }
     

@@ -23,3 +23,7 @@
 // MARK: - Settings view
 "Settings" = "Settings";
 "Language" = "Language";
+
+// MARK: - Shopping List View
+"Shopping List" = "Shopping List";
+"Show completed" = "Show completed";

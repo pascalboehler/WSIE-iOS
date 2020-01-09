@@ -10,11 +10,14 @@ import UIKit
 import SwiftUI
 import Firebase
 import Alamofire
+import SwiftyJSON
 
 // With local file:
 //var recipeData: [Recipe] = loadLocal("recipes.json")
 // from server
 var recipeData: [Recipe] = loadFromApi()
+var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
+let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
 
 //fileprivate var db: Firestore!
 
@@ -44,7 +47,7 @@ func loadFromApi() -> [Recipe] {
     var recipes: [Recipe] = []
     //let urlString = "http://localhost:8080/recipe/UID/\(Auth.auth().currentUser!.uid)"
     
-    let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
+    let urlString = "\(urlPrefix)/recipe" // receive all public elements => for testing
     guard let url = URL(string: urlString) else {
         return []
     }
@@ -66,34 +69,162 @@ func loadFromApi() -> [Recipe] {
 
 class NetworkManager : ObservableObject {
     @Published var recipes: [Recipe] = []
-    @Published var isLoading: Bool = false
+    @Published var shoppingList: [ShoppingListItem] = []
+    @Published var isLoadingRecipes: Bool = false
+    @Published var isLoadingList: Bool = false
     
     init() {
-        loadFromApi()
+        if Auth.auth().currentUser != nil {
+            loadRecipesFromApi()
+            loadShoppingListFromApi()
+        }
     }
     
-    private func loadFromApi() {
-        let urlString = "http://localhost:8080/recipe" // receive all public elements => for testing
+    private func loadRecipesFromApi() {
+        print("Fetching started...")
+        let urlString = "\(urlPrefix)/recipe" // receive all public elements => for testing
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
             return
         }
         Alamofire.request(url, method: .get).validate().responseData { response in
             guard response.result.isSuccess else {
-                print("ERROR WHILE FETCHING DATA")
+                print("ERROR WHILE FETCHING RECIPE DATA")
                 return
             }
             do {
                 let decoder = JSONDecoder()
                 try self.recipes =  decoder.decode([Recipe].self, from: response.result.value!)
-                self.isLoading = false
+                self.isLoadingRecipes = false
+                print("fetch completed")
             } catch {
                 fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
             }
         }
     }
     
-    func reloadData() {
-        loadFromApi()
+    private func loadShoppingListFromApi() {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let urlString = "\(urlPrefix)/shoppingList/uid/\(uid)" // receive all test elements => only for testing!
+        guard let url = URL(string: urlString) else {
+            print("WRONG URL")
+            return
+        }
+        Alamofire.request(url, method: .get).validate().responseData { response in
+            guard response.result.isSuccess else {
+                print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.result.value!)
+                self.isLoadingList = false
+            } catch {
+                fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
+            }
+        }
+    }
+    
+    func updateShoppingListItem(itemId: Int, updatedItem: ShoppingListItem) {
+        var i = 0
+        for item in shoppingList {
+            if item.id! == itemId {
+                shoppingList[i] = updatedItem
+                do {
+                    let encoder = JSONEncoder()
+                    let json = try encoder.encode(shoppingList[i])
+                    let data = try JSON(data: json)
+                    guard let params = data.dictionaryObject else {
+                        fatalError("Unable to open dict")
+                    }
+                    let urlString = "\(urlPrefix)/shoppingList"
+                    guard let url = URL(string: urlString) else {
+                        fatalError("Wrong URL format")
+                    }
+                    Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                } catch {
+                    fatalError("Unable to update shopping list")
+                }
+            }
+            i += 1
+        }
+    }
+    
+    func updateRecipeItem(itemId: Int, updatedRecipe: Recipe) {
+        var i = 0
+        for recipe in recipes {
+            if recipe.id! == itemId {
+                recipes[i] = updatedRecipe
+                do {
+                    let encoder = JSONEncoder()
+                    let json = try encoder.encode(recipes[i])
+                    let data = try JSON(data: json)
+                    guard let params = data.dictionaryObject else {
+                        fatalError("Unable to open dict")
+                    }
+                    let urlString = "\(urlPrefix)/recipe"
+                    guard let url = URL(string: urlString) else {
+                        fatalError("Wrong URL format")
+                    }
+                    Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                } catch {
+                    fatalError("Unable to update object")
+                }
+            }
+            i += 1
+        }
+    }
+    
+    func deleteRecipe(recipeId: Int) {
+        do {
+            let encoder = JSONEncoder()
+            let json = try encoder.encode(recipes[recipeId])
+            let data = try JSON(data: json)
+            guard let params = data.dictionaryObject else {
+                fatalError("Unable to open dict")
+            }
+            //let params = convertRecipeToList(recipe: recipes[recipeId])
+            let urlString = "\(urlPrefix)/recipe"
+            guard let url = URL(string: urlString) else {
+                fatalError("Wrong URL format")
+            }
+            Alamofire.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+        } catch {
+            fatalError("Unable to parse JSON")
+        }
+    }
+    
+    func createNewShoppingListItemFromIngredient(ingredient: Ingredient) {
+        let item = ShoppingListItem(itemTitle: ingredient.name, itemAmount: ingredient.amount, itemUnit: ingredient.unit, isCompleted: false, uid: Auth.auth().currentUser!.uid)
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(item)
+            let json = try JSON(data: data)
+            guard let params = json.dictionaryObject else {
+                fatalError("Unable to create dict")
+            }
+            let urlString = "\(urlPrefix)/shoppingList"
+            guard let url = URL(string: urlString) else {
+                fatalError("Wrong URL format")
+            }
+            Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+        } catch {
+            fatalError("Unable to parse JSON")
+        }
+    }
+    
+    func reloadRecipeData() {
+        loadRecipesFromApi()
+    }
+    
+    func reloadShoppingListData() {
+        loadShoppingListFromApi()
+    }
+    
+    func reloadAll() {
+        loadRecipesFromApi()
+        loadShoppingListFromApi()
     }
 }

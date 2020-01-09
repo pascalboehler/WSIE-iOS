@@ -11,7 +11,7 @@ import SwiftUI
 struct TabbarView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var firebaseSession: FirebaseSession
-    
+    @EnvironmentObject var networkManager: NetworkManager
     var body: some View {
         TabView {
             MyRecipeView()
@@ -23,10 +23,10 @@ struct TabbarView: View {
                     }
                     Text(NSLocalizedString("My Recipes", comment: "My Recipes View Tabbar title"))
                 }
-            Text("Another Tab")
+            ShoppingList()
                 .tabItem {
-                    Image(systemName: "2.square.fill")
-                    Text("Second")
+                    Image(systemName: "cart")
+                    Text(NSLocalizedString("Shopping List", comment: "Shopping List View Tabbar title"))
                 }
             
             Settings()
@@ -42,6 +42,6 @@ struct TabbarView: View {
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabbarView()
+        TabbarView().environmentObject(UserData()).environmentObject(NetworkManager())
     }
 }

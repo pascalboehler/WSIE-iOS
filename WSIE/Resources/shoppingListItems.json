@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "itemTitle": "Element 1",
+        "itemAmount": 200,
+        "itemUnit": "gr",
+        "isCompleted": false,
+        "uid": "UID"
+    },
+    {
+        "id": 1,
+        "itemTitle": "Element 2",
+        "itemAmount": 400,
+        "itemUnit": "gr",
+        "isCompleted": false,
+        "uid": "UID"
+    },
+    {
+        "id": 2,
+        "itemTitle": "Element 3",
+        "itemAmount": 600,
+        "itemUnit": "gr",
+        "isCompleted": false,
+        "uid": "UID"
+    }
+]

@@ -65,6 +65,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -72,6 +73,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Hasher
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -88,6 +90,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Hasher
     - nanopb
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -103,7 +106,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   Hasher: 0253fad5775fad5c5f6a671ef40c8e3cffedc501
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: bc814c8175f5b887a89afe03f5c60e984b0d7b7f
+PODFILE CHECKSUM: b77947032baf1dabaeb0cbd9b2fb9ad890e114a2
 
 COCOAPODS: 1.7.5

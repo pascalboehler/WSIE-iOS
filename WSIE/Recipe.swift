@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct Recipe: Hashable, Codable, Identifiable {
-    var id: Int
+    var id: Int?
     var title: String
     var timeNeeded: String
     var isFavourite: Bool
@@ -22,6 +22,7 @@ struct Recipe: Hashable, Codable, Identifiable {
     var personAmount: Int = 4
     var sharedWith: [String] // for future see kanban for information
     var language: String = "de"
+    var isPublic: Bool = false
     
     enum Category: String, CaseIterable, Codable, Hashable {
         case breakfast = "Breakfast"
