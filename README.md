@@ -21,7 +21,7 @@ To read our markdown formatting tutorial with all the supported markdown express
 
 Screenshots of the application
 ![Test Image](/Assets/Clock/clock.png)
-![MyRecipe](/Assets/Screenshots/MyRecipe.png)![ShoppingList](/Assets/Screenshots/ShoppingList.png)![Settings](/Assets/Screenshots/Settings.png)
+| ![MyRecipe](/Assets/Screenshots/MyRecipe.png) | ![ShoppingList](/Assets/Screenshots/ShoppingList.png)! | [Settings](/Assets/Screenshots/Settings.png)
 ## Planned fot the future:
 * Scan recipes and automatically format them for the app (made with Azure cognitive services)
 
