@@ -19,7 +19,7 @@ To read our markdown formatting guide (to make sure that you get the best experi
 
 To read our markdown formatting tutorial with all the supported markdown expressions please visit our website under: http://pascalboehler.github.io/wsie-ios/markdown-tutorial
 
-Screenshots of the application
+## Screenshots of the application
 
 <img src="/Assets/Screenshots/MyRecipe.png" height="600"> <img src="/Assets/Screenshots/ShoppingList.png" height="600"> <img src="/Assets/Screenshots/Settings.png" height="600">
 
