@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var userData: UserData
     @EnvironmentObject var firebaseSession: FirebaseSession
+    @EnvironmentObject var networkManager: NetworkManager
     
     @State var email: String = ""
     @State var password: String = ""
@@ -27,6 +28,7 @@ struct LoginView: View {
                         self.email = ""
                         self.password = ""
                         self.showActivityIndicator = true
+                        self.networkManager.reloadAll()
                     }) {
                         Text("Sign In")
                     }

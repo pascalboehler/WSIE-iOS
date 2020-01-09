@@ -74,8 +74,10 @@ class NetworkManager : ObservableObject {
     @Published var isLoadingList: Bool = false
     
     init() {
-        loadRecipesFromApi()
-        loadShoppingListFromApi()
+        if Auth.auth().currentUser != nil {
+            loadRecipesFromApi()
+            loadShoppingListFromApi()
+        }
     }
     
     private func loadRecipesFromApi() {
@@ -102,7 +104,10 @@ class NetworkManager : ObservableObject {
     }
     
     private func loadShoppingListFromApi() {
-        let urlString = "\(urlPrefix)/shoppingList/uid/\(Auth.auth().currentUser!.uid)" // receive all test elements => only for testing!
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let urlString = "\(urlPrefix)/shoppingList/uid/\(uid)" // receive all test elements => only for testing!
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
             return
@@ -215,6 +220,11 @@ class NetworkManager : ObservableObject {
     }
     
     func reloadShoppingListData() {
+        loadShoppingListFromApi()
+    }
+    
+    func reloadAll() {
+        loadRecipesFromApi()
         loadShoppingListFromApi()
     }
 }
