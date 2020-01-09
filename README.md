@@ -20,8 +20,9 @@ To read our markdown formatting guide (to make sure that you get the best experi
 To read our markdown formatting tutorial with all the supported markdown expressions please visit our website under: http://pascalboehler.github.io/wsie-ios/markdown-tutorial
 
 Screenshots of the application
+
 <img src="/Assets/Screenshots/MyRecipe.png", height="300"> <img src="/Assets/Screenshots/ShoppingList.png", height="300"> <img src="/Assets/Screenshots/Settings.png", height="300">
-## Planned fot the future:
+## Planned for the future:
 * Scan recipes and automatically format them for the app (made with Azure cognitive services)
 
 *Our privacy policy is available under: https://pascalboehler.github.io/WSIE-iOS/privacypolicy.html*
