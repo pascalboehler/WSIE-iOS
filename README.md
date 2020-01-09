@@ -21,6 +21,7 @@ To read our markdown formatting tutorial with all the supported markdown express
 
 ## Screenshots of the application
 
+
 <img src="/Assets/Screenshots/MyRecipe.png" height="600"> <img src="/Assets/Screenshots/ShoppingList.png" height="600"> <img src="/Assets/Screenshots/Settings.png" height="600">
 
 ## Planned for the future:
