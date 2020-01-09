@@ -21,7 +21,7 @@ To read our markdown formatting tutorial with all the supported markdown express
 
 Screenshots of the application
 
-<img src="/Assets/Screenshots/MyRecipe.png" height="450"> <img src="/Assets/Screenshots/ShoppingList.png" height="450"> <img src="/Assets/Screenshots/Settings.png" height="450">
+<img src="/Assets/Screenshots/MyRecipe.png" height="500"> <img src="/Assets/Screenshots/ShoppingList.png" height="500"> <img src="/Assets/Screenshots/Settings.png" height="500">
 
 ## Planned for the future:
 * Scan recipes and automatically format them for the app (made with Azure cognitive services)
