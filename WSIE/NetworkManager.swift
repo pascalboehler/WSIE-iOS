@@ -82,7 +82,10 @@ class NetworkManager : ObservableObject {
     
     private func loadRecipesFromApi() {
         print("Fetching started...")
-        let urlString = "\(urlPrefix)/recipe" // receive all public elements => for testing
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let urlString = "\(urlPrefix)/recipe/uid/\(uid)" // receive all public elements => for testing
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
             return
@@ -134,9 +137,7 @@ class NetworkManager : ObservableObject {
                 shoppingList[i] = updatedItem
                 do {
                     let encoder = JSONEncoder()
-                    let json = try encoder.encode(shoppingList[i])
-                    let data = try JSON(data: json)
-                    guard let params = data.dictionaryObject else {
+                    guard let params = try JSON(data: encoder.encode(shoppingList[i])).dictionaryObject else {
                         fatalError("Unable to open dict")
                     }
                     let urlString = "\(urlPrefix)/shoppingList"
@@ -159,9 +160,7 @@ class NetworkManager : ObservableObject {
                 recipes[i] = updatedRecipe
                 do {
                     let encoder = JSONEncoder()
-                    let json = try encoder.encode(recipes[i])
-                    let data = try JSON(data: json)
-                    guard let params = data.dictionaryObject else {
+                    guard let params = try JSON(data: encoder.encode(updatedRecipe)).dictionaryObject else {
                         fatalError("Unable to open dict")
                     }
                     let urlString = "\(urlPrefix)/recipe"
@@ -180,9 +179,7 @@ class NetworkManager : ObservableObject {
     func deleteRecipe(recipeId: Int) {
         do {
             let encoder = JSONEncoder()
-            let json = try encoder.encode(recipes[recipeId])
-            let data = try JSON(data: json)
-            guard let params = data.dictionaryObject else {
+            guard let params = try JSON(data: encoder.encode(recipes[recipeId])).dictionaryObject else {
                 fatalError("Unable to open dict")
             }
             //let params = convertRecipeToList(recipe: recipes[recipeId])
@@ -200,9 +197,7 @@ class NetworkManager : ObservableObject {
         let item = ShoppingListItem(itemTitle: ingredient.name, itemAmount: ingredient.amount, itemUnit: ingredient.unit, isCompleted: false, uid: Auth.auth().currentUser!.uid)
         let encoder = JSONEncoder()
         do {
-            let data = try encoder.encode(item)
-            let json = try JSON(data: data)
-            guard let params = json.dictionaryObject else {
+            guard let params = try JSON(data: encoder.encode(item)).dictionaryObject else {
                 fatalError("Unable to create dict")
             }
             let urlString = "\(urlPrefix)/shoppingList"
@@ -210,6 +205,23 @@ class NetworkManager : ObservableObject {
                 fatalError("Wrong URL format")
             }
             Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+        } catch {
+            fatalError("Unable to parse JSON")
+        }
+    }
+    
+    func createNewRecipe(recipe: Recipe) {
+        let encoder = JSONEncoder()
+        do {
+            guard let params = try JSON(data: encoder.encode(recipe)).dictionaryObject else {
+                fatalError("Unable to create dict")
+            }
+            let urlString = "\(urlPrefix)/recipe"
+            guard let url = URL(string: urlString) else {
+                fatalError("Wrong URL format!")
+            }
+            print(recipe)
+            Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
         } catch {
             fatalError("Unable to parse JSON")
         }

@@ -27,3 +27,8 @@
 // MARK: - Shopping List View
 "Shopping List" = "Einkaufsliste";
 "Show completed" = "Erledigte Einträge";
+
+// MARK: - Create Recipe View
+"Done" = "Fertig";
+"Cancel" = "Abbrechen";
+"New recipe" = "Neues Rezept";
