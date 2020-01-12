@@ -23,6 +23,7 @@
 		BB51FF83238BD775005AD29F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF82238BD775005AD29F /* UserData.swift */; };
 		BB51FF86238BD7E5005AD29F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB51FF85238BD7E5005AD29F /* Recipe.swift */; };
 		BB6AB49523C234DC00C698A3 /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */; };
+		BBAB230123C79C9E00949B50 /* CreateRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB230023C79C9E00949B50 /* CreateRecipeView.swift */; };
 		BBBEE60C2390FEDD004EC2C7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBBEE60E2390FEDD004EC2C7 /* Localizable.strings */; };
 		BBCB0A9323BFCB9A0083ABC0 /* ShoppingListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB0A9223BFCB9A0083ABC0 /* ShoppingListElement.swift */; };
 		BBCB0A9723BFCC0C0083ABC0 /* shoppingListItems.json in Resources */ = {isa = PBXBuildFile; fileRef = BBCB0A9623BFCC0C0083ABC0 /* shoppingListItems.json */; };
@@ -43,6 +44,7 @@
 		BBE3DF7F237C2F42007CAA1E /* WSIETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF7E237C2F42007CAA1E /* WSIETests.swift */; };
 		BBE3DF8A237C2F42007CAA1E /* WSIEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */; };
 		BBF38F8C2388365F0042B837 /* MyRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF38F8B2388365F0042B837 /* MyRecipeView.swift */; };
+		BBF943F923C88EF0001F663B /* AddIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF943F823C88EF0001F663B /* AddIngredient.swift */; };
 		BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFB0B21238D79F300027505 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,7 @@
 		BB51FF82238BD775005AD29F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		BB51FF85238BD7E5005AD29F /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
+		BBAB230023C79C9E00949B50 /* CreateRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeView.swift; sourceTree = "<group>"; };
 		BBBEE60B2390FE7B004EC2C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BBBEE60D2390FEDD004EC2C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BBBEE60F2390FEEA004EC2C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		BBE3DF89237C2F42007CAA1E /* WSIEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSIEUITests.swift; sourceTree = "<group>"; };
 		BBE3DF8B237C2F42007CAA1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBF38F8B2388365F0042B837 /* MyRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeView.swift; sourceTree = "<group>"; };
+		BBF943F823C88EF0001F663B /* AddIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredient.swift; sourceTree = "<group>"; };
 		BBFB0B21238D79F300027505 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		CA8FE5094D2E067D75744EF0 /* Pods-WSIE-WSIETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSIE-WSIETests.debug.xcconfig"; path = "Target Support Files/Pods-WSIE-WSIETests/Pods-WSIE-WSIETests.debug.xcconfig"; sourceTree = "<group>"; };
 		D800DC15AA81AEB59AED94CB /* Pods_WSIE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSIE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +200,7 @@
 				BBFB0B21238D79F300027505 /* Ingredient.swift */,
 				BB2DA13F238DB81A0067E0F6 /* Step.swift */,
 				BB6AB49423C234DC00C698A3 /* ShoppingListItem.swift */,
+				BBF943F823C88EF0001F663B /* AddIngredient.swift */,
 			);
 			name = Datamodels;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			children = (
 				BBF38F8B2388365F0042B837 /* MyRecipeView.swift */,
 				BBD4EE25238D3EEC00A6EAD3 /* RecipeDetailView.swift */,
+				BBAB230023C79C9E00949B50 /* CreateRecipeView.swift */,
 				BB41B6B323BFC0550088F52A /* ShoppingList.swift */,
 				BB021F1423917BAE00FD796B /* Settings.swift */,
 				BBCEB6A7238E6C1C00DCD3E7 /* LoginView.swift */,
@@ -588,6 +594,8 @@
 				BBD4EE26238D3EEC00A6EAD3 /* RecipeDetailView.swift in Sources */,
 				BBDAF6FA239171B00064DB86 /* FirebaseSession.swift in Sources */,
 				BBCEB6A6238E6B5200DCD3E7 /* MainView.swift in Sources */,
+				BBF943F923C88EF0001F663B /* AddIngredient.swift in Sources */,
+				BBAB230123C79C9E00949B50 /* CreateRecipeView.swift in Sources */,
 				BBCEB6A8238E6C1C00DCD3E7 /* LoginView.swift in Sources */,
 				BBFB0B22238D79F300027505 /* Ingredient.swift in Sources */,
 				BB2DA142238DBC400067E0F6 /* StepsListItem.swift in Sources */,

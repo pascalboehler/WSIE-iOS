@@ -64,6 +64,11 @@ struct MyRecipeView: View {
                 }
             }
             .navigationBarTitle(Text(NSLocalizedString("My Recipes", comment: "/")))
+            .navigationBarItems(trailing:
+                NavigationLink(destination: CreateRecipeView(), label: {
+                    Image(systemName: "square.and.pencil")
+                })
+            )
         }
     }
     
