@@ -14,7 +14,7 @@ struct RecipeListItem: View {
     
     var body: some View {
         VStack {
-            Image(recipe.imageName)
+            Image(uiImage: UIImage(data: recipe.imageData) ?? UIImage(named: "Gray")!)
                 .resizable()
                 .frame(height: 200)
                 .clipped()

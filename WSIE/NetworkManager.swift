@@ -17,8 +17,8 @@ import SwiftyJSON
 // from server
 var recipeData: [Recipe] = loadFromApi()
 var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
-let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
-
+//let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
+let urlPrefix: String = "http://localhost:8080"
 //fileprivate var db: Firestore!
 
 func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {

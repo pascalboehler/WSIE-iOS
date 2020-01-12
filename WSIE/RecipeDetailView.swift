@@ -16,7 +16,7 @@ struct RecipeDetailView: View {
         ScrollView {
             ZStack {
                 VStack { // Image
-                    Image(recipe.imageName)
+                    Image(uiImage: UIImage(data: recipe.imageData) ?? UIImage(named: "Gray")!)
                         .resizable()
                         .cornerRadius(CGFloat(25))
                         .aspectRatio(3/2, contentMode: .fit)

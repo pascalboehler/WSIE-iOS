@@ -229,7 +229,7 @@ struct CreateRecipeView: View {
                     for item in self.ingredients {
                         recipeIngredients.append(Ingredient(id: item.id, name: item.name, amount: Int(item.amount) ?? 1, unit: item.unit))
                     }
-                    let recipe = Recipe(id: nil, title: self.titletextFieldTitle, timeNeeded: "\(self.timeNeeded) min", isFavourite: false, ingredients: recipeIngredients, steps: self.steps, shortDescription: self.shortDescriptionTextFieldText, uid: Auth.auth().currentUser!.uid, imageName: "NoPhoto", personAmount: self.personAmountValue, sharedWith: [], language: Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first!, isPublic: false)
+                    let recipe = Recipe(id: nil, title: self.titletextFieldTitle, timeNeeded: "\(self.timeNeeded) min", isFavourite: false, ingredients: recipeIngredients, steps: self.steps, shortDescription: self.shortDescriptionTextFieldText, uid: Auth.auth().currentUser!.uid, imageName: "NoPhoto", personAmount: self.personAmountValue, sharedWith: [], language: Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first!, isPublic: false, imageData: UIImage(named: "NoPhoto")!.jpegData(compressionQuality: 0.25)!)
                     self.networkManager.createNewRecipe(recipe: recipe)
                     self.titletextFieldTitle = ""
                     self.shortDescriptionTextFieldText = ""
