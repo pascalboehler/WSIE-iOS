@@ -15,57 +15,11 @@ import SwiftyJSON
 // With local file:
 //var recipeData: [Recipe] = loadLocal("recipes.json")
 // from server
-var recipeData: [Recipe] = loadFromApi()
+var recipeData: [Recipe] = loadLocal("recipeData.json")
 var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
 //let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
 let urlPrefix: String = "http://localhost:8080"
 //fileprivate var db: Firestore!
-
-func loadLocal<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
-    let data: Data
-    
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-        else {
-            fatalError("Couldn't find \(filename) in main bundle.")
-        }
-    
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-    }
-    
-    do {
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
-    }
-}
-
-func loadFromApi() -> [Recipe] {
-    var recipes: [Recipe] = []
-    //let urlString = "http://localhost:8080/recipe/UID/\(Auth.auth().currentUser!.uid)"
-    
-    let urlString = "\(urlPrefix)/recipe" // receive all public elements => for testing
-    guard let url = URL(string: urlString) else {
-        return []
-    }
-    Alamofire.request(url, method: .get).validate().responseData { response in
-        guard response.result.isSuccess else {
-            print("ERROR WHILE FETCHING DATA")
-            return
-        }
-        do {
-            let decoder = JSONDecoder()
-            try recipes =  decoder.decode([Recipe].self, from: response.result.value!)
-        } catch {
-            fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
-        }
-    }
-    print(recipes)
-    return recipes
-}
 
 class NetworkManager : ObservableObject {
     @Published var recipes: [Recipe] = []
@@ -83,16 +37,19 @@ class NetworkManager : ObservableObject {
     private func loadRecipesFromApi() {
         print("Fetching started...")
         guard let uid = Auth.auth().currentUser?.uid else {
+            isLoadingRecipes = false
             return
         }
         let urlString = "\(urlPrefix)/recipe/uid/\(uid)" // receive all public elements => for testing
         guard let url = URL(string: urlString) else {
+            self.isLoadingRecipes = false
             print("WRONG URL")
             return
         }
         Alamofire.request(url, method: .get).validate().responseData { response in
             guard response.result.isSuccess else {
                 print("ERROR WHILE FETCHING RECIPE DATA")
+                self.isLoadingRecipes = false
                 return
             }
             do {
@@ -108,16 +65,19 @@ class NetworkManager : ObservableObject {
     
     private func loadShoppingListFromApi() {
         guard let uid = Auth.auth().currentUser?.uid else {
+            isLoadingList = false
             return
         }
         let urlString = "\(urlPrefix)/shoppingList/uid/\(uid)" // receive all test elements => only for testing!
         guard let url = URL(string: urlString) else {
             print("WRONG URL")
+            isLoadingRecipes = false
             return
         }
         Alamofire.request(url, method: .get).validate().responseData { response in
             guard response.result.isSuccess else {
                 print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+                self.isLoadingList = false
                 return
             }
             do {
