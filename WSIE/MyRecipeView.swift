@@ -59,7 +59,6 @@ struct MyRecipeView: View {
                             return
                         }
                         self.networkManager.deleteRecipe(recipeId: index)
-                        self.networkManager.recipes.remove(atOffsets: offset)
                     }
                 }
                 .navigationBarTitle(Text(NSLocalizedString("My Recipes", comment: "/")))
