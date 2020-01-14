@@ -122,6 +122,9 @@ struct RecipeDetailView: View {
             }
         )
         .padding()
+        .onAppear {
+            self.networkManager.reloadRecipeData()
+        }
     }
     
 }

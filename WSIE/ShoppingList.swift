@@ -48,6 +48,9 @@ struct ShoppingList: View {
                 }
             }
             .navigationBarTitle(Text(NSLocalizedString("Shopping List", comment: "Shopping List View Nav Bar Title")))
+            .onAppear {
+                self.networkManager.reloadShoppingListData()
+            }
         }
     }
 }
