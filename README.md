@@ -13,6 +13,7 @@ Functions of the application:
 * Manage all your recipes with one application
 * Sort them by name or nationality
 * Share your recipes with your friends just with a click
+* Offline functionality: You can access your recipes / shoppingList also when you are offline!
 
 ## Screenshots of the application
 
