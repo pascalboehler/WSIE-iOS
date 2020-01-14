@@ -16,6 +16,7 @@
 "Steps to prepare" = "Zubereitungsschritte:";
 "Add to list" = "Hinzufügen";
 "Step %d" = "Schritt %d:";
+"Edit" = "Bearbeiten";
 
 // MARK: - Login view
 "Sign In" = "Anmelden";

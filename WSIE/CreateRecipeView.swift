@@ -11,6 +11,7 @@ import Firebase
 
 struct CreateRecipeView: View {
     @EnvironmentObject var networkManager: NetworkManager
+    @Environment(\.presentationMode) var presentationMode
     
     @State var titletextFieldTitle = ""
     @State var shortDescriptionTextFieldText = ""
@@ -225,6 +226,10 @@ struct CreateRecipeView: View {
             .navigationBarTitle(Text(NSLocalizedString("New Recipe", comment: "View title Create Recipe View")))
             .navigationBarItems(trailing:
                 Button(action: {
+                    if self.titletextFieldTitle == "" {
+                        print("Enter text")
+                        return
+                    }
                     var recipeIngredients: [Ingredient] = []
                     for item in self.ingredients {
                         recipeIngredients.append(Ingredient(id: item.id, name: item.name, amount: Int(item.amount) ?? 1, unit: item.unit))
@@ -237,6 +242,7 @@ struct CreateRecipeView: View {
                     self.steps = []
                     self.ingredients = []
                     self.personAmountValue = 4
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Text(NSLocalizedString("Done", comment: "Save button"))
                 }

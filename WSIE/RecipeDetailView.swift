@@ -116,10 +116,8 @@ struct RecipeDetailView: View {
         .navigationBarTitle(recipe.title)
         .navigationBarItems(trailing:
             HStack {
-                Button(action: {
-                    print("Hallo")
-                }) {
-                    Text("Edit")
+                NavigationLink(destination: EditRecipeView(recipe: recipe)) {
+                    Text(NSLocalizedString("Edit", comment: "Edit button title"))
                 }
             }
         )

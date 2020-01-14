@@ -11,6 +11,7 @@ import Firebase
 
 struct EditRecipeView: View {
     @EnvironmentObject var networkManager: NetworkManager
+    @Environment(\.presentationMode) var presentationMode
     @State var recipe: Recipe
     /*
     @State var titletextFieldTitle = ""
@@ -88,9 +89,12 @@ struct EditRecipeView: View {
                         .fontWeight(.bold)
                         .padding()
                     
+                    
+                    
                     ForEach(ingredients.indices, id: \.self) { index in
                         HStack {
                             TextField("4000", text: self.$ingredients[index].amount)
+                                .keyboardType(.numberPad)
                                 .frame(width: 44)
                             
                             Button(action: {
@@ -233,6 +237,7 @@ struct EditRecipeView: View {
                     for item in self.ingredients {
                         recipeIngredients.append(Ingredient(id: item.id, name: item.name, amount: Int(item.amount) ?? 1, unit: item.unit))
                     }
+                    self.recipe.ingredients = recipeIngredients
                     /*let recipe = Recipe(id: nil, title: self.titletextFieldTitle, timeNeeded: "\(self.timeNeeded) min", isFavourite: false, ingredients: recipeIngredients, steps: self.steps, shortDescription: self.shortDescriptionTextFieldText, uid: Auth.auth().currentUser!.uid, imageName: "NoPhoto", personAmount: self.personAmountValue, sharedWith: [], language: Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first!, isPublic: false, imageData: UIImage(named: "NoPhoto")!.jpegData(compressionQuality: 0.25)!)
                     self.networkManager.createNewRecipe(recipe: recipe)
                     self.titletextFieldTitle = ""
@@ -241,12 +246,16 @@ struct EditRecipeView: View {
                     self.steps = []
                     self.ingredients = []
                     self.personAmountValue = 4*/
-                    self.networkManager.createNewRecipe(recipe: recipe)
+                    self.networkManager.createNewRecipe(recipe: self.recipe)
+                    self.presentationMode.wrappedValue.dismiss()
                     
                 }) {
                     Text(NSLocalizedString("Done", comment: "Save button"))
                 }
             )
+            .onAppear {
+                self.ingredients = convertIngredientsToAddIngredients(ingredients: self.recipe.ingredients)
+            }
     }
 }
 
