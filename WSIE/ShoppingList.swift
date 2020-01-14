@@ -47,6 +47,7 @@ struct ShoppingList: View {
                     }.onDelete { (offset) in
                         guard let index = offset.first else {
                             print("Unable to locate element")
+                            return
                         }
                         self.networkManager.deleteShoppingListItem(itemId: index)
                     }

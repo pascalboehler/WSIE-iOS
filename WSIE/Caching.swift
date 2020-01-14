@@ -9,13 +9,19 @@
 import Foundation
 
 class Caching {
+    var docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first // User document directory
+    
     // MARK: - Recipe
     func writeRecipeDataToCache(recipes: [Recipe]) {
         let encoder = JSONEncoder()
         do {
             let data = try encoder.encode(recipes)
-            let path = URL(string: "recipe.json")!
-            try data.write(to: path, options: .completeFileProtectionUntilFirstUserAuthentication)
+            guard var url = docDir else {
+                print("Couldn't parse url")
+                return
+            }
+            url.appendPathComponent("recipe.json")
+            try data.write(to: url, options: .completeFileProtectionUntilFirstUserAuthentication)
         } catch {
             fatalError("Unable to load file from disk")
         }
@@ -24,10 +30,11 @@ class Caching {
     func readRecipeDataFromCache() -> [Recipe] {
         let decoder = JSONDecoder()
         do {
-            guard let url = URL(string: "recipe.json") else {
+            guard var url = docDir else {
                 print("Could'nt parse url")
                 return []
             }
+            url.appendPathComponent("recipe.json")
             let data = try Data(contentsOf: url)
             return try decoder.decode([Recipe].self, from: data)
         } catch {
@@ -41,23 +48,25 @@ class Caching {
         let encoder = JSONEncoder()
         do {
             let data = try encoder.encode(list)
-            guard let path = URL(string: "shoppingList.json") else {
-                print("Unable to encode url")
+            guard var url = docDir else {
+                print("Couldn't parse url")
                 return
             }
-            try data.write(to: path, options: .completeFileProtectionUntilFirstUserAuthentication)
+            url.appendPathComponent("shoppingList.json")
+            try data.write(to: url, options: .completeFileProtectionUntilFirstUserAuthentication)
         } catch {
-            fatalError("Unable to write data from disk!")
+            fatalError("Unable to write data to disk!")
         }
     }
 
     func readShoppingListDataFromCache() -> [ShoppingListItem] {
         let decoder = JSONDecoder()
         do {
-            guard let url = URL(string: "shoppingList.json") else {
-                print("Unable to parse URL")
+            guard var url = docDir else {
+                print("Couldn't parse url")
                 return []
             }
+            url.appendPathComponent("shoppingList.json")
             let data = try Data(contentsOf: url)
             return try decoder.decode([ShoppingListItem].self, from: data)
         } catch {
