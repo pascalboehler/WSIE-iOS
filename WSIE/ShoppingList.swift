@@ -45,7 +45,11 @@ struct ShoppingList: View {
                             ShoppingListElement(item: item)
                         }
                     }.onDelete { (offset) in
-                        print(offset.count)
+                        guard let index = offset.first else {
+                            print("Unable to locate element")
+                            return
+                        }
+                        self.networkManager.deleteShoppingListItem(itemId: index)
                     }
                 }
                 .navigationBarTitle(Text(NSLocalizedString("Shopping List", comment: "Shopping List View Nav Bar Title")))

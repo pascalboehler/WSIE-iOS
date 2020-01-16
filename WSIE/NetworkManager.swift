@@ -17,8 +17,8 @@ import SwiftyJSON
 // from server
 var recipeData: [Recipe] = loadLocal("recipeData.json")
 var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
-//let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
-let urlPrefix: String = "http://localhost:8080"
+let urlPrefix: String = "http://wsiedevapi.uksouth.cloudapp.azure.com"
+//let urlPrefix: String = "http://localhost:8080"
 //fileprivate var db: Firestore!
 
 class NetworkManager : ObservableObject {
@@ -26,6 +26,7 @@ class NetworkManager : ObservableObject {
     @Published var shoppingList: [ShoppingListItem] = []
     @Published var isLoadingRecipes: Bool = false
     @Published var isLoadingList: Bool = false
+    private var caching = Caching()
     
     init() {
         if Auth.auth().currentUser != nil {
@@ -49,6 +50,7 @@ class NetworkManager : ObservableObject {
         Alamofire.request(url, method: .get).validate().responseData { response in
             guard response.result.isSuccess else {
                 print("ERROR WHILE FETCHING RECIPE DATA")
+                self.recipes = self.caching.readRecipeDataFromCache()
                 self.isLoadingRecipes = false
                 return
             }
@@ -56,6 +58,7 @@ class NetworkManager : ObservableObject {
                 let decoder = JSONDecoder()
                 try self.recipes =  decoder.decode([Recipe].self, from: response.result.value!)
                 self.isLoadingRecipes = false
+                self.caching.writeRecipeDataToCache(recipes: self.recipes)
                 print("fetch completed")
             } catch {
                 fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
@@ -77,6 +80,7 @@ class NetworkManager : ObservableObject {
         Alamofire.request(url, method: .get).validate().responseData { response in
             guard response.result.isSuccess else {
                 print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+                self.shoppingList = self.caching.readShoppingListDataFromCache()
                 self.isLoadingList = false
                 return
             }
@@ -84,6 +88,7 @@ class NetworkManager : ObservableObject {
                 let decoder = JSONDecoder()
                 try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.result.value!)
                 self.isLoadingList = false
+                self.caching.writeShoppingListDataToCache(list: self.shoppingList)
             } catch {
                 fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
             }
@@ -105,6 +110,8 @@ class NetworkManager : ObservableObject {
                         fatalError("Wrong URL format")
                     }
                     Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                    shoppingList.append(updatedItem)
+                    caching.writeShoppingListDataToCache(list: shoppingList)
                 } catch {
                     fatalError("Unable to update shopping list")
                 }
@@ -128,11 +135,30 @@ class NetworkManager : ObservableObject {
                         fatalError("Wrong URL format")
                     }
                     Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                    caching.writeRecipeDataToCache(recipes: recipes)
                 } catch {
                     fatalError("Unable to update object")
                 }
             }
             i += 1
+        }
+    }
+    
+    func deleteShoppingListItem(itemId: Int) {
+        do {
+            let encoder = JSONEncoder()
+            guard let params = try JSON(data: encoder.encode(shoppingList[itemId])).dictionaryObject else {
+                fatalError("Unable to open dict")
+            }
+            let urlString = "\(urlPrefix)/shoppingList"
+            guard let url = URL(string: urlString) else {
+                fatalError("Wrong URL format")
+            }
+            Alamofire.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default).validate()
+            shoppingList.remove(at: itemId)
+            caching.writeShoppingListDataToCache(list: shoppingList)
+        } catch {
+            
         }
     }
     
@@ -148,6 +174,8 @@ class NetworkManager : ObservableObject {
                 fatalError("Wrong URL format")
             }
             Alamofire.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            recipes.remove(at: recipeId)
+            caching.writeRecipeDataToCache(recipes: recipes)
         } catch {
             fatalError("Unable to parse JSON")
         }
@@ -165,6 +193,8 @@ class NetworkManager : ObservableObject {
                 fatalError("Wrong URL format")
             }
             Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            shoppingList.append(item)
+            caching.writeShoppingListDataToCache(list: shoppingList)
         } catch {
             fatalError("Unable to parse JSON")
         }
@@ -182,6 +212,8 @@ class NetworkManager : ObservableObject {
             }
             print(recipe)
             Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
+            recipes.append(recipe)
+            caching.writeRecipeDataToCache(recipes: recipes)
         } catch {
             fatalError("Unable to parse JSON")
         }
