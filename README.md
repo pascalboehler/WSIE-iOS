@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/pascalboehler/WSIE-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/pascalboehler/WSIE-iOS) [![Build Status](https://travis-ci.org/pascalboehler/WSIE-iOS.svg?branch=master)](https://travis-ci.org/pascalboehler/WSIE-iOS)![Build Status App Center](https://build.appcenter.ms/v0.1/apps/6aba5620-578b-473a-b23e-b0d779186515/branches/master/badge)
+[![codecov](https://codecov.io/gh/pascalboehler/WSIE-iOS/branch/master/graph/badge.svg)](https://codecov.io/gh/pascalboehler/WSIE-iOS) [![Build Status](https://travis-ci.org/pascalboehler/WSIE-iOS.svg?branch=master)](https://travis-ci.org/pascalboehler/WSIE-iOS) ![Build Status App Center](https://build.appcenter.ms/v0.1/apps/6aba5620-578b-473a-b23e-b0d779186515/branches/master/badge)
 
 # WSIE - What Should I Eat?
 
