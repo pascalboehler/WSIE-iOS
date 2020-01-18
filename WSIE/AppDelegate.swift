@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import Countly
 //import FirebaseFirestore
 
 @UIApplicationMain
@@ -19,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        
+        let config: CountlyConfig = CountlyConfig()
+        config.appKey = "KEY"
         //_ = Firestore.firestore()
         //initFirebase()
         return true
