@@ -11,6 +11,7 @@ target 'WSIE' do
   pod 'Firebase/Auth'
   pod 'Countly'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'AppCenter/Push'
   
   target 'WSIETests' do
     inherit! :complete
