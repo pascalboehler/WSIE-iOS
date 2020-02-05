@@ -58,12 +58,14 @@ struct CreateRecipeView: View {
                 HStack {
                     Button(action: {
                         print("set person amount button pressed")
+                        self.showPersonAmountPicker = true
                     }) {
                         Text("For \(personAmountValue) person")
                     }
                     Spacer()
                     Button(action: {
                         print("Set time button pressed")
+                        self.showTimePicker = true
                     }) {
                         Image(systemName: "clock")
                         Text("\(timeNeeded) min")
@@ -156,10 +158,8 @@ struct CreateRecipeView: View {
                             Text(NSLocalizedString("Add step", comment: "Add step button title"))
                         }
                     }
+                    Spacer()
                 }
-                
-                    
-                    
             }
             if (showUnitPicker) {
                 VStack {
