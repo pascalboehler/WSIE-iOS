@@ -16,7 +16,7 @@ struct MyRecipeView: View {
         ZStack {
             NavigationView {
                 List {
-                    Toggle(isOn: $userData.showFavouritesOnly) {
+                    Toggle(isOn:  $userData.showFavouritesOnly) {
                         HStack {
                             Image(systemName: "star.circle")
                             Text(NSLocalizedString("Favourites only", comment: "Only show favourites when switch is toggled."))

@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 import AppCenterPush
 //import FirebaseFirestore
 
@@ -21,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        MSAppCenter.start("2617d684-e3e0-4da5-8f6a-5853939f0b8c", withServices: [MSPush.self])
+        MSAppCenter.start("2617d684-e3e0-4da5-8f6a-5853939f0b8c", withServices: [MSPush.self, MSAnalytics.self, MSCrashes.self])
         //_ = Firestore.firestore()
         //initFirebase()
         return true

@@ -1,5 +1,15 @@
 PODS:
   - Alamofire (4.8.2)
+  - AppCenter (2.2.0):
+    - AppCenter/Analytics (= 2.2.0)
+    - AppCenter/Crashes (= 2.2.0)
+  - AppCenter/Analytics (2.2.0):
+    - AppCenter/Core
+  - AppCenter/Core (2.2.0)
+  - AppCenter/Crashes (2.2.0):
+    - AppCenter/Core
+  - AppCenter/Push (2.2.0):
+    - AppCenter/Core
   - Countly (19.02):
     - Countly/NotificationService (= 19.02)
   - Countly/NotificationService (19.02)
@@ -69,6 +79,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AppCenter
+  - AppCenter/Push
   - Countly
   - Firebase/Auth
   - Firebase/Core
@@ -78,6 +90,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AppCenter
     - Countly
     - Firebase
     - FirebaseAnalytics
@@ -94,6 +107,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AppCenter: c809e69d93218b9861b4f8e54ded8dcf4d2131e7
   Countly: f4f9d6b8eb9bb7914a05d28b8adca12a27b2e61a
   Firebase: dedc9e48ea3f3649ad5f6b982f8a0c73508a14b5
   FirebaseAnalytics: 3fb375bc9d13779add4039716f868d233a473fad
@@ -108,6 +122,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: b77947032baf1dabaeb0cbd9b2fb9ad890e114a2
+PODFILE CHECKSUM: 246d0da46e9fb5412690134f443d62171d00626b
 
 COCOAPODS: 1.7.5
