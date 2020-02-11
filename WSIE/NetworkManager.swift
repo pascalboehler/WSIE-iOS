@@ -17,7 +17,7 @@ import SwiftyJSON
 // from server
 var recipeData: [Recipe] = loadLocal("recipeData.json")
 var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
-let urlPrefix: String = "https://wsiedevapi.uksouth.cloudapp.azure.com/api/v1/"
+let urlPrefix: String = "https://wsieprodapi.uksouth.cloudapp.azure.com/api/v1/"
 //let urlPrefix: String = "http://localhost:8080"
 //fileprivate var db: Firestore!
 
@@ -110,7 +110,7 @@ class NetworkManager : ObservableObject {
                         fatalError("Wrong URL format")
                     }
                     Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
-                    shoppingList.append(updatedItem)
+                    //shoppingList.append(updatedItem)
                     caching.writeShoppingListDataToCache(list: shoppingList)
                 } catch {
                     fatalError("Unable to update shopping list")

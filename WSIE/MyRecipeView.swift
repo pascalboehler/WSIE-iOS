@@ -25,7 +25,6 @@ struct MyRecipeView: View {
                         GeometryReader { g -> Text in
                             let frame = g.frame(in: CoordinateSpace.global)
                             if frame.origin.y > 250 && !self.networkManager.isLoadingRecipes{
-                                print("Loading....")
                                 self.networkManager.isLoadingRecipes = true
                                 self.networkManager.reloadRecipeData()
                                 return Text("")

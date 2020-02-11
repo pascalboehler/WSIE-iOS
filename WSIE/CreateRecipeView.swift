@@ -158,7 +158,7 @@ struct CreateRecipeView: View {
                             Text(NSLocalizedString("Add step", comment: "Add step button title"))
                         }
                     }
-                    Spacer()
+                    Spacer(minLength: 500)	
                 }
             }
             if (showUnitPicker) {
