@@ -29,6 +29,9 @@ struct CreateRecipeView: View {
     @State var showPersonAmountPicker = false
     @State var showTimePicker = false
     
+    @State var showImagePicker = false
+    @State var image: UIImage = nil
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -247,6 +250,9 @@ struct CreateRecipeView: View {
                     Text(NSLocalizedString("Done", comment: "Save button"))
                 }
             )
+	.sheet(isPresented: $showImagePicker) {
+		ImagePicker(image: self.$image)	
+}
     }
 }
 
