@@ -30,7 +30,7 @@ struct CreateRecipeView: View {
     @State var showTimePicker = false
     
     @State var showImagePicker = false
-    @State var image: UIImage = nil
+    @State var image: UIImage = UIImage(named: "Gray")!
     
     var body: some View {
         VStack {
@@ -45,6 +45,7 @@ struct CreateRecipeView: View {
                 // Add Image
                 Button(action: {
                     print("New Image button pressed")
+                    self.showImagePicker.toggle()
                 }) {
                     Image("AddImage")
                         .resizable()
@@ -250,9 +251,9 @@ struct CreateRecipeView: View {
                     Text(NSLocalizedString("Done", comment: "Save button"))
                 }
             )
-	.sheet(isPresented: $showImagePicker) {
-		ImagePicker(image: self.$image)	
-}
+	        .sheet(isPresented: $showImagePicker) {
+                ImagePicker(image: self.$image)
+            }
     }
 }
 
