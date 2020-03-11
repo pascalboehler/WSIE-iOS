@@ -30,7 +30,7 @@ struct CreateRecipeView: View {
     @State var showTimePicker = false
     
     @State var showImagePicker = false
-    @State var image: UIImage = UIImage(named: "Gray")!
+    @State var image: UIImage = UIImage(named: "AddImage")!
     
     var body: some View {
         VStack {
@@ -47,7 +47,7 @@ struct CreateRecipeView: View {
                     print("New Image button pressed")
                     self.showImagePicker.toggle()
                 }) {
-                    Image("AddImage")
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(3/2, contentMode: .fit)
                 }
@@ -181,7 +181,7 @@ struct CreateRecipeView: View {
                             Text(NSLocalizedString("Done", comment: "Done button text"))
                         }
                     }
-                    Picker(selection: $unitIndex, label: Text("")) {
+                    Picker(selection: $unitIndex, label: Text ("")) {
                         ForEach(0 ..< supportedUnits.count) { i in
                             Text(self.supportedUnits[i])
                         }
@@ -238,7 +238,7 @@ struct CreateRecipeView: View {
                     for item in self.ingredients {
                         recipeIngredients.append(Ingredient(id: item.id, name: item.name, amount: Int(item.amount) ?? 1, unit: item.unit))
                     }
-                    let recipe = Recipe(id: nil, title: self.titletextFieldTitle, timeNeeded: "\(self.timeNeeded) min", isFavourite: false, ingredients: recipeIngredients, steps: self.steps, shortDescription: self.shortDescriptionTextFieldText, uid: Auth.auth().currentUser!.uid, imageName: "NoPhoto", personAmount: self.personAmountValue, sharedWith: [], language: Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first!, isPublic: false, imageData: UIImage(named: "NoPhoto")!.jpegData(compressionQuality: 0.25)!)
+                    let recipe = Recipe(id: nil, title: self.titletextFieldTitle, timeNeeded: "\(self.timeNeeded) min", isFavourite: false, ingredients: recipeIngredients, steps: self.steps, shortDescription: self.shortDescriptionTextFieldText, uid: Auth.auth().currentUser!.uid, imageName: "NoPhoto", personAmount: self.personAmountValue, sharedWith: [], language: Bundle.preferredLocalizations(from: Utility.applicationSupportedLanguages).first!, isPublic: false, imageData: self.image.jpegData(compressionQuality: 0.25)!)
                     self.networkManager.createNewRecipe(recipe: recipe)
                     self.titletextFieldTitle = ""
                     self.shortDescriptionTextFieldText = ""
