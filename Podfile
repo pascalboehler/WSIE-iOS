@@ -5,12 +5,10 @@ workspace 'WSIE'
 
 target 'WSIE' do
 
-  pod 'Hasher'
   pod 'Alamofire'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Countly'
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SwiftyJSON', '~> 5.0'
   pod 'AppCenter'
   pod 'AppCenter/Push'
   

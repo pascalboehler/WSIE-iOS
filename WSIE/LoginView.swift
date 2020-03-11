@@ -44,7 +44,8 @@ struct LoginView: View {
                 }
             .padding()
             .alert(isPresented: $firebaseSession.showAlert) { () -> Alert in
-                Alert(title: Text("Login failed"), message: Text("\(firebaseSession.errorMessage?.localizedDescription ?? "Something went wrong!")"))
+                self.showActivityIndicator = false
+                return Alert(title: Text("Login failed"), message: Text("\(firebaseSession.errorMessage?.localizedDescription ?? "Something went wrong!")"))
             }
             if (showActivityIndicator) {
                 ActivityIndicator(style: .large)
