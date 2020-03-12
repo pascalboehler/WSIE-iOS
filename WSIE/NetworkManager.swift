@@ -63,9 +63,8 @@ class NetworkManager : ObservableObject {
                             fatalError("Wrong URL format")
                         }
                         print(urlSend)
-//                        AF.request(urlSend, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
                         AF.request(urlSend, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
-                            debugPrint(response)
+                            //debugPrint(response)
                         }
                     }
                     UserDefaults.standard.set(false, forKey: "syncCacheRecipe")
@@ -114,41 +113,45 @@ class NetworkManager : ObservableObject {
             isLoadingRecipes = false
             return
         }
-        if (UserDefaults.standard.bool(forKey: "syncCacheShoppingList")) {
-            do {
-                shoppingList = caching.readShoppingListDataFromCache()
-                self.isLoadingList = false
-                let encoder = JSONEncoder()
-                for item in shoppingList {
-                    guard let params = try JSON(data: encoder.encode(item)).dictionaryObject else {
-                        fatalError("Unable to open dict")
-                    }
-                    let urlString = "\(urlPrefix)/shoppingList"
-                    guard let url = URL(string: urlString) else {
-                        fatalError("Wrong URL format")
-                    }
-                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
-                }
-                UserDefaults.standard.set(false, forKey: "syncCacheShoppingList")
-            } catch {
-                fatalError("Unable to update object")
-            }
-        } else {
-            AF.request(url, method: .get).validate().responseData { response in
-                guard response.error == nil else {
-                    print("ERROR WHILE FETCHING SHOPPING LIST DATA")
-                    self.shoppingList = self.caching.readShoppingListDataFromCache()
-                    self.isLoadingList = false
-                    return
-                }
+        if (NetworkState.isConnected()) {
+            if (UserDefaults.standard.bool(forKey: "syncCacheShoppingList")) {
                 do {
-                    let decoder = JSONDecoder()
-                    try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.data!)
+                    shoppingList = caching.readShoppingListDataFromCache()
                     self.isLoadingList = false
-                    self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                    let encoder = JSONEncoder()
+                    for item in shoppingList {
+                        guard let params = try JSON(data: encoder.encode(item)).dictionaryObject else {
+                            fatalError("Unable to open dict")
+                        }
+                        let urlStringSend = "\(urlPrefix)/shoppingList"
+                        guard let urlSend = URL(string: urlStringSend) else {
+                            fatalError("Wrong URL format")
+                        }
+                        AF.request(urlSend, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                            
+                        }
+                    }
                     UserDefaults.standard.set(false, forKey: "syncCacheShoppingList")
                 } catch {
-                    fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
+                    fatalError("Unable to update object")
+                }
+            } else {
+                AF.request(url, method: .get).validate().responseData { response in
+                    guard response.error == nil else {
+                        print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+                        self.shoppingList = self.caching.readShoppingListDataFromCache()
+                        self.isLoadingList = false
+                        return
+                    }
+                    do {
+                        let decoder = JSONDecoder()
+                        try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.data!)
+                        self.isLoadingList = false
+                        self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                        UserDefaults.standard.set(false, forKey: "syncCacheShoppingList")
+                    } catch {
+                        fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
+                    }
                 }
             }
         }
