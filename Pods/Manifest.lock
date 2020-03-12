@@ -8,8 +8,6 @@ PODS:
   - AppCenter/Core (3.0.0)
   - AppCenter/Crashes (3.0.0):
     - AppCenter/Core
-  - AppCenter/Push (3.0.0):
-    - AppCenter/Core
   - Firebase/Auth (6.19.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.4.3)
@@ -90,7 +88,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AppCenter
-  - AppCenter/Push
   - Firebase/Auth
   - Firebase/Core
   - SwiftyJSON (~> 5.0)
@@ -136,6 +133,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: e6cac7fd1fabc379c370aad1be493c40a4029001
+PODFILE CHECKSUM: a182f32f0255ccc5a1fe3fc821174ef4868c99c6
 
 COCOAPODS: 1.7.5

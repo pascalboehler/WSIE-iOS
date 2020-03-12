@@ -47,23 +47,60 @@ class NetworkManager : ObservableObject {
             print("WRONG URL")
             return
         }
-        AF.request(url, method: .get).validate().responseData { response in
-            guard response.error == nil else {
-                print("ERROR WHILE FETCHING RECIPE DATA")
-                self.recipes = self.caching.readRecipeDataFromCache()
-                self.isLoadingRecipes = false
-                return
+        if (NetworkState.isConnected()) {
+            if (UserDefaults.standard.bool(forKey: "syncCacheRecipe")) {
+                do {
+                    recipes = caching.readRecipeDataFromCache()
+                    self.isLoadingRecipes = false
+                    let encoder = JSONEncoder()
+                    for recipe in recipes {
+                        print(recipe)
+                        guard let params = try JSON(data: encoder.encode(recipe)).dictionaryObject else {
+                            fatalError("Unable to open dict")
+                        }
+                        let urlStringSend = "\(urlPrefix)/recipe"
+                        guard let urlSend = URL(string: urlStringSend) else {
+                            fatalError("Wrong URL format")
+                        }
+                        print(urlSend)
+//                        AF.request(urlSend, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                        AF.request(urlSend, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                            debugPrint(response)
+                        }
+                    }
+                    UserDefaults.standard.set(false, forKey: "syncCacheRecipe")
+                    self.isLoadingRecipes = false
+                    print("Finished uploading cached recipes")
+                } catch {
+                    fatalError("Unable to update object")
+                }
+            } else {
+                AF.request(url, method: .get).validate().responseData { response in
+                    guard response.error == nil else {
+                        print("ERROR WHILE FETCHING RECIPE DATA")
+                        self.recipes = self.caching.readRecipeDataFromCache()
+                        self.isLoadingRecipes = false
+                        return
+                    }
+                    do {
+                        let decoder = JSONDecoder()
+                        try self.recipes =  decoder.decode([Recipe].self, from: response.data!)
+                        self.isLoadingRecipes = false
+                        self.caching.writeRecipeDataToCache(recipes: self.recipes)
+                        print("fetch completed")
+                        UserDefaults.standard.set(false, forKey: "syncCacheRecipe")
+                    } catch {
+                        fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
+                    }
+                }
             }
-            do {
-                let decoder = JSONDecoder()
-                try self.recipes =  decoder.decode([Recipe].self, from: response.data!)
-                self.isLoadingRecipes = false
-                self.caching.writeRecipeDataToCache(recipes: self.recipes)
-                print("fetch completed")
-            } catch {
-                fatalError("Couldn't parse \(url) as \([Recipe].self):\n\(error)")
-            }
+        } else {
+            recipes = caching.readRecipeDataFromCache()
+            print("Loaded from cache")
+            self.isLoadingRecipes = false
         }
+        
+        
     }
     
     private func loadShoppingListFromApi() {
@@ -77,20 +114,42 @@ class NetworkManager : ObservableObject {
             isLoadingRecipes = false
             return
         }
-        AF.request(url, method: .get).validate().responseData { response in
-            guard response.error == nil else {
-                print("ERROR WHILE FETCHING SHOPPING LIST DATA")
-                self.shoppingList = self.caching.readShoppingListDataFromCache()
-                self.isLoadingList = false
-                return
-            }
+        if (UserDefaults.standard.bool(forKey: "syncCacheShoppingList")) {
             do {
-                let decoder = JSONDecoder()
-                try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.data!)
+                shoppingList = caching.readShoppingListDataFromCache()
                 self.isLoadingList = false
-                self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                let encoder = JSONEncoder()
+                for item in shoppingList {
+                    guard let params = try JSON(data: encoder.encode(item)).dictionaryObject else {
+                        fatalError("Unable to open dict")
+                    }
+                    let urlString = "\(urlPrefix)/shoppingList"
+                    guard let url = URL(string: urlString) else {
+                        fatalError("Wrong URL format")
+                    }
+                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                }
+                UserDefaults.standard.set(false, forKey: "syncCacheShoppingList")
             } catch {
-                fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
+                fatalError("Unable to update object")
+            }
+        } else {
+            AF.request(url, method: .get).validate().responseData { response in
+                guard response.error == nil else {
+                    print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+                    self.shoppingList = self.caching.readShoppingListDataFromCache()
+                    self.isLoadingList = false
+                    return
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.data!)
+                    self.isLoadingList = false
+                    self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                    UserDefaults.standard.set(false, forKey: "syncCacheShoppingList")
+                } catch {
+                    fatalError("Couldn't parse \(url) as \([ShoppingListItem].self):\n\(error)")
+                }
             }
         }
     }
@@ -109,9 +168,15 @@ class NetworkManager : ObservableObject {
                     guard let url = URL(string: urlString) else {
                         fatalError("Wrong URL format")
                     }
-                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
-                    //shoppingList.append(updatedItem)
-                    caching.writeShoppingListDataToCache(list: shoppingList)
+                    if(NetworkState.isConnected()) {
+                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                        //shoppingList.append(updatedItem)
+                        self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                    } else {
+                        self.caching.writeShoppingListDataToCache(list: self.shoppingList)
+                        UserDefaults.standard.set(true, forKey: "syncCacheShoppingList")
+                    }
+                    
                 } catch {
                     fatalError("Unable to update shopping list")
                 }
@@ -134,8 +199,14 @@ class NetworkManager : ObservableObject {
                     guard let url = URL(string: urlString) else {
                         fatalError("Wrong URL format")
                     }
-                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
-                    caching.writeRecipeDataToCache(recipes: recipes)
+                    if (NetworkState.isConnected()) {
+                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                        self.caching.writeRecipeDataToCache(recipes: self.recipes)
+                    } else {
+                        self.caching.writeRecipeDataToCache(recipes: self.recipes)
+                        UserDefaults.standard.set(true, forKey: "syncCacheRecipe")
+                    }
+                    
                 } catch {
                     fatalError("Unable to update object")
                 }
@@ -211,10 +282,15 @@ class NetworkManager : ObservableObject {
                 fatalError("Wrong URL format!")
             }
             print(recipe)
-            
-            AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
-            recipes.append(recipe)
-            caching.writeRecipeDataToCache(recipes: recipes)
+            if (NetworkState.isConnected()) {
+                AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
+                recipes.append(recipe)
+                caching.writeRecipeDataToCache(recipes: recipes)
+            } else {
+                recipes.append(recipe)
+                caching.writeRecipeDataToCache(recipes: recipes)
+                UserDefaults.standard.set(true, forKey: "syncCacheRecipe")
+            }
         } catch {
             fatalError("Unable to parse JSON")
         }
