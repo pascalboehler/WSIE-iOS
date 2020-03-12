@@ -49,8 +49,7 @@ class NetworkManager : ObservableObject {
         }
         AF.request(url, method: .get).validate().responseData { response in
             guard response.error == nil else {
-                let error = response.error
-                print("ERROR WHILE FETCHING RECIPE DATA + \(response.error?.errorDescription)")
+                print("ERROR WHILE FETCHING RECIPE DATA")
                 self.recipes = self.caching.readRecipeDataFromCache()
                 self.isLoadingRecipes = false
                 return
@@ -80,7 +79,7 @@ class NetworkManager : ObservableObject {
         }
         AF.request(url, method: .get).validate().responseData { response in
             guard response.error == nil else {
-                print("ERROR WHILE FETCHING SHOPPING LIST DATA + \(response.error?.errorDescription)")
+                print("ERROR WHILE FETCHING SHOPPING LIST DATA")
                 self.shoppingList = self.caching.readShoppingListDataFromCache()
                 self.isLoadingList = false
                 return
