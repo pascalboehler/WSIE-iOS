@@ -17,7 +17,7 @@ import SwiftyJSON
 // from server
 var recipeData: [Recipe] = loadLocal("recipeData.json")
 var shoppingListTestData: [ShoppingListItem] = loadLocal("shoppingListItems.json")
-let urlPrefix: String = "https://wsieprodapi.uksouth.cloudapp.azure.com/api/v1/"
+let urlPrefix: String = "https://wsieprodapi.uksouth.cloudapp.azure.com/api/v1"
 //let urlPrefix: String = "http://localhost:8080"
 //fileprivate var db: Firestore!
 
@@ -47,16 +47,17 @@ class NetworkManager : ObservableObject {
             print("WRONG URL")
             return
         }
-        Alamofire.request(url, method: .get).validate().responseData { response in
-            guard response.result.isSuccess else {
-                print("ERROR WHILE FETCHING RECIPE DATA")
+        AF.request(url, method: .get).validate().responseData { response in
+            guard response.error == nil else {
+                let error = response.error
+                print("ERROR WHILE FETCHING RECIPE DATA + \(response.error?.errorDescription)")
                 self.recipes = self.caching.readRecipeDataFromCache()
                 self.isLoadingRecipes = false
                 return
             }
             do {
                 let decoder = JSONDecoder()
-                try self.recipes =  decoder.decode([Recipe].self, from: response.result.value!)
+                try self.recipes =  decoder.decode([Recipe].self, from: response.data!)
                 self.isLoadingRecipes = false
                 self.caching.writeRecipeDataToCache(recipes: self.recipes)
                 print("fetch completed")
@@ -77,16 +78,16 @@ class NetworkManager : ObservableObject {
             isLoadingRecipes = false
             return
         }
-        Alamofire.request(url, method: .get).validate().responseData { response in
-            guard response.result.isSuccess else {
-                print("ERROR WHILE FETCHING SHOPPING LIST DATA")
+        AF.request(url, method: .get).validate().responseData { response in
+            guard response.error == nil else {
+                print("ERROR WHILE FETCHING SHOPPING LIST DATA + \(response.error?.errorDescription)")
                 self.shoppingList = self.caching.readShoppingListDataFromCache()
                 self.isLoadingList = false
                 return
             }
             do {
                 let decoder = JSONDecoder()
-                try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.result.value!)
+                try self.shoppingList =  decoder.decode([ShoppingListItem].self, from: response.data!)
                 self.isLoadingList = false
                 self.caching.writeShoppingListDataToCache(list: self.shoppingList)
             } catch {
@@ -109,7 +110,7 @@ class NetworkManager : ObservableObject {
                     guard let url = URL(string: urlString) else {
                         fatalError("Wrong URL format")
                     }
-                    Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
                     //shoppingList.append(updatedItem)
                     caching.writeShoppingListDataToCache(list: shoppingList)
                 } catch {
@@ -134,7 +135,7 @@ class NetworkManager : ObservableObject {
                     guard let url = URL(string: urlString) else {
                         fatalError("Wrong URL format")
                     }
-                    Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                    AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
                     caching.writeRecipeDataToCache(recipes: recipes)
                 } catch {
                     fatalError("Unable to update object")
@@ -154,7 +155,7 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            Alamofire.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default).validate()
             shoppingList.remove(at: itemId)
             caching.writeShoppingListDataToCache(list: shoppingList)
         } catch {
@@ -173,7 +174,7 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            Alamofire.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
             recipes.remove(at: recipeId)
             caching.writeRecipeDataToCache(recipes: recipes)
         } catch {
@@ -192,7 +193,7 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            Alamofire.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
             shoppingList.append(item)
             caching.writeShoppingListDataToCache(list: shoppingList)
         } catch {
@@ -211,7 +212,8 @@ class NetworkManager : ObservableObject {
                 fatalError("Wrong URL format!")
             }
             print(recipe)
-            Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
+            
+            AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
             recipes.append(recipe)
             caching.writeRecipeDataToCache(recipes: recipes)
         } catch {
