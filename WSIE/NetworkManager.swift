@@ -172,7 +172,9 @@ class NetworkManager : ObservableObject {
                         fatalError("Wrong URL format")
                     }
                     if(NetworkState.isConnected()) {
-                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                            
+                        }
                         //shoppingList.append(updatedItem)
                         self.caching.writeShoppingListDataToCache(list: self.shoppingList)
                     } else {
@@ -203,7 +205,9 @@ class NetworkManager : ObservableObject {
                         fatalError("Wrong URL format")
                     }
                     if (NetworkState.isConnected()) {
-                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+                        AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                            
+                        }
                         self.caching.writeRecipeDataToCache(recipes: self.recipes)
                     } else {
                         self.caching.writeRecipeDataToCache(recipes: self.recipes)
@@ -228,7 +232,9 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            AF.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .delete, parameters: params, encoding: JSONEncoding.default).response() { response in
+                
+            }
             shoppingList.remove(at: itemId)
             caching.writeShoppingListDataToCache(list: shoppingList)
         } catch {
@@ -247,7 +253,9 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            AF.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .delete, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                
+            }
             recipes.remove(at: recipeId)
             caching.writeRecipeDataToCache(recipes: recipes)
         } catch {
@@ -266,7 +274,9 @@ class NetworkManager : ObservableObject {
             guard let url = URL(string: urlString) else {
                 fatalError("Wrong URL format")
             }
-            AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).validate()
+            AF.request(url, method: .post, parameters: params as Parameters, encoding: JSONEncoding.default).response() { response in
+                
+            }
             shoppingList.append(item)
             caching.writeShoppingListDataToCache(list: shoppingList)
         } catch {
@@ -286,7 +296,9 @@ class NetworkManager : ObservableObject {
             }
             print(recipe)
             if (NetworkState.isConnected()) {
-                AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate()
+                AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).response() { response in
+                    
+                }
                 recipes.append(recipe)
                 caching.writeRecipeDataToCache(recipes: recipes)
             } else {
